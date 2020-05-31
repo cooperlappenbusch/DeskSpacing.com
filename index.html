@@ -6,139 +6,160 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
     <div class="scene">
-        <div class="row">
-            <div class="col">
-                <div class="accordion" id="accordionExample">
-                    <div class="card z-depth-0 bordered">
-                        <div class="card-header" id="headingOne">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse"
-                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Collapsible Group Item #1
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                                squid. 3
-                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-                                nesciunt laborum
-                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
-                                coffee nulla
-                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                cred
-                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
-                                craft beer
-                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                                accusamus
-                                labore sustainable.
+        <main class="container-fluid d-flex h-100 flex-column">
+            <div class="row flex-grow-1" id="UIRow">
+                <div class="row flex-grow-1" id="UIRow">
+                    <div class="col-4" style="height: 100%;">
+                        <h1 class="navbarTitle">3D DeskSetup</h1>
+                        <p class="underTitleText">Created by Cooper Lappenbusch and Travers Sorenson &copy;</p>
+                        <div class="accordion" id="accordionExample">
+                            <div class="card z-depth-0 bordered">
+                                <div class="card-header" id="headingOne" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" type="button">
+                                            Desks
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="jarvisStandingDesk" onclick="selectNewDesk()">
+                                            <div class="productPicture">
+                                                <img class="productPictureImg" width="200px" height="200px"
+                                                    src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
+                                            </div>
+                                            <h3>Jarvis Standing Desk</h3>
+                                            <p class="productDescription">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing
+                                                elit, sed do eiusmod
+                                                tempor
+                                            </p>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="productPicture">
+                                            <img class="productPictureImg" width="200px" height="200px"
+                                                src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
+                                        </div>
+                                        <h3>Jarvis Standing Desk</h3>
+                                        <p class="productDescription">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                            elit, sed do eiusmod
+                                            tempor
+                                        </p>
+                                        <div class="productBarrier"></div>
+                                        <div class="productPicture">
+                                            <img class="productPictureImg" width="200px" height="200px"
+                                                src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
+                                        </div>
+                                        <h3>Jarvis Standing Desk</h3>
+                                        <p class="productDescription">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                            elit, sed do eiusmod
+                                            tempor
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="card z-depth-0 bordered">
-                        <div class="card-header" id="headingTwo">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            <div class="card z-depth-0 bordered">
+                                <div class="card-header" id="headingTwo" type="button" data-toggle="collapse"
                                     data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Collapsible Group Item #2
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                                squid. 3
-                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-                                nesciunt laborum
-                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
-                                coffee nulla
-                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                cred
-                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
-                                craft beer
-                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                                accusamus
-                                labore sustainable.
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed">
+                                            16:9 Monitors
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <h4>BenQ 34WWLN 24" Monitor</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card z-depth-0 bordered">
+                                <div class="card-header" id="headingThree" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed">
+                                            21:9 Monitors
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <h4>LG WKL19W 34" Monitor</h4>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card z-depth-0 bordered">
-                        <div class="card-header" id="headingThree">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Collapsible Group Item #3
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                                squid. 3
-                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-                                nesciunt laborum
-                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
-                                coffee nulla
-                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                cred
-                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
-                                craft beer
-                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                                accusamus
-                                labore sustainable.
-                            </div>
-                        </div>
+                    <div class="col-8">
+                        <canvas id="threeCanvas">
+                        </canvas>
                     </div>
                 </div>
             </div>
-            <div class="col-8">
-                <canvas id="threeCanvas">
-                </canvas>
-            </div>
-        </div>
+        </main>
     </div>
     </div>
     <script src="three.min.js"></script>
     <script src="OrbitControls.js"></script>
     <script src="GLTFLoader.js"></script>
     <script>
+        var controls;
         var scene = new THREE.Scene();
-        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
-        camera.rotation.x = Math.PI;
-        camera.rotation.y = Math.PI;
-        camera.rotation.z = Math.PI / 3;
-        camera.position.x = -93;
-        camera.position.y = 74;
-        camera.position.z = 90;
         var myCanvas = document.getElementById("threeCanvas");
-        var renderer = new THREE.WebGLRenderer({ alpha: true, canvas: myCanvas, });
-        // renderer.domElement = document.getElementById("threeCanvas");
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        var camera = new THREE.PerspectiveCamera(90, myCanvas.clientWidth / myCanvas.clientHeight, 0.1, 2000);
 
-        //document.body.appendChild(renderer.domElement);
+
+        var renderer = new THREE.WebGLRenderer({ alpha: true, canvas: myCanvas, antialias: true, });
+
+        renderer.setSize(myCanvas.clientWidth, myCanvas.clientHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
         renderer.shadowMap.enabled = true;
         renderer.setPixelRatio(window.devicePixelRatio);
         var loader = new THREE.GLTFLoader();
         renderer.setClearColor(0xffffff, 0); // second param is opacity, 0 => transparent
-
-        var controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls = new THREE.OrbitControls(camera, renderer.domElement);
 
         //Adding light
         var light = new THREE.AmbientLight(0x404040); // soft white light
         light.intensity = 3;
-        var lampLight = new THREE.PointLight("lightgrey", 2, 100);
+        var lampLight = new THREE.PointLight("grey", 2, 100);
         lampLight.position.set(30, 45, 49.4);
         scene.add(lampLight);
+        controls.disabled = true;
+        controls.enableZoom = true;
+        controls.enableRotate = true;
+        camera.position.set(-11.677000902697038, 39.732351589749456, 48.43118814205827);
+        controls.update();
+        camera.rotation.set(-1.6338998602892991, -1.2176317641130834, -1.638038483263909);
+        controls.update();
+        camera.lookAt(25, 8.5, 35);
+        controls.update();
+        controls.enabled = true;
 
+        //SETS WHERE THE ORBIT CONTROLS ORBIT AROUND
+        controls.target = new THREE.Vector3(30, 24.4, 49.4);
+
+        var savedVector = controls.object.getWorldDirection();
+        console.log(savedVector);
+
+        var overallDictionary = {
+            desks: {
+                defaultDesk: [25, 8.5, 35, 'desk0/standing_desk_1_textured.glb'],
+                drawerDesk: [10, 10, 10,]
+            }
+        }
+
+        console.log(overallDictionary.desks.defaultDesk[3]);
         //Loader for the room
         /*loader.load('roomFolder/room.gltf', function (gltf) {
             var theModel = gltf.scene;
@@ -155,35 +176,15 @@
 
         //Loader for the default desk
         //HEIGHT IN BLENDER: 
-        loader.load('desk0/standing_desk_1.gltf', function (gltf) {
-            //gltf.scene.scale.set(1.5, 1.5, 1.5); // scale here
+        var currentDeskPath = overallDictionary.desks.defaultDesk[3];
+        loader.load(currentDeskPath, function (gltf) {
+            //gltf.scene.scale.set(5, 5, 5); // scale here
             var theModel = gltf.scene;
             gltf.scene.position.set(25, 8.5, 35);
-            theModel.traverse((o) => {
-                if (o.isMesh) {
-                    o.castShadow = true;
-                    o.receiveShadow = true;
-                }
-            });
             scene.add(gltf.scene);
         }, undefined, function (error) {
             console.error(error);
         });
-
-        //Loading ultrawide monitor
-        /*
-        loader.load('ultrawideMonitor/Ultrwide_Monitor_1.gltf', function (gltf) {
-            //gltf.scene.scale.set(1.5, 1.5, 1.5); // scale here
-            var theModel = gltf.scene;
-            gltf.scene.position.set(33, 8.5, 35);
-
-            scene.add(gltf.scene);
-        }, undefined, function (error) {
-            console.error(error);
-        });
-        */
-
-
 
         //Loading 16x9 Monitor
         loader.load('16x9monitor/16x9_Monitor_1.gltf', function (gltf) {
@@ -194,64 +195,26 @@
             console.error(error);
         });
 
+        window.addEventListener('resize', onWindowResize, false);
+
+        function onWindowResize() {
+            camera.aspect = myCanvas.innerWidth / myCanvas.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(myCanvas.innerWidth, myCanvas.innerHeight);
+        }
+
         function animate() {
             requestAnimationFrame(animate);
-            camera.updateMatrixWorld();
+            //camera.updateMatrixWorld();
+            camera.updateProjectionMatrix();
             controls.update();
             renderer.render(scene, camera);
             console.log("CAMERA POSITION X,Y,Z: " + camera.position.x + ", " + camera.position.y + ", " + camera.position.z);
+            console.log("CAMERA ROTATION X,Y,Z: " + camera.rotation.x + ", " + camera.rotation.y + ", " + camera.rotation.z);
         }
         animate();
 
 
-
-        /*let renderer, scene, camera, controls;
-        function init() {
-            renderer = new THREE.WebGLRenderer();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            document.body.appendChild(renderer.domElement);
-
-            scene = new THREE.Scene();
-
-            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
-
-            controls = new OrbitControls(camera, document.querySelector(".scene"));
-            controls.addEventListener('change', renderer);
-            controls.update();
-            hlight = new THREE.AmbientLight(0x404040, 100);
-            scene.add(hlight);
-            directionalLight = new THREE.DirectionalLight(0xffffff, 100);
-            directionalLight.position.set(0, 1, 0);
-            directionalLight.castShadow = true;
-            scene.add(directionalLight);
-            light = new THREE.PointLight(0xc4c4c4, 10);
-            light.position.set(0, 300, 500);
-            scene.add(light);
-            light2 = new THREE.PointLight(0xc4c4c4, 10);
-            light2.position.set(500, 100, 0);
-            scene.add(light2);
-            light3 = new THREE.PointLight(0xc4c4c4, 10);
-            light3.position.set(0, 100, -500);
-            scene.add(light3);
-            light4 = new THREE.PointLight(0xc4c4c4, 10);
-            light4.position.set(-500, 300, 500);
-            scene.add(light4);
-            renderer = new THREE.WebGLRenderer({ antialias: true });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            document.body.appendChild(renderer.domElement);
-            let loader = new THREE.GLTFLoader();
-            loader.load('scene.gltf', function (gltf) {
-                car = gltf.scene.children[0];
-                car.scale.set(0.5, 0.5, 0.5);
-                scene.add(gltf.scene);
-                animate();
-            });
-        }
-        function animate() {
-            renderer.render(scene, camera);
-            requestAnimationFrame(animate);
-        }
-        init();*/
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
