@@ -15,92 +15,192 @@
         <main class="container-fluid d-flex h-100 flex-column">
             <div class="row flex-grow-1" id="UIRow">
                 <div class="row flex-grow-1" id="UIRow">
-                    <div class="col-4" style="height: 100%;">
-                        <h1 class="navbarTitle">3D DeskSetup</h1>
-                        <p class="underTitleText">Created by Cooper Lappenbusch and Travers Sorenson &copy;</p>
-                        <div class="accordion" id="accordionExample">
-                            <div class="card z-depth-0 bordered">
-                                <div class="card-header" id="headingOne" data-toggle="collapse"
-                                    data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link" type="button">
-                                            Desks
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <div class="jarvisStandingDesk" onclick="selectNewDesk()">
-                                            <div class="productPicture">
-                                                <img class="productPictureImg" width="200px" height="200px"
-                                                    src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
+                    <div class="col-4" style="height: 100%; padding: 0px;">
+                        <div class="menuCol">
+                            <h1 class="navbarTitle">DeskSpacing</h1>
+                            <p class="underTitleText">Created by Cooper Lappenbusch and Travers Sorenson &copy;</p>
+                            <div class="accordion" id="accordionExample">
+                                <div class="card z-depth-0 bordered">
+                                    <div class="card-header" id="headingOne" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" type="button">
+                                                Desks
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                        data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="jarvisStandingDesk"
+                                                onclick="selectNew3DObject('desk','jarvisStandingDesk',this)">
+                                                <div class="productPicture">
+                                                    <img class="productPictureImg" width="200px" height="200px"
+                                                        src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
+                                                </div>
+                                                <h3>Default Standing Desk</h3>
+                                                <p class="productDescription">Lorem ipsum dolor sit amet, consectetur
+                                                    adipiscing
+                                                    elit, sed do eiusmod
+                                                    tempor
+                                                </p>
                                             </div>
-                                            <h3>Jarvis Standing Desk</h3>
-                                            <p class="productDescription">Lorem ipsum dolor sit amet, consectetur
-                                                adipiscing
-                                                elit, sed do eiusmod
-                                                tempor
-                                            </p>
+                                            <div class="productBarrier"></div>
+                                            <div class="drawerDesk"
+                                                onclick="selectNew3DObject('desk','drawerDesk',this)">
+                                                <div class="productPicture">
+                                                    <img class="productPictureImg" width="200px" height="200px"
+                                                        src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
+                                                </div>
+                                                <h3>Drawer Desk</h3>
+                                                <p class="productDescription">Lorem ipsum dolor sit amet, consectetur
+                                                    adipiscing
+                                                    elit, sed do eiusmod
+                                                    tempor
+                                                </p>
+                                            </div>
+
                                         </div>
-                                        <div class="productBarrier"></div>
-                                        <div class="productPicture">
-                                            <img class="productPictureImg" width="200px" height="200px"
-                                                src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
-                                        </div>
-                                        <h3>Jarvis Standing Desk</h3>
-                                        <p class="productDescription">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                            elit, sed do eiusmod
-                                            tempor
-                                        </p>
-                                        <div class="productBarrier"></div>
-                                        <div class="productPicture">
-                                            <img class="productPictureImg" width="200px" height="200px"
-                                                src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
-                                        </div>
-                                        <h3>Jarvis Standing Desk</h3>
-                                        <p class="productDescription">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                            elit, sed do eiusmod
-                                            tempor
-                                        </p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card z-depth-0 bordered">
-                                <div class="card-header" id="headingTwo" type="button" data-toggle="collapse"
-                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed">
-                                            16:9 Monitors
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <h4>BenQ 34WWLN 24" Monitor</h4>
+                                <div class="card z-depth-0 bordered">
+                                    <div class="card-header" id="headingTwo" type="button" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed">
+                                                Monitors
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                        data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div id="default16x9Monitor"
+                                                onclick="selectNew3DObject('monitor','default16x9Monitor',this)">
+                                                <div class="productPicture">
+                                                    <img class="productPictureImg" width="200px" height="200px"
+                                                        src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
+                                                </div>
+                                                <h3>Default 16:9 Monitor</h3>
+                                                <p class="productDescription">Lorem ipsum dolor sit amet, consectetur
+                                                    adipiscing
+                                                    elit, sed do eiusmod
+                                                    tempor
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div id="defaultUltrawideMonitor"
+                                                onclick="selectNew3DObject('monitor','defaultUltrawideMonitor',this)">
+                                                <div class="productPicture">
+                                                    <img class="productPictureImg" width="200px" height="200px"
+                                                        src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
+                                                </div>
+                                                <h3>Default 21:9 34" Monitor</h3>
+                                                <p class="productDescription">Lorem ipsum dolor sit amet, consectetur
+                                                    adipiscing
+                                                    elit, sed do eiusmod
+                                                    tempor
+                                                </p>
+                                            </div>
+                                        </div>
+
+
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card z-depth-0 bordered">
-                                <div class="card-header" id="headingThree" type="button" data-toggle="collapse"
-                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed">
-                                            21:9 Monitors
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <h4>LG WKL19W 34" Monitor</h4>
+
+                                <div class="card z-depth-0 bordered">
+                                    <div class="card-header" id="headingFour" type="button" data-toggle="collapse"
+                                        data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed">
+                                                Keyboards
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                        data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div id="default60PercentKeyboard"
+                                                onclick="selectNew3DObject('keyboard','default60PercentKeyboard',this)">
+                                                <div class="productPicture">
+                                                    <img class="productPictureImg" width="200px" height="200px"
+                                                        src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
+                                                </div>
+                                                <h3>Default 60% Keyboard</h3>
+                                                <p class="productDescription">
+                                                    Lorem ipsum dolor sit amet, consectetur
+                                                    adipiscing
+                                                    elit, sed do eiusmod
+                                                    tempor
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="card z-depth-0 bordered">
+                                    <div class="card-header" id="headingSix" type="button" data-toggle="collapse"
+                                        data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed">
+                                                Mouse
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                                        data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div id="mediumRGBMousepad"
+                                                onclick="selectNew3DObject('mousepad','mediumRGBMousepad',this)">
+                                                <div class="productPicture">
+                                                    <img class="productPictureImg" width="200px" height="200px"
+                                                        src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
+                                                </div>
+                                                <h3>QCK Medium RGB Mousepad</h3>
+                                                <p class="productDescription">
+                                                    Lorem ipsum dolor sit amet, consectetur
+                                                    adipiscing
+                                                    elit, sed do eiusmod
+                                                    tempor
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card z-depth-0 bordered">
+                                    <div class="card-header" id="headingFive" type="button" data-toggle="collapse"
+                                        data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed">
+                                                Mousepads
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                        data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div id="mediumRGBMousepad"
+                                                onclick="selectNew3DObject('mousepad','mediumRGBMousepad',this)">
+                                                <div class="productPicture">
+                                                    <img class="productPictureImg" width="200px" height="200px"
+                                                        src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
+                                                </div>
+                                                <h3>QCK Medium RGB Mousepad</h3>
+                                                <p class="productDescription">
+                                                    Lorem ipsum dolor sit amet, consectetur
+                                                    adipiscing
+                                                    elit, sed do eiusmod
+                                                    tempor
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-8" id="rightSideContainer">
                         <canvas id="threeCanvas">
                         </canvas>
                     </div>
@@ -116,53 +216,123 @@
         var controls;
         var scene = new THREE.Scene();
         var myCanvas = document.getElementById("threeCanvas");
-        var camera = new THREE.PerspectiveCamera(90, myCanvas.clientWidth / myCanvas.clientHeight, 0.1, 2000);
-
-
-        var renderer = new THREE.WebGLRenderer({ alpha: true, canvas: myCanvas, antialias: true, });
+        var rightSideContainer = document.getElementById("rightSideContainer");
+        var camera = new THREE.PerspectiveCamera(75, myCanvas.clientWidth / myCanvas.clientHeight, 0.1, 1000);
+        var renderer = new THREE.WebGLRenderer({ canvas: myCanvas, antialias: true, powerPreference: "high-performance", });
 
         renderer.setSize(myCanvas.clientWidth, myCanvas.clientHeight);
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.shadowMap.enabled = true;
         renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
         var loader = new THREE.GLTFLoader();
         renderer.setClearColor(0xffffff, 0); // second param is opacity, 0 => transparent
         controls = new THREE.OrbitControls(camera, renderer.domElement);
-
+        renderer.gammaFactor = 2.2;
+        renderer.gammaOutput = true;
+        renderer.outputEncoding = THREE.sRGBEncoding;
         //Adding light
-        var light = new THREE.AmbientLight(0x404040); // soft white light
-        light.intensity = 3;
-        var lampLight = new THREE.PointLight("grey", 2, 100);
+        var light = new THREE.AmbientLight(0xFFFFFF);// soft white light
+        light.intensity = .7;
+        var lampLight = new THREE.PointLight("white", 2, 100);
         lampLight.position.set(30, 45, 49.4);
         scene.add(lampLight);
+        scene.add(light);
         controls.disabled = true;
         controls.enableZoom = true;
         controls.enableRotate = true;
-        camera.position.set(-11.677000902697038, 39.732351589749456, 48.43118814205827);
+        camera.position.set(33.140910317837964, 61.27639300930197, 21.183811053080007);
         controls.update();
-        camera.rotation.set(-1.6338998602892991, -1.2176317641130834, -1.638038483263909);
+        camera.rotation.set(-0.3618175319112695, -0.012200336135305153, -0.004617427467257444);
         controls.update();
         camera.lookAt(25, 8.5, 35);
         controls.update();
         controls.enabled = true;
 
         //SETS WHERE THE ORBIT CONTROLS ORBIT AROUND
-        controls.target = new THREE.Vector3(30, 24.4, 49.4);
+        controls.target = new THREE.Vector3(45 - 10.8, 30.55, -60);
 
         var savedVector = controls.object.getWorldDirection();
         console.log(savedVector);
 
-        var overallDictionary = {
-            desks: {
-                defaultDesk: [25, 8.5, 35, 'desk0/standing_desk_1_textured.glb'],
-                drawerDesk: [10, 10, 10,]
+        var currentDesk = new THREE.Object3D();
+        var currentMonitor = new THREE.Object3D();
+        var currentKeyboard = new THREE.Object3D();
+        var currentMousepad = new THREE.Object3D();
+        var currentMouse = new THREE.Object3D();
+        var objectsStringsArray = ["", "", "", "", ""];
+        var objectsTypeArray = ["desk", "monitor", "keyboard", "mousepad", "mouse"];
+        var objectsArray = [currentDesk, currentMonitor, currentKeyboard, currentMousepad, currentMouse];
+
+        //Dictionary to get index of desk object index or string array  (the two arrays above)
+        var indexDictionary = {
+            "desk": 0,
+            "monitor": 1,
+            "keyboard": 2,
+            "mousepad": 3,
+            "mouse": 4,
+        }
+
+        //A dictionary to hold all desk starting coordinates and file paths
+        var deskDictionary = {
+            "jarvisStandingDesk": [12.75, 1.7, -43, (Math.PI / 2), 'desks/standing_desk_1_textured.glb'],
+            "drawerDesk": [7.85, 1, -38, Math.PI, 'desks/regular_desk_1.glb'],
+        }
+
+        //Dictionary to hold all coordinates of objects for corresponding desks
+        //[x, y, z, y rotation, path]
+        var coordinateDictionary = {
+            "jarvisStandingDesk": {
+                "monitor": {
+                    "defaultUltrawideMonitor": [31.3, 32.45, -60, 0, 'ultrawideMonitor/defaultUltrawideMonitor.glb'],
+                    "default16x9Monitor": [33, 30.55, -60, Math.PI / 2 + Math.PI, '16x9Monitors/16x9MonitorDefault.glb'],
+                },
+                "keyboard": {
+                    "default60PercentKeyboard": [29, 31.35, -50, Math.PI / 2 + Math.PI, 'keyboards/60_Keyboard_1_textured.glb']
+                },
+                "mousepad": {
+                    "mediumRGBMousepad": [44, 31.35 + .14, -50, Math.PI / 2 + Math.PI, 'mousepads/medium_rgb_mousepad.glb']
+                },
+                "mouse": {
+                    "defaultMouse": [44, 31.35 + .14, -50, Math.PI, 'mouses/mouse_1.glb']
+                }
+            },
+            "drawerDesk": {
+                "monitor": {
+                    "defaultUltrawideMonitor": [31.3, 33.51, -60, 0, 'ultrawideMonitor/defaultUltrawideMonitor.glb'],
+                    "default16x9Monitor": [33, 31.61, -60, Math.PI / 2 + Math.PI, '16x9Monitors/16x9MonitorDefault.glb'],
+                },
+                "keyboard": {
+                    "default60PercentKeyboard": [29, 31.35 + (33.51 - 32.45), -43, Math.PI / 2 + Math.PI, 'keyboards/60_Keyboard_1_textured.glb']
+                },
+                "mousepad": {
+                    "mediumRGBMousepad": [44, 31.35 + .14 + (33.51 - 32.45), -43, Math.PI / 2 + Math.PI, 'mousepads/medium_rgb_mousepad.glb']
+                },
+                "mouse": {
+                    "defaultMouse": [44, 31.35 + .14 + (33.51 - 32.45), -43, Math.PI / 2 + Math.PI, 'mouses/mouse_1.glb']
+                }
             }
         }
 
-        console.log(overallDictionary.desks.defaultDesk[3]);
         //Loader for the room
-        /*loader.load('roomFolder/room.gltf', function (gltf) {
+        loader.load('rooms/room_2.glb', function (gltf) {
             var theModel = gltf.scene;
+            theModel.traverse((o) => {
+                if (o.isMesh) {
+                    o.castShadow = true;
+                    o.receiveShadow = true;
+                }
+            });
+            scene.add(gltf.scene);
+        }, undefined, function (error) {
+            console.error(error);
+        });
+
+        /*loader.load('desks/regular_desk_1.glb', function (gltf) {
+            var theModel = gltf.scene;
+            gltf.scene.position.set(9.05, 1, -38);
+            gltf.scene.rotation.y = Math.PI;
             theModel.traverse((o) => {
                 if (o.isMesh) {
                     o.castShadow = true;
@@ -176,31 +346,34 @@
 
         //Loader for the default desk
         //HEIGHT IN BLENDER: 
-        var currentDeskPath = overallDictionary.desks.defaultDesk[3];
-        loader.load(currentDeskPath, function (gltf) {
+        // var currentDeskPath = deskDictionary["jarvisStandingDesk"][4];
+        /*loader.load(deskDictionary["jarvisStandingDesk"][4], function (gltf) {
             //gltf.scene.scale.set(5, 5, 5); // scale here
             var theModel = gltf.scene;
-            gltf.scene.position.set(25, 8.5, 35);
+            gltf.asset.name = "desk"
+            gltf.scene.position.set(-15, 1.7, -43);
+            gltf.scene.rotation.y = Math.PI / 2;
             scene.add(gltf.scene);
         }, undefined, function (error) {
             console.error(error);
-        });
+        });*/
 
         //Loading 16x9 Monitor
-        loader.load('16x9monitor/16x9_Monitor_1.gltf', function (gltf) {
-            gltf.scene.position.set(30, 24.4, 49.4);
-            gltf.scene.rotation.y = Math.PI;
+        /*loader.load('16x9Monitors/16x9MonitorDefault.glb', function (gltf) {
+            gltf.scene.position.set(6, 30.55, -60);
+            gltf.scene.rotation.y = Math.PI / 2 + Math.PI;
             scene.add(gltf.scene);
         }, undefined, function (error) {
             console.error(error);
-        });
+        });*/
 
         window.addEventListener('resize', onWindowResize, false);
 
         function onWindowResize() {
-            camera.aspect = myCanvas.innerWidth / myCanvas.innerHeight;
+            camera.aspect = rightSideContainer.clientWidth / rightSideContainer.clientHeight;
             camera.updateProjectionMatrix();
-            renderer.setSize(myCanvas.innerWidth, myCanvas.innerHeight);
+            renderer.setSize(rightSideContainer.clientWidth, rightSideContainer.clientHeight);
+            animate();
         }
 
         function animate() {
@@ -209,11 +382,103 @@
             camera.updateProjectionMatrix();
             controls.update();
             renderer.render(scene, camera);
-            console.log("CAMERA POSITION X,Y,Z: " + camera.position.x + ", " + camera.position.y + ", " + camera.position.z);
-            console.log("CAMERA ROTATION X,Y,Z: " + camera.rotation.x + ", " + camera.rotation.y + ", " + camera.rotation.z);
+            //Commented out logs below print the current rotation and position of camera
+            //console.log("CAMERA POSITION X,Y,Z: " + camera.position.x + ", " + camera.position.y + ", " + camera.position.z);
+            //console.log("CAMERA ROTATION X,Y,Z: " + camera.rotation.x + ", " + camera.rotation.y + ", " + camera.rotation.z);
         }
         animate();
+        var x = 10;
 
+        function initializeObjects() {
+            objectsStringsArray[0] = "jarvisStandingDesk"; //DESK LOADS LAST, BUT THIS NEEDS TO BE SET FIRST!
+            selectNew3DObject("monitor", "default16x9Monitor", null);
+            selectNew3DObject("keyboard", "default60PercentKeyboard", null);
+            selectNew3DObject("mouse", "defaultMouse", null);
+            //selectNew3DObject("mousepad", "mediumRGBMousepad", null);
+            //on first load, desk must always load last (weird bug idk im ignoring for now)
+            selectNew3DObject("desk", "jarvisStandingDesk", null);
+
+        }
+        initializeObjects();
+
+        //selectNew3DObject("desk", "drawerDesk", null);
+        //selectNew3DObject("monitor", "default16x9Monitor", null);
+        function selectNew3DObject(objectType, objectName, event) {
+            if (objectType == "desk") { //DESK IS BEING CHANGED
+                var selectedObject = scene.getObjectByName(objectType);
+                console.log(selectedObject);
+                scene.remove(selectedObject);
+                objectsStringsArray[indexDictionary[objectType]] = objectName;
+                console.log(objectsStringsArray[indexDictionary[objectType]]);
+                //Desk Loader
+                console.log("GOT HERE");
+                loader.load(deskDictionary[objectName][4], function (gltf) {
+                    //Set dictionary for currentDesk arrays? 
+                    objectsArray[indexDictionary[objectType]] = gltf.scene;
+                    objectsArray[indexDictionary[objectType]].name = objectType;
+                    objectsArray[indexDictionary[objectType]].position.set(deskDictionary[objectName][0],
+                        deskDictionary[objectName][1],
+                        deskDictionary[objectName][2]);
+                    gltf.scene.rotation.y = deskDictionary[objectName][3];
+                    gltf.name = "desk";
+                    scene.add(gltf.scene);
+                    x = x + 1;
+                }, undefined, function (error) {
+                    console.error(error);
+                });
+                //Changing all the other objects on desk to fit new desk \/
+                for (var i = 1; i < objectsStringsArray.length; i++) {
+                    console.log(objectsStringsArray[0]);
+                    console.log(objectsTypeArray[i]);
+                    console.log(objectsStringsArray[i]);
+                    console.log(objectsStringsArray);
+                    //console.log(coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]]);
+                    if (objectsStringsArray[i] != "") {
+                        objectsArray[indexDictionary[objectsTypeArray[i]]].position.set(coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]][0],
+                            coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]][1],
+                            coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]][2]
+                        );
+                    }
+                }
+                animate();
+            } else { //Object is being changed on desk
+                var selectedObject = scene.getObjectByName(objectType);
+                console.log(selectedObject);
+                scene.remove(selectedObject);
+                console.log(indexDictionary[objectType]);
+                objectsStringsArray[indexDictionary[objectType]] = objectName;
+                console.log(objectsStringsArray[0]);
+                console.log(objectType);
+                console.log(objectName);
+                console.log(coordinateDictionary[objectsStringsArray[0]][objectType][objectName]);
+                //console.log(objectsStringsArray[indexDictionary[objectType]]);
+                var coordinateDictionaryArr = coordinateDictionary[objectsStringsArray[0]][objectType][objectName];
+                //var currentObject = objectsArray[indexDictionary[objectType]];
+                loader.load(coordinateDictionaryArr[4], function (gltf) {
+                    //Set dictionary for currentDesk arrays? 
+                    objectsArray[indexDictionary[objectType]] = gltf.scene;
+                    objectsArray[indexDictionary[objectType]].name = objectType;
+                    objectsArray[indexDictionary[objectType]].position.set(coordinateDictionaryArr[0],
+                        coordinateDictionaryArr[1],
+                        coordinateDictionaryArr[2]);
+                    gltf.scene.rotation.y = coordinateDictionaryArr[3];
+                    gltf.name = objectType;
+                    scene.add(gltf.scene);
+                    x = x + 1;
+                }, undefined, function (error) {
+                    console.error(error);
+                });
+
+            }
+
+        }
+
+        scene = remove3DObject("currentDesk");
+        function remove3DObject(id) {
+            console.log("REMOVING THE 3D OBJECT");
+            scene.remove(scene.getObjectByName(id));
+            return scene;
+        }
 
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
