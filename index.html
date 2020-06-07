@@ -213,7 +213,8 @@
     <script src="OrbitControls.js"></script>
     <script src="GLTFLoader.js"></script>
     <script>
-        var controls;
+
+        var controls, dragControls;
         var scene = new THREE.Scene();
         var myCanvas = document.getElementById("threeCanvas");
         var rightSideContainer = document.getElementById("rightSideContainer");
@@ -227,8 +228,10 @@
         renderer.shadowMap.enabled = true;
         renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
         var loader = new THREE.GLTFLoader();
+
         renderer.setClearColor(0xffffff, 0); // second param is opacity, 0 => transparent
         controls = new THREE.OrbitControls(camera, renderer.domElement);
+
         renderer.gammaFactor = 2.2;
         renderer.gammaOutput = true;
         renderer.outputEncoding = THREE.sRGBEncoding;
@@ -264,7 +267,7 @@
         var objectsStringsArray = ["", "", "", "", ""];
         var objectsTypeArray = ["desk", "monitor", "keyboard", "mousepad", "mouse"];
         var objectsArray = [currentDesk, currentMonitor, currentKeyboard, currentMousepad, currentMouse];
-
+        //dragControls = new THREE.DragControls(objectsArray, camera, renderer.domElement);
         //Dictionary to get index of desk object index or string array  (the two arrays above)
         var indexDictionary = {
             "desk": 0,
@@ -373,7 +376,7 @@
             camera.aspect = rightSideContainer.clientWidth / rightSideContainer.clientHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(rightSideContainer.clientWidth, rightSideContainer.clientHeight);
-            animate();
+            //animate();
         }
 
         function animate() {
@@ -406,7 +409,7 @@
         function selectNew3DObject(objectType, objectName, event) {
             if (objectType == "desk") { //DESK IS BEING CHANGED
                 var selectedObject = scene.getObjectByName(objectType);
-                console.log(selectedObject);
+                //console.log(selectedObject);
                 scene.remove(selectedObject);
                 objectsStringsArray[indexDictionary[objectType]] = objectName;
                 console.log(objectsStringsArray[indexDictionary[objectType]]);
@@ -440,8 +443,8 @@
                         );
                     }
                 }
-                animate();
-            } else { //Object is being changed on desk
+                //animate();
+            } else { //Object is being changed (on desk)
                 var selectedObject = scene.getObjectByName(objectType);
                 console.log(selectedObject);
                 scene.remove(selectedObject);
