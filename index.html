@@ -211,11 +211,19 @@
     </div>
     <script src="three.min.js"></script>
     <script src="OrbitControls.js"></script>
+    <!--<script src="./three/examples/jsm/controls/DragControls.js"></script>-->
     <script src="GLTFLoader.js"></script>
+    <script src="three/examples/js/controls/DragControls.js"></script>
+    <script src="three/examples/js/controls/TransformControls.js"></script>
+    <script src="three/examples/js/loaders/DRACOLoader.js"></script>
     <script>
-
+        //import * as THREE from './three';
         var controls, dragControls;
         var scene = new THREE.Scene();
+        var dragControls;
+        //var dracoLoader = new DRACOLoader();
+        //dracoLoader.setDecoderPath('/examples/js/libs/draco/');
+        //loader.setDRACOLoader(dracoLoader);
         var myCanvas = document.getElementById("threeCanvas");
         var rightSideContainer = document.getElementById("rightSideContainer");
         var camera = new THREE.PerspectiveCamera(75, myCanvas.clientWidth / myCanvas.clientHeight, 0.1, 1000);
@@ -267,7 +275,26 @@
         var objectsStringsArray = ["", "", "", "", ""];
         var objectsTypeArray = ["desk", "monitor", "keyboard", "mousepad", "mouse"];
         var objectsArray = [currentDesk, currentMonitor, currentKeyboard, currentMousepad, currentMouse];
-        //dragControls = new THREE.DragControls(objectsArray, camera, renderer.domElement);
+        var newArr = objectsArray;
+        newArr.shift();
+        console.log(newArr);
+        dragControls = new THREE.DragControls(newArr, camera, renderer.domElement);
+        //var transformControls = new THREE.TransformControls(camera, renderer.domElement);
+        //transformControls.addEventListener
+        dragControls.addEventListener('drag', function (event) {
+            console.log('drag');
+            console.log(event.object);
+            //event.object.position.y = 0;
+        });
+
+        dragControls.addEventListener('dragstart', function (event) {
+            controls.enabled = false;
+        });
+
+        dragControls.addEventListener('dragend', function (event) {
+            controls.enabled = true;
+        });
+
         //Dictionary to get index of desk object index or string array  (the two arrays above)
         var indexDictionary = {
             "desk": 0,
@@ -288,11 +315,11 @@
         var coordinateDictionary = {
             "jarvisStandingDesk": {
                 "monitor": {
-                    "defaultUltrawideMonitor": [31.3, 32.45, -60, 0, 'ultrawideMonitor/defaultUltrawideMonitor.glb'],
-                    "default16x9Monitor": [33, 30.55, -60, Math.PI / 2 + Math.PI, '16x9Monitors/16x9MonitorDefault.glb'],
+                    "defaultUltrawideMonitor": [31.3, 32.45, -60, 0, 'ultrawideMonitor/defaultUltrawideMonitorNew.glb'],
+                    "default16x9Monitor": [33, 30.55, -60, Math.PI / 2 + Math.PI, ' 16x9Monitors/16x9MonitorDefault.glb'],
                 },
                 "keyboard": {
-                    "default60PercentKeyboard": [29, 31.35, -50, Math.PI / 2 + Math.PI, 'keyboards/60_Keyboard_1_textured.glb']
+                    "default60PercentKeyboard": [29, 31.35, -50, Math.PI / 2 + Math.PI, 'keyboards/60_Keyboard_1test.glb']
                 },
                 "mousepad": {
                     "mediumRGBMousepad": [44, 31.35 + .14, -50, Math.PI / 2 + Math.PI, 'mousepads/medium_rgb_mousepad.glb']
@@ -307,7 +334,7 @@
                     "default16x9Monitor": [33, 31.61, -60, Math.PI / 2 + Math.PI, '16x9Monitors/16x9MonitorDefault.glb'],
                 },
                 "keyboard": {
-                    "default60PercentKeyboard": [29, 31.35 + (33.51 - 32.45), -43, Math.PI / 2 + Math.PI, 'keyboards/60_Keyboard_1_textured.glb']
+                    "default60PercentKeyboard": [29, 31.35 + (33.51 - 32.45), -43, Math.PI / 2 + Math.PI, 'keyboards/60_Keyboard_1.glb']
                 },
                 "mousepad": {
                     "mediumRGBMousepad": [44, 31.35 + .14 + (33.51 - 32.45), -43, Math.PI / 2 + Math.PI, 'mousepads/medium_rgb_mousepad.glb']
@@ -332,43 +359,6 @@
             console.error(error);
         });
 
-        /*loader.load('desks/regular_desk_1.glb', function (gltf) {
-            var theModel = gltf.scene;
-            gltf.scene.position.set(9.05, 1, -38);
-            gltf.scene.rotation.y = Math.PI;
-            theModel.traverse((o) => {
-                if (o.isMesh) {
-                    o.castShadow = true;
-                    o.receiveShadow = true;
-                }
-            });
-            scene.add(gltf.scene);
-        }, undefined, function (error) {
-            console.error(error);
-        });*/
-
-        //Loader for the default desk
-        //HEIGHT IN BLENDER: 
-        // var currentDeskPath = deskDictionary["jarvisStandingDesk"][4];
-        /*loader.load(deskDictionary["jarvisStandingDesk"][4], function (gltf) {
-            //gltf.scene.scale.set(5, 5, 5); // scale here
-            var theModel = gltf.scene;
-            gltf.asset.name = "desk"
-            gltf.scene.position.set(-15, 1.7, -43);
-            gltf.scene.rotation.y = Math.PI / 2;
-            scene.add(gltf.scene);
-        }, undefined, function (error) {
-            console.error(error);
-        });*/
-
-        //Loading 16x9 Monitor
-        /*loader.load('16x9Monitors/16x9MonitorDefault.glb', function (gltf) {
-            gltf.scene.position.set(6, 30.55, -60);
-            gltf.scene.rotation.y = Math.PI / 2 + Math.PI;
-            scene.add(gltf.scene);
-        }, undefined, function (error) {
-            console.error(error);
-        });*/
 
         window.addEventListener('resize', onWindowResize, false);
 
@@ -460,13 +450,16 @@
                 loader.load(coordinateDictionaryArr[4], function (gltf) {
                     //Set dictionary for currentDesk arrays? 
                     objectsArray[indexDictionary[objectType]] = gltf.scene;
+                    console.log(objectType);
+                    console.log(gltf.scene.children[0].parent);
                     objectsArray[indexDictionary[objectType]].name = objectType;
                     objectsArray[indexDictionary[objectType]].position.set(coordinateDictionaryArr[0],
                         coordinateDictionaryArr[1],
                         coordinateDictionaryArr[2]);
                     gltf.scene.rotation.y = coordinateDictionaryArr[3];
-                    gltf.name = objectType;
+                    gltf.scene.name = objectType;
                     scene.add(gltf.scene);
+                    console.log(objectsArray);
                     x = x + 1;
                 }, undefined, function (error) {
                     console.error(error);
