@@ -267,23 +267,29 @@
         var savedVector = controls.object.getWorldDirection();
         console.log(savedVector);
 
-        var currentDesk = new THREE.Object3D();
-        var currentMonitor = new THREE.Object3D();
-        var currentKeyboard = new THREE.Object3D();
-        var currentMousepad = new THREE.Object3D();
-        var currentMouse = new THREE.Object3D();
+        var currentDesk = new THREE.Group();
+        var currentMonitor = new THREE.Group();
+        var currentKeyboard = new THREE.Group();
+        var currentMousepad = new THREE.Group();
+        var currentMouse = new THREE.Group();
+        var objectsArray = [currentDesk, currentMonitor, currentKeyboard, currentMousepad, currentMouse];
+
         var objectsStringsArray = ["", "", "", "", ""];
         var objectsTypeArray = ["desk", "monitor", "keyboard", "mousepad", "mouse"];
-        var objectsArray = [currentDesk, currentMonitor, currentKeyboard, currentMousepad, currentMouse];
-        var newArr = objectsArray;
-        newArr.shift();
-        console.log(newArr);
-        dragControls = new THREE.DragControls(newArr, camera, renderer.domElement);
+        //var newArr = objectsArray;
+        //newArr.shift();
+        //console.log(newArr);
+
+        dragControls = new THREE.DragControls(objectsArray, camera, renderer.domElement);
+        //THIS MADE IT WORK \/ only for the first object (desk)
+        //dragControls.transformGroup = true;
+
         //var transformControls = new THREE.TransformControls(camera, renderer.domElement);
         //transformControls.addEventListener
         dragControls.addEventListener('drag', function (event) {
             console.log('drag');
             console.log(event.object);
+            console.log(objectsArray);
             //event.object.position.y = 0;
         });
 
@@ -414,6 +420,11 @@
                         deskDictionary[objectName][2]);
                     gltf.scene.rotation.y = deskDictionary[objectName][3];
                     gltf.name = "desk";
+                    for (var i = 0; i < gltf.scenes[0].children.length; i++) {
+                        console.log("DESK ITEM " + i);
+                        console.log(gltf.scenes[0].children[i]);
+                        objectsArray[indexDictionary[objectType]].add(gltf.scenes[0].children[i]);
+                    }
                     scene.add(gltf.scene);
                     x = x + 1;
                 }, undefined, function (error) {
@@ -438,26 +449,26 @@
                 var selectedObject = scene.getObjectByName(objectType);
                 console.log(selectedObject);
                 scene.remove(selectedObject);
-                console.log(indexDictionary[objectType]);
+
                 objectsStringsArray[indexDictionary[objectType]] = objectName;
-                console.log(objectsStringsArray[0]);
-                console.log(objectType);
-                console.log(objectName);
+
                 console.log(coordinateDictionary[objectsStringsArray[0]][objectType][objectName]);
                 //console.log(objectsStringsArray[indexDictionary[objectType]]);
                 var coordinateDictionaryArr = coordinateDictionary[objectsStringsArray[0]][objectType][objectName];
                 //var currentObject = objectsArray[indexDictionary[objectType]];
                 loader.load(coordinateDictionaryArr[4], function (gltf) {
                     //Set dictionary for currentDesk arrays? 
-                    objectsArray[indexDictionary[objectType]] = gltf.scene;
-                    console.log(objectType);
-                    console.log(gltf.scene.children[0].parent);
+                    console.log("gltf.scenes[0].children[0].parent of " + objectType);
+                    console.log(gltf.scenes[0].children[0].parent);
+                    objectsArray[indexDictionary[objectType]] = gltf.scenes[0].children[0].parent;
+
                     objectsArray[indexDictionary[objectType]].name = objectType;
                     objectsArray[indexDictionary[objectType]].position.set(coordinateDictionaryArr[0],
                         coordinateDictionaryArr[1],
                         coordinateDictionaryArr[2]);
+                    objectsArray[indexDictionary[objectType]] = gltf.scenes[0].children[0].parent;
                     gltf.scene.rotation.y = coordinateDictionaryArr[3];
-                    gltf.scene.name = objectType;
+                    gltf.name = objectType;
                     scene.add(gltf.scene);
                     console.log(objectsArray);
                     x = x + 1;
