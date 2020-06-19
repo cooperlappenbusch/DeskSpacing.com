@@ -283,10 +283,10 @@
                 var controlsExist = intersectedObjects.findIndex(i => i.object.type === "Object3D");
                 console.log("gizmoExists = " + gizmoExists + " planeExists = " + planeExists + " controlsExist = " + controlsExist);
 
-                if (gizmoExists > -1 || controlsExist > -1) {
-                    console.log("FUCK BILL GATES");
-                    return;
-                }
+                //if (gizmoExists > -1 || controlsExist > -1) {
+                //    console.log("FUCK BILL GATES");
+                //    return;
+                //}
 
                 console.log("MESH EXISTS = " + meshExists);
                 for (var i = 0; i < intersectedObjects.length; i++) {
@@ -379,12 +379,12 @@
         renderer.gammaOutput = true;
         renderer.outputEncoding = THREE.sRGBEncoding;
         //Adding light
-        //var light = new THREE.AmbientLight(0xFFFFFF);// soft white light
-        //light.intensity = .7;
-        var lampLight = new THREE.PointLight("white", 2, 300);
-        lampLight.position.set(30, 45, 49.4);
-        scene.add(lampLight);
-        //scene.add(light);
+        var light = new THREE.AmbientLight(0xFFFFFF);// soft white light
+        light.intensity = .7;
+        //var lampLight = new THREE.PointLight("white", 2, 300);
+        //lampLight.position.set(30, 45, 49.4);
+        //scene.add(lampLight);
+        scene.add(light);
         controls.disabled = true;
         controls.enableZoom = true;
         controls.enableRotate = true;
@@ -454,7 +454,7 @@
         //var newArr = objectsArray;
         //newArr.shift();
         //console.log(newArr);
-
+        var pickObject = false;
         transformControls = new THREE.TransformControls(camera, renderer.domElement);
         transformControls.enabled = true;
         transformControls.size = .7;
@@ -462,14 +462,25 @@
         scene.add(transformControls);
 
         transformControls.addEventListener('mouseDown', function () {
-            console.log("ENTERED TRANSFORM CONTROLS");
+            console.log("HIT TRANSFORM CONTROLS");
+            pickObject = true;
             controls.enabled = false;
         });
         transformControls.addEventListener('mouseUp', function () {
             controls.enabled = true;
         });
 
-        window.addEventListener('mousedown', setPickPosition);
+        window.addEventListener('mousedown', function (event) {
+            console.log("WINDOW MOUSE DOWN");
+            if (pickObject) {
+                pickObject = false
+                return;
+            }
+            console.log("RUNNING SET PICK POSITION");
+            setPickPosition(event);
+            pickObject = false
+        });
+
         window.addEventListener('mouseout', clearPickPosition);
         window.addEventListener('mouseleave', clearPickPosition);
 
