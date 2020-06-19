@@ -217,21 +217,157 @@
     <script src="three/examples/js/controls/TransformControls.js"></script>
     <script src="three/examples/js/loaders/DRACOLoader.js"></script>
     <script>
+        var rightSideContainer = document.getElementById("rightSideContainer");
+        //Class to help select JS objects
+        class PickHelper {
+            constructor() {
+                this.raycaster = new THREE.Raycaster();
+                this.pickedObject = null;
+                this.pickedObjectSavedColor = 0;
+            }
+            pick(normalizedPosition, scene, camera, noDeskArr, transformControls) {
+                // restore the color if there is a picked object
+                console.log("POSITION = " + normalizedPosition);
+                console.log("PICKED CALLED");
+
+                /*if (this.pickedObject) {
+                    console.log("Entered this.pickedObject");
+                    console.log(this.pickedObject);
+                    this.pickedObject = undefined;
+                    transformControls.detach();
+                    //controls.enabled = true;
+                }*/
+                console.log(noDeskArr);
+                //if (!fillNoDeskArrBool) {
+                //    noDeskArr.push(transformControls);
+                //    noDeskArr.shift();
+                //    fillNoDeskArrBool = true;
+                //}
+                //noDeskArr.push(transformControls);
+                // cast a ray through the frustum
+                this.raycaster.setFromCamera(normalizedPosition, camera);
+                // get the list of objects the ray intersected
+
+                console.log(noDeskArr);
+                var tempArr = [...objectsArray];
+                tempArr.shift();
+                tempArr.push(transformControls);
+                console.log("NEW TEMP ARR DEBUGGGINGGIGNGINGINI");
+                console.log(tempArr);
+                const intersectedObjects = this.raycaster.intersectObjects(tempArr, true);
+                console.log("ARRAY OF INTERSECTS");
+                console.log(intersectedObjects);
+                console.log("Passed first if");
+                //console.log(intersectedObjects[0].object);
+                //intersectedObjects[0].object.type == "Object3D" && 
+
+                /*if (intersectedObjects.length && ((intersectedObjects[0].object.type != "TransformControlsPlane" || intersectedObjects[0].object.type != "Object3D") || intersectedObjects[0].object.type != "TransformControlsGizmo")) {
+                    console.log("Entered second if");
+                    // pick the first object. It's the closest one
+                    this.pickedObject = intersectedObjects[0].object;
+                    console.log("FIRST OBJECT IN RAY = ");
+                    console.log(this.pickedObject);
+                    //transformControls.detach();
+                    //transformControls.attach(this.pickedObject.parent);
+                    // save its color
+                    //this.pickedObjectSavedColor = this.pickedObject.material.emissive.getHex();
+                    // set its emissive color to flashing red/yellow
+                    //this.pickedObject.material.emissive.setHex((time * 8) % 2 > 1 ? 0xFFFF00 : 0xFF0000);
+                }*/
+
+                //Loops through the objects that the ray intersected, gettign past the TransformControlsPlane
+
+                var meshExists = intersectedObjects.findIndex(i => i.object.type === "Mesh");
+                var gizmoExists = intersectedObjects.findIndex(i => i.object.parent.parent.type === "TransformControlsGizmo");
+                var planeExists = intersectedObjects.findIndex(i => i.object.type === "TransformControlsPlane");
+                var controlsExist = intersectedObjects.findIndex(i => i.object.type === "Object3D");
+                console.log("gizmoExists = " + gizmoExists + " planeExists = " + planeExists + " controlsExist = " + controlsExist);
+
+                if (gizmoExists > -1 || controlsExist > -1) {
+                    console.log("FUCK BILL GATES");
+                    return;
+                }
+
+                console.log("MESH EXISTS = " + meshExists);
+                for (var i = 0; i < intersectedObjects.length; i++) {
+                    console.log("IN FOR LOOP " + i);
+                    console.log(intersectedObjects[i].object);
+
+                    /*if (!(((intersectedObjects[i].object.parent.type == "TransformControlsGizmo" || intersectedObjects[i].object.type == "TransformControlsPlane") || intersectedObjects[i].object.type == "Object3D"))) {
+                        this.pickedObject = intersectedObjects[i].object;
+                        //console.log();
+                        transformControls.detach();
+                        console.log("ATTATCHED OBJECT TO ");
+                        console.log(this.pickedObject.parent.parent);
+                        transformControls.attach(this.pickedObject.parent);
+                        i = intersectedObjects.length;
+                        return;
+                    }*/
+                    /*if (intersectedObjects[i].object.type != "TransformControlsGizmo" && intersectedObjects[i].object.type != "TransformControlsPlane" && intersectedObjects[i].object.type != "Object3D") {
+                        this.pickedObject = intersectedObjects[i].object;
+                        //console.log();
+                        transformControls.detach();
+                        console.log("ATTATCHED OBJECT TO ");
+                        console.log(this.pickedObject.parent.parent);
+                        transformControls.attach(this.pickedObject.parent);
+                        i = intersectedObjects.length;
+                        return;
+                    }*/
+
+                    if (intersectedObjects[i].object.type == "Mesh") {
+                        this.pickedObject = intersectedObjects[i].object;
+                        console.log("PARENT TYPE");
+                        console.log(intersectedObjects[i].object.type);
+                        transformControls.detach();
+                        console.log("ATTATCHED OBJECT TO ");
+                        console.log(this.pickedObject.parent.parent);
+                        transformControls.attach(this.pickedObject.parent);
+                        break;
+                    }
+
+                }
+                //controls.enabled = true;
+            }
+        }
+        const pickPosition = { x: 0, y: 0 };
+        clearPickPosition();
+        function getCanvasRelativePosition(event) {
+            const rect = myCanvas.getBoundingClientRect();
+            return {
+                x: (event.clientX - rect.left) * rightSideContainer.clientWidth / rect.width,
+                y: (event.clientY - rect.top) * rightSideContainer.clientHeight / rect.height,
+            };
+        }
+
+
+
+        function clearPickPosition() {
+            // unlike the mouse which always has a position
+            // if the user stops touching the screen we want
+            // to stop picking. For now we just pick a value
+            // unlikely to pick something
+            pickPosition.x = -100000;
+            pickPosition.y = -100000;
+        }
+
+        //MOUSE DOWN CODE
+
+
+
+        const pickHelper = new PickHelper();
         //import * as THREE from './three';
-        var controls, dragControls;
+        var controls, dragControls, transformControls;
         var scene = new THREE.Scene();
-        var dragControls;
+
         //var dracoLoader = new DRACOLoader();
         //dracoLoader.setDecoderPath('/examples/js/libs/draco/');
         //loader.setDRACOLoader(dracoLoader);
         var myCanvas = document.getElementById("threeCanvas");
-        var rightSideContainer = document.getElementById("rightSideContainer");
+
         var camera = new THREE.PerspectiveCamera(75, myCanvas.clientWidth / myCanvas.clientHeight, 0.1, 1000);
         var renderer = new THREE.WebGLRenderer({ canvas: myCanvas, antialias: true, powerPreference: "high-performance", });
 
         renderer.setSize(myCanvas.clientWidth, myCanvas.clientHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.shadowMap.enabled = true;
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.shadowMap.enabled = true;
         renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
@@ -239,17 +375,16 @@
 
         renderer.setClearColor(0xffffff, 0); // second param is opacity, 0 => transparent
         controls = new THREE.OrbitControls(camera, renderer.domElement);
-
         renderer.gammaFactor = 2.2;
         renderer.gammaOutput = true;
         renderer.outputEncoding = THREE.sRGBEncoding;
         //Adding light
-        var light = new THREE.AmbientLight(0xFFFFFF);// soft white light
-        light.intensity = .7;
-        var lampLight = new THREE.PointLight("white", 2, 100);
+        //var light = new THREE.AmbientLight(0xFFFFFF);// soft white light
+        //light.intensity = .7;
+        var lampLight = new THREE.PointLight("white", 2, 300);
         lampLight.position.set(30, 45, 49.4);
         scene.add(lampLight);
-        scene.add(light);
+        //scene.add(light);
         controls.disabled = true;
         controls.enableZoom = true;
         controls.enableRotate = true;
@@ -267,41 +402,186 @@
         var savedVector = controls.object.getWorldDirection();
         console.log(savedVector);
 
+
+
         var currentDesk = new THREE.Group();
         var currentMonitor = new THREE.Group();
         var currentKeyboard = new THREE.Group();
         var currentMousepad = new THREE.Group();
         var currentMouse = new THREE.Group();
         var objectsArray = [currentDesk, currentMonitor, currentKeyboard, currentMousepad, currentMouse];
+        var objectsArrayCopy = [...objectsArray];
+        //objectsArrayCopy.shift();
 
+        /*var noDeskArr = objectsArray;
+        noDeskArr.shift();
+        console.log("FIRST NO DESK ARR");
+        console.log(noDeskArr);*/
         var objectsStringsArray = ["", "", "", "", ""];
         var objectsTypeArray = ["desk", "monitor", "keyboard", "mousepad", "mouse"];
+        var dragControlArrays = Array(objectsTypeArray.length);
+        var dragControlsArr = Array(objectsTypeArray.length);
+        var fillNoDeskArrBool = false;
+
+
+
+        /*for (var i = 0; i < dragControlsArr.length; i++) {
+            console.log(i + " ITERATION");
+            var tempArr = [];
+            tempArr.push(objectsArray[i]);
+            console.log(objectsArray[i]);
+            dragControlsArr[i] = new THREE.DragControls(tempArr, camera, renderer.domElement);
+            console.log(dragControlsArr[i]);
+
+            dragControlsArr[i].addEventListener('drag', function (event) {
+                console.log('drag');
+                console.log(event.object);
+                console.log(objectsArray);
+                event.object.position.y = 0;
+            });
+
+            dragControlsArr[i].addEventListener('dragstart', function (event) {
+                controls.enabled = false;
+            });
+
+            dragControlsArr[i].addEventListener('dragend', function (event) {
+                controls.enabled = true;
+            });
+
+            dragControlsArr[i].transformGroup = true;
+        }*/
+
         //var newArr = objectsArray;
         //newArr.shift();
         //console.log(newArr);
 
-        dragControls = new THREE.DragControls(objectsArray, camera, renderer.domElement);
-        //THIS MADE IT WORK \/ only for the first object (desk)
-        //dragControls.transformGroup = true;
+        transformControls = new THREE.TransformControls(camera, renderer.domElement);
+        transformControls.enabled = true;
+        transformControls.size = .7;
+        transformControls.addEventListener('change', render);
+        scene.add(transformControls);
 
-        //var transformControls = new THREE.TransformControls(camera, renderer.domElement);
-        //transformControls.addEventListener
-        dragControls.addEventListener('drag', function (event) {
-            console.log('drag');
-            console.log(event.object);
-            console.log(objectsArray);
-            //event.object.position.y = 0;
-        });
-
-        dragControls.addEventListener('dragstart', function (event) {
+        transformControls.addEventListener('mouseDown', function () {
+            console.log("ENTERED TRANSFORM CONTROLS");
             controls.enabled = false;
         });
-
-        dragControls.addEventListener('dragend', function (event) {
+        transformControls.addEventListener('mouseUp', function () {
             controls.enabled = true;
         });
 
-        //Dictionary to get index of desk object index or string array  (the two arrays above)
+        window.addEventListener('mousedown', setPickPosition);
+        window.addEventListener('mouseout', clearPickPosition);
+        window.addEventListener('mouseleave', clearPickPosition);
+
+        window.addEventListener('resize', onWindowResize, false);
+        //Making the transform controls not show a Y direction.
+        //objectsArrayCopy.push(transformControls);
+        transformControls.showY = !transformControls.showY;
+        function setPickPosition(event) {
+
+            const pos = getCanvasRelativePosition(event);
+            pickPosition.x = (pos.x / rightSideContainer.clientWidth) * 2 - 1;
+            pickPosition.y = (pos.y / rightSideContainer.clientHeight) * -2 + 1;  // note we flip Y
+
+            pickHelper.pick(pickPosition, scene, camera, objectsArrayCopy, transformControls);
+        }
+
+        window.addEventListener('keydown', function (event) {
+
+            switch (event.keyCode) {
+
+                case 81: // Q
+                    transformControls.setSpace(transformControls.space === "local" ? "world" : "local");
+                    break;
+
+                case 16: // Shift
+                    transformControls.setTranslationSnap(100);
+                    transformControls.setRotationSnap(THREE.MathUtils.degToRad(15));
+                    transformControls.setScaleSnap(0.25);
+                    break;
+
+                case 87: // W
+                    transformControls.setMode("translate");
+                    break;
+
+                case 69: // E
+                    transformControls.setMode("rotate");
+                    break;
+
+                case 82: // R
+                    transformControls.setMode("scale");
+                    break;
+
+                case 67: // C
+                    const position = camera.position.clone();
+
+                    camera = camera.isPerspectiveCamera ? cameraOrtho : cameraPersp;
+                    camera.position.copy(position);
+
+                    transformControls.object = camera;
+                    transformControls.camera = camera;
+
+                    camera.lookAt(controls.target.x, controls.target.y, controls.target.z);
+                    onWindowResize();
+                    break;
+
+                case 86: // V
+                    const randomFoV = Math.random() + 0.1;
+                    const randomZoom = Math.random() + 0.1;
+
+                    cameraPersp.fov = randomFoV * 160;
+                    cameraOrtho.bottom = - randomFoV * 500;
+                    cameraOrtho.top = randomFoV * 500;
+
+                    cameraPersp.zoom = randomZoom * 5;
+                    cameraOrtho.zoom = randomZoom * 5;
+                    onWindowResize();
+                    break;
+
+                case 187:
+                case 107: // +, =, num+
+                    transformControls.setSize(transformControls.size + 0.1);
+                    break;
+
+                case 189:
+                case 109: // -, _, num-
+                    transformControls.setSize(Math.max(transformControls.size - 0.1, 0.1));
+                    break;
+
+                case 88: // X
+                    transformControls.showX = !transformControls.showX;
+                    break;
+
+                case 89: // Y
+                    transformControls.showY = !transformControls.showY;
+                    break;
+
+                case 90: // Z
+                    transformControls.showZ = !transformControls.showZ;
+                    break;
+
+                case 32: // Spacebar
+                    transformControls.enabled = !transformControls.enabled;
+                    break;
+
+            }
+
+        });
+
+        window.addEventListener('keyup', function (event) {
+
+            switch (event.keyCode) {
+
+                case 16: // Shift
+                    transformControls.setTranslationSnap(null);
+                    transformControls.setRotationSnap(null);
+                    transformControls.setScaleSnap(null);
+                    break;
+
+            }
+
+        });
+
         var indexDictionary = {
             "desk": 0,
             "monitor": 1,
@@ -331,7 +611,7 @@
                     "mediumRGBMousepad": [44, 31.35 + .14, -50, Math.PI / 2 + Math.PI, 'mousepads/medium_rgb_mousepad.glb']
                 },
                 "mouse": {
-                    "defaultMouse": [44, 31.35 + .14, -50, Math.PI, 'mouses/mouse_1.glb']
+                    "defaultMouse": [44, 31.35 + .14, -50, Math.PI, 'mouses/Mouse_1_textured.glb']
                 }
             },
             "drawerDesk": {
@@ -346,7 +626,7 @@
                     "mediumRGBMousepad": [44, 31.35 + .14 + (33.51 - 32.45), -43, Math.PI / 2 + Math.PI, 'mousepads/medium_rgb_mousepad.glb']
                 },
                 "mouse": {
-                    "defaultMouse": [44, 31.35 + .14 + (33.51 - 32.45), -43, Math.PI / 2 + Math.PI, 'mouses/mouse_1.glb']
+                    "defaultMouse": [44, 31.35 + .14 + (33.51 - 32.45), -43, Math.PI / 2 + Math.PI, 'mouses/Mouse_1_textured.glb']
                 }
             }
         }
@@ -375,6 +655,10 @@
             //animate();
         }
 
+        function render() {
+            renderer.render(scene, camera);
+        }
+
         function animate() {
             requestAnimationFrame(animate);
             //camera.updateMatrixWorld();
@@ -390,10 +674,11 @@
 
         function initializeObjects() {
             objectsStringsArray[0] = "jarvisStandingDesk"; //DESK LOADS LAST, BUT THIS NEEDS TO BE SET FIRST!
-            selectNew3DObject("monitor", "default16x9Monitor", null);
-            selectNew3DObject("keyboard", "default60PercentKeyboard", null);
+            //selectNew3DObject("monitor", "default16x9Monitor", null);
+            //selectNew3DObject("keyboard", "default60PercentKeyboard", null);
             selectNew3DObject("mouse", "defaultMouse", null);
-            //selectNew3DObject("mousepad", "mediumRGBMousepad", null);
+            selectNew3DObject("keyboard", "default60PercentKeyboard", null);
+            selectNew3DObject("mousepad", "mediumRGBMousepad", null);
             //on first load, desk must always load last (weird bug idk im ignoring for now)
             selectNew3DObject("desk", "jarvisStandingDesk", null);
 
@@ -422,8 +707,9 @@
                     gltf.name = "desk";
                     for (var i = 0; i < gltf.scenes[0].children.length; i++) {
                         console.log("DESK ITEM " + i);
-                        console.log(gltf.scenes[0].children[i]);
-                        objectsArray[indexDictionary[objectType]].add(gltf.scenes[0].children[i]);
+                        console.log(gltf.scene.children[i].parent);
+                        //objectsArray[indexDictionary[objectType]].add(gltf.scene.children[i].parent);
+                        console.log(objectsArray);
                     }
                     scene.add(gltf.scene);
                     x = x + 1;
@@ -470,6 +756,9 @@
                     gltf.scene.rotation.y = coordinateDictionaryArr[3];
                     gltf.name = objectType;
                     scene.add(gltf.scene);
+                    transformControls.detach();
+                    transformControls.attach(gltf.scene.children[0]);
+                    console.log(transformControls.object);
                     console.log(objectsArray);
                     x = x + 1;
                 }, undefined, function (error) {
@@ -480,14 +769,15 @@
 
         }
 
-        scene = remove3DObject("currentDesk");
+        /*scene = remove3DObject("currentDesk");
         function remove3DObject(id) {
             console.log("REMOVING THE 3D OBJECT");
             scene.remove(scene.getObjectByName(id));
             return scene;
-        }
+        }*/
 
     </script>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
