@@ -258,24 +258,6 @@
                 console.log("ARRAY OF INTERSECTS");
                 console.log(intersectedObjects);
                 console.log("Passed first if");
-                //console.log(intersectedObjects[0].object);
-                //intersectedObjects[0].object.type == "Object3D" && 
-
-                /*if (intersectedObjects.length && ((intersectedObjects[0].object.type != "TransformControlsPlane" || intersectedObjects[0].object.type != "Object3D") || intersectedObjects[0].object.type != "TransformControlsGizmo")) {
-                    console.log("Entered second if");
-                    // pick the first object. It's the closest one
-                    this.pickedObject = intersectedObjects[0].object;
-                    console.log("FIRST OBJECT IN RAY = ");
-                    console.log(this.pickedObject);
-                    //transformControls.detach();
-                    //transformControls.attach(this.pickedObject.parent);
-                    // save its color
-                    //this.pickedObjectSavedColor = this.pickedObject.material.emissive.getHex();
-                    // set its emissive color to flashing red/yellow
-                    //this.pickedObject.material.emissive.setHex((time * 8) % 2 > 1 ? 0xFFFF00 : 0xFF0000);
-                }*/
-
-                //Loops through the objects that the ray intersected, gettign past the TransformControlsPlane
 
                 var meshExists = intersectedObjects.findIndex(i => i.object.type === "Mesh");
                 var gizmoExists = intersectedObjects.findIndex(i => i.object.parent.parent.type === "TransformControlsGizmo");
@@ -283,10 +265,7 @@
                 var controlsExist = intersectedObjects.findIndex(i => i.object.type === "Object3D");
                 console.log("gizmoExists = " + gizmoExists + " planeExists = " + planeExists + " controlsExist = " + controlsExist);
 
-                //if (gizmoExists > -1 || controlsExist > -1) {
-                //    console.log("FUCK BILL GATES");
-                //    return;
-                //}
+
 
                 console.log("MESH EXISTS = " + meshExists);
                 for (var i = 0; i < intersectedObjects.length; i++) {
@@ -314,7 +293,7 @@
                         return;
                     }*/
 
-                    if (intersectedObjects[i].object.type == "Mesh") {
+                    if (intersectedObjects[i].object.type == "Mesh" && intersectedObjects[i].object.parent.parent.type != "TransformControlsGizmo") {
                         this.pickedObject = intersectedObjects[i].object;
                         console.log("PARENT TYPE");
                         console.log(intersectedObjects[i].object.type);
@@ -496,7 +475,7 @@
 
             pickHelper.pick(pickPosition, scene, camera, objectsArrayCopy, transformControls);
         }
-
+        var rotateActive = true;
         window.addEventListener('keydown', function (event) {
 
             switch (event.keyCode) {
@@ -512,15 +491,30 @@
                     break;
 
                 case 87: // W
+                    transformControls.showX = true;
+                    transformControls.showZ = true;
+                    transformControls.showY = true;
                     transformControls.setMode("translate");
                     break;
 
                 case 69: // E
-                    transformControls.setMode("rotate");
+                    transformControls.setMode("scale");
                     break;
 
                 case 82: // R
-                    transformControls.setMode("scale");
+                    if (rotateActive) {
+                        transformControls.showX = false;
+                        transformControls.showZ = false;
+                        transformControls.showY = true;
+                        transformControls.setMode("rotate");
+                        rotateActive = false;
+                    } else {
+                        transformControls.showX = true;
+                        transformControls.showZ = true;
+                        transformControls.showY = false;
+                        transformControls.setMode("translate");
+                        rotateActive = true;
+                    }
                     break;
 
                 case 67: // C
