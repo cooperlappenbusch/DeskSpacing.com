@@ -98,3 +98,17 @@ body, html {
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+
+  .dropdownWrapper  {
+    margin: 10px !important;
+  }
+  
+  .doubleDropdownWrapper {
+    display: inline-block;
+    width: calc(50% - 4px);
+    margin: 0 auto;
+  }
+
+  #rightSideContainer {
+      padding: 0 !important;
+  }

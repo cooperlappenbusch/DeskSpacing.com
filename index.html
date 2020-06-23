@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
@@ -17,10 +17,10 @@
                 <div class="row flex-grow-1" id="UIRow">
                     <div class="col-4" style="height: 100%; padding: 0px;">
                         <div class="menuCol">
-                            <h1 class="navbarTitle">DeskSpacing</h1>
+                            <h1 class="navbarTitle text-white">DeskSpacing</h1>
                             <p class="underTitleText">Created by Cooper Lappenbusch and Travers Sorenson &copy;</p>
                             <div class="accordion" id="accordionExample">
-                                <div class="card z-depth-0 bordered">
+                                <div class="card text-white z-depth-0 bordered">
                                     <div class="card-header" id="headingOne" data-toggle="collapse"
                                         data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                         <h5 class="mb-0">
@@ -39,6 +39,7 @@
                                                         src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
                                                 </div>
                                                 <h3>Default Standing Desk</h3>
+
                                                 <p class="productDescription">Lorem ipsum dolor sit amet, consectetur
                                                     adipiscing
                                                     elit, sed do eiusmod
@@ -74,7 +75,63 @@
                                     </div>
                                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                         data-parent="#accordionExample">
-                                        <div class="card-body">
+
+                                        <div class="card-body text-white">
+                                            <div id="defaultUltrawideMonitor"
+                                                onclick="selectNew3DObject('monitor','defaultUltrawideMonitor',this)">
+                                                <div class="productPicture">
+                                                    <img class="productPictureImg" width="200px" height="200px"
+                                                        src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
+                                                </div>
+                                                <h3>Custom Monitor</h3>
+                                                <div class="doubleDropdownMenu">
+                                                    <div class="input-group text-center justify-content-center"
+                                                        role="group">
+                                                        <div class="input-group-btn" role="group">
+                                                            <button type="button"
+                                                                class="btn btn-primary dropdown-toggle text-center"
+                                                                id="AdvancedSearch" data-toggle="dropdown"
+                                                                style="display: inline-block;">
+                                                                <span class="selection">Aspect Ratio:
+                                                                    21:9</span></button>
+                                                            <div class="dropdown-menu text-center" id="dropdown">
+                                                                <li><a class="dropdown-item" href="#"
+                                                                        data-value="item1">16:9</a></li>
+                                                                <li><a class="dropdown-item" href="#"
+                                                                        data-value="item2">21:9</a></li>
+                                                                <li><a class="dropdown-item" href="#"
+                                                                        data-value="item3">32:9</a></li>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="input-group text-center justify-content-center dropdownWrapper"
+                                                        role="group">
+                                                        <div class="input-group-btn dropdownWrapper" role="group">
+                                                            <button type="button"
+                                                                class="btn btn-primary dropdown-toggle text-center"
+                                                                id="AdvancedSearch" data-toggle="dropdown"
+                                                                style="display: inline-block;">
+                                                                <span class="selection">Size:
+                                                                    34"</span></button>
+                                                            <div class="dropdown-menu text-center" id="dropdown">
+                                                                <li><a class="dropdown-item" href="#"
+                                                                        data-value="item1">16:9</a></li>
+                                                                <li><a class="dropdown-item" href="#"
+                                                                        data-value="item2">21:9</a></li>
+                                                                <li><a class="dropdown-item" href="#"
+                                                                        data-value="item3">32:9</a></li>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="productDescription">
+                                                    Make a custom monitor by changing the aspect ratio and size above!
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="card-body text-white">
                                             <div id="default16x9Monitor"
                                                 onclick="selectNew3DObject('monitor','default16x9Monitor',this)">
                                                 <div class="productPicture">
@@ -89,7 +146,8 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="card-body">
+                                        <div class="productBarrier"></div>
+                                        <div class="card-body text-white">
                                             <div id="defaultUltrawideMonitor"
                                                 onclick="selectNew3DObject('monitor','defaultUltrawideMonitor',this)">
                                                 <div class="productPicture">
@@ -104,7 +162,23 @@
                                                 </p>
                                             </div>
                                         </div>
-
+                                        <div class="productBarrier"></div>
+                                        <div class="card-body text-white">
+                                            <div id="32x9_49Monitor"
+                                                onclick="selectNew3DObject('monitor','32x9_49Monitor',this)">
+                                                <div class="productPicture">
+                                                    <img class="productPictureImg" width="200px" height="200px"
+                                                        src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
+                                                </div>
+                                                <h3>Default 32:9 49" Monitor</h3>
+                                                <p class="productDescription">
+                                                    Lorem ipsum dolor sit amet, consectetur
+                                                    adipiscing
+                                                    elit, sed do eiusmod
+                                                    tempor
+                                                </p>
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -120,7 +194,7 @@
                                     </div>
                                     <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
                                         data-parent="#accordionExample">
-                                        <div class="card-body">
+                                        <div class="card-body text-white">
                                             <div id="default60PercentKeyboard"
                                                 onclick="selectNew3DObject('keyboard','default60PercentKeyboard',this)">
                                                 <div class="productPicture">
@@ -149,7 +223,7 @@
                                     </div>
                                     <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
                                         data-parent="#accordionExample">
-                                        <div class="card-body">
+                                        <div class="card-body text-white">
                                             <div id="mediumRGBMousepad"
                                                 onclick="selectNew3DObject('mousepad','mediumRGBMousepad',this)">
                                                 <div class="productPicture">
@@ -178,7 +252,7 @@
                                     </div>
                                     <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
                                         data-parent="#accordionExample">
-                                        <div class="card-body">
+                                        <div class="card-body text-white">
                                             <div id="mediumRGBMousepad"
                                                 onclick="selectNew3DObject('mousepad','mediumRGBMousepad',this)">
                                                 <div class="productPicture">
@@ -271,27 +345,6 @@
                 for (var i = 0; i < intersectedObjects.length; i++) {
                     console.log("IN FOR LOOP " + i);
                     console.log(intersectedObjects[i].object);
-
-                    /*if (!(((intersectedObjects[i].object.parent.type == "TransformControlsGizmo" || intersectedObjects[i].object.type == "TransformControlsPlane") || intersectedObjects[i].object.type == "Object3D"))) {
-                        this.pickedObject = intersectedObjects[i].object;
-                        //console.log();
-                        transformControls.detach();
-                        console.log("ATTATCHED OBJECT TO ");
-                        console.log(this.pickedObject.parent.parent);
-                        transformControls.attach(this.pickedObject.parent);
-                        i = intersectedObjects.length;
-                        return;
-                    }*/
-                    /*if (intersectedObjects[i].object.type != "TransformControlsGizmo" && intersectedObjects[i].object.type != "TransformControlsPlane" && intersectedObjects[i].object.type != "Object3D") {
-                        this.pickedObject = intersectedObjects[i].object;
-                        //console.log();
-                        transformControls.detach();
-                        console.log("ATTATCHED OBJECT TO ");
-                        console.log(this.pickedObject.parent.parent);
-                        transformControls.attach(this.pickedObject.parent);
-                        i = intersectedObjects.length;
-                        return;
-                    }*/
 
                     if (intersectedObjects[i].object.type == "Mesh" && intersectedObjects[i].object.parent.parent.type != "TransformControlsGizmo") {
                         this.pickedObject = intersectedObjects[i].object;
@@ -402,37 +455,6 @@
         var dragControlsArr = Array(objectsTypeArray.length);
         var fillNoDeskArrBool = false;
 
-
-
-        /*for (var i = 0; i < dragControlsArr.length; i++) {
-            console.log(i + " ITERATION");
-            var tempArr = [];
-            tempArr.push(objectsArray[i]);
-            console.log(objectsArray[i]);
-            dragControlsArr[i] = new THREE.DragControls(tempArr, camera, renderer.domElement);
-            console.log(dragControlsArr[i]);
-
-            dragControlsArr[i].addEventListener('drag', function (event) {
-                console.log('drag');
-                console.log(event.object);
-                console.log(objectsArray);
-                event.object.position.y = 0;
-            });
-
-            dragControlsArr[i].addEventListener('dragstart', function (event) {
-                controls.enabled = false;
-            });
-
-            dragControlsArr[i].addEventListener('dragend', function (event) {
-                controls.enabled = true;
-            });
-
-            dragControlsArr[i].transformGroup = true;
-        }*/
-
-        //var newArr = objectsArray;
-        //newArr.shift();
-        //console.log(newArr);
         var pickObject = false;
         transformControls = new THREE.TransformControls(camera, renderer.domElement);
         transformControls.enabled = true;
@@ -464,9 +486,8 @@
         window.addEventListener('mouseleave', clearPickPosition);
 
         window.addEventListener('resize', onWindowResize, false);
-        //Making the transform controls not show a Y direction.
-        //objectsArrayCopy.push(transformControls);
-        transformControls.showY = !transformControls.showY;
+
+        transformControls.showY = !transformControls.showY; //Making the transform controls not show a Y direction.
         function setPickPosition(event) {
 
             const pos = getCanvasRelativePosition(event);
@@ -608,6 +629,7 @@
                 "monitor": {
                     "defaultUltrawideMonitor": [31.3, 32.45, -60, 0, 'ultrawideMonitor/defaultUltrawideMonitorNew.glb'],
                     "default16x9Monitor": [33, 30.55, -60, Math.PI / 2 + Math.PI, ' 16x9Monitors/16x9MonitorDefault.glb'],
+                    "32x9_49Monitor": [33, 30.55 - 1.4, -57, Math.PI / 2, ' monitors/32x9_49Monitor.glb'],
                 },
                 "keyboard": {
                     "default60PercentKeyboard": [29, 31.35, -50, Math.PI / 2 + Math.PI, 'keyboards/60_Keyboard_1test.glb']
@@ -679,7 +701,7 @@
 
         function initializeObjects() {
             objectsStringsArray[0] = "jarvisStandingDesk"; //DESK LOADS LAST, BUT THIS NEEDS TO BE SET FIRST!
-            //selectNew3DObject("monitor", "default16x9Monitor", null);
+            selectNew3DObject("monitor", "32x9_49Monitor", null);
             //selectNew3DObject("keyboard", "default60PercentKeyboard", null);
             selectNew3DObject("mouse", "defaultMouse", null);
             selectNew3DObject("keyboard", "default60PercentKeyboard", null);
@@ -792,6 +814,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="dropDownLogic.js"></script>
 </body>
 
 </html>
