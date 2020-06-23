@@ -299,7 +299,7 @@
                 this.pickedObject = null;
                 this.pickedObjectSavedColor = 0;
             }
-            pick(normalizedPosition, scene, camera, noDeskArr, transformControls) {
+            pick(normalizedPosition, scene, camera, noDeskArr, transformControls, objectsArrayOfArrays) {
                 // restore the color if there is a picked object
                 console.log("POSITION = " + normalizedPosition);
                 console.log("PICKED CALLED");
@@ -322,9 +322,25 @@
                 this.raycaster.setFromCamera(normalizedPosition, camera);
                 // get the list of objects the ray intersected
 
-                console.log(noDeskArr);
-                var tempArr = [...objectsArray];
-                tempArr.shift();
+                console.log("ARRAY BEFORE");
+                console.log(objectsArrayOfArrays);
+                //var tempArr = [...objectsArrayOfArrays]; //this was just objectsArray WARNING WARNING
+                var tempArr = [];
+                for (var i = 1; i < objectsArrayOfArrays.length; i++) {
+                    console.log("Concatting BELOW");
+                    console.log(objectsArrayOfArrays[i]);
+                    tempArr = tempArr.concat(objectsArrayOfArrays[i]);
+                }
+                console.log("objectsArrayOfArrays AFTER");
+                console.log(objectsArrayOfArrays);
+                console.log("tempArr AFTER");
+                console.log(tempArr);
+                console.log("OFF WHITE");
+                console.log("OFF WHITE");
+                console.log("OFF WHITE");
+                console.log("OFF WHITE");
+
+                //tempArr.shift();
                 tempArr.push(transformControls);
                 console.log("NEW TEMP ARR DEBUGGGINGGIGNGINGINI");
                 console.log(tempArr);
@@ -442,7 +458,18 @@
         var currentMousepad = new THREE.Group();
         var currentMouse = new THREE.Group();
         var objectsArray = [currentDesk, currentMonitor, currentKeyboard, currentMousepad, currentMouse];
+        var deskArray = [], monitorArray = [], keyboardArray = [], mousepadArray = [], mouseArray = [];
+        var objectsArrayOfArrays = [deskArray, monitorArray, keyboardArray, mousepadArray, mouseArray];
         var objectsArrayCopy = [...objectsArray];
+
+
+        var objectsCountDict = {
+            "desk": 0,
+            "monitor": 0,
+            "keyboard": 0,
+            "mousepad": 0,
+            "mouse": 0,
+        }
         //objectsArrayCopy.shift();
 
         /*var noDeskArr = objectsArray;
@@ -494,7 +521,7 @@
             pickPosition.x = (pos.x / rightSideContainer.clientWidth) * 2 - 1;
             pickPosition.y = (pos.y / rightSideContainer.clientHeight) * -2 + 1;  // note we flip Y
 
-            pickHelper.pick(pickPosition, scene, camera, objectsArrayCopy, transformControls);
+            pickHelper.pick(pickPosition, scene, camera, objectsArrayCopy, transformControls, objectsArrayOfArrays);
         }
         var rotateActive = true;
         window.addEventListener('keydown', function (event) {
@@ -775,13 +802,19 @@
                     console.log(gltf.scenes[0].children[0].parent);
                     objectsArray[indexDictionary[objectType]] = gltf.scenes[0].children[0].parent;
 
-                    objectsArray[indexDictionary[objectType]].name = objectType;
+                    objectsArray[indexDictionary[objectType]].name = objectType + objectsCountDict[objectType];
                     objectsArray[indexDictionary[objectType]].position.set(coordinateDictionaryArr[0],
                         coordinateDictionaryArr[1],
                         coordinateDictionaryArr[2]);
                     objectsArray[indexDictionary[objectType]] = gltf.scenes[0].children[0].parent;
+                    var tempGroup = new THREE.Group();
+                    tempGroup = gltf.scenes[0].children[0].parent;
+                    objectsArrayOfArrays[indexDictionary[objectType]].push(gltf.scenes[0].children[0].parent);
                     gltf.scene.rotation.y = coordinateDictionaryArr[3];
-                    gltf.name = objectType;
+                    gltf.name = objectType + objectsCountDict[objectType];
+                    console.log(gltf.name);
+                    objectsCountDict[objectType]++;
+                    console.log(objectsCountDict[objectType]);
                     scene.add(gltf.scene);
                     transformControls.detach();
                     transformControls.attach(gltf.scene.children[0]);
