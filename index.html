@@ -290,6 +290,7 @@
     <script src="three/examples/js/controls/DragControls.js"></script>
     <script src="three/examples/js/controls/TransformControls.js"></script>
     <script src="three/examples/js/loaders/DRACOLoader.js"></script>
+    <script src="three/examples/js/loaders/DRACOLoader.js"></script>
     <script>
         var rightSideContainer = document.getElementById("rightSideContainer");
         //Class to help select JS objects
@@ -298,6 +299,39 @@
                 this.raycaster = new THREE.Raycaster();
                 this.pickedObject = null;
                 this.pickedObjectSavedColor = 0;
+            }
+            setPickedObject(inputtedObject) {
+                this.pickedObject = inputtedObject;
+                //transformControls.detach();
+                //transformControls.attach(inputtedObject);
+            }
+            deleteObject() {
+                if (this.pickedObject) {
+                    console.log("IN DELETE FUNCTION");
+
+                    var objectName = this.pickedObject.parent.parent.name;
+                    if (objectName == '') { //Some meshes don't have the name stored at parent.parent? This addresses that issue
+                        objectName = this.pickedObject.parent.name;
+                    }
+                    console.log(objectName);
+                    var objectNoDigits = objectName.replace(/[0-9]/g, '');
+                    console.log(objectNoDigits);
+                    var pickedObjectIndex = indexDictionary[objectNoDigits];
+                    console.log(objectsArrayOfArrays);
+                    var arrayOfObjects = objectsArrayOfArrays[pickedObjectIndex];
+                    console.log(arrayOfObjects);
+                    for (var i = 0; i < arrayOfObjects.length; i++) {
+                        console.log("Finding object to delete");
+                        if (arrayOfObjects[i].name == objectName) {
+                            console.log("FOUND THE OBJECT TO DELETE");
+                            scene.remove(objectsArrayOfArrays[pickedObjectIndex][i]);
+                            objectsArrayOfArrays[pickedObjectIndex].splice(i, 1);
+                            transformControls.detach();
+                        }
+                    }
+                } else {
+                    console.log("No object selected");
+                }
             }
             pick(normalizedPosition, scene, camera, noDeskArr, transformControls, objectsArrayOfArrays) {
                 // restore the color if there is a picked object
@@ -311,7 +345,7 @@
                     transformControls.detach();
                     //controls.enabled = true;
                 }*/
-                console.log(noDeskArr);
+                //console.log(noDeskArr);
                 //if (!fillNoDeskArrBool) {
                 //    noDeskArr.push(transformControls);
                 //    noDeskArr.shift();
@@ -322,23 +356,21 @@
                 this.raycaster.setFromCamera(normalizedPosition, camera);
                 // get the list of objects the ray intersected
 
-                console.log("ARRAY BEFORE");
-                console.log(objectsArrayOfArrays);
+                //console.log("ARRAY BEFORE");
+                //console.log(objectsArrayOfArrays);
                 //var tempArr = [...objectsArrayOfArrays]; //this was just objectsArray WARNING WARNING
                 var tempArr = [];
                 for (var i = 1; i < objectsArrayOfArrays.length; i++) {
-                    console.log("Concatting BELOW");
-                    console.log(objectsArrayOfArrays[i]);
                     tempArr = tempArr.concat(objectsArrayOfArrays[i]);
                 }
-                console.log("objectsArrayOfArrays AFTER");
+                /*console.log("objectsArrayOfArrays AFTER");
                 console.log(objectsArrayOfArrays);
                 console.log("tempArr AFTER");
                 console.log(tempArr);
                 console.log("OFF WHITE");
                 console.log("OFF WHITE");
                 console.log("OFF WHITE");
-                console.log("OFF WHITE");
+                console.log("OFF WHITE");*/
 
                 //tempArr.shift();
                 tempArr.push(transformControls);
@@ -509,8 +541,8 @@
             pickObject = false
         });
 
-        window.addEventListener('mouseout', clearPickPosition);
-        window.addEventListener('mouseleave', clearPickPosition);
+        //window.addEventListener('mouseout', clearPickPosition);
+        //window.addEventListener('mouseleave', clearPickPosition);
 
         window.addEventListener('resize', onWindowResize, false);
 
@@ -527,7 +559,12 @@
         window.addEventListener('keydown', function (event) {
 
             switch (event.keyCode) {
-
+                case 8: //BACKSPACE (Delete)
+                    console.log("DELETE DELETE");
+                    console.log("DELETE DELETE");
+                    console.log("DELETE DELETE");
+                    pickHelper.deleteObject();
+                    break;
                 case 81: // Q
                     transformControls.setSpace(transformControls.space === "local" ? "world" : "local");
                     break;
@@ -816,6 +853,7 @@
                     objectsCountDict[objectType]++;
                     console.log(objectsCountDict[objectType]);
                     scene.add(gltf.scene);
+                    pickHelper.setPickedObject(gltf.scene.children[0]);
                     transformControls.detach();
                     transformControls.attach(gltf.scene.children[0]);
                     console.log(transformControls.object);
