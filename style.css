@@ -65,11 +65,11 @@ body, html {
 }
 
 .productBarrier {
-    width: 50%;
+    width: 80%;
     height:1px;
     background-color: lightgrey;
     margin: 0 auto;
-    margin: 10px auto;
+    margin: 20px auto;
 }
 
 
@@ -112,3 +112,31 @@ body, html {
   #rightSideContainer {
       padding: 0 !important;
   }
+
+.productDescriptionText {
+    font-size: 19px;
+}
+
+.centerTopBottom {
+    margin: auto auto;
+    padding: auto auto;
+}
+
+.innerDescriptionDiv {
+    padding-top: 15px;
+}
+
+.dimensionsText {
+    font-size: 17px;
+    font-style: normal;
+    
+    
+    padding-bottom: 5px;
+}
+
+.itemTitleText {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 17px;
+    padding-bottom: 5px;
+}
