@@ -129,14 +129,21 @@ body, html {
 .dimensionsText {
     font-size: 17px;
     font-style: normal;
-    
-    
     padding-bottom: 5px;
 }
 
 .itemTitleText {
     margin: 0 !important;
     padding: 0 !important;
-    line-height: 17px;
+    line-height: 30px;
     padding-bottom: 5px;
+}
+
+.smallParagraphBreak {
+    font-size: 5px !important;
+}
+
+label {
+    padding: 0;
+    margin: 0;
 }
