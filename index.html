@@ -46,7 +46,7 @@
                                                     <div class="col-xl centerTopBottom">
                                                         <div class="innerDescriptionDiv">
                                                             <h2 class="itemTitleText">
-                                                                Modern&nbspDesk <span
+                                                                Modern Desk <span
                                                                     class="dimensionsText">5"&nbspH&nbspx&nbsp25"&nbspW&nbspx&nbsp13.5"&nbspD
                                                                 </span>
                                                             </h2>
@@ -57,7 +57,8 @@
                                                             <div class="text-center">
                                                                 <button type="button"
                                                                     class="btn btn-success text-center"
-                                                                    style="display: inline-block;">
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('desk','modernDesk',event)">
                                                                     Add to setup</button>
                                                             </div>
                                                         </div>
@@ -78,7 +79,7 @@
                                                     <div class="col-xl centerTopBottom">
                                                         <div class="innerDescriptionDiv">
                                                             <h2 class="itemTitleText">
-                                                                Standing&nbspDesk <span
+                                                                Standing Desk <span
                                                                     class="dimensionsText">5"&nbspH&nbspx&nbsp25"&nbspW&nbspx&nbsp13.5"&nbspD
                                                                 </span>
                                                             </h2>
@@ -89,14 +90,15 @@
                                                             <div class="text-center">
                                                                 <button type="button"
                                                                     class="btn btn-success text-center"
-                                                                    style="display: inline-block;">
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('desk','standingDesk',event)">
                                                                     Add to setup</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="productBarrier"></div>
+                                            <div class=" productBarrier"></div>
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-xl centerTopBottom">
@@ -110,18 +112,20 @@
                                                     <div class="col-xl centerTopBottom">
                                                         <div class="innerDescriptionDiv">
                                                             <h2 class="itemTitleText">
-                                                                Linnmon&nbspDesk <span
+                                                                Linnmon Desk <span
                                                                     class="dimensionsText">5"&nbspH&nbspx&nbsp25"&nbspW&nbspx&nbsp13.5"&nbspD
                                                                 </span>
                                                             </h2>
 
                                                             <div class="smallParagraphBreak">&nbsp</div>
-                                                            <p class="productDescriptionText">A popular and cheap IKEA
+                                                            <p class="productDescriptionText">A popular
+                                                                and cheap IKEA
                                                                 desk choice</p>
                                                             <div class="text-center">
                                                                 <button type="button"
                                                                     class="btn btn-success text-center"
-                                                                    style="display: inline-block;">
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('desk','linnmonDesk',event)">
                                                                     Add to setup</button>
                                                             </div>
                                                         </div>
@@ -148,12 +152,14 @@
                                                             </h2>
 
                                                             <div class="smallParagraphBreak">&nbsp</div>
-                                                            <p class="productDescriptionText">A setup consisting of a
+                                                            <p class="productDescriptionText">A setup
+                                                                consisting of a
                                                                 countertop and two IKEA drawers</p>
                                                             <div class="text-center">
                                                                 <button type="button"
                                                                     class="btn btn-success text-center"
-                                                                    style="display: inline-block;">
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('desk','alexDesk',event)">
                                                                     Add to setup</button>
                                                             </div>
                                                         </div>
@@ -197,9 +203,12 @@
                                                                 <form>
                                                                     <label>Aspect Ratio:</label>
                                                                     <select id="aspectRatioForm">
-                                                                        <option value="16:9">16:9</option>
-                                                                        <option value="21:9">21:9</option>
-                                                                        <option value="32:9">32:9</option>
+                                                                        <option value="16:9">16:9
+                                                                        </option>
+                                                                        <option value="21:9">21:9
+                                                                        </option>
+                                                                        <option value="32:9">32:9
+                                                                        </option>
                                                                     </select>
                                                                 </form>
                                                                 <form>
@@ -213,8 +222,10 @@
                                                                 </span>
                                                                 </h2>
 
-                                                                <div class="smallParagraphBreak">&nbsp</div>
-                                                                <p class="productDescriptionText">A custom monitor,
+                                                                <div class="smallParagraphBreak">&nbsp
+                                                                </div>
+                                                                <p class="productDescriptionText">A
+                                                                    custom monitor,
                                                                     choose
                                                                     your aspect ratio and size!</p>
                                                                 <div class="text-center">
@@ -245,13 +256,17 @@
                                                             </h2>
 
                                                             <div class="smallParagraphBreak">&nbsp</div>
-                                                            <p class="productDescriptionText">A 23" 16:9 monitor with a
+                                                            <p class="productDescriptionText">A 23" 16:9
+                                                                monitor with a
                                                                 circular base</p>
                                                             <div class="text-center">
                                                                 <button type="button"
                                                                     class="btn btn-success text-center"
                                                                     style="display: inline-block;">
                                                                     Add to setup</button>
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    onclick="replace3DObject('monitor','defaultUltrawideMonitor',event)">Replace
+                                                                    selected</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -275,13 +290,16 @@
                                                             </h2>
 
                                                             <div class="smallParagraphBreak">&nbsp</div>
-                                                            <p class="productDescriptionText">A setup consisting of a
+                                                            <p class="productDescriptionText">A setup
+                                                                consisting of a
                                                                 countertop and two IKEA drawers</p>
                                                             <div class="text-center">
                                                                 <button type="button"
                                                                     class="btn btn-success text-center"
                                                                     style="display: inline-block;">
                                                                     Add to setup</button>
+                                                                <button type="button" class="btn btn-secondary">Replace
+                                                                    selected</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -307,7 +325,8 @@
                                                             </h2>
 
                                                             <div class="smallParagraphBreak">&nbsp</div>
-                                                            <p class="productDescriptionText">A setup consisting of a
+                                                            <p class="productDescriptionText">A setup
+                                                                consisting of a
                                                                 countertop and two IKEA drawers</p>
                                                             <div class="text-center">
                                                                 <button type="button"
@@ -339,8 +358,10 @@
                                                             </h2>
 
                                                             <div class="smallParagraphBreak">&nbsp</div>
-                                                            <p class="productDescriptionText">A modern 21:9 monitor with
-                                                                a circular base, similar to many LG models</p>
+                                                            <p class="productDescriptionText">A modern
+                                                                21:9 monitor with
+                                                                a circular base, similar to many LG
+                                                                models</p>
                                                             <div class="text-center">
                                                                 <button type="button"
                                                                     class="btn btn-success text-center"
@@ -615,19 +636,19 @@
         //import * as THREE from './three';
         var controls, dragControls, transformControls;
         var scene = new THREE.Scene();
-
+        scene.background = new THREE.Color(0x272B30);
         //var dracoLoader = new DRACOLoader();
         //dracoLoader.setDecoderPath('/examples/js/libs/draco/');
         //loader.setDRACOLoader(dracoLoader);
         var myCanvas = document.getElementById("threeCanvas");
 
-        var camera = new THREE.PerspectiveCamera(75, myCanvas.clientWidth / myCanvas.clientHeight, 0.1, 1000);
+        var camera = new THREE.PerspectiveCamera(75, myCanvas.clientWidth / myCanvas.clientHeight, 0.1, 5000);
         var renderer = new THREE.WebGLRenderer({ canvas: myCanvas, antialias: true, powerPreference: "high-performance", });
 
         renderer.setSize(myCanvas.clientWidth, myCanvas.clientHeight);
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.shadowMap.enabled = true;
-        renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         var loader = new THREE.GLTFLoader();
 
         renderer.setClearColor(0xffffff, 0); // second param is opacity, 0 => transparent
@@ -636,15 +657,31 @@
         renderer.gammaOutput = true;
         renderer.outputEncoding = THREE.sRGBEncoding;
         //Adding light
-        var light = new THREE.AmbientLight(0xFFFFFF);// soft white light
-        light.intensity = .7;
-        //var lampLight = new THREE.PointLight("white", 2, 300);
-        //lampLight.position.set(30, 45, 49.4);
-        //scene.add(lampLight);
+        var light = new THREE.AmbientLight(0x404040, 2);// soft white light
+        //light.intensity = .7;
+        var lightBrightness = 85;
+        var lampLight1 = new THREE.PointLight("white", 2, lightBrightness);
+        lampLight1.position.set(34, 88, -59);
+        lampLight1.castShadow = true;
+        var lampLight2 = new THREE.PointLight("white", 2, lightBrightness);
+        lampLight2.position.set(33, -30, -51);
+        var lampLight3 = new THREE.PointLight("white", 2, lightBrightness);
+        lampLight3.position.set(-51, 40, -61);
+        var lampLight4 = new THREE.PointLight("white", 2, lightBrightness);
+        lampLight4.position.set(134, 42, -55);
+        var lampLight5 = new THREE.PointLight("white", 2, lightBrightness);
+        lampLight5.position.set(134, 42, -55);
+        scene.add(lampLight1);
+        scene.add(lampLight2);
+        scene.add(lampLight3);
+        scene.add(lampLight4);
+        scene.add(lampLight5);
         scene.add(light);
+
         controls.disabled = true;
         controls.enableZoom = true;
         controls.enableRotate = true;
+        controls.rotateSpeed = 0.7;
         camera.position.set(33.140910317837964, 61.27639300930197, 21.183811053080007);
         controls.update();
         camera.rotation.set(-0.3618175319112695, -0.012200336135305153, -0.004617427467257444);
@@ -859,27 +896,37 @@
 
         //A dictionary to hold all desk starting coordinates and file paths
         var deskDictionary = {
-            "jarvisStandingDesk": [12.75, 1.7, -43, (Math.PI / 2), 'desks/standing_desk_1_textured.glb'],
+            "modernDesk": [12.75, 1.7, -43, (Math.PI / 2), 'desks/standing_desk_1_textured.glb'],
             "drawerDesk": [7.85, 1, -38, Math.PI, 'desks/regular_desk_1.glb'],
+            "standingDesk": [6 + 55 / 2, 1, -51, Math.PI + Math.PI / 2, 'desks/standing_desk_2.glb'],
+            "linnmonDesk": [9.55 + (47 / 2), 1, -52, (Math.PI / 2), 'desks/linnmon desk 47 24.glb'],
+            "alexDesk": [-6.2 + (79 / 2), 1, -50, (Math.PI / 2 + (Math.PI)), 'desks/alex desk 79 24.glb'],
         }
-
+        var deskHeightDiff = {
+            "modernDesk": 0,
+            "drawerDesk": 10,
+            "standingDesk": -.35,
+            "linnmonDesk": -.1,
+            "alexDesk": -1.47,
+        }
+        var heightDiff = deskHeightDiff["modernDesk"];
         //Dictionary to hold all coordinates of objects for corresponding desks
         //[x, y, z, y rotation, path]
         var coordinateDictionary = {
-            "jarvisStandingDesk": {
+            "modernDesk": {
                 "monitor": {
-                    "defaultUltrawideMonitor": [31.3, 32.45, -60, 0, 'ultrawideMonitor/defaultUltrawideMonitorNew.glb'],
-                    "default16x9Monitor": [33, 30.55, -60, Math.PI / 2 + Math.PI, ' 16x9Monitors/16x9MonitorDefault.glb'],
-                    "32x9_49Monitor": [33, 30.55 - 1.4, -57, Math.PI / 2, ' monitors/32x9_49Monitor.glb'],
+                    "defaultUltrawideMonitor": [31.3, 32.45 + heightDiff, -60, 0, 'ultrawideMonitor/defaultUltrawideMonitorNew.glb'],
+                    "default16x9Monitor": [33, 30.55 + heightDiff, -60, Math.PI / 2 + Math.PI, ' 16x9Monitors/16x9MonitorDefault.glb'],
+                    "32x9_49Monitor": [33, 30.55 - 1.4 + heightDiff, -57, Math.PI / 2, ' monitors/32x9_49Monitor.glb'],
                 },
                 "keyboard": {
-                    "default60PercentKeyboard": [29, 31.35, -50, Math.PI / 2 + Math.PI, 'keyboards/60_Keyboard_1test.glb']
+                    "default60PercentKeyboard": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'keyboards/60_Keyboard_1test.glb']
                 },
                 "mousepad": {
-                    "mediumRGBMousepad": [44, 31.35 + .14, -50, Math.PI / 2 + Math.PI, 'mousepads/medium_rgb_mousepad.glb']
+                    "mediumRGBMousepad": [44, 31.35 + .14 + heightDiff, -50, Math.PI / 2 + Math.PI, 'mousepads/medium_rgb_mousepad.glb']
                 },
                 "mouse": {
-                    "defaultMouse": [44, 31.35 + .14, -50, Math.PI, 'mouses/Mouse_1_textured.glb']
+                    "defaultMouse": [44, 31.35 + .14 + heightDiff, -50, Math.PI, 'mouses/Mouse_1_textured.glb']
                 }
             },
             "drawerDesk": {
@@ -900,7 +947,7 @@
         }
 
         //Loader for the room
-        loader.load('rooms/room_2.glb', function (gltf) {
+        /*loader.load('rooms/room_2_no_roof.glb', function (gltf) {
             var theModel = gltf.scene;
             theModel.traverse((o) => {
                 if (o.isMesh) {
@@ -911,7 +958,7 @@
             scene.add(gltf.scene);
         }, undefined, function (error) {
             console.error(error);
-        });
+        });*/
 
 
         window.addEventListener('resize', onWindowResize, false);
@@ -941,14 +988,14 @@
         var x = 10;
 
         function initializeObjects() {
-            objectsStringsArray[0] = "jarvisStandingDesk"; //DESK LOADS LAST, BUT THIS NEEDS TO BE SET FIRST!
-            selectNew3DObject("monitor", "32x9_49Monitor", null);
+            objectsStringsArray[0] = "modernDesk"; //DESK LOADS LAST, BUT THIS NEEDS TO BE SET FIRST!
+            selectNew3DObject("monitor", "defaultUltrawideMonitor", null);
             //selectNew3DObject("keyboard", "default60PercentKeyboard", null);
             selectNew3DObject("mouse", "defaultMouse", null);
             selectNew3DObject("keyboard", "default60PercentKeyboard", null);
             selectNew3DObject("mousepad", "mediumRGBMousepad", null);
             //on first load, desk must always load last (weird bug idk im ignoring for now)
-            selectNew3DObject("desk", "jarvisStandingDesk", null);
+            selectNew3DObject("desk", "alexDesk", null);
 
         }
         initializeObjects();
@@ -960,8 +1007,9 @@
                 var selectedObject = scene.getObjectByName(objectType);
                 //console.log(selectedObject);
                 scene.remove(selectedObject);
-                objectsStringsArray[indexDictionary[objectType]] = objectName;
+                //objectsStringsArray[indexDictionary[objectType]] = objectName;
                 console.log(objectsStringsArray[indexDictionary[objectType]]);
+                heightDiff = deskHeightDiff[objectName];
                 //Desk Loader
                 console.log("GOT HERE");
                 loader.load(deskDictionary[objectName][4], function (gltf) {
@@ -993,7 +1041,7 @@
                     //console.log(coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]]);
                     if (objectsStringsArray[i] != "") {
                         objectsArray[indexDictionary[objectsTypeArray[i]]].position.set(coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]][0],
-                            coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]][1],
+                            coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]][1] + heightDiff,
                             coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]][2]
                         );
                     }
@@ -1002,7 +1050,7 @@
             } else { //Object is being changed (on desk)
                 var selectedObject = scene.getObjectByName(objectType);
                 console.log(selectedObject);
-                scene.remove(selectedObject);
+                //scene.remove(selectedObject);
 
                 objectsStringsArray[indexDictionary[objectType]] = objectName;
 
@@ -1018,7 +1066,7 @@
 
                     objectsArray[indexDictionary[objectType]].name = objectType + objectsCountDict[objectType];
                     objectsArray[indexDictionary[objectType]].position.set(coordinateDictionaryArr[0],
-                        coordinateDictionaryArr[1],
+                        coordinateDictionaryArr[1] + heightDiff,
                         coordinateDictionaryArr[2]);
                     objectsArray[indexDictionary[objectType]] = gltf.scenes[0].children[0].parent;
                     var tempGroup = new THREE.Group();
@@ -1042,6 +1090,11 @@
 
             }
 
+        }
+
+        function replace3DObject(objectType, objectName, event) {
+            pickHelper.deleteObject();
+            selectNew3DObject(objectType, objectName, event);
         }
 
         /*scene = remove3DObject("currentDesk");
