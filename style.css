@@ -1,9 +1,12 @@
-
+* {
+    outline: none !important;
+}
 body, html {
     height: 100% !important;
     padding: 0;
     margin: 0;
     overflow: hidden !important; /* Hide scrollbars */
+    
 }
 
 .scene, canvas {
