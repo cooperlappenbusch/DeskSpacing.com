@@ -1,4 +1,4 @@
-var dropDownDict = {
+/*var dropDownDict = {
     "16:9": ["23\"", "24\""],
     "21:9": ["34\"", "27\""],
     "32:9": ["49\""]
@@ -17,4 +17,4 @@ function resetCustomAspectRatio(e) {
         newSize.innerHTML = dropDownDict[aspectRatioForm.value][i];
         monitorSizeForm.appendChild(newSize);
     }
-}
+}*/

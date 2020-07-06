@@ -58,7 +58,7 @@
                                                                 <button type="button"
                                                                     class="btn btn-success text-center"
                                                                     style="display: inline-block;"
-                                                                    onclick="selectNew3DObject('desk','modernDesk',event)">
+                                                                    onclick="selectNew3DObject('desk','modernDesk','notCustom',event)">
                                                                     Add to setup</button>
                                                             </div>
                                                         </div>
@@ -91,7 +91,7 @@
                                                                 <button type="button"
                                                                     class="btn btn-success text-center"
                                                                     style="display: inline-block;"
-                                                                    onclick="selectNew3DObject('desk','standingDesk',event)">
+                                                                    onclick="selectNew3DObject('desk','standingDesk','notCustom',event)">
                                                                     Add to setup</button>
                                                             </div>
                                                         </div>
@@ -125,7 +125,7 @@
                                                                 <button type="button"
                                                                     class="btn btn-success text-center"
                                                                     style="display: inline-block;"
-                                                                    onclick="selectNew3DObject('desk','linnmonDesk',event)">
+                                                                    onclick="selectNew3DObject('desk','linnmonDesk','notCustom',event)">
                                                                     Add to setup</button>
                                                             </div>
                                                         </div>
@@ -159,7 +159,7 @@
                                                                 <button type="button"
                                                                     class="btn btn-success text-center"
                                                                     style="display: inline-block;"
-                                                                    onclick="selectNew3DObject('desk','alexDesk',event)">
+                                                                    onclick="selectNew3DObject('desk','alexDesk','notCustom',event)">
                                                                     Add to setup</button>
                                                             </div>
                                                         </div>
@@ -184,61 +184,8 @@
                                         data-parent="#accordionExample">
 
                                         <div class="card-body text-white">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-xl centerTopBottom">
 
-                                                        <div class="productPictureImg text-center">
-                                                            <img width="200px" height="200px"
-                                                                src="Model thumbnails\21 9 monitor 2 non curved.jpg">
-                                                        </div>
-                                                    </div>
 
-                                                    <div class="col-xl centerTopBottom">
-                                                        <div class="innerDescriptionDiv">
-                                                            <h2 class="customMonitorText">
-                                                                Custom&nbspMonitor
-                                                            </h2>
-                                                            <h4 class="itemTitleText">
-                                                                <form>
-                                                                    <label>Aspect Ratio:</label>
-                                                                    <select id="aspectRatioForm">
-                                                                        <option value="16:9">16:9
-                                                                        </option>
-                                                                        <option value="21:9">21:9
-                                                                        </option>
-                                                                        <option value="32:9">32:9
-                                                                        </option>
-                                                                    </select>
-                                                                </form>
-                                                                <form>
-                                                                    <label>Size:</label>
-                                                                    <select id="monitorSizeForm" name="cars">
-                                                                        <option value="23\"">23" </option>
-                                                                        <option value="34\"">24" </option>
-                                                                    </select>
-                                                                </form>
-                                                                <span class="dimensionsText">
-                                                                </span>
-                                                                </h2>
-
-                                                                <div class="smallParagraphBreak">&nbsp
-                                                                </div>
-                                                                <p class="productDescriptionText">A
-                                                                    custom monitor,
-                                                                    choose
-                                                                    your aspect ratio and size!</p>
-                                                                <div class="text-center">
-                                                                    <button type="button"
-                                                                        class="btn btn-success text-center"
-                                                                        style="display: inline-block;">
-                                                                        Add to setup</button>
-                                                                </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="productBarrier"></div>
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-xl centerTopBottom">
@@ -251,21 +198,36 @@
 
                                                     <div class="col-xl centerTopBottom">
                                                         <div class="innerDescriptionDiv">
-                                                            <h2 class="itemTitleText">
-                                                                16:9&nbsp23"&nbspMonitor
+                                                            <h2 class="customMonitorText">
+                                                                Small&nbsp16:9 Monitor
                                                             </h2>
-
+                                                            <h4 class="itemTitleText">
+                                                                <form>
+                                                                    <label>Size:</label>
+                                                                    <select id="small16x9MonitorForm" name="cars">
+                                                                        <option value="22\"">22" </option>
+                                                                        <option value="23\"">23" </option>
+                                                                        <option value="24\"">24" </option>
+                                                                        <option value="25\"">25" </option>
+                                                                        <option value="26\"">26" </option>
+                                                                        <option value="27\"">27" </option>
+                                                                        <option value="28\"">28" </option>
+                                                                        <option value="29\"">29" </option>
+                                                                    </select>
+                                                                </form>
+                                                            </h4>
                                                             <div class="smallParagraphBreak">&nbsp</div>
-                                                            <p class="productDescriptionText">A 23" 16:9
+                                                            <p class="productDescriptionText">A 16:9
                                                                 monitor with a
                                                                 circular base</p>
                                                             <div class="text-center">
                                                                 <button type="button"
                                                                     class="btn btn-success text-center"
-                                                                    style="display: inline-block;">
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('monitor','small16x9Monitor','custom',event)">
                                                                     Add to setup</button>
                                                                 <button type="button" class="btn btn-secondary"
-                                                                    onclick="replace3DObject('monitor','defaultUltrawideMonitor',event)">Replace
+                                                                    onclick="replace3DObject('monitor','small16x9Monitor','custom',event)">Replace
                                                                     selected</button>
                                                             </div>
                                                         </div>
@@ -285,10 +247,23 @@
 
                                                     <div class="col-xl centerTopBottom">
                                                         <div class="innerDescriptionDiv">
-                                                            <h2 class="itemTitleText">
-                                                                16:9&nbsp23"&nbspCurved
+                                                            <h2 class="customMonitorText">
+                                                                Large&nbsp16:9 Curved Monitor
                                                             </h2>
-
+                                                            <h4 class="itemTitleText">
+                                                                <form>
+                                                                    <label>Size:</label>
+                                                                    <select id="largeCurved16x9MonitorForm" name="cars">
+                                                                        <option value="31\"">31" </option>
+                                                                        <option value="32\"">32" </option>
+                                                                        <option value="33\"">33" </option>
+                                                                        <option value="34\"">34" </option>
+                                                                        <option value="35\"">35" </option>
+                                                                        <option value="36\"">36" </option>
+                                                                        <option value="37\"">37" </option>
+                                                                    </select>
+                                                                </form>
+                                                            </h4>
                                                             <div class="smallParagraphBreak">&nbsp</div>
                                                             <p class="productDescriptionText">A setup
                                                                 consisting of a
@@ -296,9 +271,11 @@
                                                             <div class="text-center">
                                                                 <button type="button"
                                                                     class="btn btn-success text-center"
-                                                                    style="display: inline-block;">
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('monitor','largeCurved16x9Monitor','custom',event)">
                                                                     Add to setup</button>
-                                                                <button type="button" class="btn btn-secondary">Replace
+                                                                <button type=" button" class="btn btn-secondary"
+                                                                    onclick="replace3DObject('monitor','largeCurved16x9Monitor','custom',event)">Replace
                                                                     selected</button>
                                                             </div>
                                                         </div>
@@ -393,7 +370,7 @@
                                         data-parent="#accordionExample">
                                         <div class="card-body text-white">
                                             <div id="default60PercentKeyboard"
-                                                onclick="selectNew3DObject('keyboard','default60PercentKeyboard',this)">
+                                                onclick="selectNew3DObject('keyboard','default60PercentKeyboard','notCustom',this)">
                                                 <div class="productPicture">
                                                     <img class="productPictureImg" width="200px" height="200px"
                                                         src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
@@ -422,7 +399,7 @@
                                         data-parent="#accordionExample">
                                         <div class="card-body text-white">
                                             <div id="mediumRGBMousepad"
-                                                onclick="selectNew3DObject('mousepad','mediumRGBMousepad',this)">
+                                                onclick="selectNew3DObject('mousepad','mediumRGBMousepad','notCustom',this)">
                                                 <div class="productPicture">
                                                     <img class="productPictureImg" width="200px" height="200px"
                                                         src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
@@ -451,7 +428,7 @@
                                         data-parent="#accordionExample">
                                         <div class="card-body text-white">
                                             <div id="mediumRGBMousepad"
-                                                onclick="selectNew3DObject('mousepad','mediumRGBMousepad',this)">
+                                                onclick="selectNew3DObject('mousepad','mediumRGBMousepad','notCustom',this)">
                                                 <div class="productPicture">
                                                     <img class="productPictureImg" width="200px" height="200px"
                                                         src="https://www.fully.com/media/catalog/product/cache/98207abf3b475baeffaf823b5f6edc92/f/u/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg">
@@ -732,7 +709,7 @@
         transformControls = new THREE.TransformControls(camera, renderer.domElement);
         transformControls.enabled = true;
         transformControls.size = .7;
-        transformControls.addEventListener('change', render);
+        //transformControls.addEventListener('change', render);
         scene.add(transformControls);
 
         transformControls.addEventListener('mouseDown', function () {
@@ -915,9 +892,23 @@
         var coordinateDictionary = {
             "modernDesk": {
                 "monitor": {
-                    "defaultUltrawideMonitor": [31.3, 32.45 + heightDiff, -60, 0, 'ultrawideMonitor/defaultUltrawideMonitorNew.glb'],
-                    "default16x9Monitor": [33, 30.55 + heightDiff, -60, Math.PI / 2 + Math.PI, ' 16x9Monitors/16x9MonitorDefault.glb'],
-                    "32x9_49Monitor": [33, 30.55 - 1.4 + heightDiff, -57, Math.PI / 2, ' monitors/32x9_49Monitor.glb'],
+                    "small16x9Monitor22": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 small monitor/16_9 monitor 3 22in.glb'],
+                    "small16x9Monitor23": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 small monitor/16_9 monitor 3 23in.glb'],
+                    "small16x9Monitor24": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 small monitor/16_9 monitor 3 24in.glb'],
+                    "small16x9Monitor25": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 small monitor/16_9 monitor 3 25in.glb'],
+                    "small16x9Monitor26": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 small monitor/16_9 monitor 3 26in.glb'],
+                    "small16x9Monitor27": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 small monitor/16_9 monitor 3 27in.glb'],
+                    "small16x9Monitor28": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 small monitor/16_9 monitor 3 28in.glb'],
+                    "small16x9Monitor29": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 small monitor/16_9 monitor 3 29in.glb'],
+                    "largeCurved16x9Monitor31": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 large monitors/curved large 16 9 monitor 31in.glb'],
+                    "largeCurved16x9Monitor32": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 large monitors/curved large 16 9 monitor 32in.glb'],
+                    "largeCurved16x9Monitor33": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 large monitors/curved large 16 9 monitor 33in.glb'],
+                    "largeCurved16x9Monitor34": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 large monitors/curved large 16 9 monitor 34in.glb'],
+                    "largeCurved16x9Monitor35": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 large monitors/curved large 16 9 monitor 35in.glb'],
+                    "largeCurved16x9Monitor36": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 large monitors/curved large 16 9 monitor 36in.glb'],
+                    "largeCurved16x9Monitor37": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 large monitors/curved large 16 9 monitor 37in.glb'],
+
+
                 },
                 "keyboard": {
                     "default60PercentKeyboard": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'keyboards/60_Keyboard_1test.glb']
@@ -989,20 +980,19 @@
 
         function initializeObjects() {
             objectsStringsArray[0] = "modernDesk"; //DESK LOADS LAST, BUT THIS NEEDS TO BE SET FIRST!
-            selectNew3DObject("monitor", "defaultUltrawideMonitor", null);
+            selectNew3DObject("monitor", "largeCurved16x9Monitor", "custom", null);
             //selectNew3DObject("keyboard", "default60PercentKeyboard", null);
-            selectNew3DObject("mouse", "defaultMouse", null);
-            selectNew3DObject("keyboard", "default60PercentKeyboard", null);
-            selectNew3DObject("mousepad", "mediumRGBMousepad", null);
+            selectNew3DObject("mouse", "defaultMouse", "custom", null);
+            selectNew3DObject("keyboard", "default60PercentKeyboard", "custom", null);
+            selectNew3DObject("mousepad", "mediumRGBMousepad", "custom", null);
             //on first load, desk must always load last (weird bug idk im ignoring for now)
-            selectNew3DObject("desk", "alexDesk", null);
-
+            selectNew3DObject("desk", "modernDesk", "custom", null);
         }
         initializeObjects();
 
         //selectNew3DObject("desk", "drawerDesk", null);
         //selectNew3DObject("monitor", "default16x9Monitor", null);
-        function selectNew3DObject(objectType, objectName, event) {
+        function selectNew3DObject(objectType, objectName, customOrNot, event) {
             if (objectType == "desk") { //DESK IS BEING CHANGED
                 var selectedObject = scene.getObjectByName(objectType);
                 //console.log(selectedObject);
@@ -1048,9 +1038,18 @@
                 }
                 //animate();
             } else { //Object is being changed (on desk)
+                //Get value of size form for monitors only
+                if (objectType == "monitor" && customOrNot == "custom") {
+                    var monitorForm = document.getElementById(objectName + "Form");
+                    //Leaves us with only the number, takes out the / and "
+                    var monitorSize = monitorForm.options[monitorForm.selectedIndex].value.replace(/[^0-9]/g, '');
+                    objectName = objectName + monitorSize;
+                    console.log(objectName);
+
+                }
                 var selectedObject = scene.getObjectByName(objectType);
                 console.log(selectedObject);
-                //scene.remove(selectedObject);
+                scene.remove(selectedObject);
 
                 objectsStringsArray[indexDictionary[objectType]] = objectName;
 
