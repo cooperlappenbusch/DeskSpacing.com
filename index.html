@@ -19,6 +19,12 @@
                         <div class="menuCol">
                             <h1 class="navbarTitle text-white">DeskSpacing</h1>
                             <p class="underTitleText">Created by Cooper Lappenbusch and Travers Sorenson &copy;</p>
+                            <div class="text-center keybindButton">
+                                <button type="button" class="btn btn-outline-success text-center keybindButton mr-1"
+                                    data-toggle="modal" data-target="#exampleModal">
+                                    Controls Help
+                                </button>
+                            </div>
                             <div class="accordion" id="accordionExample">
                                 <div class="card text-white z-depth-0 bordered">
                                     <div class="card-header" id="headingOne" data-toggle="collapse"
@@ -199,7 +205,7 @@
                                                     <div class="col-xl centerTopBottom">
                                                         <div class="innerDescriptionDiv">
                                                             <h2 class="customMonitorText">
-                                                                Small&nbsp16:9 Monitor
+                                                                16:9 Monitor
                                                             </h2>
                                                             <h4 class="itemTitleText">
                                                                 <form>
@@ -209,10 +215,9 @@
                                                                         <option value="23\"">23" </option>
                                                                         <option value="24\"">24" </option>
                                                                         <option value="25\"">25" </option>
-                                                                        <option value="26\"">26" </option>
                                                                         <option value="27\"">27" </option>
                                                                         <option value="28\"">28" </option>
-                                                                        <option value="29\"">29" </option>
+                                                                        <option value="31\"">31.5" </option>
                                                                     </select>
                                                                 </form>
                                                             </h4>
@@ -248,25 +253,23 @@
                                                     <div class="col-xl centerTopBottom">
                                                         <div class="innerDescriptionDiv">
                                                             <h2 class="customMonitorText">
-                                                                Large&nbsp16:9 Curved Monitor
+                                                                16:9 Curved Monitor
                                                             </h2>
                                                             <h4 class="itemTitleText">
                                                                 <form>
                                                                     <label>Size:</label>
                                                                     <select id="largeCurved16x9MonitorForm" name="cars">
-                                                                        <option value="31\"">31" </option>
-                                                                        <option value="32\"">32" </option>
-                                                                        <option value="33\"">33" </option>
+                                                                        <option value="25\"">25" </option>
+                                                                        <option value="27\"">27" </option>
+                                                                        <option value="31\"">31.5" </option>
                                                                         <option value="34\"">34" </option>
-                                                                        <option value="35\"">35" </option>
-                                                                        <option value="36\"">36" </option>
-                                                                        <option value="37\"">37" </option>
                                                                     </select>
                                                                 </form>
                                                             </h4>
                                                             <div class="smallParagraphBreak">&nbsp</div>
-                                                            <p class="productDescriptionText">A large monitor with a
-                                                                wide base</p>
+                                                            <p class="productDescriptionText">A curvded 16:9 monitor
+                                                                with a
+                                                                wide rectangular base</p>
                                                             <div class="text-center">
                                                                 <button type="button"
                                                                     class="btn btn-success text-center"
@@ -275,6 +278,50 @@
                                                                     Add to setup</button>
                                                                 <button type=" button" class="btn btn-secondary"
                                                                     onclick="replace3DObject('monitor','largeCurved16x9Monitor','custom',event)">Replace
+                                                                    selected</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="productBarrier"></div>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xl centerTopBottom">
+
+                                                        <div class="productPictureImg text-center">
+                                                            <img width="200px" height="200px"
+                                                                src="Model thumbnails/21 9 monitor 2 non curved.jpg">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl centerTopBottom">
+                                                        <div class="innerDescriptionDiv">
+                                                            <h2 class="customMonitorText">
+                                                                21:9 Monitor
+                                                            </h2>
+                                                            <h4 class="itemTitleText">
+                                                                <form>
+                                                                    <label>Size:</label>
+                                                                    <select id="flat21x9MonitorForm" name="cars">
+                                                                        <option value="25\"">25" </option>
+                                                                        <option value="29\"">29" </option>
+                                                                        <option value="34\"">34" </option>
+                                                                    </select>
+                                                                </form>
+                                                            </h4>
+                                                            <div class="smallParagraphBreak">&nbsp</div>
+                                                            <p class="productDescriptionText">A 21:9 flat screen
+                                                                ultrawide with a
+                                                                half circle base</p>
+                                                            <div class="text-center">
+                                                                <button type="button"
+                                                                    class="btn btn-success text-center"
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('monitor','flat21x9Monitor','custom',event)">
+                                                                    Add to setup</button>
+                                                                <button type=" button" class="btn btn-secondary"
+                                                                    onclick="replace3DObject('monitor','flat21x9Monitor','custom',event)">Replace
                                                                     selected</button>
                                                             </div>
                                                         </div>
@@ -301,6 +348,7 @@
                                                                 <form>
                                                                     <label>Size:</label>
                                                                     <select id="curved21x9MonitorForm" name="cars">
+                                                                        <option value="30\"">30" </option>
                                                                         <option value="34\"">34" </option>
                                                                         <option value="38\"">38" </option>
                                                                     </select>
@@ -458,15 +506,16 @@
                                     </div>
                                 </div>
                                 <div class="card z-depth-0 bordered">
-                                    <div class="card-header" id="headingSix" type="button" data-toggle="collapse"
-                                        data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    <div class="card-header" id="headingSeven" type="button" data-toggle="collapse"
+                                        data-target="#collapseSeven" aria-expanded="false"
+                                        aria-controls="collapseSeven">
                                         <h5 class="mb-0">
                                             <button class="btn btn-link collapsed">
                                                 Mouse
                                             </button>
                                         </h5>
                                     </div>
-                                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven"
                                         data-parent="#accordionExample">
                                         <div class="card-body text-white">
                                             <div class="container">
@@ -655,7 +704,499 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="card z-depth-0 bordered">
+                                    <div class="card-header" id="headingSix" type="button" data-toggle="collapse"
+                                        data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed">
+                                                Speakers
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                                        data-parent="#accordionExample">
+                                        <div class="card-body text-white">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xl centerTopBottom">
 
+                                                        <div class="productPictureImg text-center">
+                                                            <img width="200px" height="200px"
+                                                                src="Model thumbnails\speakers 1.jpg">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl centerTopBottom">
+                                                        <div class="innerDescriptionDiv">
+                                                            <h2 class="customMonitorText">
+                                                                DeskSpacing Monitor Speakers
+                                                            </h2>
+                                                            <h4 class="itemTitleText">
+                                                                <form>
+                                                                    <label>Type:</label>
+                                                                    <select id="deskSpacingSpeakerForm" name="cars">
+                                                                        <option value="Primary">Primary</option>
+                                                                        <option value="Secondary">Secondary</option>
+                                                                    </select>
+                                                                </form>
+                                                            </h4>
+                                                            <div class="smallParagraphBreak">&nbsp</div>
+                                                            <p class="productDescriptionText">A large blocky monitor
+                                                                speaker, with a primary and secondary type</p>
+                                                            <div class="text-center">
+                                                                <button type="button"
+                                                                    class="btn btn-success text-center"
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('speaker','deskSpacingSpeaker','custom',event)">
+                                                                    Add to setup</button>
+                                                                <button type=" button" class="btn btn-secondary"
+                                                                    onclick="replace3DObject('speaker','deskSpacingSpeaker','custom',event)">Replace
+                                                                    selected</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="productBarrier"></div>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xl centerTopBottom">
+
+                                                        <div class="productPictureImg text-center">
+                                                            <img width="200px" height="200px"
+                                                                src="Model thumbnails\speaker bar 1.jpg">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl centerTopBottom">
+                                                        <div class="innerDescriptionDiv">
+                                                            <h2 class="customMonitorText">
+                                                                DeskSpacing SoundBar
+                                                            </h2>
+
+                                                            <div class="smallParagraphBreak">&nbsp</div>
+                                                            <p class="productDescriptionText">A small speaker for
+                                                                maximum space efficiency</p>
+                                                            <div class="text-center">
+                                                                <button type="button"
+                                                                    class="btn btn-success text-center"
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('speaker','deskSpacingSoundBar','notCustom',event)">
+                                                                    Add to setup</button>
+                                                                <button type=" button" class="btn btn-secondary"
+                                                                    onclick="replace3DObject('speaker','deskSpacingSoundBar','notCustom',event)">Replace
+                                                                    selected</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="productBarrier"></div>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xl centerTopBottom">
+
+                                                        <div class="productPictureImg text-center">
+                                                            <img width="200px" height="200px"
+                                                                src="Model thumbnails\speakers 2 primary.jpg">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl centerTopBottom">
+                                                        <div class="innerDescriptionDiv">
+                                                            <h2 class="customMonitorText">
+                                                                Studio Monitor Speakers
+                                                            </h2>
+                                                            <h4 class="itemTitleText">
+                                                                <form>
+                                                                    <label>Type:</label>
+                                                                    <select id="studioMonitorSpeakerForm" name="cars">
+                                                                        <option value="Primary">Primary</option>
+                                                                        <option value="Secondary">Secondary</option>
+                                                                    </select>
+                                                                </form>
+                                                            </h4>
+                                                            <div class="smallParagraphBreak">&nbsp</div>
+                                                            <p class="productDescriptionText">Large speakers with heavy
+                                                                bass capability, with a secondary and primary type</p>
+                                                            <div class="text-center">
+                                                                <button type="button"
+                                                                    class="btn btn-success text-center"
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('speaker','studioMonitorSpeaker','custom',event)">
+                                                                    Add to setup</button>
+                                                                <button type=" button" class="btn btn-secondary"
+                                                                    onclick="replace3DObject('speaker','studioMonitorSpeaker','custom',event)">Replace
+                                                                    selected</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="card z-depth-0 bordered">
+                                    <div class="card-header" id="headingEight" type="button" data-toggle="collapse"
+                                        data-target="#collapseEight" aria-expanded="false"
+                                        aria-controls="collapseEight">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed">
+                                                Laptops
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight"
+                                        data-parent="#accordionExample">
+                                        <div class="card-body text-white">
+
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xl centerTopBottom">
+
+                                                        <div class="productPictureImg text-center">
+                                                            <img width="200px" height="200px"
+                                                                src="Model thumbnails\13 inch laptop.jpg">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl centerTopBottom">
+                                                        <div class="innerDescriptionDiv">
+                                                            <h2 class="customMonitorText">
+                                                                13" Laptop
+                                                            </h2>
+                                                            <div class="smallParagraphBreak">&nbsp</div>
+                                                            <p class="productDescriptionText">A modern laptop with a
+                                                                16:9 13" screen</p>
+                                                            <div class="text-center">
+                                                                <button type="button"
+                                                                    class="btn btn-success text-center"
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('laptop','modernLaptop13','notCustom',event)">
+                                                                    Add to setup</button>
+                                                                <button type=" button" class="btn btn-secondary"
+                                                                    onclick="replace3DObject('laptop','modernLaptop13','notCustom',event)">Replace
+                                                                    selected</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="productBarrier"></div>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xl centerTopBottom">
+
+                                                        <div class="productPictureImg text-center">
+                                                            <img width="200px" height="200px"
+                                                                src="Model thumbnails\15 inch laptop.jpg">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl centerTopBottom">
+                                                        <div class="innerDescriptionDiv">
+                                                            <h2 class="customMonitorText">
+                                                                15" Laptop
+                                                            </h2>
+                                                            <div class="smallParagraphBreak">&nbsp</div>
+                                                            <p class="productDescriptionText">A modern laptop with a
+                                                                16:9 15" screen</p>
+                                                            <div class="text-center">
+                                                                <button type="button"
+                                                                    class="btn btn-success text-center"
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('laptop','modernLaptop15','notCustom',event)">
+                                                                    Add to setup</button>
+                                                                <button type=" button" class="btn btn-secondary"
+                                                                    onclick="replace3DObject('laptop','modernLaptop15','notCustom',event)">Replace
+                                                                    selected</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="productBarrier"></div>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xl centerTopBottom">
+
+                                                        <div class="productPictureImg text-center">
+                                                            <img width="200px" height="200px"
+                                                                src="Model thumbnails\17 inch laptop.jpg">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl centerTopBottom">
+                                                        <div class="innerDescriptionDiv">
+                                                            <h2 class="customMonitorText">
+                                                                17" Laptop
+                                                            </h2>
+                                                            <div class="smallParagraphBreak">&nbsp</div>
+                                                            <p class="productDescriptionText">A modern laptop with a
+                                                                16:9 17" screen</p>
+                                                            <div class="text-center">
+                                                                <button type="button"
+                                                                    class="btn btn-success text-center"
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('laptop','modernLaptop17','notCustom',event)">
+                                                                    Add to setup</button>
+                                                                <button type=" button" class="btn btn-secondary"
+                                                                    onclick="replace3DObject('laptop','modernLaptop17','notCustom',event)">Replace
+                                                                    selected</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card z-depth-0 bordered">
+                                    <div class="card-header" id="headingNine" type="button" data-toggle="collapse"
+                                        data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed">
+                                                Computer Towers
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseNine" class="collapse" aria-labelledby="headingNine"
+                                        data-parent="#accordionExample">
+                                        <div class="card-body text-white">
+
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xl centerTopBottom">
+
+                                                        <div class="productPictureImg text-center">
+                                                            <img width="200px" height="200px"
+                                                                src="Model thumbnails\desktop 1.jpg">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl centerTopBottom">
+                                                        <div class="innerDescriptionDiv">
+                                                            <h2 class="customMonitorText">
+                                                                Modern Computer Build
+                                                            </h2>
+                                                            <div class="smallParagraphBreak">&nbsp</div>
+                                                            <p class="productDescriptionText">A modern tower with
+                                                                blue and grey accents</p>
+                                                            <div class="text-center">
+                                                                <button type="button"
+                                                                    class="btn btn-success text-center"
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('computer','modernComputerTower','notCustom',event)">
+                                                                    Add to setup</button>
+                                                                <button type=" button" class="btn btn-secondary"
+                                                                    onclick="replace3DObject('computer','modernComputerTower','notCustom',event)">Replace
+                                                                    selected</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="productBarrier"></div>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xl centerTopBottom">
+
+                                                        <div class="productPictureImg text-center">
+                                                            <img width="200px" height="200px"
+                                                                src="Model thumbnails\desktop 2 small.jpg">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl centerTopBottom">
+                                                        <div class="innerDescriptionDiv">
+                                                            <h2 class="customMonitorText">
+                                                                Modern Mini ITX Computer Build
+                                                            </h2>
+                                                            <div class="smallParagraphBreak">&nbsp</div>
+                                                            <p class="productDescriptionText">A compact ITX build with
+                                                                RGB fans</p>
+                                                            <div class="text-center">
+                                                                <button type="button"
+                                                                    class="btn btn-success text-center"
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('computer','miniITXTower','notCustom',event)">
+                                                                    Add to setup</button>
+                                                                <button type=" button" class="btn btn-secondary"
+                                                                    onclick="replace3DObject('computer','miniITXTower','notCustom',event)">Replace
+                                                                    selected</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="card z-depth-0 bordered">
+                                    <div class="card-header" id="headingTen" type="button" data-toggle="collapse"
+                                        data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed">
+                                                Miscellaneous
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTen" class="collapse" aria-labelledby="headingTen"
+                                        data-parent="#accordionExample">
+                                        <div class="card-body text-white">
+
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xl centerTopBottom">
+
+                                                        <div class="productPictureImg text-center">
+                                                            <img width="200px" height="200px"
+                                                                src="Model thumbnails\book.jpg">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl centerTopBottom">
+                                                        <div class="innerDescriptionDiv">
+                                                            <h2 class="customMonitorText">
+                                                                Book
+                                                            </h2>
+                                                            <div class="smallParagraphBreak">&nbsp</div>
+                                                            <p class="productDescriptionText">A regular book, good for
+                                                                reference</p>
+                                                            <div class="text-center">
+                                                                <button type="button"
+                                                                    class="btn btn-success text-center"
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('misc','regularBook','notCustom',event)">
+                                                                    Add to setup</button>
+                                                                <button type=" button" class="btn btn-secondary"
+                                                                    onclick="replace3DObject('misc','regularBook','notCustom',event)">Replace
+                                                                    selected</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="productBarrier"></div>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xl centerTopBottom">
+
+                                                        <div class="productPictureImg text-center">
+                                                            <img width="200px" height="200px"
+                                                                src="Model thumbnails\coffee cup.jpg">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl centerTopBottom">
+                                                        <div class="innerDescriptionDiv">
+                                                            <h2 class="customMonitorText">
+                                                                Coffee Cup
+                                                            </h2>
+                                                            <div class="smallParagraphBreak">&nbsp</div>
+                                                            <p class="productDescriptionText">A coffee cup</p>
+                                                            <div class="text-center">
+                                                                <button type="button"
+                                                                    class="btn btn-success text-center"
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('misc','coffeeCup','notCustom',event)">
+                                                                    Add to setup</button>
+                                                                <button type=" button" class="btn btn-secondary"
+                                                                    onclick="replace3DObject('misc','coffeeCup','notCustom',event)">Replace
+                                                                    selected</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="productBarrier"></div>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xl centerTopBottom">
+
+                                                        <div class="productPictureImg text-center">
+                                                            <img width="200px" height="200px"
+                                                                src="Model thumbnails\midi_keyboard_1.jpg">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl centerTopBottom">
+                                                        <div class="innerDescriptionDiv">
+                                                            <h2 class="customMonitorText">
+                                                                MIDI Keyboard
+                                                            </h2>
+                                                            <div class="smallParagraphBreak">&nbsp</div>
+                                                            <p class="productDescriptionText">A MIDI keyboard built for
+                                                                music producers</p>
+                                                            <div class="text-center">
+                                                                <button type="button"
+                                                                    class="btn btn-success text-center"
+                                                                    style="display: inline-block;"
+                                                                    onclick="selectNew3DObject('misc','MIDIKeyboard','notCustom',event)">
+                                                                    Add to setup</button>
+                                                                <button type=" button" class="btn btn-secondary"
+                                                                    onclick="replace3DObject('misc','MIDIKeyboard','notCustom',event)">Replace
+                                                                    selected</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-white" id=" exampleModalLabel">Controls /
+                                                Keybinds
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="text-white">
+                                                <span id="keybindLetter">R</span> - Toggle rotate/translate
+                                            </p>
+                                            <p class="text-white">
+                                                <span id="keybindLetter">X/Y/Z </span> - Toggle respective axis
+                                            </p>
+                                            <p class="text-white">
+                                                <span id="keybindLetter">Backspace</span> - Delete selected object
+                                            </p>
+                                            <p class="text-white">
+                                                <span id="keybindLetter">LMB </span> - Drag to rotate camera
+                                            </p>
+                                            <p class="text-white">
+                                                <span id="keybindLetter">Scroll Wheel </span> - Control camera zoom
+                                            </p>
+                                            <p class="text-white">
+                                                <span id="keybindLetter">- / +</span> - Change controls size
+                                            </p>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -825,18 +1366,22 @@
         var controls, dragControls, transformControls;
         var scene = new THREE.Scene();
         scene.background = new THREE.Color(0x272B30);
+
         //var dracoLoader = new DRACOLoader();
         //dracoLoader.setDecoderPath('/examples/js/libs/draco/');
         //loader.setDRACOLoader(dracoLoader);
         var myCanvas = document.getElementById("threeCanvas");
 
-        var camera = new THREE.PerspectiveCamera(75, myCanvas.clientWidth / myCanvas.clientHeight, 0.1, 5000);
+        var camera = new THREE.PerspectiveCamera(45, myCanvas.clientWidth / myCanvas.clientHeight, 0.1, 5000);
         var renderer = new THREE.WebGLRenderer({ canvas: myCanvas, antialias: true, powerPreference: "high-performance", });
 
         renderer.setSize(myCanvas.clientWidth, myCanvas.clientHeight);
         renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.shadowMap.enabled = true;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping
+        renderer.outputEncoding = THREE.sRGBEncoding
         renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        renderer.shadowMap.enabled = true;
+
         var loader = new THREE.GLTFLoader();
 
         renderer.setClearColor(0xffffff, 0); // second param is opacity, 0 => transparent
@@ -844,27 +1389,36 @@
         renderer.gammaFactor = 2.2;
         renderer.gammaOutput = true;
         renderer.outputEncoding = THREE.sRGBEncoding;
-        //Adding light
-        var light = new THREE.AmbientLight(0x404040, 2);// soft white light
-        //light.intensity = .7;
-        var lightBrightness = 85;
-        var lampLight1 = new THREE.PointLight("white", 2, lightBrightness);
-        lampLight1.position.set(34, 88, -59);
-        lampLight1.castShadow = true;
-        var lampLight2 = new THREE.PointLight("white", 2, lightBrightness);
-        lampLight2.position.set(33, -30, -51);
-        var lampLight3 = new THREE.PointLight("white", 2, lightBrightness);
-        lampLight3.position.set(-51, 40, -61);
-        var lampLight4 = new THREE.PointLight("white", 2, lightBrightness);
-        lampLight4.position.set(134, 42, -55);
-        var lampLight5 = new THREE.PointLight("white", 2, lightBrightness);
-        lampLight5.position.set(134, 42, -55);
-        scene.add(lampLight1);
-        scene.add(lampLight2);
-        scene.add(lampLight3);
-        scene.add(lampLight4);
-        scene.add(lampLight5);
+
+        hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, .3);
+        hemiLight.position.set(0, 100, 40);
+        hemiLight.castShadow = true;
+        scene.add(hemiLight);
+
+        scene.fog = new THREE.Fog(0xa0a0a0, 300, 350);
+
+        light = new THREE.SpotLight(0x444444, 1);
+        light.position.set(0, 100, 40);
+
+        light.shadow.bias = -0.0001;
+        light.shadow.mapSize.width = 1024 * 4;
+        light.shadow.mapSize.height = 1024 * 4;
+        light.castShadow = true;
         scene.add(light);
+        //scene.add(hemiLight);
+
+        var geometry = new THREE.BoxGeometry(1, 1, 1);
+        var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        var cube = new THREE.Mesh(geometry, material);
+        cube.position.set(36, 100, -100);
+        scene.add(cube);
+        scene.background = new THREE.Color(0x333333);
+        //scene.fog = new THREE.Fog(0xa0a0a0, 75, 450);
+        /*var mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(1000, 1000), new THREE.MeshPhongMaterial({ color: 0x999999, depthWrite: false }));
+        mesh.rotation.x = - Math.PI / 2;
+        mesh.position.y = 1;
+        mesh.receiveShadow = true;
+        scene.add(mesh);*/
 
         controls.disabled = true;
         controls.enableZoom = true;
@@ -891,9 +1445,13 @@
         var currentKeyboard = new THREE.Group();
         var currentMousepad = new THREE.Group();
         var currentMouse = new THREE.Group();
-        var objectsArray = [currentDesk, currentMonitor, currentKeyboard, currentMousepad, currentMouse];
-        var deskArray = [], monitorArray = [], keyboardArray = [], mousepadArray = [], mouseArray = [];
-        var objectsArrayOfArrays = [deskArray, monitorArray, keyboardArray, mousepadArray, mouseArray];
+        var currentSpeaker = new THREE.Group();
+        var currentLaptop = new THREE.Group();
+        var currentComputer = new THREE.Group();
+        var currentMisc = new THREE.Group();
+        var objectsArray = [currentDesk, currentMonitor, currentKeyboard, currentMousepad, currentMouse, currentSpeaker, currentLaptop, currentComputer, currentMisc];
+        var deskArray = [], monitorArray = [], keyboardArray = [], mousepadArray = [], mouseArray = [], speakerArray = [], laptopsArray = [], computerArray = [], miscArray = [];
+        var objectsArrayOfArrays = [deskArray, monitorArray, keyboardArray, mousepadArray, mouseArray, speakerArray, laptopsArray, computerArray, miscArray];
         var objectsArrayCopy = [...objectsArray];
 
 
@@ -903,7 +1461,12 @@
             "keyboard": 0,
             "mousepad": 0,
             "mouse": 0,
+            "speaker": 0,
+            "laptop": 0,
+            "computer": 0,
+            "misc": 0
         }
+
         //objectsArrayCopy.shift();
 
         /*var noDeskArr = objectsArray;
@@ -911,7 +1474,7 @@
         console.log("FIRST NO DESK ARR");
         console.log(noDeskArr);*/
         var objectsStringsArray = ["", "", "", "", ""];
-        var objectsTypeArray = ["desk", "monitor", "keyboard", "mousepad", "mouse"];
+        var objectsTypeArray = ["desk", "monitor", "keyboard", "mousepad", "mouse", "speaker", "laptop", "computer", "misc"];
         var dragControlArrays = Array(objectsTypeArray.length);
         var dragControlsArr = Array(objectsTypeArray.length);
         var fillNoDeskArrBool = false;
@@ -962,31 +1525,28 @@
 
             switch (event.keyCode) {
                 case 8: //BACKSPACE (Delete)
-                    console.log("DELETE DELETE");
-                    console.log("DELETE DELETE");
-                    console.log("DELETE DELETE");
                     pickHelper.deleteObject();
                     break;
-                case 81: // Q
+                /*case 81: // Q
                     transformControls.setSpace(transformControls.space === "local" ? "world" : "local");
-                    break;
+                    break;*/
 
-                case 16: // Shift
+                /*case 16: // Shift
                     transformControls.setTranslationSnap(100);
                     transformControls.setRotationSnap(THREE.MathUtils.degToRad(15));
                     transformControls.setScaleSnap(0.25);
-                    break;
-
+                    break;*/
+                /*
                 case 87: // W
                     transformControls.showX = true;
                     transformControls.showZ = true;
                     transformControls.showY = true;
                     transformControls.setMode("translate");
-                    break;
-
+                    break;*/
+                /*
                 case 69: // E
                     transformControls.setMode("scale");
-                    break;
+                    break;*/
 
                 case 82: // R
                     if (rotateActive) {
@@ -1003,32 +1563,32 @@
                         rotateActive = true;
                     }
                     break;
+                /*
+            case 67: // C
+                const position = camera.position.clone();
 
-                case 67: // C
-                    const position = camera.position.clone();
+                camera = camera.isPerspectiveCamera ? cameraOrtho : cameraPersp;
+                camera.position.copy(position);
 
-                    camera = camera.isPerspectiveCamera ? cameraOrtho : cameraPersp;
-                    camera.position.copy(position);
+                transformControls.object = camera;
+                transformControls.camera = camera;
 
-                    transformControls.object = camera;
-                    transformControls.camera = camera;
+                camera.lookAt(controls.target.x, controls.target.y, controls.target.z);
+                onWindowResize();
+                break;*/
+                /*
+            case 86: // V
+                const randomFoV = Math.random() + 0.1;
+                const randomZoom = Math.random() + 0.1;
 
-                    camera.lookAt(controls.target.x, controls.target.y, controls.target.z);
-                    onWindowResize();
-                    break;
+                cameraPersp.fov = randomFoV * 160;
+                cameraOrtho.bottom = - randomFoV * 500;
+                cameraOrtho.top = randomFoV * 500;
 
-                case 86: // V
-                    const randomFoV = Math.random() + 0.1;
-                    const randomZoom = Math.random() + 0.1;
-
-                    cameraPersp.fov = randomFoV * 160;
-                    cameraOrtho.bottom = - randomFoV * 500;
-                    cameraOrtho.top = randomFoV * 500;
-
-                    cameraPersp.zoom = randomZoom * 5;
-                    cameraOrtho.zoom = randomZoom * 5;
-                    onWindowResize();
-                    break;
+                cameraPersp.zoom = randomZoom * 5;
+                cameraOrtho.zoom = randomZoom * 5;
+                onWindowResize();
+                break;*/
 
                 case 187:
                 case 107: // +, =, num+
@@ -1052,9 +1612,9 @@
                     transformControls.showZ = !transformControls.showZ;
                     break;
 
-                case 32: // Spacebar
+                /*case 32: // Spacebar
                     transformControls.enabled = !transformControls.enabled;
-                    break;
+                    break;*/
 
             }
 
@@ -1063,13 +1623,13 @@
         window.addEventListener('keyup', function (event) {
 
             switch (event.keyCode) {
-
+                /*
                 case 16: // Shift
                     transformControls.setTranslationSnap(null);
                     transformControls.setRotationSnap(null);
                     transformControls.setScaleSnap(null);
                     break;
-
+                */
             }
 
         });
@@ -1080,6 +1640,10 @@
             "keyboard": 2,
             "mousepad": 3,
             "mouse": 4,
+            "speaker": 5,
+            "laptop": 6,
+            "computer": 7,
+            "misc": 8
         }
 
         //A dictionary to hold all desk starting coordinates and file paths
@@ -1103,28 +1667,25 @@
         var coordinateDictionary = {
             "modernDesk": {
                 "monitor": {
-                    "small16x9Monitor22": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 small monitor/16_9 monitor 3 22in.glb'],
-                    "small16x9Monitor23": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 small monitor/16_9 monitor 3 23in.glb'],
-                    "small16x9Monitor24": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 small monitor/16_9 monitor 3 24in.glb'],
-                    "small16x9Monitor25": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 small monitor/16_9 monitor 3 25in.glb'],
-                    "small16x9Monitor26": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 small monitor/16_9 monitor 3 26in.glb'],
-                    "small16x9Monitor27": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 small monitor/16_9 monitor 3 27in.glb'],
-                    "small16x9Monitor28": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 small monitor/16_9 monitor 3 28in.glb'],
-                    "small16x9Monitor29": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 small monitor/16_9 monitor 3 29in.glb'],
-                    "largeCurved16x9Monitor31": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 large monitors/curved large 16 9 monitor 31in.glb'],
-                    "largeCurved16x9Monitor32": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 large monitors/curved large 16 9 monitor 32in.glb'],
-                    "largeCurved16x9Monitor33": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 large monitors/curved large 16 9 monitor 33in.glb'],
-                    "largeCurved16x9Monitor34": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 large monitors/curved large 16 9 monitor 34in.glb'],
-                    "largeCurved16x9Monitor35": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 large monitors/curved large 16 9 monitor 35in.glb'],
-                    "largeCurved16x9Monitor36": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 large monitors/curved large 16 9 monitor 36in.glb'],
-                    "largeCurved16x9Monitor37": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 large monitors/curved large 16 9 monitor 37in.glb'],
-                    "curved21x9Monitor34": [33, 33.8 - 1.4 + heightDiff, -59.5, 0, 'GLTFs/monitors/21 9 monitors/Ultrwide Monitor 1 34in.glb'],
-                    "curved21x9Monitor38": [33, 33.8 - 1.4 + heightDiff, -59.5, 0, 'GLTFs/monitors/21 9 monitors/Ultrwide Monitor 1 38in.glb'],
+                    "small16x9Monitor22": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 22in.glb'],
+                    "small16x9Monitor23": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 23in.glb'],
+                    "small16x9Monitor24": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 24in.glb'],
+                    "small16x9Monitor25": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 25in.glb'],
+                    "small16x9Monitor27": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 27in.glb'],
+                    "small16x9Monitor28": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 28in.glb'],
+                    "small16x9Monitor31": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 31.5in.glb'],
+                    "largeCurved16x9Monitor25": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 25in.glb'],
+                    "largeCurved16x9Monitor27": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 27in.glb'],
+                    "largeCurved16x9Monitor31": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 31.5in.glb'],
+                    "largeCurved16x9Monitor34": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 34in.glb'],
+                    "curved21x9Monitor30": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors/Ultrwide Monitor 1 30in.glb'],
+                    "curved21x9Monitor34": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors/Ultrwide Monitor 1 34in.glb'],
+                    "curved21x9Monitor38": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors/Ultrwide Monitor 1 38in.glb'],
                     "curved32x9Monitor43": [33, 30.45 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors/32_9 monitor 43.4in.glb'],
                     "curved32x9Monitor49": [33, 30.45 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors/32_9 monitor 49in.glb'],
-
-
-
+                    "flat21x9Monitor25": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors/21 9 monitor 2 non curved 25in.glb'],
+                    "flat21x9Monitor29": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors/21 9 monitor 2 non curved 29in.glb'],
+                    "flat21x9Monitor34": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors/21 9 monitor 2 non curved 34in.glb'],
                 },
                 "keyboard": {
                     "default60PercentKeyboard": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 allGrey.glb'],
@@ -1136,17 +1697,33 @@
                     "QCKSmall": [44, 31.35 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/small qck mousepad - 8.4Dx9.8W.glb'],
                     "QCKMedium": [44, 31.35 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/medium qck mousepad - 10.6Dx12.6W.glb'],
                     "QCKLarge": [44, 31.35 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/large qck mousepad - 15.7Dx17.7W.glb'],
-
                 },
                 "mouse": {
-                    "defaultMouse": [44, 31.1 + .14 + heightDiff, -50, Math.PI, 'GLTFs/mice and mousepads/mouse 1 - 4.1Dx2.2Wx1.6H.glb'],
+                    "defaultMouse": [44, 31.1 + .14 + heightDiff, -50, Math.PI, 'GLTFs/mice and mousepads/mouse_1_-_4.1Dx2.2Wx1.glb'],
                     "MXMaster3": [44, 33.2 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/mouse 2 - 4.9Dx3.5Wx2H.glb']
-
                 },
-                "speakers": {
-                    "primaryDefaultSpeaker": [44, 31.35 + .14 + heightDiff, -50, Math.PI, 'mouses/Mouse_1_textured.glb'],
-                    "secondaryDefaultSpeaker": [44, 31.35 + .14 + heightDiff, -50, Math.PI, 'mouses/Mouse_1_textured.glb'],
+                "speaker": {
+                    "deskSpacingSpeakerPrimary": [44 - 20, 21.2 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/speakers/speakers 1 primary - 7.4Dx5.8Wx9.5H.glb'],
+                    "deskSpacingSpeakerSecondary": [44, 36.25 + .14 + heightDiff, -46, -Math.PI / 2, 'GLTFs/speakers/speakers_1_secondary_-_7.4Dx5.8Wx9H.glb'],
+                    "deskSpacingSoundBar": [44 - 11, 31.1 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/speakers/speaker bar 1 - 2.5Dx16Wx2.8H.glb'],
+                    "studioMonitorSpeakerPrimary": [44 - 20, 31.35 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/speakers/speakers 2 primary - 8.3Dx7.3Wx10.3H.glb'],
+                    "studioMonitorSpeakerSecondary": [44 - 15, 31.35 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/speakers/speakers 2 secondary - 8.3Dx7.3Wx10.3H.glb'],
+                },
+                "laptop": {
+                    "modernLaptop13": [33, 30.7 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/laptops/SPOILER_13_inch_laptop.glb'],
+                    "modernLaptop15": [33, 30.7 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/laptops/15 inch laptop.glb'],
+                    "modernLaptop17": [33, 30.7 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/laptops/17 inch laptop.glb'],
+                },
+                "computer": {
+                    "modernComputerTower": [54, 31.2 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/computer towers/desktop - 8.27Wx16.5Dx19.5H.glb'],
+                    "miniITXTower": [51, 31.2 + .14 + heightDiff, -50, 0, 'GLTFs/computer towers/desktop 2 small - 16.7Dx13.6Wx14.3H.glb'],
+                }, "misc": {
+                    "regularBook": [-70, -22.58 + heightDiff, -32, Math.PI, 'GLTFs/YYadditional decorations/book.glb'],
+                    "coffeeCup": [51, 31.25 + .14 + heightDiff, -50, 0, 'GLTFs/YYadditional decorations/coffee cup.glb'],
+                    "MIDIKeyboard": [30, 31.25 + .14 + heightDiff, -50, Math.PI + Math.PI / 2, 'GLTFs/YYadditional decorations/midi keyboard 1 - 7.1Dx12.5Wx1.5H.glb']
                 }
+
+
             },
             "drawerDesk": {
                 "monitor": {
@@ -1200,7 +1777,7 @@
             controls.update();
             renderer.render(scene, camera);
             //Commented out logs below print the current rotation and position of camera
-            //console.log("CAMERA POSITION X,Y,Z: " + camera.position.x + ", " + camera.position.y + ", " + camera.position.z);
+            console.log("CAMERA POSITION X,Y,Z: " + camera.position.x + ", " + camera.position.y + ", " + camera.position.z);
             //console.log("CAMERA ROTATION X,Y,Z: " + camera.rotation.x + ", " + camera.rotation.y + ", " + camera.rotation.z);
         }
         animate();
@@ -1213,6 +1790,8 @@
             selectNew3DObject("mouse", "defaultMouse", "custom", null);
             selectNew3DObject("keyboard", "default60PercentKeyboard", "custom", null);
             selectNew3DObject("mousepad", "QCKSmall", "custom", null);
+            //selectNew3DObject('speaker', 'studioMonitorSpeaker', 'custom', null);
+            //selectNew3DObject('laptop', 'modernLaptop13', 'notCustom', null);
             //on first load, desk must always load last (weird bug idk im ignoring for now)
             selectNew3DObject("desk", "modernDesk", "custom", null);
         }
@@ -1233,6 +1812,12 @@
                 loader.load(deskDictionary[objectName][4], function (gltf) {
                     //Set dictionary for currentDesk arrays? 
                     objectsArray[indexDictionary[objectType]] = gltf.scene;
+                    objectsArray[indexDictionary[objectType]].traverse(function (object) {
+                        if (object.isMesh) {
+                            object.castShadow = true;
+                            object.receiveShadow = true;
+                        }
+                    });
                     objectsArray[indexDictionary[objectType]].name = objectType;
                     objectsArray[indexDictionary[objectType]].position.set(deskDictionary[objectName][0],
                         deskDictionary[objectName][1],
@@ -1251,30 +1836,52 @@
                     console.error(error);
                 });
                 //Changing all the other objects on desk to fit new desk \/
-                for (var i = 1; i < objectsStringsArray.length; i++) {
-                    console.log(objectsStringsArray[0]);
+                for (var i = 1; i < objectsArrayOfArrays.length; i++) {
+                    for (var inner = 0; inner < objectsArrayOfArrays[i].length; inner++) {
+                        //console.log(objectsArrayOfArrays[i][inner].name);
+                        var object = scene.getObjectByName(objectsArrayOfArrays[i][inner].name)
+                        console.log(object.userData.objectName);
+                        console.log(object.userData.objectName);
+                        console.log(object.userData.objectName);
+                        console.log(object.userData.objectName);
+                        //object.position.y += heightDiff;
+                        object.position.set(coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][object.userData.objectName][0],
+                            coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][object.userData.objectName][1] + heightDiff,
+                            coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][object.userData.objectName][2]
+                        );
+                    }
+                    /*console.log(objectsStringsArray[0]);
                     console.log(objectsTypeArray[i]);
                     console.log(objectsStringsArray[i]);
                     console.log(objectsStringsArray);
                     //console.log(coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]]);
                     if (objectsStringsArray[i] != "") {
+                        console.log(objectsArrayOfArrays);
                         objectsArray[indexDictionary[objectsTypeArray[i]]].position.set(coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]][0],
                             coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]][1] + heightDiff,
                             coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]][2]
                         );
-                    }
+                    }*/
                 }
                 //animate();
             } else { //Object is being changed (on desk)
                 //Get value of size form for monitors only
+
                 if (objectType == "monitor" && customOrNot == "custom") {
                     var monitorForm = document.getElementById(objectName + "Form");
                     //Leaves us with only the number, takes out the / and "
                     var monitorSize = monitorForm.options[monitorForm.selectedIndex].value.replace(/[^0-9]/g, '');
                     objectName = objectName + monitorSize;
                     console.log(objectName);
-
+                } else if (objectType == "speaker" && customOrNot == "custom") {
+                    var monitorForm = document.getElementById(objectName + "Form");
+                    //Leaves us with only the number, takes out the / and "
+                    var monitorSize = monitorForm.options[monitorForm.selectedIndex].value;
+                    objectName = objectName + monitorSize;
+                    console.log(objectName);
                 }
+
+
                 var selectedObject = scene.getObjectByName(objectType);
                 console.log(selectedObject);
                 scene.remove(selectedObject);
@@ -1301,6 +1908,13 @@
                     objectsArrayOfArrays[indexDictionary[objectType]].push(gltf.scenes[0].children[0].parent);
                     gltf.scene.rotation.y = coordinateDictionaryArr[3];
                     gltf.name = objectType + objectsCountDict[objectType];
+                    gltf.scene.userData.objectName = objectName;
+                    gltf.scene.traverse(function (object) {
+                        if (object.isMesh) {
+                            object.castShadow = true;
+                            object.receiveShadow = true;
+                        }
+                    });
                     console.log(gltf.name);
                     objectsCountDict[objectType]++;
                     console.log(objectsCountDict[objectType]);
