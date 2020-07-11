@@ -1259,7 +1259,9 @@
                                         <p class="text-white">
                                             <span id="keybindLetter">- / +</span> - Change controls size
                                         </p>
-
+                                        <p class="text-white">
+                                            <span id="keybindLetter">C</span> - Hide controls
+                                        </p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -1450,10 +1452,11 @@
                         console.log(this.pickedObject.parent.parent);
                         transformControls.attach(this.pickedObject.parent);
                         //transformControls.attach(this.pickedObject.children[0]);
-                        break;
+                        return; //WAS BREAK BEFORE
                     }
 
                 }
+                //transformControls.detach();
                 //controls.enabled = true;
             }
         }
@@ -1668,7 +1671,9 @@
                 case 69: // E
                     transformControls.setMode("scale");
                     break;*/
-
+                case 67:
+                    transformControls.detach();
+                    return;
                 case 82: // R
                     if (rotateActive) {
                         transformControls.showX = false;
