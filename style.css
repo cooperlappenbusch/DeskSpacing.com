@@ -6,7 +6,7 @@ body, html {
     padding: 0;
     margin: 0;
     overflow: hidden !important; /* Hide scrollbars */
-    
+
 }
 
 .scene, canvas {
@@ -156,4 +156,27 @@ label {
 }
 .keybindButton {
     margin: 5px;
+}
+
+.navbarWrapper {
+    position: fixed;
+}
+
+.btn.btn-primary {
+    background: #62C462 !important;
+    border-color: #62C462 !important;
+    color: #fff !important;
+}
+
+.navbar-brand {
+    padding-left: 0px !important;
+    font-size: 26px;
+}
+
+.navbar {
+    border: 0px !important;
+}
+
+.jumbotronMainText {
+    font-weight: bold !important;
 }

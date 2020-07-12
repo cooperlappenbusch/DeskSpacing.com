@@ -1,0 +1,446 @@
+$font-serif: 'Crimson Text', serif;
+$font-sans-serif: 'Raleway', sans-serif;
+
+$xl: 1140px;
+$lg: 960px;
+$md: 768px;
+$sm: 576px;
+$white: #fff;
+$black: #000;
+$primary: #CF4647;
+html {
+	overflow-x: hidden;
+}
+body {
+	font-family: $font-sans-serif;
+	line-height: 1.7;
+	font-size: 18px;
+	background: #2A363B;
+	color: lighten(#545d61, 20%);
+}
+a {
+	transition: .3s all ease;
+	color: $primary;
+	&:hover {
+		text-decoration: none;
+		color: $primary;
+	}
+}
+h1, h2, h3, h4, h5 {
+	line-height: 1.5;
+	font-weight: normal;
+	color: $white;
+}
+
+.text-primary {
+	color: $primary!important;
+}
+.probootstrap-navabr-dark {
+	background: transparent!important;
+	position: absolute;
+	left: 0;
+	right: 0;
+	@media screen and (max-width: 991px) {
+		// background: $black!important;
+		background: darken(#2A363B, 4%)!important;
+		top: 0;
+		position: relative;
+	}
+	.navbar-nav {
+		> .nav-item {
+			> .nav-link {
+				font-size: 16px;
+				padding-top: 30px;
+				padding-bottom: 30px;
+				padding-left: 20px;
+				padding-right: 20px;
+				@media screen and (max-width: $lg) {
+					padding-top: 10px;
+					padding-bottom: 10px;
+					padding-left: 0px;
+					padding-right: 0px;
+				}
+			}
+			&.probootstrap-cta {
+				a {
+					color: $white;
+				}
+			}
+			&.probootstrap-seperator {
+				position: relative;
+				margin-left: 20px;
+				padding-left: 20px;
+				@media screen and (max-width: $lg) {
+					padding-left: 0;
+					margin-left: 0;
+				}
+				&:before {
+					position: absolute;
+					content: "";
+					top: 10px;
+					bottom: 10px;
+					left: 0;
+					width: 2px;
+					background: rgba($white, .05);
+					@media screen and (max-width: $lg) {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+.bg-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.probootstrap-cover {
+  // background: lighten( $black, 10%);
+  @extend .bg-image;
+  background-position: center center;
+  .probootstrap-text {
+  	.probootstrap-heading {
+			font-size: 40px;
+			line-height: 1.5;
+			@media screen and (max-width: $md) {
+				font-size: 30px;
+			}
+  	}
+  	.probootstrap-subheading {
+  	}
+  }
+  .btn {
+		@media screen and (max-width: $md) {
+			width: 100%!important;
+			border: 1px solid red;
+		}
+	}
+}
+.btn {
+	border-radius: 4px;
+	padding: 20px 30px;
+	font-size: 14px;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+	&:hover, &:active, &:focus {
+		outline: none;
+		box-shadow: none;
+	}
+	&.btn-primary {
+		background: $primary;
+		border-color: $primary;
+		color: $white;
+		&:hover, &:focus, &:active {
+			border-color: darken($primary, 10%);
+			background: darken($primary, 10%);
+		}
+	}
+	&.btn-outline-white {
+		border-color: rgba($white, .2);
+		background: none;
+		&:hover, &:focus, &:active {
+			background: $white;
+			border-color: $white;
+			color: $black;
+		}
+	}
+}
+.form-control {
+	border: 2px solid rgba($white, .2);
+	height: 55px;
+	background: none!important;
+	color: $white!important;
+	font-size: 18px;
+	&:focus, &:active {
+		border: 2px solid $white;
+	}
+}
+textarea {
+	height: inherit!important;
+}
+.probootstrap-vh-100 {
+  height: 100vh;
+  min-height: 1000px;
+  @media screen and (max-width: $lg) {
+  	height: inherit;
+  	padding-top: 5em;
+  	padding-bottom: 5em;
+  }
+}
+.probootstrap-vh-75 {
+  height: 75vh;
+  @media screen and (max-width: $lg) {
+  	height: inherit;
+  	padding-top: 5em;
+  	padding-bottom: 5em;
+  }
+}
+
+.bg-primary {
+	background: $primary!important;
+}
+.probootstrap-section,
+.probootstrap-footer {
+	padding: 7em 0;
+	.probootstrap-heading {
+		font-size: 40px;
+		line-height: 1.5;
+		@media screen and (max-width: $md) {
+			font-size: 30px;
+		}
+	}
+}
+.probootstrap-bg-dark {
+	background: darken(#2A363B, 2%);
+}
+.probootstrap-footer {
+	font-size: 16px;
+	&.probootstrap-bg-dark {
+		background: darken(#2A363B, 4%);
+	}
+	a {
+		color: rgba($white, .3);
+		&:hover {
+			color: $primary;
+		}
+	}
+	.probootstrap-heading {
+		font-size: 24px;
+	}
+	.probootstrap-heading-2 {
+		font-size: 14px;
+		font-weight: bold;
+		letter-spacing: .05em;
+		text-transform: uppercase;
+		color: rgba(255,255,255,.6);
+	}
+}
+.probootstrap-devices {
+	position: relative;
+	height: 664px;
+	transition: .3s all ease;
+	@media screen and (max-width: 1429px) {
+		height: 564px;
+	}
+	@media screen and (max-width: 1090px) {
+		height: 464px;	
+	}
+	@media screen and (max-width: 884px) {
+		height: 364px;	
+	}
+	@media screen and (max-width: 690px) {
+		height: 200px;
+	}
+	@media screen and (max-width: 480px) {
+		height: 100px;
+	}
+	.probootstrap-device-left,
+	.probootstrap-device-center,
+	.probootstrap-device-right {
+		position: absolute;
+		width: auto;
+		bottom: 0;
+		transition: .3s all ease;
+	}
+	.probootstrap-device-left, {
+		left: 50%;
+		margin-left: -650px;
+		max-width: 700px;
+		@media screen and (max-width: 1429px) {
+			max-width: 600px;
+			margin-left: -550px;
+		}
+		@media screen and (max-width: 1090px) {
+			max-width: 450px;
+			margin-left: -450px;
+		}
+		@media screen and (max-width: 884px) {
+			max-width: 400px;
+			margin-left: -350px;
+		}
+		@media screen and (max-width: 690px) {
+			max-width: 200px;
+			margin-left: -220px;	
+		}
+		@media screen and (max-width: 480px) {
+			max-width: 150px;
+			margin-left: -140px;	
+		}
+	}
+	.probootstrap-device-center {
+		max-width: 900px;
+		left: 50%;
+		margin-left: -450px;
+		bottom: -5%;
+		@media screen and (max-width: 1429px) {
+			max-width: 800px;
+			margin-left: -400px;
+		}
+		@media screen and (max-width: 1090px) {
+			max-width: 600px;
+			margin-left: -300px;
+		}
+		@media screen and (max-width: 884px) {
+			max-width: 500px;
+			margin-left: -250px;
+		}
+		@media screen and (max-width: 690px) {
+			max-width: 300px;
+			margin-left: -150px;	
+		}
+		@media screen and (max-width: 480px) {
+			max-width: 200px;
+			margin-left: -100px;	
+		}
+	}
+	.probootstrap-device-right {
+		max-width: 700px;
+		right: 50%;
+		margin-right: -650px;
+		@media screen and (max-width: 1429px) {
+			max-width: 600px;
+			margin-right: -550px;
+		}
+		@media screen and (max-width: 1090px) {
+			max-width: 450px;
+			margin-right: -450px;
+		}
+		@media screen and (max-width: 884px) {
+			max-width: 400px;
+			margin-right: -350px;
+		}
+		@media screen and (max-width: 690px) {
+			max-width: 200px;
+			margin-right: -220px;	
+		}
+		@media screen and (max-width: 480px) {
+			max-width: 150px;
+			margin-right: -140px;	
+		}
+	}
+}
+
+
+
+
+.probootstrap-footer-social {
+	li {
+		list-style: none;
+		margin: 0 10px 10px 0;
+		display: inline-block;
+		a {
+			height: 60px;
+			width: 60px;
+			display: block;
+			float: left;
+			background: rgba($white, .05);
+			border-radius: 50%;
+			position: relative;
+			span {
+				position: absolute;
+				font-size: 26px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+}
+.footer-small-nav {
+	> li {
+		// font-size: 13px;
+		display: inline-block;
+		a {
+			margin: 0 10px 10px 0;
+			&:hover, &:focus {
+				color: $primary;
+			}
+		}
+	}
+}
+.media {
+	.probootstrap-icon {
+		width: 100px;
+		span {
+			color: $primary;
+		}
+	}
+}
+.probootstrap-overflow-hidden {
+	overflow: hidden;
+}
+
+
+#probootstrap-loader {
+	position: fixed;
+	width:  96px;
+	height: 96px;
+	left:  50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(255,255,255,0.9);
+	box-shadow: 0px 24px 64px rgba(0,0,0,0.24);
+	border-radius:16px;
+	opacity: 0; 
+	visibility: hidden;
+	transition: opacity .2s ease-out, visibility 0s linear .2s;
+	z-index:1000;
+}
+
+#probootstrap-loader.fullscreen {
+	padding:  0;
+	left:  0;
+	top:  0;
+	width:  100%;
+	height: 100%;
+	transform: none;
+	background-color: #fff;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+#probootstrap-loader.show {
+	transition: opacity .4s ease-out, visibility 0s linear 0s;
+	visibility: visible;
+	opacity: 1;
+}
+
+#probootstrap-loader .circular {
+  animation: loader-rotate 2s linear infinite;
+  position: absolute;
+  left:  calc(50% - 24px);
+  top:  calc(50% - 24px);
+  display: block;
+  transform: rotate(0deg);
+}
+
+#probootstrap-loader .path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: loader-dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@keyframes loader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -136px;
+  }
+}
