@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css" />
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172455339-1"></script>
     <script>
@@ -17,6 +16,10 @@
 
         gtag('config', 'UA-172455339-1');
     </script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
 </head>
 
 <body>
@@ -1498,7 +1501,7 @@
         //import * as THREE from './three';
         var controls, dragControls, transformControls;
         var scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x272B30);
+        scene.background = new THREE.Color(0x2A363B);
 
         //var dracoLoader = new DRACOLoader();
         //dracoLoader.setDecoderPath('/examples/js/libs/draco/');
@@ -1544,7 +1547,7 @@
         var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
         var cube = new THREE.Mesh(geometry, material);
         cube.position.set(36, 100, -100);
-        scene.background = new THREE.Color(0x333333);
+        scene.background = new THREE.Color(0x2A363B);
         //scene.fog = new THREE.Fog(0xa0a0a0, 75, 450);
         /*var mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(1000, 1000), new THREE.MeshPhongMaterial({ color: 0x999999, depthWrite: false }));
         mesh.rotation.x = - Math.PI / 2;
