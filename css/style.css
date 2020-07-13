@@ -414,3 +414,12 @@ textarea {
 .jumbotronMainText {
   font-weight: bold;
 }
+
+.customModalCSS {
+  width: 50vh !important;
+  height: 28vh !important;
+}
+
+.modalTextBackground {
+  background-color:rgba(0, 0, 0, 0.5);
+}
