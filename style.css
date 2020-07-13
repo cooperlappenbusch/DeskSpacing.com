@@ -180,3 +180,7 @@ label {
 .jumbotronMainText {
     font-weight: bold !important;
 }
+
+.modalTextBackground {
+    background-color:rgba(0, 0, 0, 0.5);
+  }
