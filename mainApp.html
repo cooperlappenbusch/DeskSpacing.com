@@ -19,13 +19,37 @@
         gtag('config', 'UA-172455339-1');
     </script>
     <script language="Javascript">
+        var isMobile = {
+            Android: function () {
+                return navigator.userAgent.match(/Android/i);
+            },
+            BlackBerry: function () {
+                return navigator.userAgent.match(/BlackBerry/i);
+            },
+            iOS: function () {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+            },
+            Opera: function () {
+                return navigator.userAgent.match(/Opera Mini/i);
+            },
+            Windows: function () {
+                return navigator.userAgent.match(/IEMobile/i);
+            },
+            any: function () {
+                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+            }
+        };
         window.onload = function () {
             var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
-            if (mobile) {
+
+            if (isMobile.any()) {
+                alert("Welcome to DeskSpacing! Unfortunately DeskSpacing is an experience for users on desktop only for now. If you are interested in a mobile version of the app, let us know at deskspacing@gmail.com . Sorry for the inconvenience! ");
+            }
+            /*if (mobile) {
                 alert("Welcome to DeskSpacing! Unfortunately DeskSpacing is an experience for users on desktop only for now. If you are interested in a mobile version of the app, let us know at deskspacing@gmail.com . Sorry for the inconvenience! ");
             } else {
 
-            }
+            }*/
         }
     </script>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
