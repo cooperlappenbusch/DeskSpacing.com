@@ -2,6 +2,8 @@
 <html>
 
 <head>
+    <title>DeskSpacing</title>
+    <link rel="icon" href="favicon.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -15,6 +17,16 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-172455339-1');
+    </script>
+    <script language="Javascript">
+        window.onload = function () {
+            var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+            if (mobile) {
+                alert("Welcome to DeskSpacing! Unfortunately DeskSpacing is an experience for users on desktop only for now. If you are interested in a mobile version of the app, let us know at deskspacing@gmail.com . Sorry for the inconvenience! ");
+            } else {
+
+            }
+        }
     </script>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap.min.css">
