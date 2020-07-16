@@ -18,6 +18,7 @@
 
         gtag('config', 'UA-172455339-1');
     </script>
+    <link rel="stylesheet" href="css/icomoon.css">
     <script language="Javascript">
         var isMobile = {
             Android: function () {
@@ -86,7 +87,7 @@
                     <button type="button" class="btn btn-outline-primary my-2 my-sm-0" type="submit" data-toggle="modal"
                         data-target="#exampleModal">Keybinds</button>
                     <p>&nbsp;&nbsp;</p>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal"
+                    <button class="btn btn-success my-2 my-sm-0" type="submit" data-toggle="modal"
                         data-target="#tutorialModal">Beginner Tutorial</button>
 
                 </nav>
@@ -130,11 +131,12 @@
 
                                                 <div class="col-xl centerTopBottom">
                                                     <div class="innerDescriptionDiv">
-                                                        <h3 class="itemTitleText">
+                                                        <h3 class="itemTitleText" id="modernDesk">
                                                             <a href="https://www.amazon.com/gp/product/B07PFLRNJ3/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B07PFLRNJ3&linkId=14dde2085ad92614610ab9c163e145cb"
                                                                 style="text-decoration: underline;" target="_blank"
                                                                 data-toggle="tooltip" title="Purchase on Amazon">
-                                                                Modern Desk</a> <span class="dimensionsText"> <br>
+                                                                Modern Desk</a> <span id="modernDeskUnits"
+                                                                class="dimensionsText"> <br>
                                                                 23.8"&nbspL&nbspx&nbsp51.7"&nbspW&nbspx&nbsp30.3"&nbspH
                                                             </span>
 
@@ -170,7 +172,8 @@
                                                                 href="https://www.amazon.com/gp/product/B088B739DX/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B088B739DX&linkId=d43d458614fbb9f3e1f9a0c4c3add6c1"
                                                                 style="text-decoration: underline;" target="_blank"
                                                                 data-toggle="tooltip" title="Purchase on Amazon">
-                                                                Standing Desk </a><span class="dimensionsText"> <br>
+                                                                Standing Desk </a><span id="standingDeskUnits"
+                                                                class="dimensionsText"> <br>
                                                                 28.4"&nbspL&nbspx&nbsp55"&nbspW&nbspx&nbsp29.7"&nbspH
                                                             </span>
                                                         </h3>
@@ -181,7 +184,6 @@
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
                                                                 onclick="selectNew3DObject('desk','standingDesk','notCustom',event)">
-
                                                                 Add</button>
                                                         </div>
                                                     </div>
@@ -201,13 +203,13 @@
 
                                                 <div class="col-xl centerTopBottom">
                                                     <div class="innerDescriptionDiv">
-                                                        <h3 class="itemTitleText">
+                                                        <h3 class="itemTitleText" id="Linnmon Desk">
                                                             Linnmon Desk
                                                         </h3>
                                                         <div class="text-center">
                                                             <h5 class="itemTitleText">
                                                                 <form>
-                                                                    <select id="linnmonDeskForm" name="cars">
+                                                                    <select id="linnmonDeskForm" autocomplete="off">
 
                                                                         <option value="39">24" L x 39" W x 30.3" H
                                                                         </option>
@@ -255,7 +257,7 @@
                                                         <div class="text-center">
                                                             <h5 class="itemTitleText">
                                                                 <form>
-                                                                    <select id="alexDeskForm" name="cars">
+                                                                    <select id="alexDeskForm" autocomplete="off">
 
                                                                         <option value="61">40" L x 61" W x 28.7" H
                                                                         </option>
@@ -273,6 +275,52 @@
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
                                                                 onclick="selectNew3DObject('desk','alexDesk','custom',event)">
+
+                                                                Add</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\L shaped desk.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="itemTitleText">
+                                                            Bekant L Shaped Desk
+                                                        </h3>
+                                                        <div class="text-center">
+                                                            <h5 class="itemTitleText">
+                                                                43.2"&nbspL&nbspx&nbsp63"&nbspW&nbspx&nbsp30.1"&nbspH
+                                                            </h5>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <h5 class="itemTitleText">
+                                                                <form>
+                                                                    <select id="bekantLShapedForm" autocomplete="off"
+                                                                        autocomplete="off">
+                                                                        <option value="Left">Left </option>
+                                                                        <option value="Right">Right </option>
+                                                                    </select>
+                                                                </form>
+                                                            </h5>
+                                                        </div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="selectNew3DObject('desk','bekantLShaped','custom',event)">
 
                                                                 Add</button>
                                                         </div>
@@ -321,7 +369,8 @@
                                                         <div class="text-center">
                                                             <h5 class="itemTitleText">
                                                                 <form>
-                                                                    <select id="small16x9MonitorForm" name="cars">
+                                                                    <select id="small16x9MonitorForm"
+                                                                        autocomplete="off">
                                                                         <option value="22\"">22" </option>
                                                                         <option value="23\"">23" </option>
                                                                         <option value="24\"">24" </option>
@@ -377,7 +426,8 @@
                                                         <div class="text-center">
                                                             <h5 class="itemTitleText">
                                                                 <form>
-                                                                    <select id="largeCurved16x9MonitorForm" name="cars">
+                                                                    <select id="largeCurved16x9MonitorForm"
+                                                                        autocomplete="off">
                                                                         <option value="25\"">25" </option>
                                                                         <option value="27\"">27" </option>
                                                                         <option value="31\"">31.5" </option>
@@ -429,7 +479,7 @@
                                                         <div class="text-center">
                                                             <h5 class="itemTitleText">
                                                                 <form>
-                                                                    <select id="flat21x9MonitorForm" name="cars">
+                                                                    <select id="flat21x9MonitorForm" autocomplete="off">
                                                                         <option value="25\"">25" </option>
                                                                         <option value="29\"">29" </option>
                                                                         <option value="34\"">34" </option>
@@ -479,7 +529,8 @@
                                                         <div class="text-center">
                                                             <h5 class="itemTitleText">
                                                                 <form>
-                                                                    <select id="curved21x9MonitorForm" name="cars">
+                                                                    <select id="curved21x9MonitorForm"
+                                                                        autocomplete="off">
                                                                         <option value="30\"">30" </option>
                                                                         <option value="34\"">34" </option>
                                                                         <option value="38\"">38" </option>
@@ -529,7 +580,8 @@
                                                         <div class="text-center">
                                                             <h5 class="itemTitleText">
                                                                 <form>
-                                                                    <select id="curved32x9MonitorForm" name="cars">
+                                                                    <select id="curved32x9MonitorForm"
+                                                                        autocomplete="off">
                                                                         <option value="43\"">43.4" </option>
                                                                         <option value="49\"">49" </option>
                                                                     </select>
@@ -641,7 +693,7 @@
 
                                                     <div class="productPictureImg text-center">
                                                         <img id="75PercentKeyboardImage" width="200px" height="200px"
-                                                            src="Model thumbnails\60 Keyboard 2 allGrey.jpg">
+                                                            src="Model thumbnails\75PercentKeyboardAllGrey.jpg">
                                                     </div>
                                                 </div>
 
@@ -696,7 +748,7 @@
                                                 <div class="col-xl centerTopBottom">
                                                     <div class="productPictureImg text-center">
                                                         <img id="defaultFullKeyboardImage" width="200px" height="200px"
-                                                            src="Model thumbnails\full size keyboard allGrey.jpg">
+                                                            src="Model thumbnails\defaultFullKeyboardAllGrey.jpg">
                                                     </div>
                                                 </div>
 
@@ -736,6 +788,57 @@
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
                                                                 onclick="replace3DObject('keyboard','defaultFullKeyboard','custom',event)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="productPictureImg text-center">
+                                                        <img id="TKLKeyboardImage" width="200px" height="200px"
+                                                            src="Model thumbnails\TKLKeyboardAllGrey.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            <a href="https://www.amazon.com/gp/product/B07DFBKYT5/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B07DFBKYT5&linkId=a130df8fb868efb4fb53daa8287349ac"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                TKL Keyboard</a><span class="dimensionsText"> <br>
+                                                                5.6"&nbspL&nbspx&nbsp14.8"&nbspW&nbspx&nbsp1.5"&nbspH
+                                                            </span>
+                                                        </h3>
+                                                        <div class="text-center">
+                                                            <h4 class="itemTitleText">
+                                                                <form>
+                                                                    <label>Style:</label>
+                                                                    <select id="TKLKeyboardForm">
+                                                                        <option value="AllGrey">All Grey</option>
+                                                                        <option value="AllWhite">All White</option>
+                                                                        <option value="WGR">White / Grey / Red</option>
+                                                                        <option value="OBW">Orange / Black / White
+                                                                        </option>
+                                                                        <option value="YPGrade">Sunset</option>
+                                                                        <option value="8008">8008</option>
+                                                                    </select>
+                                                                </form>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="selectNew3DObject('keyboard','TKLKeyboard','custom',event)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="replace3DObject('keyboard','TKLKeyboard','custom',event)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -962,7 +1065,7 @@
                                     data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                                     <h5 class="mb-0">
                                         <button class="btn btn-link collapsed">
-                                            Speakers
+                                            Speakers and Audio Equipment
                                         </button>
                                     </h5>
                                 </div>
@@ -995,7 +1098,8 @@
                                                             <h4 class="itemTitleText">
                                                                 <form>
                                                                     <label>Type:</label>
-                                                                    <select id="deskSpacingSpeakerForm" name="cars">
+                                                                    <select id="deskSpacingSpeakerForm"
+                                                                        autocomplete="off">
                                                                         <option value="Primary">Primary</option>
                                                                         <option value="Secondary">Secondary</option>
                                                                     </select>
@@ -1080,7 +1184,8 @@
                                                             <h4 class="itemTitleText">
                                                                 <form>
                                                                     <label>Type:</label>
-                                                                    <select id="studioMonitorSpeakerForm" name="cars">
+                                                                    <select id="studioMonitorSpeakerForm"
+                                                                        autocomplete="off">
                                                                         <option value="Primary">Primary</option>
                                                                         <option value="Secondary">Secondary</option>
                                                                     </select>
@@ -1096,6 +1201,112 @@
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
                                                                 onclick="replace3DObject('speaker','studioMonitorSpeaker','custom',event)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\blue yeti.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText"><a
+                                                                href="https://www.amazon.com/gp/product/B00N1YPXW2/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B00N1YPXW2&linkId=9d4c15230e8341d369c5516bf7793508"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                USB Microphone</a><span class="dimensionsText">
+                                                                <br>
+                                                                4.8"&nbspL&nbspx&nbsp4.6"&nbspW&nbspx&nbsp11.6"&nbspH
+                                                            </span>
+                                                        </h3>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="selectNew3DObject('speaker','yetiUSBMic','notCustom',event)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="replace3DObject('speaker','yetiUSBMic','notCustom',event)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\audio interface.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            Audio Interface
+                                                            <span class="dimensionsText">
+                                                                <br>
+                                                                4.2"&nbspL&nbspx&nbsp5.7"&nbspW&nbspx&nbsp1.7"&nbspH
+                                                            </span>
+                                                        </h3>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="selectNew3DObject('speaker','audioInterface','notCustom',event)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="replace3DObject('speaker','audioInterface','notCustom',event)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\midi keyboard 1.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText"><a
+                                                                href="https://www.amazon.com/gp/product/B00IJ6QAO2/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B00IJ6QAO2&linkId=197ce4643ff066d929d98c3e407140bc"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                MIDI Keyboard</a><span class="dimensionsText"> <br>
+                                                                7.1"&nbspL&nbspx&nbsp12.5"&nbspW&nbspx&nbsp1.5"&nbspH
+                                                            </span>
+                                                        </h3>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="selectNew3DObject('misc','MIDIKeyboard','notCustom',event)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="replace3DObject('misc','MIDIKeyboard','notCustom',event)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1382,42 +1593,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="productBarrier"></div>
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-xl centerTopBottom">
 
-                                                    <div class="productPictureImg text-center">
-                                                        <img width="200px" height="200px"
-                                                            src="Model thumbnails\midi keyboard 1.jpg">
-                                                    </div>
-                                                </div>
 
-                                                <div class="col-xl centerTopBottom">
-                                                    <div class="innerDescriptionDiv">
-                                                        <h3 class="customMonitorText"><a
-                                                                href="https://www.amazon.com/gp/product/B00IJ6QAO2/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B00IJ6QAO2&linkId=197ce4643ff066d929d98c3e407140bc"
-                                                                style="text-decoration: underline;" target="_blank"
-                                                                data-toggle="tooltip" title="Purchase on Amazon">
-                                                                MIDI Keyboard</a><span class="dimensionsText"> <br>
-                                                                7.1"&nbspL&nbspx&nbsp12.5"&nbspW&nbspx&nbsp1.5"&nbspH
-                                                            </span>
-                                                        </h3>
-                                                        <div class="smallParagraphBreak">&nbsp</div>
-
-                                                        <div class="text-center">
-                                                            <button type="button" class="btn btn-primary text-center"
-                                                                style="display: inline-block;"
-                                                                onclick="selectNew3DObject('misc','MIDIKeyboard','notCustom',event)">
-                                                                Add</button>
-                                                            <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('misc','MIDIKeyboard','notCustom',event)">Replace
-                                                                selected</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
 
                                         <div class="productBarrier"></div>
                                         <div class="container">
@@ -1512,26 +1689,50 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <p class="text-white">
-                                            <span id="keybindLetter">R</span> - Toggle rotate/translate
+                                        <h4>Camera controls</h4>
+                                        <p>
+                                            <span id="keybindLetter" class="text-white"><strong>Left Mouse
+                                                    Button</strong></span> -
+                                            Drag to
+                                            rotate camera
                                         </p>
-                                        <p class="text-white">
-                                            <span id="keybindLetter">X/Y/Z </span> - Toggle respective axis
+                                        <p>
+                                            <span id="keybindLetter" class="text-white"><strong>Shift + Left Mouse
+                                                    Button</strong></span> -
+                                            Pan camera
                                         </p>
-                                        <p class="text-white">
-                                            <span id="keybindLetter">Backspace</span> - Delete selected object
+                                        <p>
+                                            <span id=keybindLetter" class="text-white"><strong>Scroll Wheel</strong>
+                                            </span> - Control
+                                            camera zoom
                                         </p>
-                                        <p class="text-white">
-                                            <span id="keybindLetter">LMB </span> - Drag to rotate camera
+                                        <h4>Object controls</h4>
+                                        <p>
+                                            <span id="keybindLetter" class="text-white"><strong>R</strong></span> -
+                                            Toggle
+                                            rotate/translate
                                         </p>
-                                        <p class="text-white">
-                                            <span id="keybindLetter">Scroll Wheel </span> - Control camera zoom
+                                        <p>
+                                            <span id="keybindLetter" class="text-white"><strong>X / Y /
+                                                    Z</strong></span> - Toggle
+                                            respective axis
                                         </p>
-                                        <p class="text-white">
-                                            <span id="keybindLetter">- / +</span> - Change controls size
+                                        <p>
+                                            <span id="keybindLetter" class="text-white"><strong>Delete / Backspace /
+                                                    D</strong></span>
+                                            -
+                                            Delete selected
+                                            object
                                         </p>
-                                        <p class="text-white">
-                                            <span id="keybindLetter">C</span> - Hide controls
+                                        <span id="keybindLetter" class="text-white"><strong>- /
+                                                +</strong></span> -
+                                        Change controls
+                                        size
+                                        </p>
+                                        <p>
+                                            <span id="keybindLetter" class="text-white"><strong>C</strong></span> -
+                                            Hide
+                                            controls
                                         </p>
                                     </div>
                                     <div class="modal-footer">
@@ -1544,15 +1745,119 @@
                         </div>
                     </div>
 
-
                 </div>
                 <div class="col" id="rightSideContainer">
-                    <canvas id="threeCanvas">
+                    <canvas id="threeCanvas" style="z-index: 0;">
+                        <button id="settingsButton" class="btn btn-secondary" type="submit" data-toggle="modal"
+                            data-target="#settingsModal" style="display: none;"><span class="icon-cog"></span></button>
+                        <button id="resetCameraButton" class="btn btn-secondary" onclick="resetCamera()">Reset
+                            Camera</button>
                     </canvas>
+                    <button id="settingsButton" class="btn btn-secondary" type="submit" data-toggle="modal"
+                        data-target="#settingsModal" style="display: none;"><span class="icon-cog"></span></button>
+                    <button id="resetCameraButton" class="btn btn-secondary" onclick="resetCamera()">Reset
+                        Camera</button>
                 </div>
 
             </div>
 
+            <!--STARTING MODAL-->
+            <div class="starterModal modal fade" id="starterModal">
+                <div class="modal-dialog" role="document" style="max-height: 500px;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-white" id=" exampleModalLabel">DeskSpacing
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h2 class="text-white text-center style=" text-decoration: underline;">
+                                Welcome to DeskSpacing Setup Creator!
+                            </h2>
+
+                            <h5 class="text-white">New user?</h5>
+                            <p>Click here for a tutorial on the basics of DeskSpacing controls</p>
+                            <div class="text-center">
+                                <button class="btn btn-success introTutorialButton" type="submit" data-toggle="modal"
+                                    data-target="#tutorialModal">Beginner Tutorial</button>
+                            </div>
+                            <!--<h3 class="text-white">What have we added in the last update?</h3>-->
+                            <h5 class="text-white">Update 1.01</h5>
+                            <p>Added Features:</p>
+                            <ul style="list-style-type: '- ';">
+                                <li>Added a usb microphone object</li>
+                                <li>Added an audio interface object</li>
+                                <li>Added an L shaped desk with left and right options</li>
+                                <li>Added panning controls and a "reset camera" button</li>
+                                <li>Added tenkeyless keyboard (TKL Keyboard) with keycap options</li>
+                                <li>Added pop up for new users</li>
+                            </ul>
+                            <p>Fixes:</p>
+                            <ul style="list-style-type: '- ';">
+                                <li>Added delete functionality for delete key</li>
+                                <li>fixed dropdowns not refreshing on browser refresh firefox</li>
+                            </ul>
+                            <p>Changes:</p>
+                            <ul style="list-style-type: '- ';">
+                                <li>Changed "Speakers" section to "Speakers and Audio Equipment"</li>
+                                <li>Updated 2017 Footer to 2020, woops!</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--SETTINGS MODAL-->
+            <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-white" id=" exampleModalLabel">Settings
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h4 class="text-white" style="text-decoration: underline;">
+                                Units
+                            </h4>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input checked" name="optionsRadios"
+                                        id="optionsRadios1" value="0" checked>
+                                    Imperial (Inches)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="optionsRadios"
+                                        id="optionsRadios1" value="1" onchange="imperialToMetric()">
+                                    Metric (Centimeters)
+                                </label>
+                            </div>
+
+
+
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--TUTORIAL MODAL-->
             <div class="modal fade" id="tutorialModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-xl" role="document">
@@ -1655,6 +1960,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
                         </div>
                     </div>
                 </div>
@@ -1673,6 +1979,21 @@
     <script src="three/examples/js/loaders/DRACOLoader.js"></script>
     <script src="three/examples/js/loaders/DRACOLoader.js"></script>
     <script>
+
+        /*function imperialToMetric() {
+            document.getElementById("modernDeskUnits").textContent = coordinateDictionary["modernDesk"]["monitor"][7];
+            
+            document.getElementById("standingDeskUnits").textContent = coordinateDictionary["modernDesk"]["monitor"][7];
+        }
+
+        function isDigit(c) {
+            var isDig = 0;
+            if (c <= '9' && c >= '0' || c == '.') {
+                isDig = 1;
+            }
+            //console.log(isDig);
+            return isDig;
+        }*/
 
         var rightSideContainer = document.getElementById("rightSideContainer");
         //small16x9Monitor Checkbox
@@ -1743,6 +2064,13 @@
             var imageElement = document.getElementById('defaultFullKeyboardImage');
             imageElement.src = "Model thumbnails/" + "defaultFullKeyboard" + keyboardForm.value + ".jpg";
         }
+
+        document.getElementById('TKLKeyboardForm').onchange = function () {
+            var keyboardForm = document.getElementById('TKLKeyboardForm');
+            var imageElement = document.getElementById('TKLKeyboardImage');
+            imageElement.src = "Model thumbnails/" + "TKLKeyboard" + keyboardForm.value + ".jpg";
+        }
+
 
 
         //Class to help select JS objects
@@ -1949,7 +2277,7 @@
         controls.disabled = true;
         controls.enableZoom = true;
         controls.enableRotate = true;
-        controls.enablePan = false;
+        controls.enablePan = true;
         controls.rotateSpeed = 0.7;
         camera.position.set(33.140910317837964, 61.27639300930197, 21.183811053080007);
         controls.update();
@@ -1964,8 +2292,38 @@
 
         var savedVector = controls.object.getWorldDirection();
         console.log(savedVector);
+        var camToSave = {};
+        camToSave.position = camera.position;
+        camToSave.rotation = camera.rotation;
+        camToSave.controlCenter = controls.center;
 
+        function resetCamera() {
 
+            controls.reset();
+            controls.enableZoom = true;
+            controls.enableRotate = true;
+            controls.enablePan = true;
+            controls.rotateSpeed = 0.7;
+            camera.position.set(33.140910317837964, 61.27639300930197, 21.183811053080007);
+            controls.update();
+            camera.rotation.set(-0.3618175319112695, -0.012200336135305153, -0.004617427467257444);
+            controls.update();
+            controls.target = new THREE.Vector3(45 - 10.8, 30.55, -60);
+
+            camera.lookAt(25, 8.5, 35);
+
+            //restoreCamera(camToSave.position, camToSave.rotation, camToSave.controlCenter);
+        }
+
+        function restoreCamera(position, rotation, controlCenter) {
+            camera.position.set(position.x, position.y, position.z);
+            camera.rotation.set(rotation.x, rotation.y, rotation.z);
+
+            controls.center.set(controlCenter.x, controlCenter.y, controlCenter.z);
+            controls.update();
+
+            render();
+        }
 
         var currentDesk = new THREE.Group();
         var currentMonitor = new THREE.Group();
@@ -2021,8 +2379,15 @@
             controls.enabled = true;
         });
 
+        var rightmousemove;
+
         window.addEventListener('mousedown', function (event) {
             console.log("WINDOW MOUSE DOWN");
+            rightmousemove = false;
+            if (event.button == 2) {
+                rightmousemove = true;
+                //   // Right click
+            }
             if (pickObject) {
                 pickObject = false
                 return;
@@ -2030,6 +2395,12 @@
             console.log("RUNNING SET PICK POSITION");
             setPickPosition(event);
             pickObject = false
+        });
+
+        document.addEventListener("mousemove", function (event) {
+            if (rightmousemove === true) {
+                event.stopImmediatePropagation();
+            }
         });
 
         //window.addEventListener('mouseout', clearPickPosition);
@@ -2051,6 +2422,12 @@
 
             switch (event.keyCode) {
                 case 8: //BACKSPACE (Delete)
+                    pickHelper.deleteObject();
+                    break;
+                case 46:
+                    pickHelper.deleteObject();
+                    break;
+                case 68:
                     pickHelper.deleteObject();
                     break;
                 /*case 81: // Q
@@ -2095,7 +2472,7 @@
             case 67: // C
                 const position = camera.position.clone();
 
-                camera = camera.isPerspectiveCamera ? cameraOrtho : cameraPersp;
+                camera = camera.isPerspectiveCamera ?C cameraOrtho : cameraPersp;
                 camera.position.copy(position);
 
                 transformControls.object = camera;
@@ -2176,7 +2553,7 @@
 
         //A dictionary to hold all desk starting coordinates and file paths
         var deskDictionary = {
-            "modernDesk": [12.75, 1.7, -43, (Math.PI / 2), 'desks/standing_desk_1_textured.glb'],
+            "modernDesk": [12.75, 1.7, -43, (Math.PI / 2), 'GLTFs/desks/standing desks/standing desk 1 - 23.8Dx51.7Wx30.3H.glb'],
             "drawerDesk": [7.85, 1, -38, Math.PI, 'desks/regular_desk_1.glb'],
             "standingDesk": [6 + 55 / 2, 1, -51, Math.PI + Math.PI / 2, 'desks/standing_desk_2.glb'],
             "linnmonDesk39": [9.55 + (47 / 2), 1, -52, (Math.PI / 2), 'GLTFs/desks/linnmon desks/linnmon desk - 24Dx39Wx30.3H.glb'],
@@ -2185,6 +2562,8 @@
             "alexDesk61": [-6.2 + (79 / 2), 1, -50, (Math.PI / 2 + (Math.PI)), 'GLTFs/desks/alex desks/alex desk - 40Dx61Wx28.7H.glb'],
             "alexDesk67": [-6.2 + (79 / 2), 1, -50, (Math.PI / 2 + (Math.PI)), 'GLTFs/desks/alex desks/alex desk - 31Dx67Wx28.7H.glb'],
             "alexDesk79": [-6.2 + (79 / 2), 1, -50, (Math.PI / 2 + (Math.PI)), 'GLTFs/desks/alex desks/alex desk - 24Dx79Wx28.7H.glb'],
+            "bekantLShapedLeft": [-6.2 + (79 / 2), 1, -55, (Math.PI / 2 + (Math.PI)), 'GLTFs/desks/L shaped desks/L shaped desk left.glb'],
+            "bekantLShapedRight": [-6.2 + (79 / 2), 1, -55, (Math.PI / 2 + (Math.PI)), 'GLTFs/desks/L shaped desks/L shaped desk right.glb']
         }
         var deskHeightDiff = {
             "modernDesk": 0,
@@ -2196,6 +2575,8 @@
             "alexDesk61": -1.47,
             "alexDesk67": -1.6,
             "alexDesk79": -1.47,
+            "bekantLShapedLeft": -1.1,
+            "bekantLShapedRight": -1.1
         }
         var heightDiff = deskHeightDiff["modernDesk"];
         //Dictionary to hold all coordinates of objects for corresponding desks
@@ -2203,102 +2584,108 @@
         var coordinateDictionary = {
             "modernDesk": {
                 "monitor": {
-                    "small16x9Monitor22": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 22in.glb'],
-                    "small16x9Monitor23": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 23in.glb'],
-                    "small16x9Monitor24": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 24in.glb'],
-                    "small16x9Monitor25": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 25in.glb'],
-                    "small16x9Monitor27": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 27in.glb'],
-                    "small16x9Monitor28": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 28in.glb'],
-                    "small16x9Monitor31": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 31.5in.glb'],
-                    "small16x9Monitor22NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 22in no stand.glb'],
-                    "small16x9Monitor23NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 23in no stand.glb'],
-                    "small16x9Monitor24NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 24in no stand.glb'],
-                    "small16x9Monitor25NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 25in no stand.glb'],
-                    "small16x9Monitor27NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 27in no stand.glb'],
-                    "small16x9Monitor28NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 28in no stand.glb'],
-                    "small16x9Monitor31NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 31.5in no stand.glb'],
-                    "largeCurved16x9Monitor25": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 25in.glb'],
-                    "largeCurved16x9Monitor27": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 27in.glb'],
-                    "largeCurved16x9Monitor31": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 31.5in.glb'],
-                    "largeCurved16x9Monitor34": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 34in.glb'],
-                    "largeCurved16x9Monitor25NoStand": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors no stand/curved 16 9 monitor 25in no stand.glb'],
-                    "largeCurved16x9Monitor27NoStand": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors no stand/curved 16 9 monitor  27in.glb'],
-                    "largeCurved16x9Monitor31NoStand": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors no stand/curved large 16 9 monitor 31.5in no stand.glb'],
-                    "largeCurved16x9Monitor34NoStand": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors no stand/curved large 16 9 monitor 34in no stand.glb'],
-                    "curved21x9Monitor30": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors/Ultrwide Monitor 1 30in.glb'],
-                    "curved21x9Monitor34": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors/Ultrwide Monitor 1 34in.glb'],
-                    "curved21x9Monitor38": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors/Ultrwide Monitor 1 38in.glb'],
-                    "curved21x9Monitor30NoStand": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors no stand/Ultrwide Monitor 1 30in no stand.glb'],
-                    "curved21x9Monitor34NoStand": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors no stand/Ultrwide Monitor 1 34in no stand.glb'],
-                    "curved21x9Monitor38NoStand": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors no stand/Ultrwide Monitor 1 38in no stand.glb'],
-                    "curved32x9Monitor43": [33, 30.45 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors/32_9 monitor 43.4in.glb'],
-                    "curved32x9Monitor49": [33, 30.45 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors/32_9 monitor 49in.glb'],
-                    "curved32x9Monitor43NoStand": [33, 30.45 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors no stand/32_9 monitor 43.4in.glb'],
-                    "curved32x9Monitor49NoStand": [33, 30.45 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors no stand/32_9 monitor 49in.glb'],
-                    "flat21x9Monitor25": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors/21 9 monitor 2 non curved 25in.glb'],
-                    "flat21x9Monitor29": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors/21 9 monitor 2 non curved 29in.glb'],
-                    "flat21x9Monitor34": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors/21 9 monitor 2 non curved 34in.glb'],
-                    "flat21x9Monitor25NoStand": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors no stand/21 9 monitor 2 non curved 25in no stand.glb'],
-                    "flat21x9Monitor29NoStand": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors no stand/21 9 monitor 2 non curved 29in no stand.glb'],
-                    "flat21x9Monitor34NoStand": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors no stand/21 9 monitor 2 non curved 34in no stand.glb'],
+                    "small16x9Monitor22": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 22in.glb', '22"', '58.42cm'],
+                    "small16x9Monitor23": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 23in.glb', '23"', '60.96cm'],
+                    "small16x9Monitor24": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 24in.glb', '24"', '60.96cm'],
+                    "small16x9Monitor25": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 25in.glb', '25"', '63.5cm'],
+                    "small16x9Monitor27": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 27in.glb', '27"', '68.58cm'],
+                    "small16x9Monitor28": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 28in.glb', '28"', '71.12cm'],
+                    "small16x9Monitor31": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 31.5in.glb', '31.5"', '80.01cm'],
+                    "small16x9Monitor22NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 22in no stand.glb', '22"', '56cm'],
+                    "small16x9Monitor23NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 23in no stand.glb', '23"', '58cm'],
+                    "small16x9Monitor24NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 24in no stand.glb', '24"', '61cm'],
+                    "small16x9Monitor25NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 25in no stand.glb', '25"', '64cm'],
+                    "small16x9Monitor27NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 27in no stand.glb', '27"', '69cm'],
+                    "small16x9Monitor28NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 28in no stand.glb', '28"', '71cm'],
+                    "small16x9Monitor31NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 31.5in no stand.glb', '31.5"', '80cm'],
+                    "largeCurved16x9Monitor25": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 25in.glb', '25"', '64cm'],
+                    "largeCurved16x9Monitor27": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 27in.glb', '27"', '69cm'],
+                    "largeCurved16x9Monitor31": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 31.5in.glb', '31.5"', '80cm'],
+                    "largeCurved16x9Monitor34": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 34in.glb', '34"', '102cm'],
+                    "largeCurved16x9Monitor25NoStand": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors no stand/curved 16 9 monitor 25in no stand.glb', '25"', '64cm'],
+                    "largeCurved16x9Monitor27NoStand": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors no stand/curved 16 9 monitor  27in.glb', '27"', '69cm'],
+                    "largeCurved16x9Monitor31NoStand": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors no stand/curved large 16 9 monitor 31.5in no stand.glb', '31.5"', '80cm'],
+                    "largeCurved16x9Monitor34NoStand": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors no stand/curved large 16 9 monitor 34in no stand.glb', '34"', '86cm'],
+                    "curved21x9Monitor30": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors/Ultrwide Monitor 1 30in.glb', '30"', '76cm'],
+                    "curved21x9Monitor34": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors/Ultrwide Monitor 1 34in.glb', '34"', '86cm'],
+                    "curved21x9Monitor38": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors/Ultrwide Monitor 1 38in.glb', '38"', '97cm'],
+                    "curved21x9Monitor30NoStand": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors no stand/Ultrwide Monitor 1 30in no stand.glb', '30"', '76cm'],
+                    "curved21x9Monitor34NoStand": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors no stand/Ultrwide Monitor 1 34in no stand.glb', '34"', '86cm'],
+                    "curved21x9Monitor38NoStand": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors no stand/Ultrwide Monitor 1 38in no stand.glb', '38"', '97cm'],
+                    "curved32x9Monitor43": [33, 30.45 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors/32_9 monitor 43.4in.glb', '43.4"', '110cm'],
+                    "curved32x9Monitor49": [33, 30.45 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors/32_9 monitor 49in.glb', '49"', '124cm'],
+                    "curved32x9Monitor43NoStand": [33, 30.45 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors no stand/32_9 monitor 43.4in.glb', '43.4"', '110cm'],
+                    "curved32x9Monitor49NoStand": [33, 30.45 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors no stand/32_9 monitor 49in.glb', '49"', '124cm'],
+                    "flat21x9Monitor25": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors/21 9 monitor 2 non curved 25in.glb', '25"', '64cm'],
+                    "flat21x9Monitor29": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors/21 9 monitor 2 non curved 29in.glb', '29"', '74cm'],
+                    "flat21x9Monitor34": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors/21 9 monitor 2 non curved 34in.glb', '34"', '86cm'],
+                    "flat21x9Monitor25NoStand": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors no stand/21 9 monitor 2 non curved 25in no stand.glb', '25"', '64cm'],
+                    "flat21x9Monitor29NoStand": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors no stand/21 9 monitor 2 non curved 29in no stand.glb', '29"', '74cm'],
+                    "flat21x9Monitor34NoStand": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors no stand/21 9 monitor 2 non curved 34in no stand.glb', '34"', '86cm'],
                 },
                 "keyboard": {
-                    "default60PercentKeyboardAllGrey": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 allGrey.glb'],
-                    "default60PercentKeyboardAllWhite": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 allWhite.glb'],
-                    "default60PercentKeyboardMinimalist": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 minimalist 1.glb'],
-                    "default60PercentKeyboardNightrunner": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 nightrunner.glb'],
-                    "default60PercentKeyboardOBW": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 obw.glb'],
-                    "default60PercentKeyboardWGR": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 wgr.glb'],
-                    "default60PercentKeyboardYPGrad": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 ypGrad.glb'],
-                    "75PercentKeyboardAllGrey": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 allGrey.glb'],
-                    "75PercentKeyboardAllWhite": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 allWhite.glb'],
-                    "75PercentKeyboardMinimalist": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 minimalist.glb'],
-                    "75PercentKeyboardNightrunner": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 nightRunner.glb'],
-                    "75PercentKeyboardOBW": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 obw.glb'],
-                    "75PercentKeyboardWGR": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 wgr.glb'],
-                    "75PercentKeyboard8008": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 8008.glb'],
-                    "defaultFullKeyboardAllGrey": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard allGrey.glb'],
-                    "defaultFullKeyboardAllWhite": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard white.glb'],
-                    "defaultFullKeyboardNightrunner": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard nightRunner.glb'],
-                    "defaultFullKeyboardWGR": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard wgr.glb'],
-                    "defaultFullKeyboardOBW": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard obw.glb'],
-                    "defaultFullKeyboardYPGrade": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard ypGrad.glb'],
-
+                    "default60PercentKeyboardAllGrey": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 allGrey.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
+                    "default60PercentKeyboardAllWhite": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 allWhite.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
+                    "default60PercentKeyboardMinimalist": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 minimalist 1.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
+                    "default60PercentKeyboardNightrunner": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 nightrunner.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
+                    "default60PercentKeyboardOBW": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 obw.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
+                    "default60PercentKeyboardWGR": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 wgr.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
+                    "default60PercentKeyboardYPGrad": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 ypGrad.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
+                    "75PercentKeyboardAllGrey": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 allGrey.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
+                    "75PercentKeyboardAllWhite": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 allWhite.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
+                    "75PercentKeyboardMinimalist": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 minimalist.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
+                    "75PercentKeyboardNightrunner": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 nightRunner.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
+                    "75PercentKeyboardOBW": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 obw.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
+                    "75PercentKeyboardWGR": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 wgr.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
+                    "75PercentKeyboard8008": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 8008.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
+                    "defaultFullKeyboardAllGrey": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard allGrey.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
+                    "defaultFullKeyboardAllWhite": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard white.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
+                    "defaultFullKeyboardNightrunner": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard nightRunner.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
+                    "defaultFullKeyboardWGR": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard wgr.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
+                    "defaultFullKeyboardOBW": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard obw.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
+                    "defaultFullKeyboardYPGrade": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard ypGrad.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
+                    "TKLKeyboardAllGrey": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard allGrey.glb'],//new6
+                    "TKLKeyboardAllWhite": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard allWhite.glb'],//new6
+                    "TKLKeyboardOBW": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard obw.glb'],//new6
+                    "TKLKeyboardWGR": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard wgr.glb'],//new6
+                    "TKLKeyboardYGB": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard ygb.glb'],//new6
+                    "TKLKeyboardYPGrade": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard ypGrad.glb'],//new6
+                    "TKLKeyboard8008": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard 8008.glb']//new6
                 },
                 "mousepad": {
-                    "mediumRGBMousepad": [44, 31.35 + .14 + heightDiff, -50, Math.PI / 2 + Math.PI, 'mousepads/medium_rgb_mousepad.glb'],
-                    "QCKSmall": [44, 31.35 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/small qck mousepad - 8.4Dx9.8W.glb'],
-                    "QCKMedium": [44, 31.35 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/medium qck mousepad - 10.6Dx12.6W.glb'],
-                    "QCKLarge": [44, 31.35 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/large qck mousepad - 15.7Dx17.7W.glb'],
+                    "mediumRGBMousepad": [44, 31.35 + .14 + heightDiff, -50, Math.PI / 2 + Math.PI, 'mousepads/medium_rgb_mousepad.glb', ''],
+                    "QCKSmall": [44, 31.35 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/small qck mousepad - 8.4Dx9.8W.glb', '8.4" L x 9.8" W', '21cm L x 25cm'],
+                    "QCKMedium": [44, 31.35 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/medium qck mousepad - 10.6Dx12.6W.glb', '10.6" L x 12.6" W', '27cm L x 32cm'],
+                    "QCKLarge": [44, 31.35 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/large qck mousepad - 15.7Dx17.7W.glb', '15.7" L x 17.7" W', '40cm L x 45cm'],
                 },
                 "mouse": {
-                    "defaultMouse": [44, 31.1 + .14 + heightDiff, -50, Math.PI, 'GLTFs/mice and mousepads/mouse_1_-_4.1Dx2.2Wx1.glb'],
-                    "MXMaster3": [44, 33.2 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/mouse 2 - 4.9Dx3.5Wx2H.glb']
+                    "defaultMouse": [44, 31.1 + .14 + heightDiff, -50, Math.PI, 'GLTFs/mice and mousepads/mouse_1_-_4.1Dx2.2Wx1.glb', '4.1" L x 2.2" W x 1.6" H', '10cm L x 6cm W x 4cm '],
+                    "MXMaster3": [44, 33.2 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/mouse 2 - 4.9Dx3.5Wx2H.glb', '4.9" L x 43.5" W x 2" H', '12cm L x 110cm W x 5cm ']
                 },
                 "speaker": {
-                    "deskSpacingSpeakerPrimary": [44 - 20, 21.2 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/speakers/speakers 1 primary - 7.4Dx5.8Wx9.5H.glb'],
-                    "deskSpacingSpeakerSecondary": [44, 36.25 + .14 + heightDiff, -46, -Math.PI / 2, 'GLTFs/speakers/speakers_1_secondary_-_7.4Dx5.8Wx9H.glb'],
-                    "deskSpacingSoundBar": [44 - 11, 31.1 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/speakers/speaker bar 1 - 2.5Dx16Wx2.8H.glb'],
-                    "studioMonitorSpeakerPrimary": [44 - 20, 31.35 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/speakers/speakers 2 primary - 8.3Dx7.3Wx10.3H.glb'],
-                    "studioMonitorSpeakerSecondary": [44 - 15, 31.35 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/speakers/speakers 2 secondary - 8.3Dx7.3Wx10.3H.glb'],
+                    "deskSpacingSpeakerPrimary": [44 - 20, 21.2 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/speakers/speakers 1 primary - 7.4Dx5.8Wx9.5H.glb', '7.4" L x 5.8" W x 9.5" H', '19cm L x 15cm W x 24cm'],
+                    "deskSpacingSpeakerSecondary": [44, 36.25 + .14 + heightDiff, -46, -Math.PI / 2, 'GLTFs/speakers/speakers_1_secondary_-_7.4Dx5.8Wx9H.glb', '7.4" L x 5.8" W x 9.5" H', '19cm L x 15cm W x 24cm'],
+                    "deskSpacingSoundBar": [44 - 11, 31.1 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/speakers/speaker bar 1 - 2.5Dx16Wx2.8H.glb', '2.5" L x 16" W x 2.8" H', '6cm L x 41cm W x 7cm '],
+                    "studioMonitorSpeakerPrimary": [44 - 20, 31.35 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/speakers/speakers 2 primary - 8.3Dx7.3Wx10.3H.glb', '8.3" L x 7.3" W x 10.3" H', '21cm L x 19cm W x 26cm'],
+                    "studioMonitorSpeakerSecondary": [44 - 15, 31.35 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/speakers/speakers 2 secondary - 8.3Dx7.3Wx10.3H.glb', '8.3" L x 7.3" W x 10.3" H', '21cm L x 19cm W x 26cm'],
+                    "yetiUSBMic": [34 - 15, 31 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/music objects/blue yeti.glb'],//new6
+                    "audioInterface": [33 - 15, 32.15 + .14 + heightDiff, -58, -Math.PI / 2, 'GLTFs/music objects/audio interface.glb'],//new6
                 },
                 "laptop": {
-                    "modernLaptop13": [33, 30.7 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/laptops/SPOILER_13_inch_laptop.glb'],
-                    "modernLaptop15": [33, 30.7 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/laptops/15 inch laptop.glb'],
-                    "modernLaptop17": [33, 30.7 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/laptops/17 inch laptop.glb'],
+                    "modernLaptop13": [33, 30.7 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/laptops/SPOILER_13_inch_laptop.glb', ''],
+                    "modernLaptop15": [33, 30.7 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/laptops/15 inch laptop.glb', ''],
+                    "modernLaptop17": [33, 30.7 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/laptops/17 inch laptop.glb', ''],
                 },
                 "computer": {
-                    "modernComputerTower": [54, 31.2 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/computer towers/desktop_-_8.27Wx16.5Dx19.5H.glb'],
-                    "miniITXTower": [51, 31.2 + .14 + heightDiff, -50, 0, 'GLTFs/computer towers/desktop 2 small - 16.7Dx13.6Wx14.3H.glb'],
+                    "modernComputerTower": [54, 31.2 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/computer towers/desktop_-_8.27Wx16.5Dx19.5H.glb', '8.3" L x 16.5" W x 19.5" H', '21cm L x 42cm W x 50cm '],
+                    "miniITXTower": [51, 31.2 + .14 + heightDiff, -50, 0, 'GLTFs/computer towers/desktop 2 small - 16.7Dx13.6Wx14.3H.glb', '16.7" L x 13.6" W x 14.3" H', '42cm L x 35cm W x 36cm '],
                 }, "misc": {
-                    "regularBook": [-70, -22.58 + heightDiff, -32, Math.PI, 'GLTFs/YYadditional decorations/book.glb'],
-                    "coffeeCup": [51, 31.25 + .14 + heightDiff, -50, 0, 'GLTFs/YYadditional decorations/coffee cup.glb'],
-                    "MIDIKeyboard": [30, 31.25 + .14 + heightDiff, -50, Math.PI + Math.PI / 2, 'GLTFs/YYadditional decorations/midi keyboard 1 - 7.1Dx12.5Wx1.5H.glb'],
-                    "basicLamp": [30, 31 + .14 + heightDiff, -50, Math.PI + Math.PI / 2, 'GLTFs/lamps/lamp 1 - 8Dx5Wx9.7H.glb'],
-                    "modernLamp": [30, 31.01 + .14 + heightDiff, -50, Math.PI + Math.PI / 2, 'GLTFs/lamps/lamp 2 - 10.2Dx4Wx8.3H.glb']
+                    "regularBook": [-70, -22.58 + heightDiff, -32, Math.PI, 'GLTFs/YYadditional decorations/book.glb', ''],
+                    "coffeeCup": [51, 31.25 + .14 + heightDiff, -50, 0, 'GLTFs/YYadditional decorations/coffee cup.glb', ''],
+                    "MIDIKeyboard": [30, 31.25 + .14 + heightDiff, -50, Math.PI + Math.PI / 2, 'GLTFs/YYadditional decorations/midi keyboard 1 - 7.1Dx12.5Wx1.5H.glb', '7.1" L x 12.5" W x 1.5" H', '18cm L x 32cm W x 4cm '],
+                    "basicLamp": [30, 31 + .14 + heightDiff, -50, Math.PI + Math.PI / 2, 'GLTFs/lamps/lamp 1 - 8Dx5Wx9.7H.glb', '8" L x 5" W x 9.7" H', '20cm L x 13cm W x 25cm '],
+                    "modernLamp": [30, 31.01 + .14 + heightDiff, -50, Math.PI + Math.PI / 2, 'GLTFs/lamps/lamp 2 - 10.2Dx4Wx8.3H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm ']
                 }
-
-
             },
             "drawerDesk": {
                 "monitor": {
@@ -2379,8 +2766,6 @@
                 if (customOrNot == "custom") {
                     var deskForm = document.getElementById(objectName + "Form");
                     objectName = objectName + deskForm.value;
-
-
                 }
                 var selectedObject = scene.getObjectByName(objectType);
                 //console.log(selectedObject);
@@ -2447,84 +2832,89 @@
                 //animate();
             } else { //Object is being changed (on desk)
                 //Get value of size form for monitors only
-
-                if (objectType == "monitor" && customOrNot == "custom") {
-                    var monitorForm = document.getElementById(objectName + "Form");
-                    //Leaves us with only the number, takes out the / and "
-                    console.log(monitorForm);
-                    var monitorSize = monitorForm.options[monitorForm.selectedIndex].value.replace(/[^0-9]/g, '');
-                    var standOrNot = document.getElementById(objectName + "Stand");
-                    objectName = objectName + monitorSize;
-                    if (standOrNot.value == "on") {
-                        objectName = objectName + "NoStand";
-                    }
-                    console.log(objectName);
-                    console.log(objectName);
-                    console.log(objectName);
-                    console.log(objectName);
-                } else if (objectType == "speaker" && customOrNot == "custom") {
-                    var monitorForm = document.getElementById(objectName + "Form");
-                    //Leaves us with only the number, takes out the / and "
-                    var monitorSize = monitorForm.options[monitorForm.selectedIndex].value;
-                    objectName = objectName + monitorSize;
-                    console.log(objectName);
-                } else if (objectType == "keyboard" && customOrNot == "custom") {
-                    var keyboardForm = document.getElementById(objectName + "Form");
-                    //document.getElementById(objectName + "Image").src = "Model thumbnails/" + objectName + keyboardForm.value + ".jpg";
-
-                    objectName = objectName + keyboardForm.value;
+                //Sphere cylinder box
+                if (objectName.includes("primitive")) {
+                    //Spawn in a primitve object
+                    //Object type will be misc
+                } else {
 
 
-                }
-
-
-                var selectedObject = scene.getObjectByName(objectType);
-                console.log(selectedObject);
-                scene.remove(selectedObject);
-
-                objectsStringsArray[indexDictionary[objectType]] = objectName;
-
-                console.log(coordinateDictionary[objectsStringsArray[0]][objectType][objectName]);
-                //console.log(objectsStringsArray[indexDictionary[objectType]]);
-                var coordinateDictionaryArr = coordinateDictionary[objectsStringsArray[0]][objectType][objectName];
-                //var currentObject = objectsArray[indexDictionary[objectType]];
-                loader.load(coordinateDictionaryArr[4], function (gltf) {
-                    //Set dictionary for currentDesk arrays? 
-                    console.log("gltf.scenes[0].children[0].parent of " + objectType);
-                    console.log(gltf.scenes[0].children[0].parent);
-                    objectsArray[indexDictionary[objectType]] = gltf.scenes[0].children[0].parent;
-
-                    objectsArray[indexDictionary[objectType]].name = objectType + objectsCountDict[objectType];
-                    objectsArray[indexDictionary[objectType]].position.set(coordinateDictionaryArr[0],
-                        coordinateDictionaryArr[1] + heightDiff,
-                        coordinateDictionaryArr[2]);
-                    objectsArray[indexDictionary[objectType]] = gltf.scenes[0].children[0].parent;
-                    var tempGroup = new THREE.Group();
-                    tempGroup = gltf.scenes[0].children[0].parent;
-                    objectsArrayOfArrays[indexDictionary[objectType]].push(gltf.scenes[0].children[0].parent);
-                    gltf.scene.rotation.y = coordinateDictionaryArr[3];
-                    gltf.name = objectType + objectsCountDict[objectType];
-                    gltf.scene.userData.objectName = objectName;
-                    gltf.scene.traverse(function (object) {
-                        if (object.isMesh) {
-                            object.castShadow = true;
-                            object.receiveShadow = true;
+                    if (objectType == "monitor" && customOrNot == "custom") {
+                        var monitorForm = document.getElementById(objectName + "Form");
+                        //Leaves us with only the number, takes out the / and "
+                        console.log(monitorForm);
+                        var monitorSize = monitorForm.options[monitorForm.selectedIndex].value.replace(/[^0-9]/g, '');
+                        var standOrNot = document.getElementById(objectName + "Stand");
+                        objectName = objectName + monitorSize;
+                        if (standOrNot.value == "on") {
+                            objectName = objectName + "NoStand";
                         }
-                    });
-                    console.log(gltf.name);
-                    objectsCountDict[objectType]++;
-                    console.log(objectsCountDict[objectType]);
-                    scene.add(gltf.scene);
-                    pickHelper.setPickedObject(gltf.scene.children[0]);
-                    transformControls.detach();
-                    transformControls.attach(gltf.scene.children[0]);
-                    console.log(transformControls.object);
-                    console.log(objectsArray);
-                    x = x + 1;
-                }, undefined, function (error) {
-                    console.error(error);
-                });
+                        console.log(objectName);
+                        console.log(objectName);
+                        console.log(objectName);
+                        console.log(objectName);
+                    } else if (objectType == "speaker" && customOrNot == "custom") {
+                        var monitorForm = document.getElementById(objectName + "Form");
+                        //Leaves us with only the number, takes out the / and "
+                        var monitorSize = monitorForm.options[monitorForm.selectedIndex].value;
+                        objectName = objectName + monitorSize;
+                        console.log(objectName);
+                    } else if (objectType == "keyboard" && customOrNot == "custom") {
+                        var keyboardForm = document.getElementById(objectName + "Form");
+                        //document.getElementById(objectName + "Image").src = "Model thumbnails/" + objectName + keyboardForm.value + ".jpg";
+                        objectName = objectName + keyboardForm.value;
 
+
+                    }
+
+
+                    var selectedObject = scene.getObjectByName(objectType);
+                    console.log(selectedObject);
+                    scene.remove(selectedObject);
+
+                    objectsStringsArray[indexDictionary[objectType]] = objectName;
+
+                    console.log(coordinateDictionary[objectsStringsArray[0]][objectType][objectName]);
+                    //console.log(objectsStringsArray[indexDictionary[objectType]]);
+                    var coordinateDictionaryArr = coordinateDictionary[objectsStringsArray[0]][objectType][objectName];
+                    //var currentObject = objectsArray[indexDictionary[objectType]];
+                    loader.load(coordinateDictionaryArr[4], function (gltf) {
+                        //Set dictionary for currentDesk arrays? 
+                        console.log("gltf.scenes[0].children[0].parent of " + objectType);
+                        console.log(gltf.scenes[0].children[0].parent);
+                        objectsArray[indexDictionary[objectType]] = gltf.scenes[0].children[0].parent;
+
+                        objectsArray[indexDictionary[objectType]].name = objectType + objectsCountDict[objectType];
+                        objectsArray[indexDictionary[objectType]].position.set(coordinateDictionaryArr[0],
+                            coordinateDictionaryArr[1] + heightDiff,
+                            coordinateDictionaryArr[2]);
+                        objectsArray[indexDictionary[objectType]] = gltf.scenes[0].children[0].parent;
+                        var tempGroup = new THREE.Group();
+                        tempGroup = gltf.scenes[0].children[0].parent;
+                        objectsArrayOfArrays[indexDictionary[objectType]].push(gltf.scenes[0].children[0].parent);
+                        gltf.scene.rotation.y = coordinateDictionaryArr[3];
+                        gltf.name = objectType + objectsCountDict[objectType];
+                        gltf.scene.userData.objectName = objectName;
+                        gltf.scene.traverse(function (object) {
+                            if (object.isMesh) {
+                                object.castShadow = true;
+                                object.receiveShadow = true;
+                            }
+                        });
+                        console.log(gltf.name);
+                        objectsCountDict[objectType]++;
+                        console.log(objectsCountDict[objectType]);
+                        scene.add(gltf.scene);
+                        pickHelper.setPickedObject(gltf.scene.children[0]);
+                        transformControls.detach();
+                        transformControls.attach(gltf.scene.children[0]);
+                        console.log(transformControls.object);
+                        console.log(objectsArray);
+                        x = x + 1;
+                    }, undefined, function (error) {
+                        console.error(error);
+                    });
+                }
             }
 
         }
@@ -2555,6 +2945,7 @@
         crossorigin="anonymous"></script>
     <script> //RECENTLY ADDED FOR BOOTSTRAP TOOLTIPS OVER AMAZON AFFILIATE LINKS
         $("[data-toggle=tooltip]").tooltip();
+        $('.starterModal').modal('show');
     </script>
 
 </body>

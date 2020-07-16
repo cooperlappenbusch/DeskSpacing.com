@@ -5,8 +5,8 @@ body, html {
     height: 100% !important;
     padding: 0;
     margin: 0;
-    overflow: hidden !important; /* Hide scrollbars */
-
+    overflow: hidden !important; /* Hide scrollbars */ 
+    height: 100%;
 }
 
 .scene, canvas {
@@ -152,7 +152,7 @@ label {
 }
 
 .keybindLetter {
-    font-style: bold;
+    font-weight: bold !important;
 }
 .keybindButton {
     margin: 5px;
@@ -183,4 +183,36 @@ label {
 
 .modalTextBackground {
     background-color:rgba(0, 0, 0, 0.5);
-  }
+}
+
+#settingsButton {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 15px;
+}
+
+#resetCameraButton {
+    position: fixed;
+    bottom: 0;
+    right: -60;
+    margin: 15px;
+    z-index: 1;
+}
+
+.modalRadioButton {
+    position: fixed;
+  bottom: -4px;
+  right: 10px;
+}
+
+.introTutorialButton {
+    margin: 10px;
+    margin-bottom: 16px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.modal-content::-webkit-scrollbar {
+    display: none; 
+}
