@@ -1518,6 +1518,113 @@
                                 </div>
                             </div>
 
+                            <div class="card z-depth-0 bordered">
+                                <div class="card-header" id="headingEleven" type="button" data-toggle="collapse"
+                                    data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed">
+                                            Basic Shapes
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body text-white">
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails/cube primitive.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            Box<span class="dimensionsText"> <br>
+                                                            </span>
+                                                        </h3>
+                                                        <div class="text-center">
+                                                            <p>Length: &nbsp;<input id="primitiveBoxH" type="text"
+                                                                    onkeypress="validate(event)"
+                                                                    onclick="unselectObjectCall()" style="width: 30%;"
+                                                                    value="1">
+                                                            </p>
+                                                            <p>Width: &nbsp;<input id="primitiveBoxL" type="text"
+                                                                    onkeypress="validate(event)"
+                                                                    onclick="unselectObjectCall()" style="width: 30%;"
+                                                                    value="1">
+                                                            </p>
+                                                            <p>Height: &nbsp;<input id="primitiveBoxW" type="text"
+                                                                    onkeypress="validate(event)"
+                                                                    onclick="unselectObjectCall()" style="width: 30%;"
+                                                                    value="1">
+                                                            </p>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="selectNew3DObject('primitive','primitiveBox','custom',event)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="replace3DObject('primitive','primitiveBox','custom',event)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails/primitive sphere.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            Sphere<span class="dimensionsText"> <br>
+                                                            </span>
+                                                        </h3>
+                                                        <div class="text-center">
+                                                            <p>Radius: &nbsp;<input id="primitiveSphereRadius"
+                                                                    type="text" onkeypress="validate(event)"
+                                                                    onclick="unselectObjectCall()" style="width: 30%;"
+                                                                    value="1">
+                                                            </p>
+
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="selectNew3DObject('primitive','primitiveSphere','custom',event)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="replace3DObject('primitive','primitiveSphere','custom',event)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
 
                             <div class="card z-depth-0 bordered">
                                 <div class="card-header" id="headingTen" type="button" data-toggle="collapse"
@@ -1784,25 +1891,19 @@
                                     data-target="#tutorialModal">Beginner Tutorial</button>
                             </div>
                             <!--<h3 class="text-white">What have we added in the last update?</h3>-->
-                            <h5 class="text-white">Update 1.01</h5>
+                            <h5 class="text-white">Update 1.02</h5>
                             <p>Added Features:</p>
                             <ul style="list-style-type: '- ';">
-                                <li>Added a usb microphone object</li>
-                                <li>Added an audio interface object</li>
-                                <li>Added an L shaped desk with left and right options</li>
-                                <li>Added panning controls and a "reset camera" button</li>
-                                <li>Added tenkeyless keyboard (TKL Keyboard) with keycap options</li>
-                                <li>Added pop up for new users</li>
+                                <li>Added Basic Shapes menu, where you can spawn custom boxes and spheres. Useful for
+                                    representing custom objects or objects not in DeskSpacing yet.</li>
                             </ul>
                             <p>Fixes:</p>
                             <ul style="list-style-type: '- ';">
-                                <li>Added delete functionality for delete key</li>
-                                <li>fixed dropdowns not refreshing on browser refresh firefox</li>
+                                <li>Fixed file pathing issues for some objects</li>
                             </ul>
                             <p>Changes:</p>
                             <ul style="list-style-type: '- ';">
-                                <li>Changed "Speakers" section to "Speakers and Audio Equipment"</li>
-                                <li>Updated 2017 Footer to 2020, woops!</li>
+                                <li>Changed texture on USB microphone model </li>
                             </ul>
                         </div>
                         <div class="modal-footer">
@@ -1995,6 +2096,25 @@
             return isDig;
         }*/
 
+        //FUNCTION USE: Makes sure 
+        function validate(evt) {
+            var theEvent = evt || window.event;
+
+            // Handle paste
+            if (theEvent.type === 'paste') {
+                key = event.clipboardData.getData('text/plain');
+            } else {
+                // Handle key press
+                var key = theEvent.keyCode || theEvent.which;
+                key = String.fromCharCode(key);
+            }
+            var regex = /[0-9]|\./;
+            if (!regex.test(key)) {
+                theEvent.returnValue = false;
+                if (theEvent.preventDefault) theEvent.preventDefault();
+            }
+        }
+
         var rightSideContainer = document.getElementById("rightSideContainer");
         //small16x9Monitor Checkbox
         document.getElementById('small16x9MonitorStand').onclick = function () {
@@ -2071,7 +2191,9 @@
             imageElement.src = "Model thumbnails/" + "TKLKeyboard" + keyboardForm.value + ".jpg";
         }
 
-
+        function unselectObjectCall() {
+            pickHelper.unselectPickedObject();
+        }
 
         //Class to help select JS objects
         class PickHelper {
@@ -2079,6 +2201,10 @@
                 this.raycaster = new THREE.Raycaster();
                 this.pickedObject = null;
                 this.pickedObjectSavedColor = 0;
+            }
+            unselectPickedObject() {
+                this.pickedObject = null;
+                transformControls.detach();
             }
             setPickedObject(inputtedObject) {
                 this.pickedObject = inputtedObject;
@@ -2088,25 +2214,44 @@
             deleteObject() {
                 if (this.pickedObject) {
                     console.log("IN DELETE FUNCTION");
+                    console.log(this.pickedObject);
+                    if (this.pickedObject.name.includes("primitive")) {
+                        var objectName = this.pickedObject.name
+                        var objectNoDigits = objectName.replace(/[0-9]/g, '');
+                        console.log(objectNoDigits);
+                        var pickedObjectIndex = indexDictionary[objectNoDigits];
+                        console.log(objectsArrayOfArrays);
+                        var arrayOfObjects = objectsArrayOfArrays[pickedObjectIndex];
+                        for (var i = 0; i < arrayOfObjects.length; i++) {
 
-                    var objectName = this.pickedObject.parent.parent.name;
-                    if (objectName == '') { //Some meshes don't have the name stored at parent.parent? This addresses that issue
-                        objectName = this.pickedObject.parent.name;
-                    }
-                    console.log(objectName);
-                    var objectNoDigits = objectName.replace(/[0-9]/g, '');
-                    console.log(objectNoDigits);
-                    var pickedObjectIndex = indexDictionary[objectNoDigits];
-                    console.log(objectsArrayOfArrays);
-                    var arrayOfObjects = objectsArrayOfArrays[pickedObjectIndex];
-                    console.log(arrayOfObjects);
-                    for (var i = 0; i < arrayOfObjects.length; i++) {
-                        console.log("Finding object to delete");
-                        if (arrayOfObjects[i].name == objectName) {
-                            console.log("FOUND THE OBJECT TO DELETE");
-                            scene.remove(objectsArrayOfArrays[pickedObjectIndex][i]);
-                            objectsArrayOfArrays[pickedObjectIndex].splice(i, 1);
-                            transformControls.detach();
+                            console.log("Finding object to delete");
+                            if (arrayOfObjects[i].name == objectName) {
+                                console.log("FOUND THE OBJECT TO DELETE");
+                                scene.remove(objectsArrayOfArrays[pickedObjectIndex][i]);
+                                objectsArrayOfArrays[pickedObjectIndex].splice(i, 1);
+                                transformControls.detach();
+                            }
+                        }
+                    } else {
+                        var objectName = this.pickedObject.parent.parent.name;
+                        if (objectName == '') { //Some meshes don't have the name stored at parent.parent? This addresses that issue
+                            objectName = this.pickedObject.parent.name;
+                        }
+                        console.log(objectName);
+                        var objectNoDigits = objectName.replace(/[0-9]/g, '');
+                        console.log(objectNoDigits);
+                        var pickedObjectIndex = indexDictionary[objectNoDigits];
+                        console.log(objectsArrayOfArrays);
+                        var arrayOfObjects = objectsArrayOfArrays[pickedObjectIndex];
+                        console.log(arrayOfObjects);
+                        for (var i = 0; i < arrayOfObjects.length; i++) {
+                            console.log("Finding object to delete");
+                            if (arrayOfObjects[i].name == objectName) {
+                                console.log("FOUND THE OBJECT TO DELETE");
+                                scene.remove(objectsArrayOfArrays[pickedObjectIndex][i]);
+                                objectsArrayOfArrays[pickedObjectIndex].splice(i, 1);
+                                transformControls.detach();
+                            }
                         }
                     }
                 } else {
@@ -2162,19 +2307,17 @@
                 console.log("Passed first if");
 
                 var meshExists = intersectedObjects.findIndex(i => i.object.type === "Mesh");
-                var gizmoExists = intersectedObjects.findIndex(i => i.object.parent.parent.type === "TransformControlsGizmo");
+                //var gizmoExists = intersectedObjects.findIndex(i => i.object.parent.parent.type === "TransformControlsGizmo");
+                //var gizmoExists = -1;
                 var planeExists = intersectedObjects.findIndex(i => i.object.type === "TransformControlsPlane");
                 var controlsExist = intersectedObjects.findIndex(i => i.object.type === "Object3D");
-                console.log("gizmoExists = " + gizmoExists + " planeExists = " + planeExists + " controlsExist = " + controlsExist);
+                //console.log("gizmoExists = " + gizmoExists + " planeExists = " + planeExists + " controlsExist = " + controlsExist);
 
-
-
-                console.log("MESH EXISTS = " + meshExists);
-                for (var i = 0; i < intersectedObjects.length; i++) {
+                /*for (var i = 0; i < intersectedObjects.length; i++) {
                     console.log("IN FOR LOOP " + i);
                     console.log(intersectedObjects[i].object);
 
-                    if (intersectedObjects[i].object.type == "Mesh" && intersectedObjects[i].object.parent.parent.type != "TransformControlsGizmo") {
+                    if (intersectedObjects[i].object.name.includes("primitive")) {
                         this.pickedObject = intersectedObjects[i].object;
                         console.log("PARENT TYPE");
                         console.log(intersectedObjects[i].object.type);
@@ -2184,6 +2327,35 @@
                         transformControls.attach(this.pickedObject.parent);
                         //transformControls.attach(this.pickedObject.children[0]);
                         return; //WAS BREAK BEFORE
+                    }
+                }*/
+
+                console.log("MESH EXISTS = " + meshExists);
+                for (var i = 0; i < intersectedObjects.length; i++) {
+                    console.log("IN FOR LOOP " + i);
+                    console.log(intersectedObjects[i].object.parent.parent);
+                    if (intersectedObjects[i].object.parent.parent != null) {
+                        if (intersectedObjects[i].object.type == "Mesh" && intersectedObjects[i].object.parent.parent.type != "TransformControlsGizmo") {
+                            this.pickedObject = intersectedObjects[i].object;
+                            console.log("PARENT TYPE");
+                            console.log(intersectedObjects[i].object.type);
+                            transformControls.detach();
+                            console.log("ATTATCHED OBJECT TO ");
+                            console.log(this.pickedObject.parent.parent);
+                            transformControls.attach(this.pickedObject.parent);
+                            //transformControls.attach(this.pickedObject.children[0]);
+                            return; //WAS BREAK BEFORE
+                        }
+                    } else { //intersectedObjects[i].object.parent.parent IS NULL, meaning its a primitive object
+                        if (intersectedObjects[i].object.name.includes("primitive")) {
+                            this.pickedObject = intersectedObjects[i].object;
+                            console.log("PARENT TYPE");
+                            console.log(intersectedObjects[i].object.type);
+                            transformControls.detach();
+                            transformControls.attach(this.pickedObject);
+                            //transformControls.attach(this.pickedObject.children[0]);
+                            return; //WAS BREAK BEFORE
+                        }
                     }
 
                 }
@@ -2334,9 +2506,10 @@
         var currentLaptop = new THREE.Group();
         var currentComputer = new THREE.Group();
         var currentMisc = new THREE.Group();
-        var objectsArray = [currentDesk, currentMonitor, currentKeyboard, currentMousepad, currentMouse, currentSpeaker, currentLaptop, currentComputer, currentMisc];
-        var deskArray = [], monitorArray = [], keyboardArray = [], mousepadArray = [], mouseArray = [], speakerArray = [], laptopsArray = [], computerArray = [], miscArray = [];
-        var objectsArrayOfArrays = [deskArray, monitorArray, keyboardArray, mousepadArray, mouseArray, speakerArray, laptopsArray, computerArray, miscArray];
+        var currentPrimitive = new THREE.Group();
+        var objectsArray = [currentDesk, currentMonitor, currentKeyboard, currentMousepad, currentMouse, currentSpeaker, currentLaptop, currentComputer, currentMisc, currentPrimitive];
+        var deskArray = [], monitorArray = [], keyboardArray = [], mousepadArray = [], mouseArray = [], speakerArray = [], laptopsArray = [], computerArray = [], miscArray = [], primitiveArray = [];
+        var objectsArrayOfArrays = [deskArray, monitorArray, keyboardArray, mousepadArray, mouseArray, speakerArray, laptopsArray, computerArray, miscArray, primitiveArray];
         var objectsArrayCopy = [...objectsArray];
 
 
@@ -2349,7 +2522,8 @@
             "speaker": 0,
             "laptop": 0,
             "computer": 0,
-            "misc": 0
+            "misc": 0,
+            "primitive": 0
         }
 
         //objectsArrayCopy.shift();
@@ -2359,7 +2533,7 @@
         console.log("FIRST NO DESK ARR");
         console.log(noDeskArr);*/
         var objectsStringsArray = ["", "", "", "", ""];
-        var objectsTypeArray = ["desk", "monitor", "keyboard", "mousepad", "mouse", "speaker", "laptop", "computer", "misc"];
+        var objectsTypeArray = ["desk", "monitor", "keyboard", "mousepad", "mouse", "speaker", "laptop", "computer", "misc", "primitive"];
         var dragControlArrays = Array(objectsTypeArray.length);
         var dragControlsArr = Array(objectsTypeArray.length);
         var fillNoDeskArrBool = false;
@@ -2548,7 +2722,8 @@
             "speaker": 5,
             "laptop": 6,
             "computer": 7,
-            "misc": 8
+            "misc": 8,
+            "primitive": 9
         }
 
         //A dictionary to hold all desk starting coordinates and file paths
@@ -2664,11 +2839,11 @@
                 },
                 "speaker": {
                     "deskSpacingSpeakerPrimary": [44 - 20, 21.2 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/speakers/speakers 1 primary - 7.4Dx5.8Wx9.5H.glb', '7.4" L x 5.8" W x 9.5" H', '19cm L x 15cm W x 24cm'],
-                    "deskSpacingSpeakerSecondary": [44, 36.25 + .14 + heightDiff, -46, -Math.PI / 2, 'GLTFs/speakers/speakers_1_secondary_-_7.4Dx5.8Wx9H.glb', '7.4" L x 5.8" W x 9.5" H', '19cm L x 15cm W x 24cm'],
+                    "deskSpacingSpeakerSecondary": [44, 36.25 + .14 + heightDiff, -46, -Math.PI / 2, 'GLTFs/speakers/speakers 1 secondary - 7.4Dx5.8Wx9.5H.glb', '7.4" L x 5.8" W x 9.5" H', '19cm L x 15cm W x 24cm'],
                     "deskSpacingSoundBar": [44 - 11, 31.1 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/speakers/speaker bar 1 - 2.5Dx16Wx2.8H.glb', '2.5" L x 16" W x 2.8" H', '6cm L x 41cm W x 7cm '],
                     "studioMonitorSpeakerPrimary": [44 - 20, 31.35 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/speakers/speakers 2 primary - 8.3Dx7.3Wx10.3H.glb', '8.3" L x 7.3" W x 10.3" H', '21cm L x 19cm W x 26cm'],
                     "studioMonitorSpeakerSecondary": [44 - 15, 31.35 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/speakers/speakers 2 secondary - 8.3Dx7.3Wx10.3H.glb', '8.3" L x 7.3" W x 10.3" H', '21cm L x 19cm W x 26cm'],
-                    "yetiUSBMic": [34 - 15, 31 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/music objects/blue yeti.glb'],//new6
+                    "yetiUSBMic": [34 - 15, 31 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/music objects/blue_yeti (1).glb'],//new6
                     "audioInterface": [33 - 15, 32.15 + .14 + heightDiff, -58, -Math.PI / 2, 'GLTFs/music objects/audio interface.glb'],//new6
                 },
                 "laptop": {
@@ -2768,7 +2943,13 @@
                     objectName = objectName + deskForm.value;
                 }
                 var selectedObject = scene.getObjectByName(objectType);
-                //console.log(selectedObject);
+                console.log("A");
+                console.log("A");
+                console.log("A");
+                console.log("A");
+                console.log("A");
+                console.log("A");
+                console.log(selectedObject);
                 scene.remove(selectedObject);
                 //objectsStringsArray[indexDictionary[objectType]] = objectName;
                 console.log(objectsStringsArray[indexDictionary[objectType]]);
@@ -2836,6 +3017,69 @@
                 if (objectName.includes("primitive")) {
                     //Spawn in a primitve object
                     //Object type will be misc
+                    if (objectName == "primitiveBox") {
+                        var length = document.getElementById(objectName + "L").value;
+                        var width = document.getElementById(objectName + "W").value;
+                        var height = document.getElementById(objectName + "H").value;
+                        var geometry = new THREE.BoxBufferGeometry(length, width, height);
+                        var material = new THREE.MeshLambertMaterial({ color: 0x202020 });
+                        geometry.computeFaceNormals();
+                        geometry.computeVertexNormals();
+                        var mesh = new THREE.Mesh(geometry, material);
+                        mesh.position.set(33, 33.04 - 1.176 + heightDiff + (width / 2 - .5), -57);
+                        mesh.name = objectType + objectsCountDict[objectType];
+                        mesh.parent = new THREE.Mesh(geometry, material);
+                        mesh.parent.name = objectType + objectsCountDict[objectType];
+                        mesh.parent.parent = new THREE.Mesh(geometry, material);
+                        mesh.parent.parent.name = objectType + objectsCountDict[objectType];
+                        console.log("MESH");
+                        console.log("MESH");
+                        console.log("MESH");
+                        console.log("MESH");
+                        console.log(mesh);
+                        transformControls.detach();
+                        transformControls.attach(mesh);
+                        pickHelper.setPickedObject(mesh);
+                        mesh.castShadow = true;
+                        mesh.receiveShadow = true;
+                        scene.add(mesh);
+                        objectsArrayOfArrays[indexDictionary[objectType]].push(mesh);
+                        objectsArray[indexDictionary[objectType]] = mesh;
+                        objectsCountDict[objectType]++;
+                        console.log(objectsArrayOfArrays[indexDictionary[objectType]]);
+                    } else if (objectName == "primitiveSphere") {
+                        var radius = document.getElementById(objectName + "Radius").value;
+                        var detail = 5;
+                        console.log(radius);
+                        console.log(radius);
+                        console.log(radius);
+                        console.log(radius);
+                        console.log(radius);
+                        var geometry = new THREE.OctahedronBufferGeometry(radius, detail);
+                        var material = new THREE.MeshLambertMaterial({ color: 0x202020 });
+                        var mesh = new THREE.Mesh(geometry, material);
+                        mesh.position.set(33, 33.04 - 1.176 + heightDiff + (radius - .5), -57);
+                        mesh.name = objectType + objectsCountDict[objectType];
+                        mesh.parent = new THREE.Mesh(geometry, material);
+                        mesh.parent.name = objectType + objectsCountDict[objectType];
+                        mesh.parent.parent = new THREE.Mesh(geometry, material);
+                        mesh.parent.parent.name = objectType + objectsCountDict[objectType];
+                        console.log("MESH");
+                        console.log("MESH");
+                        console.log("MESH");
+                        console.log("MESH");
+                        console.log(mesh);
+                        transformControls.detach();
+                        transformControls.attach(mesh);
+                        pickHelper.setPickedObject(mesh);
+                        mesh.castShadow = true;
+                        mesh.receiveShadow = true;
+                        scene.add(mesh);
+                        objectsArrayOfArrays[indexDictionary[objectType]].push(mesh);
+                        objectsArray[indexDictionary[objectType]] = mesh;
+                        objectsCountDict[objectType]++;
+                        console.log(objectsArrayOfArrays[indexDictionary[objectType]]);
+                    }
                 } else {
 
 
