@@ -145,12 +145,12 @@
                                                         </h3>
                                                         <div class="smallParagraphBreak">&nbsp</div>
                                                         <div class="text-center">
-                                                            <p>Length: &nbsp;<input id="customDeskL" type="text"
+                                                            <p>Length: &nbsp;<input id="customDeskW" type="text"
                                                                     onkeypress="validate(event)"
                                                                     onclick="unselectObjectCall()" style="width: 30%;"
                                                                     value="1">
                                                             </p>
-                                                            <p>Width: &nbsp;<input id="customDeskW" type="text"
+                                                            <p>Width: &nbsp;<input id="customDeskL" type="text"
                                                                     onkeypress="validate(event)"
                                                                     onclick="unselectObjectCall()" style="width: 30%;"
                                                                     value="1">
@@ -1810,7 +1810,37 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
 
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails/gaming chair.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            Gaming Chair<span class="dimensionsText"> <br>
+                                                            </span>
+                                                        </h3>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="selectNew3DObject('misc','gamingChair','custom',event)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="replace3DObject('misc','gamingChair','custom',event)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -3073,7 +3103,9 @@
                     "basicLamp": [30, 31 + .14 + heightDiff, -50, Math.PI + Math.PI / 2, 'GLTFs/lamps/lamp 1 - 8Dx5Wx9.7H.glb', '8" L x 5" W x 9.7" H', '20cm L x 13cm W x 25cm '],
                     "modernLamp": [30, 31.01 + .14 + heightDiff, -50, Math.PI + Math.PI / 2, 'GLTFs/lamps/lamp 2 - 10.2Dx4Wx8.3H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm '],
                     "modernOfficeChair": [30, 2.8, -50, Math.PI + Math.PI / 2, 'GLTFs/chairs/office chair - 46.6Dx33.2Wx32.1H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm '],
-                    "simpleChair": [30, 2.8, -50, Math.PI, 'GLTFs/chairs/simple chair - 36.9Dx14.5Wx18.5H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm ']
+                    "simpleChair": [30, 2.8, -50, Math.PI, 'GLTFs/chairs/simple chair - 36.9Dx14.5Wx18.5H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm '],
+                    "gamingChair": [33, 1.1, -40, Math.PI / 2, 'GLTFs/chairs/gaming chair.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm ']
+
                 }/*, "chair": {
                     "modernOfficeChair": [30, 2.8, -50, Math.PI + Math.PI / 2, 'GLTFs/chairs/office chair - 46.6Dx33.2Wx32.1H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm '],
                     "simpleChair": [30, 2.8, -50, Math.PI, 'GLTFs/chairs/simple chair - 36.9Dx14.5Wx18.5H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm ']
