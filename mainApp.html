@@ -2657,14 +2657,14 @@
         renderer.gammaOutput = true;
         renderer.outputEncoding = THREE.sRGBEncoding;
 
-        hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, .4);
+        hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, .7);
         hemiLight.position.set(0, 100, 40);
         hemiLight.castShadow = false;
         scene.add(hemiLight);
 
         scene.fog = new THREE.Fog(0xa0a0a0, 300, 350);
 
-        light = new THREE.SpotLight(0x444444, 2.5);
+        light = new THREE.SpotLight(0x444444, 1.5);
         light.position.set(0, 100, 40);
 
         light.shadow.bias = -0.00001;
