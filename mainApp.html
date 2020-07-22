@@ -2886,7 +2886,9 @@
             "lightAlderwood": 'textures/alderFineWoodTexture.jpg',
             "darkWalnut": 'textures/darkWalnut.jpg',
             "italianOak": 'textures/italianOak.jpg',
-            "zebranoWood": 'textures/zebranoWood.jpg'
+            "zebranoWood": 'textures/zebranoWood.jpg',
+            "darkParquet": 'textures/darkParquet.jpg',
+            "lightParquetNORM": 'textures/lightParquetNORM.jpg'
         }
 
         var deskHeightDiff = {
@@ -3129,15 +3131,19 @@
             enablePicking(); // this will get done again in addObject, but I need to do it here so the code to replace the desk works
 
             let geometry = new THREE.BoxBufferGeometry(document.getElementById(objectName + "L").value, 1, document.getElementById(objectName + "W").value);
-            var texture = new THREE.TextureLoader().load(textureDictionary[document.getElementById(objectName + "Form").value]);
-            let material = new THREE.MeshLambertMaterial({ map: texture });
             
+            let textureName = document.getElementById(objectName + "Form").value;
+
+            let texture = new THREE.TextureLoader().load(textureDictionary[textureName]);
+            let material = new THREE.MeshLambertMaterial({ map: texture });
+            material.name = textureName;
+
             pickHelper.pick(getObjectByType("Desk")[0]);
-            let oldDesk = pickHelper.pickedObject.userData.objectNames;
+            let oldDesk = pickHelper.pickedObject.userData.objectName;
             pickHelper.deletePicked();
 
             // add object to scene and make a group
-            var object = addPrimitive(objectType, objectName, geometry, material); // this function is not getting called for some reason
+            let object = addPrimitive(objectType, objectName, geometry, material);
 
             updateDeskHeightDiff(objectName, oldDesk);
 
@@ -3148,9 +3154,10 @@
         // adds the floor for the intialization function
         function addFloorInit(objectType, objectName) {
             let geometry = new THREE.BoxBufferGeometry(100, 2, 70);
-            let texture = new THREE.TextureLoader().load("textures/image.jpg");
-            let textureNormalMap = new THREE.TextureLoader().load("textures/lightParquetNORM.jpg");
+            let texture = new THREE.TextureLoader().load(textureDictionary["darkParquet"]);
+            let textureNormalMap = new THREE.TextureLoader().load(textureDictionary["lightParquetNORM"]);
             let material = new THREE.MeshLambertMaterial({ map: texture });
+            material.name = "darkParquet";
             material.normalMap = textureNormalMap;
 
             let object = addPrimitive(objectType, objectName, geometry, material)
@@ -3182,7 +3189,7 @@
             var object = addPrimitive(objectType, objectName, geometry, material); // this function is not getting called for some reason
             
             // set position, reset if object is being replaced, and delete previous object
-            let position = new THREE.Vector3(33, 33.04 - 1.176 + heightDiff + (width - .5), -57);
+            let position = new THREE.Vector3(0, 33.04 - 1.176 + heightDiff + (width - .5), -57);
             if(replace) {
                 position = pickHelper.pickedObject.position;
                 pickHelper.deletePicked();
@@ -3222,6 +3229,9 @@
 
             objectsArr.push(object);
             scene.add(object);
+
+            console.log("New primitive just added to the scene: ");
+            console.log(object);
 
             return object;
         }
@@ -3565,15 +3575,15 @@
             let shareableString = "[ ";
             for(let i = 0; i < objectsArr.length; i++) {
                 let object = objectsArr[i];
+                
+                shareableString += object.userData.type + "|";
+                shareableString += object.userData.objectName + "|";
+                shareableString += object.position.x + "," + object.position.y + "," + object.position.z + ",|";
+                shareableString += object.rotation.x + "," + object.rotation.y + "," + object.rotation.z + ",";
                 if(object.userData.type.includes("Primitive")) {
                     // add code for primitive
-                } else {
-                    shareableString += object.userData.type + "|";
-                    shareableString += object.userData.objectName + "|";
-                    shareableString += object.position.x + "," + object.position.y + "," + object.position.z + ",|";
-                    shareableString += object.rotation.x + "," + object.rotation.y + "," + object.rotation.z + ",";
-                    shareableString += "| ";
                 }
+                shareableString += "| ";
             }
 
             shareableString += "]";
