@@ -184,7 +184,7 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="addPrimitiveDesk('FurniturePrimitiveDeskNoSelect','customDesk')">
+                                                                onclick="addPrimitiveDesk('FurniturePrimitiveBoxDeskNoSelect','customDesk')">
                                                                 Add</button>
                                                         </div>
                                                     </div>
@@ -2662,10 +2662,13 @@
             controls.enabled = true;
 
             camera.lookAt(25, 8.5, 35);
+
+            //parseShareableString("[ *PrimitiveBoxFloorFurnitureNoSelect|floor|0,0,-40,|0,0,0,|100,2,70,|darkParquet|* Monitor|small16x9Monitor28|0,30.800000000000004,-57,|0,4.71238898038469,0,| Mouse|defaultMouse|9,30.7,-50,|0,3.141592653589793,0,| Mousepad|QCKSmall|9,30.75,-50,|0,1.5707963267948966,0,| Keyboard|default60PercentKeyboardAllGrey|-3,30.85,-50,|0,4.71238898038469,0,| *FurniturePrimitiveBoxDeskNoSelect|customDesk|0,30.2,-53,|0,0,0,|50,1,20,|italianOak|* *PrimitiveBox|referenceBox|-12.456730542942143,33.2,-54.65369349806694,|0,0.906999410493721,0,|5,5,10,|null|* FurnitureChair|modernOfficeChair|0,2.8,-50,|0,4.71238898038469,0,| ]");
         }
 
         resetCamera();
 
+        // // copy of the above function for testing purposes
         // function resetCamera1() {
         //     controls.reset();
         //     controls.enableZoom = true;
@@ -2808,6 +2811,7 @@
                     break;
                 case 67:
                     transformControls.detach();
+                    pickHelper.pickedObject = null;
                     return;
                 case 82: // R
                     if (rotateActive) {
@@ -3155,10 +3159,8 @@
         function addFloorInit(objectType, objectName) {
             let geometry = new THREE.BoxBufferGeometry(100, 2, 70);
             let texture = new THREE.TextureLoader().load(textureDictionary["darkParquet"]);
-            let textureNormalMap = new THREE.TextureLoader().load(textureDictionary["lightParquetNORM"]);
             let material = new THREE.MeshLambertMaterial({ map: texture });
             material.name = "darkParquet";
-            material.normalMap = textureNormalMap;
 
             let object = addPrimitive(objectType, objectName, geometry, material)
 
@@ -3191,7 +3193,7 @@
             
             // set position, reset if object is being replaced, and delete previous object
             let position = new THREE.Vector3(0, 31.7 + heightDiff + (width - .5), -57);
-            if(replace) {
+            if(replace && pickHelper.pickedObject != null) {
                 // only use x and z of the old object and keep y untouched
                 position.set(pickHelper.pickedObject.position.x, position.y, pickHelper.pickedObject.position.z);
                 pickHelper.deletePicked();
@@ -3269,7 +3271,7 @@
                 object.userData.type = objectType;
 
                 // replace object if replace is true
-                if(replace) {
+                if(replace && pickHelper.pickedObject != null) {
                     // only use x and y of the old object
                     pos.set(pickHelper.pickedObject.position.x, pos.y, pickHelper.pickedObject.position.z);
                     pickHelper.deletePicked();
@@ -3368,11 +3370,8 @@
 
         // add an object with position and rotation as inputs
         function addDefaultPosRot(objectType, objectName, posi, roti) {
-            // console.log("LOOK HERE FOR POSITION");
-            // console.log(pos);
-
-            // console.log("LOOK HERE FOR ROTATION");
-            // console.log(rot);
+            console.log("OBJECT NAME");
+            console.log(objectName);
 
             addObject(objectName, function(object) {
                 let pos = posi;
@@ -3382,11 +3381,6 @@
 
                 pickHelper.pick(object);
 
-                console.log("MEGA DEBUG: OBJECT POSITION ROTATION");
-                console.log(object);
-                console.log(pos);
-                console.log(rot);
-
                 // set position and rotation
                 object.position.set(pos.x, pos.y, pos.z);
                 object.rotation.set(rot.x, rot.y, rot.z);
@@ -3395,9 +3389,47 @@
             });
         }
 
-        function addPrimitivePosRotDim(objectType, objectName, pos, rot, dim) {
+        function addPrimitivePosRotDimText(objectType, objectName, pos, rot, dim, textureName) {
+            // create box or sphere geometry
+            let geometry = null;
+            let width = 0;
+            if(objectType.includes("Box")) {
+                geometry = new THREE.BoxBufferGeometry(dim.x, dim.y, dim.z);
+            } else if(objectType.includes("Sphere")) {
+                geometry = new THREE.OctahedronBufferGeometry(dim.x, 5);
+            } else {
+                console.log("Error: invalid primitive type");
+            }
+
+            let texture = null;
+            let material = null;
+            // create material
+            if(textureName != "null") {
+                texture = new THREE.TextureLoader().load(textureDictionary[textureName]);
+                material = new THREE.MeshLambertMaterial({ map: texture });
+            } else {
+                material = new THREE.MeshLambertMaterial({ color: 0x202020 });
+            }
+            material.name = textureName;
+
+            // add object to scene and make a group
+            var object = addPrimitive(objectType, objectName, geometry, material);
+
+            object.position.set(pos.x, pos.y, pos.z);
+            object.rotation.set(rot.x, rot.y, rot.z);
 
         }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3475,9 +3507,10 @@
 
         // takes in the shareable string and places all the objects contained in it
         function parseShareableString(string) {
+            pickHelper.pickedObject = null;
             resetScene();
+            heightDiff = 0;
 
-            addFloorInit("PrimitiveBoxFloorFurnitureNoSelect", "floor"); // adds the floor
             
             let dataType = 0;
             let objectName = "";
@@ -3502,14 +3535,22 @@
                 while(c != ']' && !exitCode) {
                     c = string.charAt(index);
 
-                    if(c == '*') {
+                    if(c == ' ') {
+                        dataType = 0;
+                        objectType = "";
+                        objectName = "";
+                        textureName = "";
+                    } else if(c == '*') { // toggle primitive mode
                         primitiveData = !primitiveData;
-                    } else if(primitiveData) {
+                    } else if(primitiveData) { // primitive
                         if(c == '|') {
                             if(dataType == 0) {
                                 // type
                             } else if(dataType == 1) {
                                 // name
+                                if(objectType.includes("Desk")) {
+                                    updateDeskHeightDiff(objectName, "modernDesk");
+                                }
                             } else if(dataType == 2) {
                                 // position
                                 //console.log("SETTING POSITION");
@@ -3529,7 +3570,10 @@
                                 vector = new THREE.Vector3();
                             } else if(dataType == 5) {
                                 // texture name
-                                
+                                addPrimitivePosRotDimText(objectType, objectName, position, rotation, dimension, textureName);
+                                objectType = "";
+                                objectName = "";
+                                textureName = "";
                             }
                             dataType++;
                             xyz = 0
@@ -3540,7 +3584,7 @@
                             } else if (dataType == 1) {
                                 // getting the objectName
                                 objectName += c;
-                            } else if (dataType == 2 || dataType == 3) {
+                            } else if (dataType == 2 || dataType == 3 || dataType == 4) {
                                 // getting the position or rotation
                                 if(c != ',') {
                                     vecStr += c;
@@ -3561,19 +3605,22 @@
                                     vecStr = "";
                                     xyz++;
                                 }
+                            } else if (dataType == 5) {
+                                textureName += c;
                             } else {
                                 console.log("PARSE ERROR. INDEX IS: " + index + "c is: " + c + "datatype is: " + dataType);
                                 exitCode = 1;
                             }
                         }
-                    } else {
-                        if(c == ' ') {
-                            dataType = 0;
-                        } else if(c == '|') {
+                    } else { // not primitive
+                        if(c == '|') {
                             if(dataType == 0) {
                                 // type
                             } else if(dataType == 1) {
                                 // name
+                                if(objectType.includes("Desk")) {
+                                    updateDeskHeightDiff(objectName, "modernDesk");
+                                }
                             } else if(dataType == 2) {
                                 // position
                                 //console.log("SETTING POSITION");
@@ -3661,7 +3708,7 @@
                 if(object.userData.type.includes("Primitive")) {
                     mesh = object.children[0];
                     if(object.userData.type.includes("Box")) {
-                        shareableString += mesh.geometry.parameters.depth + "," + mesh.geometry.parameters.height + "," + mesh.geometry.parameters.width +",|";
+                        shareableString += mesh.geometry.parameters.width + "," + mesh.geometry.parameters.height + "," + mesh.geometry.parameters.depth +",|";
                     } else if (object.userData.type.includes("Sphere")) {
                         shareableString += mesh.geometry.parameters.radius + "," + "-1" + "," + "-1" +",|";
                     } else {
