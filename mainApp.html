@@ -147,28 +147,30 @@
                                                         <div class="text-center">
                                                             <p>Length: &nbsp;<input id="customDeskW" type="text"
                                                                     onkeypress="validate(event)"
-                                                                    onclick="unselectObjectCall()" style="width: 30%;"
+                                                                    onclick="disablePicking()"
+                                                                    style="width: 30%;"
                                                                     value="1">
                                                             </p>
                                                             <p>Width: &nbsp;<input id="customDeskL" type="text"
                                                                     onkeypress="validate(event)"
-                                                                    onclick="unselectObjectCall()" style="width: 30%;"
+                                                                    onclick="disablePicking()"
+                                                                    style="width: 30%;"
                                                                     value="1">
                                                             </p>
                                                             <p>
                                                             <form>
                                                                 <label>Material:</label>
                                                                 <select id="customDeskForm">
-                                                                    <option value="textures/alderFineWoodTexture.jpg"
+                                                                    <option value="lightAlderwood"
                                                                         data-image="Model thumbnails/customDeskLightAlderwood.jpg">
                                                                         Light Alderwood</option>
-                                                                    <option value="textures/darkWalnut.jpg"
+                                                                    <option value="darkWalnut"
                                                                         data-image="Model thumbnails/customDeskDarkWalnut.jpg">
                                                                         Dark Walnut</option>
-                                                                    <option value="textures/italianOak.jpg"
+                                                                    <option value="italianOak"
                                                                         data-image="Model thumbnails/customDeskItalianOak.jpg">
                                                                         Italian Oak</option>
-                                                                    <option value="textures/zebranoWood.jpg"
+                                                                    <option value="zebranoWood"
                                                                         data-image="Model thumbnails/customDeskZebranoWood.jpg">
                                                                         Zebrano Wood</option>
 
@@ -182,7 +184,7 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('desk','customDesk','notCustom',event)">
+                                                                onclick="addPrimitiveDesk('FurniturePrimitiveDeskNoSelect','customDesk')">
                                                                 Add</button>
                                                         </div>
                                                     </div>
@@ -218,7 +220,7 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('desk','modernDesk','notCustom',event)">
+                                                                onclick="addDesk('FurnitureDeskNoSelect','modernDesk')">
                                                                 Add</button>
                                                         </div>
                                                     </div>
@@ -254,7 +256,7 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('desk','standingDesk','notCustom',event)">
+                                                                onclick="addDesk('FurnitureDeskNoSelect','standingDesk')">
                                                                 Add</button>
                                                         </div>
                                                     </div>
@@ -298,7 +300,7 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('desk','linnmonDesk','custom',event)">
+                                                                onclick="addDeskCustom('FurnitureDeskNoSelect','linnmonDesk')">
 
                                                                 Add</button>
                                                         </div>
@@ -347,7 +349,7 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('desk','alexDesk','custom',event)">
+                                                                onclick="addDeskCustom('FurnitureDeskNoSelect','alexDesk')">
 
                                                                 Add</button>
                                                         </div>
@@ -393,7 +395,7 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('desk','bekantLShaped','custom',event)">
+                                                                onclick="addDeskCustom('FurnitureDeskNoSelect','bekantLShaped')">
 
                                                                 Add</button>
                                                         </div>
@@ -444,13 +446,13 @@
                                                                 <form>
                                                                     <select id="small16x9MonitorForm"
                                                                         autocomplete="off">
-                                                                        <option value="22\"">22" </option>
-                                                                        <option value="23\"">23" </option>
-                                                                        <option value="24\"">24" </option>
-                                                                        <option value="25\"">25" </option>
-                                                                        <option value="27\"">27" </option>
-                                                                        <option value="28\"">28" </option>
-                                                                        <option value="31\"">31.5" </option>
+                                                                        <option value="22">22" </option>
+                                                                        <option value="23">23" </option>
+                                                                        <option value="24">24" </option>
+                                                                        <option value="25">25" </option>
+                                                                        <option value="27">27" </option>
+                                                                        <option value="28">28" </option>
+                                                                        <option value="31">31.5" </option>
                                                                     </select>
 
                                                                     <label for="small16x9MonitorStand"> No Stand:
@@ -467,10 +469,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('monitor','small16x9Monitor','custom',event)">
+                                                                onclick="addMonitor('monitor','small16x9Monitor',false)">
                                                                 Add</button>
                                                             <button type="button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('monitor','small16x9Monitor','custom',event)">Replace
+                                                                onclick="addMonitor('monitor','small16x9Monitor',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -501,10 +503,10 @@
                                                                 <form>
                                                                     <select id="largeCurved16x9MonitorForm"
                                                                         autocomplete="off">
-                                                                        <option value="25\"">25" </option>
-                                                                        <option value="27\"">27" </option>
-                                                                        <option value="31\"">31.5" </option>
-                                                                        <option value="34\"">34" </option>
+                                                                        <option value="25">25" </option>
+                                                                        <option value="27">27" </option>
+                                                                        <option value="31">31.5" </option>
+                                                                        <option value="34">34" </option>
                                                                     </select>
                                                                     <label for="largeCurved16x9MonitorStand"> No Stand:
                                                                     </label>
@@ -520,10 +522,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('monitor','largeCurved16x9Monitor','custom',event)">
+                                                                onclick="addMonitor('monitor','largeCurved16x9Monitor',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('monitor','largeCurved16x9Monitor','custom',event)">Replace
+                                                                onclick="addMonitor('monitor','largeCurved16x9Monitor',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -553,9 +555,9 @@
                                                             <h5 class="itemTitleText">
                                                                 <form>
                                                                     <select id="flat21x9MonitorForm" autocomplete="off">
-                                                                        <option value="25\"">25" </option>
-                                                                        <option value="29\"">29" </option>
-                                                                        <option value="34\"">34" </option>
+                                                                        <option value="25">25" </option>
+                                                                        <option value="29">29" </option>
+                                                                        <option value="34">34" </option>
                                                                     </select>
                                                                     <label for="flat21x9MonitorStand"> No Stand:
                                                                     </label>
@@ -570,10 +572,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('monitor','flat21x9Monitor','custom',event)">
+                                                                onclick="addMonitor('Monitor','flat21x9Monitor',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('monitor','flat21x9Monitor','custom',event)">Replace
+                                                                onclick="addMonitor('Monitor','flat21x9Monitor',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -604,9 +606,9 @@
                                                                 <form>
                                                                     <select id="curved21x9MonitorForm"
                                                                         autocomplete="off">
-                                                                        <option value="30\"">30" </option>
-                                                                        <option value="34\"">34" </option>
-                                                                        <option value="38\"">38" </option>
+                                                                        <option value="30">30" </option>
+                                                                        <option value="34">34" </option>
+                                                                        <option value="38">38" </option>
                                                                     </select>
                                                                     <label for="curved21x9MonitorStand"> No Stand:
                                                                     </label>
@@ -621,10 +623,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('monitor','curved21x9Monitor','custom',event)">
+                                                                onclick="addMonitor('Monitor','curved21x9Monitor',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('monitor','curved21x9Monitor','custom',event)">Replace
+                                                                onclick="addMonitor('Monitor','curved21x9Monitor',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -655,8 +657,8 @@
                                                                 <form>
                                                                     <select id="curved32x9MonitorForm"
                                                                         autocomplete="off">
-                                                                        <option value="43\"">43.4" </option>
-                                                                        <option value="49\"">49" </option>
+                                                                        <option value="43">43.4" </option>
+                                                                        <option value="49">49" </option>
                                                                     </select>
                                                                     <label for="curved32x9MonitorStand"> No Stand:
                                                                     </label>
@@ -671,10 +673,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('monitor','curved32x9Monitor','custom',event)">
+                                                                onclick="addMonitor('Monitor','curved32x9Monitor',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('monitor','curved32x9Monitor','custom',event)">Replace
+                                                                onclick="addMonitor('Monitor','curved32x9Monitor',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -747,10 +749,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('keyboard','default60PercentKeyboard','custom',event)">
+                                                                onclick="addCustom('Keyboard','default60PercentKeyboard', false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('keyboard','default60PercentKeyboard','custom',event)">Replace
+                                                                onclick="addCustom('Keyboard','default60PercentKeyboard', true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -803,10 +805,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('keyboard','75PercentKeyboard','custom',event)">
+                                                                onclick="addCustom('Keyboard','75PercentKeyboard', false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('keyboard','75PercentKeyboard','custom',event)">Replace
+                                                                onclick="addCustom('Keyboard','75PercentKeyboard', true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -857,10 +859,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('keyboard','defaultFullKeyboard','custom',event)">
+                                                                onclick="addCustom('Keyboard','defaultFullKeyboard', false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('keyboard','defaultFullKeyboard','custom',event)">Replace
+                                                                onclick="addCustom('Keyboard','defaultFullKeyboard', true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -908,10 +910,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('keyboard','TKLKeyboard','custom',event)">
+                                                                onclick="addCustom('Keyboard','TKLKeyboard',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('keyboard','TKLKeyboard','custom',event)">Replace
+                                                                onclick="addCustom('Keyboard','TKLKeyboard',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -959,10 +961,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('mouse','MXMaster3','notCustom',event)">
+                                                                onclick="addDefault('Mouse','MXMaster3',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('mouse','MXMaster3','notCustom',event)">Replace
+                                                                onclick="addDefault('Mouse','MXMaster3',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -996,10 +998,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('mouse','defaultMouse','notCustom',event)">
+                                                                onclick="addDefault('Mouse','defaultMouse',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('mouse','defaultMouse','notCustom',event)">Replace
+                                                                onclick="addDefault('Mouse','defaultMouse',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1047,10 +1049,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('mousepad','QCKSmall','notCustom',event)">
+                                                                onclick="addDefault('Mousepad','QCKSmall', false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('mousepad','QCKSmall','notCustom',event)">Replace
+                                                                onclick="addDefault('Mousepad','QCKSmall',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1084,10 +1086,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('mousepad','QCKMedium','notCustom',event)">
+                                                                onclick="addDefault('Mousepad','QCKMedium',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('mousepad','QCKMedium','notCustom',event)">Replace
+                                                                onclick="addDefault('Mousepad','QCKMedium',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1120,10 +1122,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('mousepad','QCKLarge','notCustom',event)">
+                                                                onclick="addDefault('Mousepad','QCKLarge',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('mousepad','QCKLarge','notCustom',event)">Replace
+                                                                onclick="addDefault('Mousepad','QCKLarge',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1157,10 +1159,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('mousepad','QCKXXL','notCustom',event)">
+                                                                onclick="addDefault('Mousepad','QCKXXL',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('mousepad','QCKXXL','notCustom',event)">Replace
+                                                                onclick="addDefault('Mousepad','QCKXXL',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1221,10 +1223,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('speaker','deskSpacingSpeaker','custom',event)">
+                                                                onclick="addCustom('Speaker','deskSpacingSpeaker',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('speaker','deskSpacingSpeaker','custom',event)">Replace
+                                                                onclick="addCustom('Speaker','deskSpacingSpeaker',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1258,10 +1260,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('speaker','deskSpacingSoundBar','notCustom',event)">
+                                                                onclick="addDefault('Speaker','deskSpacingSoundBar',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('speaker','deskSpacingSoundBar','notCustom',event)">Replace
+                                                                onclick="addDefault('Speaker','deskSpacingSoundBar',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1307,10 +1309,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('speaker','studioMonitorSpeaker','custom',event)">
+                                                                onclick="addCustom('Speaker','studioMonitorSpeaker',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('speaker','studioMonitorSpeaker','custom',event)">Replace
+                                                                onclick="addCustom('Speaker','studioMonitorSpeaker',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1343,10 +1345,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('speaker','yetiUSBMic','notCustom',event)">
+                                                                onclick="addDefault('Speaker','yetiUSBMic',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('speaker','yetiUSBMic','notCustom',event)">Replace
+                                                                onclick="addDefault('Speaker','yetiUSBMic',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1377,10 +1379,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('speaker','audioInterface','notCustom',event)">
+                                                                onclick="addDefault('Speaker','audioInterface',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('speaker','audioInterface','notCustom',event)">Replace
+                                                                onclick="addDefault('Speaker','audioInterface',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1413,10 +1415,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('misc','MIDIKeyboard','notCustom',event)">
+                                                                onclick="addDefault('Misc','MIDIKeyboard',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('misc','MIDIKeyboard','notCustom',event)">Replace
+                                                                onclick="addDefault('Misc','MIDIKeyboard',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1461,10 +1463,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('laptop','modernLaptop13','notCustom',event)">
+                                                                onclick="addDefault('Laptop','modernLaptop13',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('laptop','modernLaptop13','notCustom',event)">Replace
+                                                                onclick="addDefault('Laptop','modernLaptop13',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1492,10 +1494,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('laptop','modernLaptop15','notCustom',event)">
+                                                                onclick="addDefault('Laptop','modernLaptop15',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('laptop','modernLaptop15','notCustom',event)">Replace
+                                                                onclick="addDefault('Laptop','modernLaptop15',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1524,10 +1526,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('laptop','modernLaptop17','notCustom',event)">
+                                                                onclick="addDefault('Laptop','modernLaptop17',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('laptop','modernLaptop17','notCustom',event)">Replace
+                                                                onclick="addDefault('Laptop','modernLaptop17',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1574,10 +1576,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('computer','modernComputerTower','notCustom',event)">
+                                                                onclick="addDefault('Computer','modernComputerTower',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('computer','modernComputerTower','notCustom',event)">Replace
+                                                                onclick="addDefault('Computer','modernComputerTower',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1612,18 +1614,16 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('computer','miniITXTower','notCustom',event)">
+                                                                onclick="addDefault('Computer','miniITXTower',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('computer','miniITXTower','notCustom',event)">Replace
+                                                                onclick="addDefault('Computer','miniITXTower',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
@@ -1658,19 +1658,19 @@
                                                             </span>
                                                         </h3>
                                                         <div class="text-center">
-                                                            <p>Length: &nbsp;<input id="primitiveBoxH" type="text"
+                                                            <p>Length: &nbsp;<input id="referenceBoxH" type="text"
                                                                     onkeypress="validate(event)"
-                                                                    onclick="unselectObjectCall()" style="width: 30%;"
+                                                                    onclick="disablePicking()" style="width: 30%;"
                                                                     value="1">
                                                             </p>
-                                                            <p>Width: &nbsp;<input id="primitiveBoxL" type="text"
+                                                            <p>Width: &nbsp;<input id="referenceBoxL" type="text"
                                                                     onkeypress="validate(event)"
-                                                                    onclick="unselectObjectCall()" style="width: 30%;"
+                                                                    onclick="disablePicking()" style="width: 30%;"
                                                                     value="1">
                                                             </p>
-                                                            <p>Height: &nbsp;<input id="primitiveBoxW" type="text"
+                                                            <p>Height: &nbsp;<input id="referenceBoxW" type="text"
                                                                     onkeypress="validate(event)"
-                                                                    onclick="unselectObjectCall()" style="width: 30%;"
+                                                                    onclick="disablePicking()" style="width: 30%;"
                                                                     value="1">
                                                             </p>
                                                         </div>
@@ -1679,10 +1679,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('primitive','primitiveBox','custom',event)">
+                                                                onclick="addPrimitiveReference('PrimitiveBox','referenceBox', false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('primitive','primitiveBox','custom',event)">Replace
+                                                                onclick="addPrimitiveReference('PrimitiveBox','referenceBox', true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1707,9 +1707,9 @@
                                                             </span>
                                                         </h3>
                                                         <div class="text-center">
-                                                            <p>Radius: &nbsp;<input id="primitiveSphereRadius"
+                                                            <p>Radius: &nbsp;<input id="referenceSphereRadius"
                                                                     type="text" onkeypress="validate(event)"
-                                                                    onclick="unselectObjectCall()" style="width: 30%;"
+                                                                    onclick="disablePicking()" style="width: 30%;"
                                                                     value="1">
                                                             </p>
 
@@ -1719,10 +1719,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('primitive','primitiveSphere','custom',event)">
+                                                                onclick="addPrimitiveReference('PrimitiveSphere','referenceSphere',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('primitive','primitiveSphere','custom',event)">Replace
+                                                                onclick="addPrimitiveReference('PrimitiveSphere','referenceSphere',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1769,10 +1769,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('misc','modernOfficeChair','custom',event)">
+                                                                onclick="addDefault('FurnitureChair','modernOfficeChair',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('misc','modernOfficeChair','custom',event)">Replace
+                                                                onclick="addDefault('FurnitureChair','modernOfficeChair',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1800,10 +1800,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('misc','simpleChair','custom',event)">
+                                                                onclick="addDefault('FurnitureChair','simpleChair',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('misc','simpleChair','custom',event)">Replace
+                                                                onclick="addDefault('FurnitureChair','simpleChair',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1831,10 +1831,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('misc','gamingChair','custom',event)">
+                                                                onclick="addDefault('FurnitureChair','gamingChair',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('misc','gamingChair','custom',event)">Replace
+                                                                onclick="addDefault('FurnitureChair','gamingChair',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1880,10 +1880,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('misc','regularBook','notCustom',event)">
+                                                                onclick="addDefault('Misc','regularBook',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('misc','regularBook','notCustom',event)">Replace
+                                                                onclick="addDefault('Misc','regularBook',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1911,10 +1911,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('misc','coffeeCup','notCustom',event)">
+                                                                onclick="addDefault('Misc','coffeeCup',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('misc','coffeeCup','notCustom',event)">Replace
+                                                                onclick="addDefault('Misc','coffeeCup',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1947,10 +1947,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('misc','basicLamp','notCustom',event)">
+                                                                onclick="addDefault('Misc','basicLamp',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('misc','basicLamp','notCustom',event)">Replace
+                                                                onclick="addDefault('Misc','basicLamp',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -1981,10 +1981,10 @@
                                                         <div class="text-center">
                                                             <button type="button" class="btn btn-primary text-center"
                                                                 style="display: inline-block;"
-                                                                onclick="selectNew3DObject('misc','modernLamp','notCustom',event)">
+                                                                onclick="addDefault('Misc','modernLamp',false)">
                                                                 Add</button>
                                                             <button type=" button" class="btn btn-secondary"
-                                                                onclick="replace3DObject('misc','modernLamp','notCustom',event)">Replace
+                                                                onclick="addDefault('Misc','modernLamp',true)">Replace
                                                                 selected</button>
                                                         </div>
                                                     </div>
@@ -2313,23 +2313,7 @@
     <script src="three/examples/js/loaders/DRACOLoader.js"></script>
 
     <script>
-
-        /*function imperialToMetric() {
-            document.getElementById("modernDeskUnits").textContent = coordinateDictionary["modernDesk"]["monitor"][7];
-            
-            document.getElementById("standingDeskUnits").textContent = coordinateDictionary["modernDesk"]["monitor"][7];
-        }
-
-        function isDigit(c) {
-            var isDig = 0;
-            if (c <= '9' && c >= '0' || c == '.') {
-                isDig = 1;
-            }
-            //console.log(isDig);
-            return isDig;
-        }*/
-
-        //FUNCTION USE: Makes sure 
+        //FUNCTION USE: Makes sure text entered in the box is numbers and also makes sure letters entered don't activate hotkeys
         function validate(evt) {
             var theEvent = evt || window.event;
 
@@ -2399,6 +2383,7 @@
             }
         }
 
+        //using the DOM to switch out the images
         //60% keyboard on change
         document.getElementById('default60PercentKeyboardForm').onchange = function () {
             var keyboardForm = document.getElementById('default60PercentKeyboardForm');
@@ -2430,9 +2415,39 @@
             imageElement.src = form.options[form.selectedIndex].getAttribute("data-image");
         }
 
+        //I believe this exists to allow the html to call unselectPickedObject in the pickHelper class
         function unselectObjectCall() {
             pickHelper.unselectPickedObject();
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // PICK CLASS
+
+
 
         //Class to help select JS objects
         class PickHelper {
@@ -2440,6 +2455,7 @@
                 this.raycaster = new THREE.Raycaster();
                 this.pickedObject = null;
                 this.pickedObjectSavedColor = 0;
+                this.pickEnabled = true;
             }
             unselectPickedObject() {
                 this.pickedObject = null;
@@ -2450,156 +2466,85 @@
                 //transformControls.detach();
                 //transformControls.attach(inputtedObject);
             }
-            deleteObject() {
-                if (this.pickedObject) {
-                    console.log("IN DELETE FUNCTION");
-                    console.log(this.pickedObject);
-                    if (this.pickedObject.name.includes("primitive")) {
-                        var objectName = this.pickedObject.name
-                        var objectNoDigits = objectName.replace(/[0-9]/g, '');
-                        console.log(objectNoDigits);
-                        var pickedObjectIndex = indexDictionary[objectNoDigits];
-                        console.log(objectsArrayOfArrays);
-                        var arrayOfObjects = objectsArrayOfArrays[pickedObjectIndex];
-                        for (var i = 0; i < arrayOfObjects.length; i++) {
+        
+            deletePicked() {
+                if(this.pickedObject != null && this.pickEnabled) {
+                    transformControls.detach();
 
-                            console.log("Finding object to delete");
-                            if (arrayOfObjects[i].name == objectName) {
-                                console.log("FOUND THE OBJECT TO DELETE");
-                                scene.remove(objectsArrayOfArrays[pickedObjectIndex][i]);
-                                objectsArrayOfArrays[pickedObjectIndex].splice(i, 1);
-                                transformControls.detach();
-                            }
-                        }
-                    } else {
-                        var objectName = this.pickedObject.parent.parent.name;
-                        if (objectName == '') { //Some meshes don't have the name stored at parent.parent? This addresses that issue
-                            objectName = this.pickedObject.parent.name;
-                        }
-                        console.log(objectName);
-                        var objectNoDigits = objectName.replace(/[0-9]/g, '');
-                        console.log(objectNoDigits);
-                        var pickedObjectIndex = indexDictionary[objectNoDigits];
-                        console.log(objectsArrayOfArrays);
-                        var arrayOfObjects = objectsArrayOfArrays[pickedObjectIndex];
-                        console.log(arrayOfObjects);
-                        for (var i = 0; i < arrayOfObjects.length; i++) {
-                            console.log("Finding object to delete");
-                            if (arrayOfObjects[i].name == objectName) {
-                                console.log("FOUND THE OBJECT TO DELETE");
-                                scene.remove(objectsArrayOfArrays[pickedObjectIndex][i]);
-                                objectsArrayOfArrays[pickedObjectIndex].splice(i, 1);
-                                transformControls.detach();
-                            }
+                    scene.remove(this.pickedObject);
+                    
+                    let remIndex = -1;
+                    for(let i = 0; i < objectsArr.length; i++) {
+                        if(objectsArr[i].name == this.pickedObject.name) {
+                            remIndex = i;
+                            i = objectsArr.length;
                         }
                     }
-                } else {
-                    console.log("No object selected");
-                }
+
+                    if(remIndex != -1) {
+                        objectsArr = removeArrElem(objectsArr, remIndex);
+                    }
+
+                    this.pickedObject = null;
+
+                    console.log("objectsArr");
+                    console.log(objectsArr);
+                }   
+                return objectsArr;
             }
-            pick(normalizedPosition, scene, camera, noDeskArr, transformControls, objectsArrayOfArrays) {
+
+            mouseSelect(normalizedPosition) {
                 // restore the color if there is a picked object
                 console.log("POSITION = " + normalizedPosition);
                 console.log("PICKED CALLED");
 
-                /*if (this.pickedObject) {
-                    console.log("Entered this.pickedObject");
-                    console.log(this.pickedObject);
-                    this.pickedObject = undefined;
-                    transformControls.detach();
-                    //controls.enabled = true;
-                }*/
-                //console.log(noDeskArr);
-                //if (!fillNoDeskArrBool) {
-                //    noDeskArr.push(transformControls);
-                //    noDeskArr.shift();
-                //    fillNoDeskArrBool = true;
-                //}
-                //noDeskArr.push(transformControls);
                 // cast a ray through the frustum
                 this.raycaster.setFromCamera(normalizedPosition, camera);
-                // get the list of objects the ray intersected
+                
+                // find objects intersected by cast ray
+                const intersectedObjects = this.raycaster.intersectObjects(objectsArr, true);
 
-                //console.log("ARRAY BEFORE");
-                //console.log(objectsArrayOfArrays);
-                //var tempArr = [...objectsArrayOfArrays]; //this was just objectsArray WARNING WARNING
-                var tempArr = [];
-                for (var i = 1; i < objectsArrayOfArrays.length; i++) {
-                    tempArr = tempArr.concat(objectsArrayOfArrays[i]);
-                }
-                /*console.log("objectsArrayOfArrays AFTER");
-                console.log(objectsArrayOfArrays);
-                console.log("tempArr AFTER");
-                console.log(tempArr);
-                console.log("OFF WHITE");
-                console.log("OFF WHITE");
-                console.log("OFF WHITE");
-                console.log("OFF WHITE");*/
+                // find first intersected object
+                let index = intersectedObjects.length - 1;
+                let interObj;
 
-                //tempArr.shift();
-                tempArr.push(transformControls);
-                console.log("NEW TEMP ARR DEBUGGGINGGIGNGINGINI");
-                console.log(tempArr);
-                const intersectedObjects = this.raycaster.intersectObjects(tempArr, true);
-                console.log("ARRAY OF INTERSECTS");
-                console.log(intersectedObjects);
-                console.log("Passed first if");
-
-                var meshExists = intersectedObjects.findIndex(i => i.object.type === "Mesh");
-                //var gizmoExists = intersectedObjects.findIndex(i => i.object.parent.parent.type === "TransformControlsGizmo");
-                //var gizmoExists = -1;
-                var planeExists = intersectedObjects.findIndex(i => i.object.type === "TransformControlsPlane");
-                var controlsExist = intersectedObjects.findIndex(i => i.object.type === "Object3D");
-                //console.log("gizmoExists = " + gizmoExists + " planeExists = " + planeExists + " controlsExist = " + controlsExist);
-
-                /*for (var i = 0; i < intersectedObjects.length; i++) {
-                    console.log("IN FOR LOOP " + i);
-                    console.log(intersectedObjects[i].object);
-
-                    if (intersectedObjects[i].object.name.includes("primitive")) {
-                        this.pickedObject = intersectedObjects[i].object;
-                        console.log("PARENT TYPE");
-                        console.log(intersectedObjects[i].object.type);
-                        transformControls.detach();
-                        console.log("ATTATCHED OBJECT TO ");
-                        console.log(this.pickedObject.parent.parent);
-                        transformControls.attach(this.pickedObject.parent);
-                        //transformControls.attach(this.pickedObject.children[0]);
-                        return; //WAS BREAK BEFORE
-                    }
-                }*/
-
-                console.log("MESH EXISTS = " + meshExists);
-                for (var i = 0; i < intersectedObjects.length; i++) {
-                    console.log("IN FOR LOOP " + i);
-                    console.log(intersectedObjects[i].object.parent.parent);
-                    if (intersectedObjects[i].object.parent.parent != null) {
-                        if (intersectedObjects[i].object.type == "Mesh" && intersectedObjects[i].object.parent.parent.type != "TransformControlsGizmo") {
-                            this.pickedObject = intersectedObjects[i].object;
-                            console.log("PARENT TYPE");
-                            console.log(intersectedObjects[i].object.type);
-                            transformControls.detach();
-                            console.log("ATTATCHED OBJECT TO ");
-                            console.log(this.pickedObject.parent.parent);
-                            transformControls.attach(this.pickedObject.parent);
-                            //transformControls.attach(this.pickedObject.children[0]);
-                            return; //WAS BREAK BEFORE
-                        }
-                    } else { //intersectedObjects[i].object.parent.parent IS NULL, meaning its a primitive object
-                        if (intersectedObjects[i].object.name.includes("primitive")) {
-                            this.pickedObject = intersectedObjects[i].object;
-                            console.log("PARENT TYPE");
-                            console.log(intersectedObjects[i].object.type);
-                            transformControls.detach();
-                            transformControls.attach(this.pickedObject);
-                            //transformControls.attach(this.pickedObject.children[0]);
-                            return; //WAS BREAK BEFORE
+                console.log("INTERSECTED OBJECTS ARRAY");
+                console.log(intersectedObjects)
+                while(0 <= index) {
+                    console.log("WE MADE IT THIS FAR");
+                    interObj = intersectedObjects[index].object.parent;
+                    
+                    // prevents selection of objects we don't want to select
+                    if(!interObj.userData.type.includes("NoSelect")) { 
+                        // check what type of object the element is
+                        if(interObj.type == "Group") {
+                            console.log("WE'RE A GROUP")
+                            this.pick(interObj);
+                        } else if(interObj.type == "Mesh") {
+                            console.log("WE'RE A MESH")
+                            this.pick(interObj);
+                        } else {
+                            console.log("No object selected");
                         }
                     }
-
+                    index--;
                 }
-                //transformControls.detach();
-                //controls.enabled = true;
+            }
+
+            pick(object) {
+                if(this.pickEnabled) {
+                    console.log("Object just picked: ");
+                    console.log(object);
+                    
+                    transformControls.detach();
+                    // attach controls if the object type allows it
+                    if(!object.userData.type.includes("NoSelect")) {
+                        transformControls.attach(object);
+                    }
+                        
+                    // set picked object
+                    this.pickedObject = object;
+                }
             }
         }
         const pickPosition = { x: 0, y: 0 };
@@ -2612,7 +2557,14 @@
             };
         }
 
-
+        function disablePicking() {
+            pickHelper.pickEnabled = false;
+            console.log("Picking disabled");
+        }
+        function enablePicking() {
+            pickHelper.pickEnabled = true;
+            console.log("Picking enabled");
+        }
 
         function clearPickPosition() {
             // unlike the mouse which always has a position
@@ -2627,15 +2579,35 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // SETUP
+
+
+
+
+
+
         const pickHelper = new PickHelper();
         //import * as THREE from './three';
         var controls, dragControls, transformControls;
         var scene = new THREE.Scene();
         scene.background = new THREE.Color(0x2A363B);
 
-        //var dracoLoader = new DRACOLoader();
-        //dracoLoader.setDecoderPath('/examples/js/libs/draco/');
-        //loader.setDRACOLoader(dracoLoader);
         var myCanvas = document.getElementById("threeCanvas");
 
         var camera = new THREE.PerspectiveCamera(45, myCanvas.clientWidth / myCanvas.clientHeight, 0.1, 5000);
@@ -2657,6 +2629,8 @@
         renderer.gammaOutput = true;
         renderer.outputEncoding = THREE.sRGBEncoding;
 
+        // LIGHTS AND BACKGROUND
+
         hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, .7);
         hemiLight.position.set(0, 100, 40);
         hemiLight.castShadow = false;
@@ -2672,129 +2646,108 @@
         light.shadow.mapSize.height = 1024 * 4;
         light.castShadow = true;
         scene.add(light);
-        //scene.add(hemiLight);
 
-        var geometry = new THREE.BoxGeometry(1, 1, 1);
-        var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-        var cube = new THREE.Mesh(geometry, material);
-        cube.position.set(36, 100, -100);
         scene.background = new THREE.Color(0x2A363B);
-        //scene.fog = new THREE.Fog(0xa0a0a0, 75, 450);
-        /*var mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(1000, 1000), new THREE.MeshPhongMaterial({ color: 0x999999, depthWrite: false }));
-        mesh.rotation.x = - Math.PI / 2;
-        mesh.position.y = 1;
-        mesh.receiveShadow = true;
-        scene.add(mesh);*/
-
-        controls.disabled = true;
-        controls.enableZoom = true;
-        controls.enableRotate = true;
-        controls.enablePan = true;
-        controls.rotateSpeed = 0.7;
-        camera.position.set(33.140910317837964, 61.27639300930197, 21.183811053080007);
-        controls.update();
-        camera.rotation.set(-0.3618175319112695, -0.012200336135305153, -0.004617427467257444);
-        controls.update();
-        camera.lookAt(25, 8.5, 35);
-        controls.update();
-        controls.enabled = true;
-
-        //SETS WHERE THE ORBIT CONTROLS ORBIT AROUND
-        controls.target = new THREE.Vector3(45 - 10.8, 30.55, -60);
-
-        var savedVector = controls.object.getWorldDirection();
-        console.log(savedVector);
-        var camToSave = {};
-        camToSave.position = camera.position;
-        camToSave.rotation = camera.rotation;
-        camToSave.controlCenter = controls.center;
 
         function resetCamera() {
-
             controls.reset();
             controls.enableZoom = true;
             controls.enableRotate = true;
             controls.enablePan = true;
             controls.rotateSpeed = 0.7;
-            camera.position.set(33.140910317837964, 61.27639300930197, 21.183811053080007);
+            camera.position.set(0, 61.27639300930197, 21.183811053080007);
+            camera.rotation.set(-0.3618175319112695, 0, -0.004617427467257444);
             controls.update();
-            camera.rotation.set(-0.3618175319112695, -0.012200336135305153, -0.004617427467257444);
-            controls.update();
-            controls.target = new THREE.Vector3(45 - 10.8, 30.55, -60);
+            controls.target.set(0, 30.55, -60);
+            controls.enabled = true;
 
             camera.lookAt(25, 8.5, 35);
-
-            //restoreCamera(camToSave.position, camToSave.rotation, camToSave.controlCenter);
         }
 
-        function restoreCamera(position, rotation, controlCenter) {
-            camera.position.set(position.x, position.y, position.z);
-            camera.rotation.set(rotation.x, rotation.y, rotation.z);
+        resetCamera();
 
-            controls.center.set(controlCenter.x, controlCenter.y, controlCenter.z);
-            controls.update();
+        // function resetCamera1() {
+        //     controls.reset();
+        //     controls.enableZoom = true;
+        //     controls.enableRotate = true;
+        //     controls.enablePan = true;
+        //     controls.rotateSpeed = 0.7;
+        //     camera.position.set(0, 61.27639300930197, 21.183811053080007);
+        //     camera.rotation.set(-0.3618175319112695, 0, -0.004617427467257444);
+        //     controls.update();
+        //     controls.target.set(0, 30.55, -60);
+        //     controls.enabled = true;
 
-            render();
-        }
-
-        var currentDesk = new THREE.Group();
-        var currentMonitor = new THREE.Group();
-        var currentKeyboard = new THREE.Group();
-        var currentMousepad = new THREE.Group();
-        var currentMouse = new THREE.Group();
-        var currentSpeaker = new THREE.Group();
-        var currentLaptop = new THREE.Group();
-        var currentComputer = new THREE.Group();
-        var currentMisc = new THREE.Group();
-        var currentPrimitive = new THREE.Group();
-        var objectsArray = [currentDesk, currentMonitor, currentKeyboard, currentMousepad, currentMouse, currentSpeaker, currentLaptop, currentComputer, currentMisc, currentPrimitive];
-        var deskArray = [], monitorArray = [], keyboardArray = [], mousepadArray = [], mouseArray = [], speakerArray = [], laptopsArray = [], computerArray = [], miscArray = [], primitiveArray = [];
-        var objectsArrayOfArrays = [deskArray, monitorArray, keyboardArray, mousepadArray, mouseArray, speakerArray, laptopsArray, computerArray, miscArray, primitiveArray];
-        var objectsArrayCopy = [...objectsArray];
+        //     camera.lookAt(25, 8.5, 35);
+        // }
 
 
-        var objectsCountDict = {
-            "desk": 0,
-            "monitor": 0,
-            "keyboard": 0,
-            "mousepad": 0,
-            "mouse": 0,
-            "speaker": 0,
-            "laptop": 0,
-            "computer": 0,
-            "misc": 0,
-            "primitive": 0
-        }
 
-        //objectsArrayCopy.shift();
 
-        /*var noDeskArr = objectsArray;
-        noDeskArr.shift();
-        console.log("FIRST NO DESK ARR");
-        console.log(noDeskArr);*/
-        var objectsStringsArray = ["", "", "", "", ""];
-        var objectsTypeArray = ["desk", "monitor", "keyboard", "mousepad", "mouse", "speaker", "laptop", "computer", "misc", "primitive"];
-        var dragControlArrays = Array(objectsTypeArray.length);
-        var dragControlsArr = Array(objectsTypeArray.length);
-        var fillNoDeskArrBool = false;
-        var pickObject = false;
+
+
+
+
+
+
+
+
+
+
+        // DECLARATION SECTION
+
+        var objectsArr = []; // 1D array to store all the objects currently in the scene
+        var pickObject = false; // not sure what this is about but I'm afraid to remove it
+
+        // transform controls. for dragging and rotating
         transformControls = new THREE.TransformControls(camera, renderer.domElement);
         transformControls.enabled = true;
         transformControls.size = .7;
-        //transformControls.addEventListener('change', render);
         scene.add(transformControls);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // EVENT LISTENERS
+
+        document.getElementById('threeCanvas').addEventListener('click', function() {
+            enablePicking();
+        });
+
+        // event listener for a click on the controls
         transformControls.addEventListener('mouseDown', function () {
             console.log("HIT TRANSFORM CONTROLS");
             pickObject = true;
-            controls.enabled = false;
+            controls.enabled = false; // makes it so the camera doesn't rotate when you're trying to drag an object
         });
         transformControls.addEventListener('mouseUp', function () {
-            controls.enabled = true;
+            controls.enabled = true; // ^ see above
         });
 
+        // eventListener for a click in the window
         var rightmousemove;
-
         window.addEventListener('mousedown', function (event) {
             console.log("WINDOW MOUSE DOWN");
             rightmousemove = false;
@@ -2804,13 +2757,14 @@
             }
             if (pickObject) {
                 pickObject = false
-                return;
+            } else {
+                console.log("RUNNING SET PICK POSITION");
+                setPickPosition(event);
+                pickObject = false
             }
-            console.log("RUNNING SET PICK POSITION");
-            setPickPosition(event);
-            pickObject = false
         });
 
+        // stops right click drag
         document.addEventListener("mousemove", function (event) {
             if (rightmousemove === true) {
                 event.stopImmediatePropagation();
@@ -2820,50 +2774,38 @@
         //window.addEventListener('mouseout', clearPickPosition);
         //window.addEventListener('mouseleave', clearPickPosition);
 
-        window.addEventListener('resize', onWindowResize, false);
+        window.addEventListener('resize', function() {
+            camera.aspect = rightSideContainer.clientWidth / rightSideContainer.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(rightSideContainer.clientWidth, rightSideContainer.clientHeight);
+        });
 
-        transformControls.showY = !transformControls.showY; //Making the transform controls not show a Y direction.
+        transformControls.showY = false; //Making the transform controls not show a Y direction.
+
         function setPickPosition(event) {
 
+            // right side container is a bootstrap column. contains the canvas
             const pos = getCanvasRelativePosition(event);
             pickPosition.x = (pos.x / rightSideContainer.clientWidth) * 2 - 1;
             pickPosition.y = (pos.y / rightSideContainer.clientHeight) * -2 + 1;  // note we flip Y
 
-            pickHelper.pick(pickPosition, scene, camera, objectsArrayCopy, transformControls, objectsArrayOfArrays);
+            pickHelper.mouseSelect(pickPosition);
         }
         var rotateActive = true;
+
+        // adds an event listener to the DOM element of the entire window. If any key is pressed, check the keyCode of the event with a switch statement and go from there
         window.addEventListener('keydown', function (event) {
 
             switch (event.keyCode) {
                 case 8: //BACKSPACE (Delete)
-                    pickHelper.deleteObject();
+                    objectsArr = pickHelper.deletePicked();
                     break;
                 case 46:
-                    pickHelper.deleteObject();
+                    objectsArr = pickHelper.deletePicked();
                     break;
                 case 68:
-                    pickHelper.deleteObject();
+                    objectsArr = pickHelper.deletePicked();
                     break;
-                /*case 81: // Q
-                    transformControls.setSpace(transformControls.space === "local" ? "world" : "local");
-                    break;*/
-
-                /*case 16: // Shift
-                    transformControls.setTranslationSnap(100);
-                    transformControls.setRotationSnap(THREE.MathUtils.degToRad(15));
-                    transformControls.setScaleSnap(0.25);
-                    break;*/
-                /*
-                case 87: // W
-                    transformControls.showX = true;
-                    transformControls.showZ = true;
-                    transformControls.showY = true;
-                    transformControls.setMode("translate");
-                    break;*/
-                /*
-                case 69: // E
-                    transformControls.setMode("scale");
-                    break;*/
                 case 67:
                     transformControls.detach();
                     return;
@@ -2882,33 +2824,6 @@
                         rotateActive = true;
                     }
                     break;
-                /*
-            case 67: // C
-                const position = camera.position.clone();
-
-                camera = camera.isPerspectiveCamera ?C cameraOrtho : cameraPersp;
-                camera.position.copy(position);
-
-                transformControls.object = camera;
-                transformControls.camera = camera;
-
-                camera.lookAt(controls.target.x, controls.target.y, controls.target.z);
-                onWindowResize();
-                break;*/
-                /*
-            case 86: // V
-                const randomFoV = Math.random() + 0.1;
-                const randomZoom = Math.random() + 0.1;
-
-                cameraPersp.fov = randomFoV * 160;
-                cameraOrtho.bottom = - randomFoV * 500;
-                cameraOrtho.top = randomFoV * 500;
-
-                cameraPersp.zoom = randomZoom * 5;
-                cameraOrtho.zoom = randomZoom * 5;
-                onWindowResize();
-                break;*/
-
                 case 187:
                 case 107: // +, =, num+
                     transformControls.setSize(transformControls.size + 0.1);
@@ -2930,15 +2845,11 @@
                 case 90: // Z
                     transformControls.showZ = !transformControls.showZ;
                     break;
-
-                /*case 32: // Spacebar
-                    transformControls.enabled = !transformControls.enabled;
-                    break;*/
-
             }
 
         });
 
+        // does nothing
         window.addEventListener('keyup', function (event) {
 
             switch (event.keyCode) {
@@ -2953,180 +2864,197 @@
 
         });
 
-        var indexDictionary = {
-            "desk": 0,
-            "monitor": 1,
-            "keyboard": 2,
-            "mousepad": 3,
-            "mouse": 4,
-            "speaker": 5,
-            "laptop": 6,
-            "computer": 7,
-            "misc": 8,
-            "primitive": 9
+
+
+
+
+
+
+
+
+
+        // DICTIONARIES
+
+
+
+
+
+
+
+
+        var textureDictionary = {
+            "lightAlderwood": 'textures/alderFineWoodTexture.jpg',
+            "darkWalnut": 'textures/darkWalnut.jpg',
+            "italianOak": 'textures/italianOak.jpg',
+            "zebranoWood": 'textures/zebranoWood.jpg'
         }
 
-        //A dictionary to hold all desk starting coordinates and file paths
-        var deskDictionary = {
-            "modernDesk": [12.75, 1.7, -43, (Math.PI / 2), 'GLTFs/desks/standing desks/standing desk 1 - 23.8Dx51.7Wx30.3H.glb'],
-            "drawerDesk": [7.85, 1, -38, Math.PI, 'desks/regular_desk_1.glb'],
-            "standingDesk": [6 + 55 / 2, 1, -51, Math.PI + Math.PI / 2, 'desks/standing_desk_2.glb'],
-            "linnmonDesk39": [9.55 + (47 / 2), 1, -52, (Math.PI / 2), 'GLTFs/desks/linnmon desks/linnmon desk - 24Dx39Wx30.3H.glb'],
-            "linnmonDesk47": [9.55 + (47 / 2), 1, -52, (Math.PI / 2), 'GLTFs/desks/linnmon desks/linnmon desk - 24Dx47Wx30.3H.glb'],
-            "linnmonDesk59": [9.55 + (47 / 2), 1, -52, (Math.PI / 2), 'GLTFs/desks/linnmon desks/linnmon desk - 24Dx59Wx30.3H.glb'],
-            "alexDesk61": [-6.2 + (79 / 2), 1, -50, (Math.PI / 2 + (Math.PI)), 'GLTFs/desks/alex desks/alex desk - 40Dx61Wx28.7H.glb'],
-            "alexDesk67": [-6.2 + (79 / 2), 1, -50, (Math.PI / 2 + (Math.PI)), 'GLTFs/desks/alex desks/alex desk - 31Dx67Wx28.7H.glb'],
-            "alexDesk79": [-6.2 + (79 / 2), 1, -50, (Math.PI / 2 + (Math.PI)), 'GLTFs/desks/alex desks/alex desk - 24Dx79Wx28.7H.glb'],
-            "bekantLShapedLeft": [-6.2 + (79 / 2), 1, -55, (Math.PI / 2 + (Math.PI)), 'GLTFs/desks/L shaped desks/L shaped desk left.glb'],
-            "bekantLShapedRight": [-6.2 + (79 / 2), 1, -55, (Math.PI / 2 + (Math.PI)), 'GLTFs/desks/L shaped desks/L shaped desk right.glb']
-        }
         var deskHeightDiff = {
             "modernDesk": 0,
             "drawerDesk": 10,
-            "standingDesk": -.35,
-            "linnmonDesk39": -.1,
-            "linnmonDesk47": -.52,
-            "linnmonDesk59": -.52,
-            "alexDesk61": -1.47,
-            "alexDesk67": -1.6,
-            "alexDesk79": -1.47,
-            "bekantLShapedLeft": -1.1,
-            "bekantLShapedRight": -1.1,
+            "standingDesk": -.62,
+            "linnmonDesk39": 0,
+            "linnmonDesk47": 0,
+            "linnmonDesk59": 0,
+            "alexDesk61": -1.4,
+            "alexDesk67": -1.4,
+            "alexDesk79": -1.4,
+            "bekantLShapedLeft": -.2,
+            "bekantLShapedRight": -.2,
             "customDesk": -.5
         }
         var heightDiff = deskHeightDiff["modernDesk"];
-        //Dictionary to hold all coordinates of objects for corresponding desks
-        //[x, y, z, y rotation, path]
-        var coordinateDictionary = {
-            "modernDesk": {
-                "monitor": {
-                    "small16x9Monitor22": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 22in.glb', '22"', '58.42cm'],
-                    "small16x9Monitor23": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 23in.glb', '23"', '60.96cm'],
-                    "small16x9Monitor24": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 24in.glb', '24"', '60.96cm'],
-                    "small16x9Monitor25": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 25in.glb', '25"', '63.5cm'],
-                    "small16x9Monitor27": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 27in.glb', '27"', '68.58cm'],
-                    "small16x9Monitor28": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 28in.glb', '28"', '71.12cm'],
-                    "small16x9Monitor31": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 31.5in.glb', '31.5"', '80.01cm'],
-                    "small16x9Monitor22NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 22in no stand.glb', '22"', '56cm'],
-                    "small16x9Monitor23NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 23in no stand.glb', '23"', '58cm'],
-                    "small16x9Monitor24NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 24in no stand.glb', '24"', '61cm'],
-                    "small16x9Monitor25NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 25in no stand.glb', '25"', '64cm'],
-                    "small16x9Monitor27NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 27in no stand.glb', '27"', '69cm'],
-                    "small16x9Monitor28NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 28in no stand.glb', '28"', '71cm'],
-                    "small16x9Monitor31NoStand": [33, 33.04 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 31.5in no stand.glb', '31.5"', '80cm'],
-                    "largeCurved16x9Monitor25": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 25in.glb', '25"', '64cm'],
-                    "largeCurved16x9Monitor27": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 27in.glb', '27"', '69cm'],
-                    "largeCurved16x9Monitor31": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 31.5in.glb', '31.5"', '80cm'],
-                    "largeCurved16x9Monitor34": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 34in.glb', '34"', '102cm'],
-                    "largeCurved16x9Monitor25NoStand": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors no stand/curved 16 9 monitor 25in no stand.glb', '25"', '64cm'],
-                    "largeCurved16x9Monitor27NoStand": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors no stand/curved 16 9 monitor  27in.glb', '27"', '69cm'],
-                    "largeCurved16x9Monitor31NoStand": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors no stand/curved large 16 9 monitor 31.5in no stand.glb', '31.5"', '80cm'],
-                    "largeCurved16x9Monitor34NoStand": [33, 30.69 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors no stand/curved large 16 9 monitor 34in no stand.glb', '34"', '86cm'],
-                    "curved21x9Monitor30": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors/Ultrwide Monitor 1 30in.glb', '30"', '76cm'],
-                    "curved21x9Monitor34": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors/Ultrwide Monitor 1 34in.glb', '34"', '86cm'],
-                    "curved21x9Monitor38": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors/Ultrwide Monitor 1 38in.glb', '38"', '97cm'],
-                    "curved21x9Monitor30NoStand": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors no stand/Ultrwide Monitor 1 30in no stand.glb', '30"', '76cm'],
-                    "curved21x9Monitor34NoStand": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors no stand/Ultrwide Monitor 1 34in no stand.glb', '34"', '86cm'],
-                    "curved21x9Monitor38NoStand": [33, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors no stand/Ultrwide Monitor 1 38in no stand.glb', '38"', '97cm'],
-                    "curved32x9Monitor43": [33, 30.45 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors/32_9 monitor 43.4in.glb', '43.4"', '110cm'],
-                    "curved32x9Monitor49": [33, 30.45 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors/32_9 monitor 49in.glb', '49"', '124cm'],
-                    "curved32x9Monitor43NoStand": [33, 30.45 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors no stand/32_9 monitor 43.4in.glb', '43.4"', '110cm'],
-                    "curved32x9Monitor49NoStand": [33, 30.45 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors no stand/32_9 monitor 49in.glb', '49"', '124cm'],
-                    "flat21x9Monitor25": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors/21 9 monitor 2 non curved 25in.glb', '25"', '64cm'],
-                    "flat21x9Monitor29": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors/21 9 monitor 2 non curved 29in.glb', '29"', '74cm'],
-                    "flat21x9Monitor34": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors/21 9 monitor 2 non curved 34in.glb', '34"', '86cm'],
-                    "flat21x9Monitor25NoStand": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors no stand/21 9 monitor 2 non curved 25in no stand.glb', '25"', '64cm'],
-                    "flat21x9Monitor29NoStand": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors no stand/21 9 monitor 2 non curved 29in no stand.glb', '29"', '74cm'],
-                    "flat21x9Monitor34NoStand": [33, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors no stand/21 9 monitor 2 non curved 34in no stand.glb', '34"', '86cm'],
-                },
-                "keyboard": {
-                    "default60PercentKeyboardAllGrey": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 allGrey.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
-                    "default60PercentKeyboardAllWhite": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 allWhite.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
-                    "default60PercentKeyboardMinimalist": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 minimalist 1.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
-                    "default60PercentKeyboardNightrunner": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 nightrunner.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
-                    "default60PercentKeyboardOBW": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 obw.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
-                    "default60PercentKeyboardWGR": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 wgr.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
-                    "default60PercentKeyboardYPGrad": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 ypGrad.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
-                    "75PercentKeyboardAllGrey": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 allGrey.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
-                    "75PercentKeyboardAllWhite": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 allWhite.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
-                    "75PercentKeyboardMinimalist": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 minimalist.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
-                    "75PercentKeyboardNightrunner": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 nightRunner.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
-                    "75PercentKeyboardOBW": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 obw.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
-                    "75PercentKeyboardWGR": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 wgr.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
-                    "75PercentKeyboard8008": [29, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 8008.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
-                    "defaultFullKeyboardAllGrey": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard allGrey.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
-                    "defaultFullKeyboardAllWhite": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard white.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
-                    "defaultFullKeyboardNightrunner": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard nightRunner.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
-                    "defaultFullKeyboardWGR": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard wgr.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
-                    "defaultFullKeyboardOBW": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard obw.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
-                    "defaultFullKeyboardYPGrade": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard ypGrad.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
-                    "TKLKeyboardAllGrey": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard allGrey.glb'],//new6
-                    "TKLKeyboardAllWhite": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard allWhite.glb'],//new6
-                    "TKLKeyboardOBW": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard obw.glb'],//new6
-                    "TKLKeyboardWGR": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard wgr.glb'],//new6
-                    "TKLKeyboardYGB": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard ygb.glb'],//new6
-                    "TKLKeyboardYPGrade": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard ypGrad.glb'],//new6
-                    "TKLKeyboard8008": [23, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard 8008.glb']//new6
-                },
-                "mousepad": {
-                    "mediumRGBMousepad": [44, 31.35 + .14 + heightDiff, -50, Math.PI / 2 + Math.PI, 'mousepads/medium_rgb_mousepad.glb', ''],
-                    "QCKSmall": [44, 31.35 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/small qck mousepad - 8.4Dx9.8W.glb', '8.4" L x 9.8" W', '21cm L x 25cm'],
-                    "QCKMedium": [44, 31.35 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/medium qck mousepad - 10.6Dx12.6W.glb', '10.6" L x 12.6" W', '27cm L x 32cm'],
-                    "QCKLarge": [44, 31.35 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/large qck mousepad - 15.7Dx17.7W.glb', '15.7" L x 17.7" W', '40cm L x 45cm'],
-                    "QCKXXL": [-5.5, 31.35 + heightDiff, -61, Math.PI, 'GLTFs/mice and mousepads/qck mousepad XXL.glb', '15.7" L x 17.7" W', '40cm L x 45cm']
-                },
-                "mouse": {
-                    "defaultMouse": [44, 31.1 + .14 + heightDiff, -50, Math.PI, 'GLTFs/mice and mousepads/mouse 1 - 4.1Dx2.2Wx1.6H.glb', '4.1" L x 2.2" W x 1.6" H', '10cm L x 6cm W x 4cm '],
-                    "MXMaster3": [44, 33.2 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/mouse 2 - 4.9Dx3.5Wx2H.glb', '4.9" L x 43.5" W x 2" H', '12cm L x 110cm W x 5cm ']
-                },
-                "speaker": {
-                    "deskSpacingSpeakerPrimary": [44 - 20, 21.2 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/speakers/speakers 1 primary - 7.4Dx5.8Wx9.5H.glb', '7.4" L x 5.8" W x 9.5" H', '19cm L x 15cm W x 24cm'],
-                    "deskSpacingSpeakerSecondary": [44, 36.25 + .14 + heightDiff, -46, -Math.PI / 2, 'GLTFs/speakers/speakers 1 secondary - 7.4Dx5.8Wx9.5H.glb', '7.4" L x 5.8" W x 9.5" H', '19cm L x 15cm W x 24cm'],
-                    "deskSpacingSoundBar": [44 - 11, 31.1 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/speakers/speaker bar 1 - 2.5Dx16Wx2.8H.glb', '2.5" L x 16" W x 2.8" H', '6cm L x 41cm W x 7cm '],
-                    "studioMonitorSpeakerPrimary": [44 - 20, 31.35 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/speakers/speakers 2 primary - 8.3Dx7.3Wx10.3H.glb', '8.3" L x 7.3" W x 10.3" H', '21cm L x 19cm W x 26cm'],
-                    "studioMonitorSpeakerSecondary": [44 - 15, 31.35 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/speakers/speakers 2 secondary - 8.3Dx7.3Wx10.3H.glb', '8.3" L x 7.3" W x 10.3" H', '21cm L x 19cm W x 26cm'],
-                    "yetiUSBMic": [34 - 15, 31 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/music objects/blue_yeti (1).glb'],//new6
-                    "audioInterface": [33 - 15, 32.15 + .14 + heightDiff, -58, -Math.PI / 2, 'GLTFs/music objects/audio interface.glb'],//new6
-                },
-                "laptop": {
-                    "modernLaptop13": [33, 30.7 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/laptops/13 inch laptop.glb', ''],
-                    "modernLaptop15": [33, 30.7 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/laptops/15 inch laptop.glb', ''],
-                    "modernLaptop17": [33, 30.7 + .14 + heightDiff, -50, -Math.PI / 2, 'GLTFs/laptops/17 inch laptop.glb', ''],
-                },
-                "computer": {
-                    "modernComputerTower": [54, 31.2 + .14 + heightDiff, -50, Math.PI / 2, 'GLTFs/computer towers/desktop - 8.27Wx16.5Dx19.5H.glb', '8.3" L x 16.5" W x 19.5" H', '21cm L x 42cm W x 50cm '],
-                    "miniITXTower": [51, 31.2 + .14 + heightDiff, -50, 0, 'GLTFs/computer towers/desktop 2 small - 16.7Dx13.6Wx14.3H.glb', '16.7" L x 13.6" W x 14.3" H', '42cm L x 35cm W x 36cm '],
-                }, "misc": {
-                    "regularBook": [-70, -22.58 + heightDiff, -32, Math.PI, 'GLTFs/YYadditional decorations/book.glb', ''],
-                    "coffeeCup": [51, 31.25 + .14 + heightDiff, -50, 0, 'GLTFs/YYadditional decorations/coffee cup.glb', ''],
-                    "MIDIKeyboard": [30, 31.25 + .14 + heightDiff, -50, Math.PI + Math.PI / 2, 'GLTFs/YYadditional decorations/midi keyboard 1 - 7.1Dx12.5Wx1.5H.glb', '7.1" L x 12.5" W x 1.5" H', '18cm L x 32cm W x 4cm '],
-                    "basicLamp": [30, 31 + .14 + heightDiff, -50, Math.PI + Math.PI / 2, 'GLTFs/lamps/lamp 1 - 8Dx5Wx9.7H.glb', '8" L x 5" W x 9.7" H', '20cm L x 13cm W x 25cm '],
-                    "modernLamp": [30, 31.01 + .14 + heightDiff, -50, Math.PI + Math.PI / 2, 'GLTFs/lamps/lamp 2 - 10.2Dx4Wx8.3H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm '],
-                    "modernOfficeChair": [30, 2.8, -50, Math.PI + Math.PI / 2, 'GLTFs/chairs/office chair - 46.6Dx33.2Wx32.1H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm '],
-                    "simpleChair": [30, 2.8, -50, Math.PI, 'GLTFs/chairs/simple chair - 36.9Dx14.5Wx18.5H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm '],
-                    "gamingChair": [33, 1.1, -40, Math.PI / 2, 'GLTFs/chairs/gaming chair.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm ']
 
-                }/*, "chair": {
-                    "modernOfficeChair": [30, 2.8, -50, Math.PI + Math.PI / 2, 'GLTFs/chairs/office chair - 46.6Dx33.2Wx32.1H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm '],
-                    "simpleChair": [30, 2.8, -50, Math.PI, 'GLTFs/chairs/simple chair - 36.9Dx14.5Wx18.5H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm ']
-                }*/
-            },
-            "drawerDesk": {
-                "monitor": {
-                    "defaultUltrawideMonitor": [31.3, 33.51, -60, 0, 'ultrawideMonitor/defaultUltrawideMonitor.glb'],
-                    "default16x9Monitor": [33, 31.61, -60, Math.PI / 2 + Math.PI, '16x9Monitors/16x9MonitorDefault.glb'],
-                },
-                "keyboard": {
-                    "default60PercentKeyboard": [29, 31.35 + (33.51 - 32.45), -43, Math.PI / 2 + Math.PI, 'keyboards/60_Keyboard_1.glb']
-                },
-                "mousepad": {
-                    "mediumRGBMousepad": [44, 31.35 + .14 + (33.51 - 32.45), -43, Math.PI / 2 + Math.PI, 'mousepads/medium_rgb_mousepad.glb']
-                },
-                "mouse": {
-                    "defaultMouse": [44, 31.35 + .14 + (33.51 - 32.45), -43, Math.PI / 2 + Math.PI, 'mouses/Mouse_1_textured.glb']
-                }
-            }
-        }
+        //Dictionary to hold all coordinates of objects for corresponding desks
+        //[x, y, z, rotationY, path]
+        var coordinateDictionary = {
+            "modernDesk": [0, 30.7, -53, (Math.PI / 2), 'GLTFs/desks/standing desks/standing desk 1 - 23.8Dx51.7Wx30.3H.glb'],
+            "drawerDesk": [0, 1, -38, Math.PI, 'desks/regular_desk_1.glb'],
+            "standingDesk": [0, 30, -51, Math.PI + Math.PI / 2, 'GLTFs/desks/standing desks/standing desk 2 - 28.4Dx55Wx29.7H.glb'],
+            "linnmonDesk39": [0, 31.2, -55, (Math.PI / 2), 'GLTFs/desks/linnmon desks/linnmon desk - 24Dx39Wx30.3H.glb'],
+            "linnmonDesk47": [0, 31.2, -55, (Math.PI / 2), 'GLTFs/desks/linnmon desks/linnmon desk - 24Dx47Wx30.3H.glb'],
+            "linnmonDesk59": [0, 31.2, -55, (Math.PI / 2), 'GLTFs/desks/linnmon desks/linnmon desk - 24Dx59Wx30.3H.glb'],
+            "alexDesk61": [0, 29, -50, (Math.PI / 2 + (Math.PI)), 'GLTFs/desks/alex desks/alex desk - 40Dx61Wx28.7H.glb'],
+            "alexDesk67": [0, 29, -50, (Math.PI / 2 + (Math.PI)), 'GLTFs/desks/alex desks/alex desk - 31Dx67Wx28.7H.glb'],
+            "alexDesk79": [0, 29, -50, (Math.PI / 2 + (Math.PI)), 'GLTFs/desks/alex desks/alex desk - 24Dx79Wx28.7H.glb'],
+            "bekantLShapedLeft": [0, 31, -55, (Math.PI / 2 + (Math.PI)), 'GLTFs/desks/L shaped desks/L shaped desk left.glb'],
+            "bekantLShapedRight": [0, 31, -55, (Math.PI / 2 + (Math.PI)), 'GLTFs/desks/L shaped desks/L shaped desk right.glb'],
+            "customDesk": [0, 30.2, -53],
+
+            "small16x9Monitor22": [0, 32.7 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 22in.glb', '22"', '58.42cm'],
+            "small16x9Monitor23": [0, 32.7 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 23in.glb', '23"', '60.96cm'],
+            "small16x9Monitor24": [0, 32.7 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 24in.glb', '24"', '60.96cm'],
+            "small16x9Monitor25": [0, 32.7 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 25in.glb', '25"', '63.5cm'],
+            "small16x9Monitor27": [0, 32.7 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 27in.glb', '27"', '68.58cm'],
+            "small16x9Monitor28": [0, 32.7 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 28in.glb', '28"', '71.12cm'],
+            "small16x9Monitor31": [0, 32.7 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitor/16_9 monitor 3 31.5in.glb', '31.5"', '80.01cm'],
+            "small16x9Monitor22NoStand": [0, 45 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 22in no stand.glb', '22"', '56cm'],
+            "small16x9Monitor23NoStand": [0, 45 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 23in no stand.glb', '23"', '58cm'],
+            "small16x9Monitor24NoStand": [0, 45 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 24in no stand.glb', '24"', '61cm'],
+            "small16x9Monitor25NoStand": [0, 45 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 25in no stand.glb', '25"', '64cm'],
+            "small16x9Monitor27NoStand": [0, 45 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 27in no stand.glb', '27"', '69cm'],
+            "small16x9Monitor28NoStand": [0, 45 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 28in no stand.glb', '28"', '71cm'],
+            "small16x9Monitor31NoStand": [0, 45 - 1.4 + heightDiff, -57, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 monitors no stand/16_9 monitor 3 31.5in no stand.glb', '31.5"', '80cm'],
+            "largeCurved16x9Monitor25": [0, 32.6 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 25in.glb', '25"', '64cm'],
+            "largeCurved16x9Monitor27": [0, 32.6 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 27in.glb', '27"', '69cm'],
+            "largeCurved16x9Monitor31": [0, 32.6 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 31.5in.glb', '31.5"', '80cm'],
+            "largeCurved16x9Monitor34": [0, 32.6 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors/curved 16 9 monitor 34in.glb', '34"', '102cm'],
+            "largeCurved16x9Monitor25NoStand": [0, 45 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors no stand/curved 16 9 monitor 25in no stand.glb', '25"', '64cm'],
+            "largeCurved16x9Monitor27NoStand": [0, 45 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors no stand/curved 16 9 monitor  27in.glb', '27"', '69cm'],
+            "largeCurved16x9Monitor31NoStand": [0, 45 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors no stand/curved large 16 9 monitor 31.5in no stand.glb', '31.5"', '80cm'],
+            "largeCurved16x9Monitor34NoStand": [0, 45 - 1.4 + heightDiff, -59.5, Math.PI / 2 + Math.PI, 'GLTFs/monitors/16 9 curved monitors no stand/curved large 16 9 monitor 34in no stand.glb', '34"', '86cm'],
+            "curved21x9Monitor30": [0, 32.7 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors/Ultrwide Monitor 1 30in.glb', '30"', '76cm'],
+            "curved21x9Monitor34": [0, 32.7 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors/Ultrwide Monitor 1 34in.glb', '34"', '86cm'],
+            "curved21x9Monitor38": [0, 32.7 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors/Ultrwide Monitor 1 38in.glb', '38"', '97cm'],
+            "curved21x9Monitor30NoStand": [0, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors no stand/Ultrwide Monitor 1 30in no stand.glb', '30"', '76cm'],
+            "curved21x9Monitor34NoStand": [0, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors no stand/Ultrwide Monitor 1 34in no stand.glb', '34"', '86cm'],
+            "curved21x9Monitor38NoStand": [0, 33.8 - 1.4 + heightDiff, -60.5, 0, 'GLTFs/monitors/21 9 curved monitors no stand/Ultrwide Monitor 1 38in no stand.glb', '38"', '97cm'],
+            "curved32x9Monitor43": [0, 32.7 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors/32_9 monitor 43.4in.glb', '43.4"', '110cm'],
+            "curved32x9Monitor49": [0, 32.7 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors/32_9 monitor 49in.glb', '49"', '124cm'],
+            "curved32x9Monitor43NoStand": [0, 30.45 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors no stand/32_9 monitor 43.4in.glb', '43.4"', '110cm'],
+            "curved32x9Monitor49NoStand": [0, 30.45 - 1.4 + heightDiff, -56.8, Math.PI / 2, 'GLTFs/monitors/32 9 monitors no stand/32_9 monitor 49in.glb', '49"', '124cm'],
+            "flat21x9Monitor25": [0, 32.7 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors/21 9 monitor 2 non curved 25in.glb', '25"', '64cm'],
+            "flat21x9Monitor29": [0, 32.7 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors/21 9 monitor 2 non curved 29in.glb', '29"', '74cm'],
+            "flat21x9Monitor34": [0, 32.7 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors/21 9 monitor 2 non curved 34in.glb', '34"', '86cm'],
+            "flat21x9Monitor25NoStand": [0, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors no stand/21 9 monitor 2 non curved 25in no stand.glb', '25"', '64cm'],
+            "flat21x9Monitor29NoStand": [0, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors no stand/21 9 monitor 2 non curved 29in no stand.glb', '29"', '74cm'],
+            "flat21x9Monitor34NoStand": [0, 32.73 - 1.4 + heightDiff, -59, Math.PI / 2 + Math.PI, 'GLTFs/monitors/21 9 monitors no stand/21 9 monitor 2 non curved 34in no stand.glb', '34"', '86cm'],
+
+            "default60PercentKeyboardAllGrey": [-3, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 allGrey.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
+            "default60PercentKeyboardAllWhite": [-3, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 allWhite.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
+            "default60PercentKeyboardMinimalist": [-3, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 minimalist 1.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
+            "default60PercentKeyboardNightrunner": [-3, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 nightrunner.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
+            "default60PercentKeyboardOBW": [-3, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 obw.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
+            "default60PercentKeyboardWGR": [-3, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 wgr.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
+            "default60PercentKeyboardYPGrad": [-3, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 1 ypGrad.glb', '4.3" L x 12" W x 1.4" H', '11cm L x 30cm W x 4cm '],
+            "75PercentKeyboardAllGrey": [-4, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 allGrey.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
+            "75PercentKeyboardAllWhite": [-4, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 allWhite.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
+            "75PercentKeyboardMinimalist": [-4, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 minimalist.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
+            "75PercentKeyboardNightrunner": [-4, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 nightRunner.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
+            "75PercentKeyboardOBW": [-4, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 obw.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
+            "75PercentKeyboardWGR": [-4, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 wgr.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
+            "75PercentKeyboard8008": [-4, 31.35 + heightDiff, -50, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/60 keyboards/60 Keyboard 2 8008.glb', '4.3" L x 12.5" W x 1.4" H', '11cm L x 32cm W x 4cm '],
+            "defaultFullKeyboardAllGrey": [-6, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard allGrey.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
+            "defaultFullKeyboardAllWhite": [-6, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard white.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
+            "defaultFullKeyboardNightrunner": [-6, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard nightRunner.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
+            "defaultFullKeyboardWGR": [-6, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard wgr.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
+            "defaultFullKeyboardOBW": [-6, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard obw.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
+            "defaultFullKeyboardYPGrade": [-6, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/full size keyboards/full size keyboard ypGrad.glb', '5.5" L x 18" W x 1.5" H', '14cm L x 46cm W x 4cm '],
+            "TKLKeyboardAllGrey": [-5, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard allGrey.glb'],
+            "TKLKeyboardAllWhite": [-5, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard allWhite.glb'],
+            "TKLKeyboardOBW": [-5, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard obw.glb'],
+            "TKLKeyboardWGR": [-5, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard wgr.glb'],
+            "TKLKeyboardYGB": [-5, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard ygb.glb'],
+            "TKLKeyboardYPGrade": [-5, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard ypGrad.glb'],
+            "TKLKeyboard8008": [-5, 31.35 + heightDiff, -49, Math.PI / 2 + Math.PI, 'GLTFs/keyboards/tkl keyboards/tkl keyboard 8008.glb'],
+
+            "mediumRGBMousepad": [12, 31.25 + heightDiff, -50, Math.PI / 2 + Math.PI, 'mousepads/medium_rgb_mousepad.glb', ''],
+            "QCKSmall": [9, 31.25 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/small qck mousepad - 8.4Dx9.8W.glb', '8.4" L x 9.8" W', '21cm L x 25cm'],
+            "QCKMedium": [9, 31.25 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/medium qck mousepad - 10.6Dx12.6W.glb', '10.6" L x 12.6" W', '27cm L x 32cm'],
+            "QCKLarge": [9, 31.25 + heightDiff, -53, Math.PI / 2, 'GLTFs/mice and mousepads/large qck mousepad - 15.7Dx17.7W.glb', '15.7" L x 17.7" W', '40cm L x 45cm'],
+            "QCKXXL": [1, 31.35 + heightDiff, -52, Math.PI, 'GLTFs/mice and mousepads/qck mousepad XXL.glb', '15.7" L x 17.7" W', '40cm L x 45cm'],
+
+            "defaultMouse": [9, 31.2 + heightDiff, -50, Math.PI, 'GLTFs/mice and mousepads/mouse 1 - 4.1Dx2.2Wx1.6H.glb', '4.1" L x 2.2" W x 1.6" H', '10cm L x 6cm W x 4cm '],
+            "MXMaster3": [9, 31.2 + heightDiff, -50, Math.PI / 2, 'GLTFs/mice and mousepads/mouse 2 - 4.9Dx3.5Wx2H.glb', '4.9" L x 43.5" W x 2" H', '12cm L x 110cm W x 5cm '],
+
+            "deskSpacingSpeakerPrimary": [-18, 31.3 + heightDiff, -57, -Math.PI / 2, 'GLTFs/speakers/speakers 1 primary - 7.4Dx5.8Wx9.5H.glb', '7.4" L x 5.8" W x 9.5" H', '19cm L x 15cm W x 24cm'],
+            "deskSpacingSpeakerSecondary": [18, 31.3 + heightDiff, -57, -Math.PI / 2, 'GLTFs/speakers/speakers 1 secondary - 7.4Dx5.8Wx9.5H.glb', '7.4" L x 5.8" W x 9.5" H', '19cm L x 15cm W x 24cm'],
+            "deskSpacingSoundBar": [0, 31.33 + heightDiff, -53, Math.PI / 2, 'GLTFs/speakers/speaker bar 1 - 2.5Dx16Wx2.8H.glb', '2.5" L x 16" W x 2.8" H', '6cm L x 41cm W x 7cm '],
+            "studioMonitorSpeakerPrimary": [-18, 31.3 + heightDiff, -57, -Math.PI / 2, 'GLTFs/speakers/speakers 2 primary - 8.3Dx7.3Wx10.3H.glb', '8.3" L x 7.3" W x 10.3" H', '21cm L x 19cm W x 26cm'],
+            "studioMonitorSpeakerSecondary": [18, 31.3 + heightDiff, -57, -Math.PI / 2, 'GLTFs/speakers/speakers 2 secondary - 8.3Dx7.3Wx10.3H.glb', '8.3" L x 7.3" W x 10.3" H', '21cm L x 19cm W x 26cm'],
+            "yetiUSBMic": [-20, 31.3 + heightDiff, -50, -Math.PI / 2, 'GLTFs/music objects/blue yeti.glb'],
+            "audioInterface": [-20, 31.3 + heightDiff, -58, -Math.PI / 2, 'GLTFs/music objects/audio interface.glb'],
+
+            "modernLaptop13": [-17, 31.3 + .14 + heightDiff, -55, -Math.PI / 2, 'GLTFs/laptops/13 inch laptop.glb', ''],
+            "modernLaptop15": [-17, 31.3 + .14 + heightDiff, -55, -Math.PI / 2, 'GLTFs/laptops/15 inch laptop.glb', ''],
+            "modernLaptop17": [-17, 31.3 + .14 + heightDiff, -55, -Math.PI / 2, 'GLTFs/laptops/17 inch laptop.glb', ''],
+
+            "modernComputerTower": [18, 31.7 + heightDiff, -50, Math.PI / 2, 'GLTFs/computer towers/desktop - 8.27Wx16.5Dx19.5H.glb', '8.3" L x 16.5" W x 19.5" H', '21cm L x 42cm W x 50cm '],
+            "miniITXTower": [18, 31.7 + heightDiff, -50, 0, 'GLTFs/computer towers/desktop 2 small - 16.7Dx13.6Wx14.3H.glb', '16.7" L x 13.6" W x 14.3" H', '42cm L x 35cm W x 36cm '],
+
+            "regularBook": [-70, -22.58 + heightDiff, -32, Math.PI, 'GLTFs/YYadditional decorations/book.glb', ''],
+            "coffeeCup": [51, 31.25 + .14 + heightDiff, -50, 0, 'GLTFs/YYadditional decorations/coffee cup.glb', ''],
+            "MIDIKeyboard": [-20, 31.23 + heightDiff, -50, Math.PI + Math.PI / 2, 'GLTFs/YYadditional decorations/midi keyboard 1 - 7.1Dx12.5Wx1.5H.glb', '7.1" L x 12.5" W x 1.5" H', '18cm L x 32cm W x 4cm '],
+            "basicLamp": [30, 31 + .14 + heightDiff, -50, Math.PI + Math.PI / 2, 'GLTFs/lamps/lamp 1 - 8Dx5Wx9.7H.glb', '8" L x 5" W x 9.7" H', '20cm L x 13cm W x 25cm '],
+            "modernLamp": [30, 31.01 + .14 + heightDiff, -50, Math.PI + Math.PI / 2, 'GLTFs/lamps/lamp 2 - 10.2Dx4Wx8.3H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm '],
+            "modernOfficeChair": [0, 2.8, -50, Math.PI + Math.PI / 2, 'GLTFs/chairs/office chair - 46.6Dx33.2Wx32.1H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm '],
+            "simpleChair": [0, 2.8, -50, Math.PI, 'GLTFs/chairs/simple chair - 36.9Dx14.5Wx18.5H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm '],
+            "gamingChair": [0, 3.5, -40, Math.PI / 2, 'GLTFs/chairs/gaming chair.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm ']
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // INITIALIZATION
+
+
+
+
 
         //Loader for the room
         /*loader.load('rooms/room_2_no_roof.glb', function (gltf) {
@@ -3142,23 +3070,12 @@
             console.error(error);
         });*/
 
-
-        window.addEventListener('resize', onWindowResize, false);
-
-        function onWindowResize() {
-            camera.aspect = rightSideContainer.clientWidth / rightSideContainer.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(rightSideContainer.clientWidth, rightSideContainer.clientHeight);
-            //animate();
-        }
-
         function render() {
             renderer.render(scene, camera);
         }
 
         function animate() {
-            requestAnimationFrame(animate);
-            //camera.updateMatrixWorld();
+            requestAnimationFrame(animate); // asynch animate loop
             camera.updateProjectionMatrix();
             controls.update();
             renderer.render(scene, camera);
@@ -3170,335 +3087,498 @@
         var x = 10;
 
         function initializeObjects() {
-            var geometry = new THREE.BoxBufferGeometry(100, 2, 70);
-            var texture = new THREE.TextureLoader().load("textures/image.jpg");
-            var textureNormalMap = new THREE.TextureLoader().load("textures/lightParquetNORM.jpg");
-            var material = new THREE.MeshLambertMaterial({ map: texture });
-            material.normalMap = textureNormalMap;
-            var mesh = new THREE.Mesh(geometry, material);
-            mesh.position.set(33, 0, -40);
-            mesh.receiveShadow = true;
-            scene.add(mesh);
-            objectsStringsArray[0] = "modernDesk"; //DESK LOADS LAST, BUT THIS NEEDS TO BE SET FIRST!
-            selectNew3DObject("monitor", "small16x9Monitor28", "notCustom", null);
-            //selectNew3DObject("keyboard", "default60PercentKeyboard", null);
-            selectNew3DObject("mouse", "defaultMouse", "custom", null);
-            selectNew3DObject("keyboard", "default60PercentKeyboard", "custom", null);
-            selectNew3DObject("mousepad", "QCKSmall", "custom", null);
-            //selectNew3DObject('speaker', 'studioMonitorSpeaker', 'custom', null);
-            //selectNew3DObject('laptop', 'modernLaptop13', 'notCustom', null);
-            //on first load, desk must always load last (weird bug idk im ignoring for now)
-            selectNew3DObject("desk", "modernDesk", "notCustom", null);
+            // primtive stuff
+            addFloorInit("PrimitiveFloorFurnitureNoSelect", "floor");
+            // objects
+            addDefault("DeskNoSelect", "modernDesk", false); // uses addDefault instead of addDesk because there is no previous desk
+            addDefault("Monitor", "small16x9Monitor28", false);
+            addDefault("Mouse", "defaultMouse", false);
+            addDefault("Keyboard", "default60PercentKeyboardAllGrey", false);
+            addDefault("Mousepad", "QCKSmall", false);
         }
         initializeObjects();
 
-        //selectNew3DObject("desk", "drawerDesk", null);
-        //selectNew3DObject("monitor", "default16x9Monitor", null);
-        function selectNew3DObject(objectType, objectName, customOrNot, event) {
-            if (objectType == "desk") { //DESK IS BEING CHANGED
-                if (customOrNot == "custom") {
-                    var deskForm = document.getElementById(objectName + "Form");
-                    objectName = objectName + deskForm.value;
+        function removeArrElem(array, index) {
+            let tempArr = [];
+
+            for(let i = 0; i < array.length; i++) {
+                if(i != index) {
+                    tempArr.push(array[i]);
+                }
+            }
+
+            return tempArr;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        // OBJECT ADDING FUNCTIONS
+
+
+        // add a custom primitive desk
+        function addPrimitiveDesk(objectType, objectName) {
+            enablePicking(); // this will get done again in addObject, but I need to do it here so the code to replace the desk works
+
+            let geometry = new THREE.BoxBufferGeometry(document.getElementById(objectName + "L").value, 1, document.getElementById(objectName + "W").value);
+            var texture = new THREE.TextureLoader().load(textureDictionary[document.getElementById(objectName + "Form").value]);
+            let material = new THREE.MeshLambertMaterial({ map: texture });
+            
+            pickHelper.pick(getObjectByType("Desk")[0]);
+            let oldDesk = pickHelper.pickedObject.userData.objectNames;
+            pickHelper.deletePicked();
+
+            // add object to scene and make a group
+            var object = addPrimitive(objectType, objectName, geometry, material); // this function is not getting called for some reason
+
+            updateDeskHeightDiff(objectName, oldDesk);
+
+            let posArr = coordinateDictionary[objectName];
+            object.position.set(posArr[0], posArr[1], posArr[2]);
+        }
+
+        // adds the floor for the intialization function
+        function addFloorInit(objectType, objectName) {
+            let geometry = new THREE.BoxBufferGeometry(100, 2, 70);
+            let texture = new THREE.TextureLoader().load("textures/image.jpg");
+            let textureNormalMap = new THREE.TextureLoader().load("textures/lightParquetNORM.jpg");
+            let material = new THREE.MeshLambertMaterial({ map: texture });
+            material.normalMap = textureNormalMap;
+
+            let object = addPrimitive(objectType, objectName, geometry, material)
+
+            object.position.set(0, 0, -40);
+        }
+
+        // add a reference primitive object
+        function addPrimitiveReference(objectType, objectName, replace) {
+            // create box or sphere geometry
+            let geometry;
+            let width = 0;
+            if(objectType.includes("Box")) {
+                geometry = new THREE.BoxBufferGeometry(document.getElementById(objectName + "L").value,
+                    document.getElementById(objectName + "W").value,
+                    document.getElementById(objectName + "H").value);
+                    width = document.getElementById(objectName + "W").value / 2;
+            } else if(objectType.includes("Sphere")) {
+                geometry = new THREE.OctahedronBufferGeometry(document.getElementById(objectName + "Radius").value, 5);
+                width = document.getElementById(objectName + "Radius").value;
+            } else {
+                console.log("Error: invalid primitive type");
+            }
+
+            // create material
+            let material = new THREE.MeshLambertMaterial({ color: 0x202020 })
+
+            // add object to scene and make a group
+            var object = addPrimitive(objectType, objectName, geometry, material); // this function is not getting called for some reason
+            
+            // set position, reset if object is being replaced, and delete previous object
+            let position = new THREE.Vector3(33, 33.04 - 1.176 + heightDiff + (width - .5), -57);
+            if(replace) {
+                position = pickHelper.pickedObject.position;
+                pickHelper.deletePicked();
+            }
+
+            object.position.set(position.x, position.y, position.z);
+            pickHelper.pick(object);
+        }
+
+
+        // add a primitive object base function
+        function addPrimitive(objectType, objectName, geometry, material) {
+            enablePicking(); // resets pick enabled if it was disabled by something else
+
+            let mesh = new THREE.Mesh(geometry, material);
+            let object = new THREE.Group();
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+
+            // adds the primitive mesh to a group, so it is the same type as everything else in the scene
+            object.add(mesh);
+
+            // make sure the object is getting a unique name
+            let highest = 0;
+            let objCount = 0;
+            for(let i = 0; i < objectsArr.length; i++) {
+                objCount = getCountOfObject(objectsArr[i].name);
+                if(objectsArr[i].userData.objectName == objectName && objCount >= highest) {
+                    highest = objCount + 1;
+                }
+            }
+
+            object.name = objectName + "-" + highest;
+
+            object.userData.type = objectType;
+            object.userData.objectName = objectName;
+
+            objectsArr.push(object);
+            scene.add(object);
+
+            return object;
+        }
+
+        // add any object with a dropdown and checkbox field, including monitors
+        function addMonitor(objectType, objectNameBase, replace) {
+            // check size
+            let objectName = objectNameBase + document.getElementById(objectNameBase + "Form").value;
+
+            // check for stand
+            if (document.getElementById(objectNameBase + "Stand").value == "on") {
+                objectName += "NoStand";
+            }
+
+            addDefault(objectType, objectName, replace);
+        }
+
+        // add an object with one custom parameter
+        function addCustom(objectType, baseObjectName, replace) {
+            let objectName = baseObjectName + document.getElementById(baseObjectName + "Form").value;
+
+            addDefault(objectType, objectName, replace);
+        }
+
+        // basic add function for adding a gltf. 
+        function addDefault(objectType, objectName, replace) {
+            addObject(objectName, function(object) {
+                let coordDictArr = coordinateDictionary[objectName];
+
+                let pos = new THREE.Vector3(coordDictArr[0], coordDictArr[1], coordDictArr[2]);
+                let rot = new THREE.Vector3(0, coordDictArr[3], 0);
+
+                object.userData.type = objectType;
+
+                // replace object if replace is true
+                if(replace) {
+                    pos = pickHelper.pickedObject.position;
+                    pickHelper.deletePicked();
+                }
+                pickHelper.pick(object);
+
+                // set position and rotation
+                object.position.set(pos.x, pos.y, pos.z);
+                object.rotation.set(rot.x, rot.y, rot.z);
+
+                return object;
+            });
+        }
+
+        // add object using dictionary coords. Most barebones add function. Won't work right called on its own
+        function addObject(objectName, callBack) {
+            enablePicking(); // resets pick enabled if it was disabled by something else
+
+            let filePath = coordinateDictionary[objectName][4]; 
+
+            loader.load(filePath, function (gltf) {
+                let object = gltf.scene.children[0];
+                
+                // for loop to check if there are any duplicate objects
+                let highest = 0;
+                let objCount = 0;
+                for(let i = 0; i < objectsArr.length; i++) {
+                    objCount = getCountOfObject(objectsArr[i].name);
+                    if(objectsArr[i].userData.objectName == objectName && objCount >= highest) {
+                        highest = objCount + 1;
+                    }
                 }
 
-                if (objectName.includes("custom")) { //customDesk
-                    var selectedObject = scene.getObjectByName(objectType);
-                    console.log("OBJECT OBJECT OBJECT");
-                    console.log("OBJECT OBJECT OBJECT");
-                    console.log("OBJECT OBJECT OBJECT");
-                    console.log(selectedObject);
-                    scene.remove(selectedObject);
-                    var length = document.getElementById(objectName + "L").value;
-                    var width = document.getElementById(objectName + "W").value;
-                    var geometry = new THREE.BoxBufferGeometry(length, .7, width);
-                    var texture = new THREE.TextureLoader().load(document.getElementById(objectName + "Form").value);
-                    //'textures/alderFineWoodTexture.jpg'
-                    // immediately use the texture for material creation
-                    //var material = new THREE.MeshBasicMaterial({ map: texture });
-                    var material = new THREE.MeshLambertMaterial({ map: texture });
-                    geometry.computeFaceNormals();
-                    geometry.computeVertexNormals();
-                    var mesh = new THREE.Mesh(geometry, material);
-                    mesh.position.set(33, 33.04 - 1.176 + - .87 - .5, -53);
-                    mesh.name = objectType;
-                    mesh.parent = new THREE.Mesh(geometry, material);
-                    mesh.parent.name = objectType;
-                    mesh.parent.parent = new THREE.Mesh(geometry, material);
-                    mesh.parent.parent.name = objectType;
-                    mesh.castShadow = true;
-                    mesh.receiveShadow = true;
-                    mesh.roughness = .25;
-                    var group = new THREE.Group();
-                    group.name = objectType;
-                    group.add(mesh);
-                    scene.add(group);
-                    objectsArrayOfArrays[indexDictionary[objectType]].push(mesh);
-                    objectsArray[indexDictionary[objectType]] = mesh;
-                    objectsCountDict[objectType]++;
-                    console.log(objectsArrayOfArrays[indexDictionary[objectType]]);
-                    heightDiff = deskHeightDiff[objectName];
-                    for (var i = 1; i < objectsArrayOfArrays.length; i++) {
-                        for (var inner = 0; inner < objectsArrayOfArrays[i].length; inner++) {
-                            //console.log(objectsArrayOfArrays[i][inner].name);
-                            var object = scene.getObjectByName(objectsArrayOfArrays[i][inner].name);
-                            console.log(object.userData.objectName);
-                            console.log(object.userData.objectName);
-                            console.log(object.userData.objectName);
-                            console.log(object.userData.objectName);
-                            //object.position.y += heightDiff;
-                            if (!object.userData.objectName.includes("Chair")) {
-                                object.position.set(coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][object.userData.objectName][0],
-                                    coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][object.userData.objectName][1] + heightDiff,
-                                    coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][object.userData.objectName][2]
-                                );
-                            }
-                        }
+                // give object unique name and basic name
+                object.name = objectName + "-" + highest;
+                object.userData.objectName = objectName;
+
+                // shadows
+                gltf.scene.traverse(function (object) {
+                    if (object.isMesh) {
+                        object.castShadow = true;
+                        object.receiveShadow = true;
                     }
-                } else {
+                });
+
+                objectsArr.push(object); // create new group at end of array
+                scene.add(object);
+
+                object = callBack(object);
+                
+
+                console.log(objectName + " was just added to the scene. Object: ");
+                console.log(object);
+
+                //createShareableString();
+                x = x + 1; // idk what this is
+            }, undefined, function (error) {
+                console.error(error);
+            });
+        }
+
+        // add desk
+        function addDesk(objectType, objectName) {
+            enablePicking(); // this will get done again in addObject, but I need to do it here so the code to replace the desk works
+
+            // pick the old desk, store it, and delete it
+            pickHelper.pick(getObjectByType("Desk")[0]);
+            let oldDesk = pickHelper.pickedObject.userData.objectName;
+            pickHelper.deletePicked();
+
+            // call base function for adding single object
+            addDefault(objectType, objectName, false);
+
+            // update height of all objects and unselect the new desk so it can't be accidentally deleted
+            updateDeskHeightDiff(objectName, oldDesk);
+            pickHelper.unselectPickedObject();
+        }
+
+        function addDeskCustom(objectType, baseObjectName) {
+            enablePicking(); // this will get done again in addObject, but I need to do it here so the code to replace the desk works
+
+            // pick the old desk, store it, and delete it
+            pickHelper.pick(getObjectByType("Desk")[0]);
+            let oldDesk = pickHelper.pickedObject.userData.objectName;
+            pickHelper.deletePicked();
+
+            // get exact name of the object to add using the form
+            let objectName = baseObjectName + document.getElementById(baseObjectName + "Form").value
+
+            // call base function now that we have the complete name
+            addDefault(objectType, objectName, false);
+
+            // update heighy for all objects
+            updateDeskHeightDiff(objectName, oldDesk);
+        }
+
+        // add an object with position and rotation as inputs
+        function addDefaultPosRot(objectType, objectName, posi, roti) {
+            // console.log("LOOK HERE FOR POSITION");
+            // console.log(pos);
+
+            // console.log("LOOK HERE FOR ROTATION");
+            // console.log(rot);
+
+            addObject(objectName, function(object) {
+                let pos = posi;
+                let rot = roti;
+                
+                object.userData.type = objectType;
+
+                pickHelper.pick(object);
+
+                console.log("MEGA DEBUG: OBJECT POSITION ROTATION");
+                console.log(object);
+                console.log(pos);
+                console.log(rot);
+
+                // set position and rotation
+                object.position.set(pos.x, pos.y, pos.z);
+                object.rotation.set(rot.x, rot.y, rot.z);
+
+                return object;
+            });
+        }
+
+        function addPrimitivePosRotDim(objectType, objectName, pos, rot, dim) {
+
+        }
 
 
-                    var selectedObject = scene.getObjectByName(objectType);
-                    console.log("A");
-                    console.log("A");
-                    console.log("A");
-                    console.log("A");
-                    console.log("A");
-                    console.log("A");
-                    console.log(selectedObject);
-                    scene.remove(selectedObject);
-                    //objectsStringsArray[indexDictionary[objectType]] = objectName;
-                    console.log(objectsStringsArray[indexDictionary[objectType]]);
-                    heightDiff = deskHeightDiff[objectName];
-                    //Desk Loader
-                    console.log("GOT HERE");
-                    loader.load(deskDictionary[objectName][4], function (gltf) {
-                        //Set dictionary for currentDesk arrays? 
-                        objectsArray[indexDictionary[objectType]] = gltf.scene;
-                        objectsArray[indexDictionary[objectType]].traverse(function (object) {
-                            if (object.isMesh) {
-                                object.castShadow = true;
-                                object.receiveShadow = true;
-                            }
-                        });
-                        objectsArray[indexDictionary[objectType]].name = objectType;
-                        objectsArray[indexDictionary[objectType]].position.set(deskDictionary[objectName][0],
-                            deskDictionary[objectName][1],
-                            deskDictionary[objectName][2]);
-                        gltf.scene.rotation.y = deskDictionary[objectName][3];
-                        gltf.name = "desk";
-                        for (var i = 0; i < gltf.scenes[0].children.length; i++) {
-                            console.log("DESK ITEM " + i);
-                            console.log(gltf.scene.children[i].parent);
-                            //objectsArray[indexDictionary[objectType]].add(gltf.scene.children[i].parent);
-                            console.log(objectsArray);
-                        }
-                        scene.add(gltf.scene);
-                        x = x + 1;
-                    }, undefined, function (error) {
-                        console.error(error);
-                    });
-                    //Changing all the other objects on desk to fit new desk \/
-                    for (var i = 1; i < objectsArrayOfArrays.length; i++) {
-                        for (var inner = 0; inner < objectsArrayOfArrays[i].length; inner++) {
-                            //console.log(objectsArrayOfArrays[i][inner].name);
-                            var object = scene.getObjectByName(objectsArrayOfArrays[i][inner].name);
-                            console.log(object.userData.objectName);
-                            console.log(object.userData.objectName);
-                            console.log(object.userData.objectName);
-                            console.log(object.userData.objectName);
-                            //object.position.y += heightDiff;
-                            if (!object.userData.objectName.includes("Chair")) {
-                                object.position.set(coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][object.userData.objectName][0],
-                                    coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][object.userData.objectName][1] + heightDiff,
-                                    coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][object.userData.objectName][2]
-                                );
-                            }
-                        }
-                        /*console.log(objectsStringsArray[0]);
-                        console.log(objectsTypeArray[i]);
-                        console.log(objectsStringsArray[i]);
-                        console.log(objectsStringsArray);
-                        //console.log(coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]]);
-                        if (objectsStringsArray[i] != "") {
-                            console.log(objectsArrayOfArrays);
-                            objectsArray[indexDictionary[objectsTypeArray[i]]].position.set(coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]][0],
-                                coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]][1] + heightDiff,
-                                coordinateDictionary[objectsStringsArray[0]][objectsTypeArray[i]][objectsStringsArray[i]][2]
-                            );
-                        }*/
-                    }
+
+
+
+
+
+
+        // OTHER FUNCTIONS
+
+
+
+        // finds any objects that have a type string with the objectType string in it, and a returns an array of those objects
+        function getObjectByType(objectType) {
+            var object = [];
+            for(let i = 0; i < objectsArr.length; i++) {
+                if(objectsArr[i].userData.type.includes(objectType)) {
+                    object.push(objectsArr[i]);
                 }
-                //animate();
-            } else { //Object is being changed (on desk)
-                //Get value of size form for monitors only
-                //Sphere cylinder box
-                if (objectName.includes("primitive")) {
-                    //Spawn in a primitve object
-                    //Object type will be misc
-                    if (objectName == "primitiveBox") {
-                        var length = document.getElementById(objectName + "L").value;
-                        var width = document.getElementById(objectName + "W").value;
-                        var height = document.getElementById(objectName + "H").value;
-                        var geometry = new THREE.BoxBufferGeometry(length, width, height);
-                        var material = new THREE.MeshLambertMaterial({ color: 0x202020 });
-                        geometry.computeFaceNormals();
-                        geometry.computeVertexNormals();
-                        var mesh = new THREE.Mesh(geometry, material);
-                        mesh.position.set(33, 33.04 - 1.176 + heightDiff + (width / 2 - .5), -57);
-                        mesh.name = objectType + objectsCountDict[objectType];
-                        mesh.parent = new THREE.Mesh(geometry, material);
-                        mesh.parent.name = objectType + objectsCountDict[objectType];
-                        mesh.parent.parent = new THREE.Mesh(geometry, material);
-                        mesh.parent.parent.name = objectType + objectsCountDict[objectType];
-                        console.log("MESH");
-                        console.log("MESH");
-                        console.log("MESH");
-                        console.log("MESH");
-                        console.log(mesh);
-                        transformControls.detach();
-                        transformControls.attach(mesh);
-                        pickHelper.setPickedObject(mesh);
-                        mesh.castShadow = true;
-                        mesh.receiveShadow = true;
-                        scene.add(mesh);
-                        objectsArrayOfArrays[indexDictionary[objectType]].push(mesh);
-                        objectsArray[indexDictionary[objectType]] = mesh;
-                        objectsCountDict[objectType]++;
-                        console.log(objectsArrayOfArrays[indexDictionary[objectType]]);
-                    } else if (objectName == "primitiveSphere") {
-                        var radius = document.getElementById(objectName + "Radius").value;
-                        var detail = 5;
-                        console.log(radius);
-                        console.log(radius);
-                        console.log(radius);
-                        console.log(radius);
-                        console.log(radius);
-                        var geometry = new THREE.OctahedronBufferGeometry(radius, detail);
-                        var material = new THREE.MeshLambertMaterial({ color: 0x202020 });
-                        var mesh = new THREE.Mesh(geometry, material);
-                        mesh.position.set(33, 33.04 - 1.176 + heightDiff + (radius - .5), -57);
-                        mesh.name = objectType + objectsCountDict[objectType];
-                        mesh.parent = new THREE.Mesh(geometry, material);
-                        mesh.parent.name = objectType + objectsCountDict[objectType];
-                        mesh.parent.parent = new THREE.Mesh(geometry, material);
-                        mesh.parent.parent.name = objectType + objectsCountDict[objectType];
-                        console.log("MESH");
-                        console.log("MESH");
-                        console.log("MESH");
-                        console.log("MESH");
-                        console.log(mesh);
-                        transformControls.detach();
-                        transformControls.attach(mesh);
-                        pickHelper.setPickedObject(mesh);
-                        mesh.castShadow = true;
-                        mesh.receiveShadow = true;
-                        scene.add(mesh);
-                        objectsArrayOfArrays[indexDictionary[objectType]].push(mesh);
-                        objectsArray[indexDictionary[objectType]] = mesh;
-                        objectsCountDict[objectType]++;
-                        console.log(objectsArrayOfArrays[indexDictionary[objectType]]);
-                    }
-                } else {
+            }
 
+            return object;
+        }
 
-                    if (objectType == "monitor" && customOrNot == "custom") {
-                        var monitorForm = document.getElementById(objectName + "Form");
-                        //Leaves us with only the number, takes out the / and "
-                        console.log(monitorForm);
-                        var monitorSize = monitorForm.options[monitorForm.selectedIndex].value.replace(/[^0-9]/g, '');
-                        var standOrNot = document.getElementById(objectName + "Stand");
-                        objectName = objectName + monitorSize;
-                        if (standOrNot.value == "on") {
-                            objectName = objectName + "NoStand";
+        // !!! unsure if this works. but it's not currently used
+        function getObjectByObjectName(objectName) {
+            var object = [];
+            for(let i = 0; i < objectsArr.length; i++) {
+                if(objectsArr[i].userData.objectName == objectName) {
+                    object.push(objectsArr[i]);
+                }
+            }
+
+            return object;
+        }
+
+        // extract the number from the object's unique name string
+        function getCountOfObject(objectName) {
+            let index  = objectName.length - 1;
+            while(objectName.charAt(index) != '-' && index >= 0) {
+                index--;
+            }
+            return parseInt(objectName.substring(index + 1));
+        }
+
+        function updateDeskHeightDiff(deskName, oldDesk) {
+            let position = new THREE.Vector3();
+            let object;
+
+            for(let i = 0; i < objectsArr.length; i++) {
+                object = objectsArr[i];
+                position = object.position;
+                if(!object.userData.type.includes("Furniture")) {
+                    
+                    object.position.set(position.x, position.y + (deskHeightDiff[deskName] - deskHeightDiff[oldDesk]), position.z);
+                }
+            }
+            heightDiff = deskHeightDiff[deskName];
+        }
+
+        // clears the scene of all objects
+        function resetScene() {
+            for(let i = objectsArr.length - 1; i >= 0; i--) {
+                console.log("REMOVED:");
+                console.log(objectsArr[i]);
+
+                enablePicking();
+
+                pickHelper.pick(objectsArr[i]);
+                pickHelper.deletePicked();
+            }
+            console.log("OBJECTS ARRAY AFTER RESET:");
+            console.log(objectsArr);
+        }
+
+        // takes in the shareable string and places all the objects contained in it
+        function parseShareableString(string) {
+            resetScene();
+
+            addFloorInit("PrimitiveFloorFurnitureNoSelect", "floor"); // adds the floor
+            
+            let dataType = 0;
+            let objectName = "";
+            let objectType = "";
+            let vector = new THREE.Vector3();
+            let position = new THREE.Vector3();
+            let rotation = new THREE.Vector3();
+            let vecStr = "";
+            let xyz;
+
+            let object;
+            
+            let index = 2;
+            let exitCode = 0; // becomes 1 if there is a problem in the string
+            let c = string.charAt(0);
+            if(c == '[') {
+                //while loop to go through string
+                while(c != ']' && !exitCode) {
+                    c = string.charAt(index);
+
+                    if(c == ' ') {
+                        dataType = 0;
+                    } else if(c == '|') {
+                        if(dataType == 0) {
+                            // type
+                        } else if(dataType == 1) {
+                            // name
+                        } else if(dataType == 2) {
+                            // position
+                            //console.log("SETTING POSITION");
+                            position = vector;
+                            //console.log(position);
+                            vector = new THREE.Vector3(); // without this it doesn't work for some reason
+                        } else if(dataType == 3) {
+                            // rotation
+                            //console.log("SETTING ROTATION");
+                            rotation = vector;
+                            //console.log(rotation);
+                            vector = new THREE.Vector3(); // without this it doesn't work for some reason
+
+                            //console.log("THE VECTORS BEING PASSED FOR OBJECT: " + objectName);
+                            //console.log(position);
+                            //console.log(rotation);
+                            addDefaultPosRot(objectType, objectName, position, rotation);
+                            objectType = "";
+                            objectName = "";
                         }
-                        console.log(objectName);
-                        console.log(objectName);
-                        console.log(objectName);
-                        console.log(objectName);
-                    } else if (objectType == "speaker" && customOrNot == "custom") {
-                        var monitorForm = document.getElementById(objectName + "Form");
-                        //Leaves us with only the number, takes out the / and "
-                        var monitorSize = monitorForm.options[monitorForm.selectedIndex].value;
-                        objectName = objectName + monitorSize;
-                        console.log(objectName);
-                    } else if (objectType == "keyboard" && customOrNot == "custom") {
-                        var keyboardForm = document.getElementById(objectName + "Form");
-                        //document.getElementById(objectName + "Image").src = "Model thumbnails/" + objectName + keyboardForm.value + ".jpg";
-                        objectName = objectName + keyboardForm.value;
-
-
-                    }
-
-
-                    var selectedObject = scene.getObjectByName(objectType);
-                    console.log(selectedObject);
-                    scene.remove(selectedObject);
-
-                    objectsStringsArray[indexDictionary[objectType]] = objectName;
-
-                    console.log(coordinateDictionary[objectsStringsArray[0]][objectType][objectName]);
-                    //console.log(objectsStringsArray[indexDictionary[objectType]]);
-                    var coordinateDictionaryArr = coordinateDictionary[objectsStringsArray[0]][objectType][objectName];
-                    //var currentObject = objectsArray[indexDictionary[objectType]];
-                    loader.load(coordinateDictionaryArr[4], function (gltf) {
-                        //Set dictionary for currentDesk arrays? 
-                        console.log("gltf.scenes[0].children[0].parent of " + objectType);
-                        console.log(gltf.scenes[0].children[0].parent);
-                        objectsArray[indexDictionary[objectType]] = gltf.scenes[0].children[0].parent;
-
-                        objectsArray[indexDictionary[objectType]].name = objectType + objectsCountDict[objectType];
-                        if (!objectName.includes("Chair")) {
-                            objectsArray[indexDictionary[objectType]].position.set(coordinateDictionaryArr[0],
-                                coordinateDictionaryArr[1] + heightDiff,
-                                coordinateDictionaryArr[2]);
+                        dataType++;
+                        xyz = 0
+                    } else {
+                        if (dataType == 0) {
+                            // getting the objectType
+                            objectType += c;
+                        } else if (dataType == 1) {
+                            // getting the objectName
+                            objectName += c;
+                        } else if (dataType == 2 || dataType == 3) {
+                            // getting the position or rotation
+                            if(c != ',') {
+                                vecStr += c;
+                            } else {
+                                if(xyz == 0) {
+                                    //console.log("VECTOR X: " + vecStr)
+                                    vector.x = parseFloat(vecStr);
+                                } else if(xyz == 1) {
+                                    //console.log("VECTOR Y: " + vecStr)
+                                    vector.y = parseFloat(vecStr);
+                                } else if(xyz == 2) {
+                                    //console.log("VECTOR Z: " + vecStr)
+                                    vector.z = parseFloat(vecStr);
+                                } else {
+                                    console.log("UH OH");
+                                    exitCode = 1;
+                                }
+                                vecStr = "";
+                                xyz++;
+                            }
                         } else {
-                            objectsArray[indexDictionary[objectType]].position.set(coordinateDictionaryArr[0],
-                                coordinateDictionaryArr[1],
-                                coordinateDictionaryArr[2]);
+                            console.log("PARSE ERROR. INDEX IS: " + index + "c is: " + c + "datatype is: " + dataType);
+                            exitCode = 1;
                         }
-                        objectsArray[indexDictionary[objectType]] = gltf.scenes[0].children[0].parent;
-                        var tempGroup = new THREE.Group();
-                        tempGroup = gltf.scenes[0].children[0].parent;
-                        objectsArrayOfArrays[indexDictionary[objectType]].push(gltf.scenes[0].children[0].parent);
-                        gltf.scene.rotation.y = coordinateDictionaryArr[3];
-                        gltf.name = objectType + objectsCountDict[objectType];
-                        gltf.scene.userData.objectName = objectName;
-                        gltf.scene.traverse(function (object) {
-                            if (object.isMesh) {
-                                object.castShadow = true;
-                                object.receiveShadow = true;
-                            }
-                        });
-                        console.log(gltf.name);
-                        objectsCountDict[objectType]++;
-                        console.log(objectsCountDict[objectType]);
-                        scene.add(gltf.scene);
-                        pickHelper.setPickedObject(gltf.scene.children[0]);
-                        transformControls.detach();
-                        transformControls.attach(gltf.scene.children[0]);
-                        console.log(transformControls.object);
-                        console.log(objectsArray);
-                        x = x + 1;
-                    }, undefined, function (error) {
-                        console.error(error);
-                    });
+                    }
+                    index++;
                 }
+                if(index > 10000) {
+                    exitCode = 1;
+                    console.log("infinite loop");
+                }
+            } else {
+                console.log("Error: invalid input string");
+                exitCode = 1;
             }
 
         }
 
-        function replace3DObject(objectType, objectName, event) {
-            pickHelper.deleteObject();
-            selectNew3DObject(objectType, objectName, event);
+        // creates the shareable string
+        function createShareableString() {
+            let shareableString = "[ ";
+            for(let i = 0; i < objectsArr.length; i++) {
+                let object = objectsArr[i];
+                if(object.userData.type.includes("Primitive")) {
+                    // add code for primitive
+                } else {
+                    shareableString += object.userData.type + "|";
+                    shareableString += object.userData.objectName + "|";
+                    shareableString += object.position.x + "," + object.position.y + "," + object.position.z + ",|";
+                    shareableString += object.rotation.x + "," + object.rotation.y + "," + object.rotation.z + ",";
+                    shareableString += "| ";
+                }
+            }
+
+            shareableString += "]";
+            console.log(shareableString);
         }
-
-        /*scene = remove3DObject("currentDesk");
-        function remove3DObject(id) {
-            console.log("REMOVING THE 3D OBJECT");
-            scene.remove(scene.getObjectByName(id));
-            return scene;
-        }*/
-
     </script>
 
 
