@@ -3586,7 +3586,7 @@
                         objectType = "";
                         objectName = "";
                         textureName = "";
-                    } else if (c == '-') { // toggle primitive mode
+                    } else if (c == '^') { // toggle primitive mode
                         primitiveData = !primitiveData;
                     } else if (primitiveData) { // primitive
                         if (c == '|') {
@@ -3744,7 +3744,7 @@
             for (let i = 0; i < objectsArr.length; i++) {
                 object = objectsArr[i];
                 if (object.userData.type.includes("Primitive")) {
-                    shareableString += '-';
+                    shareableString += '^';
                 }
 
                 shareableString += object.userData.type + "|";
@@ -3760,7 +3760,7 @@
                     } else {
                         console.log("Error creating shareable string: unknown primitive shape");
                     }
-                    shareableString += mesh.material.name + "|-";
+                    shareableString += mesh.material.name + "|^";
                 }
                 shareableString += " ";
             }
