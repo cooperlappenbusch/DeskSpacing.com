@@ -90,6 +90,9 @@
 
                         </ul>
                     </div>
+                    <button type="button" id="saveModalButton" class="btn btn-info my-2 my-sm-0" type="submit"
+                        data-toggle="modal" data-target="#saveModal">Share / Save </button>
+                    <p>&nbsp;&nbsp;</p>
                     <button type="button" class="btn btn-outline-primary my-2 my-sm-0" type="submit" data-toggle="modal"
                         data-target="#exampleModal">Keybinds</button>
                     <p>&nbsp;&nbsp;</p>
@@ -147,14 +150,12 @@
                                                         <div class="text-center">
                                                             <p>Length: &nbsp;<input id="customDeskW" type="text"
                                                                     onkeypress="validate(event)"
-                                                                    onclick="disablePicking()"
-                                                                    style="width: 30%;"
+                                                                    onclick="disablePicking()" style="width: 30%;"
                                                                     value="1">
                                                             </p>
                                                             <p>Width: &nbsp;<input id="customDeskL" type="text"
                                                                     onkeypress="validate(event)"
-                                                                    onclick="disablePicking()"
-                                                                    style="width: 30%;"
+                                                                    onclick="disablePicking()" style="width: 30%;"
                                                                     value="1">
                                                             </p>
                                                             <p>
@@ -2003,6 +2004,46 @@
                             </p>
                         </div>
 
+                        <div class="modal fade" id="saveModal" tabindex="-1" role="dialog"
+                            aria-labelledby="saveModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-white" id="shareModalLabel">Share / Save Your
+                                            Setup
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body text-white">
+                                        <h2 class="text-center">Your Custom Setup Link</h2>
+                                        <p class="text-center">Use this link to come back to your setup, or share with a
+                                            friend!</p>
+                                        <form>
+                                            <div class="form-group">
+                                                <!--<label for="exampleInputEmail1">Email address</label>-->
+
+                                                <input type="email" class="form-control" id="customLinkForm"
+                                                    aria-describedby="emailHelp" value="Deskspacing.com/gottem">
+
+                                                <p id="emailHelp" class="form-text text-warning text-center"
+                                                    style="font-size: 14px;">
+                                                    <span class="icon-warning text-warning"></span> This link is custom
+                                                    to your exact setup, after making changes make sure to get a new
+                                                    link!</p>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -2383,6 +2424,11 @@
             }
         }
 
+        document.getElementById('saveModalButton').onclick = function () {
+            var customLink = createCustomLink();
+            document.getElementById("customLinkForm").value = customLink;
+        }
+
         //using the DOM to switch out the images
         //60% keyboard on change
         document.getElementById('default60PercentKeyboardForm').onchange = function () {
@@ -2466,22 +2512,22 @@
                 //transformControls.detach();
                 //transformControls.attach(inputtedObject);
             }
-        
+
             deletePicked() {
-                if(this.pickedObject != null && this.pickEnabled) {
+                if (this.pickedObject != null && this.pickEnabled) {
                     transformControls.detach();
 
                     scene.remove(this.pickedObject);
-                    
+
                     let remIndex = -1;
-                    for(let i = 0; i < objectsArr.length; i++) {
-                        if(objectsArr[i].name == this.pickedObject.name) {
+                    for (let i = 0; i < objectsArr.length; i++) {
+                        if (objectsArr[i].name == this.pickedObject.name) {
                             remIndex = i;
                             i = objectsArr.length;
                         }
                     }
 
-                    if(remIndex != -1) {
+                    if (remIndex != -1) {
                         objectsArr = removeArrElem(objectsArr, remIndex);
                     }
 
@@ -2489,7 +2535,7 @@
 
                     console.log("objectsArr");
                     console.log(objectsArr);
-                }   
+                }
                 return objectsArr;
             }
 
@@ -2500,7 +2546,7 @@
 
                 // cast a ray through the frustum
                 this.raycaster.setFromCamera(normalizedPosition, camera);
-                
+
                 // find objects intersected by cast ray
                 const intersectedObjects = this.raycaster.intersectObjects(objectsArr, true);
 
@@ -2510,17 +2556,17 @@
 
                 console.log("INTERSECTED OBJECTS ARRAY");
                 console.log(intersectedObjects)
-                while(0 <= index) {
+                while (0 <= index) {
                     console.log("WE MADE IT THIS FAR");
                     interObj = intersectedObjects[index].object.parent;
-                    
+
                     // prevents selection of objects we don't want to select
-                    if(!interObj.userData.type.includes("NoSelect")) { 
+                    if (!interObj.userData.type.includes("NoSelect")) {
                         // check what type of object the element is
-                        if(interObj.type == "Group") {
+                        if (interObj.type == "Group") {
                             console.log("WE'RE A GROUP")
                             this.pick(interObj);
-                        } else if(interObj.type == "Mesh") {
+                        } else if (interObj.type == "Mesh") {
                             console.log("WE'RE A MESH")
                             this.pick(interObj);
                         } else {
@@ -2532,16 +2578,16 @@
             }
 
             pick(object) {
-                if(this.pickEnabled) {
+                if (this.pickEnabled) {
                     console.log("Object just picked: ");
                     console.log(object);
-                    
+
                     transformControls.detach();
                     // attach controls if the object type allows it
-                    if(!object.userData.type.includes("NoSelect")) {
+                    if (!object.userData.type.includes("NoSelect")) {
                         transformControls.attach(object);
                     }
-                        
+
                     // set picked object
                     this.pickedObject = object;
                 }
@@ -2735,7 +2781,7 @@
 
         // EVENT LISTENERS
 
-        document.getElementById('threeCanvas').addEventListener('click', function() {
+        document.getElementById('threeCanvas').addEventListener('click', function () {
             enablePicking();
         });
 
@@ -2777,7 +2823,7 @@
         //window.addEventListener('mouseout', clearPickPosition);
         //window.addEventListener('mouseleave', clearPickPosition);
 
-        window.addEventListener('resize', function() {
+        window.addEventListener('resize', function () {
             camera.aspect = rightSideContainer.clientWidth / rightSideContainer.clientHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(rightSideContainer.clientWidth, rightSideContainer.clientHeight);
@@ -3026,7 +3072,7 @@
             "modernOfficeChair": [0, 2.8, -50, Math.PI + Math.PI / 2, 'GLTFs/chairs/office chair - 46.6Dx33.2Wx32.1H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm '],
             "simpleChair": [0, 2.8, -50, Math.PI, 'GLTFs/chairs/simple chair - 36.9Dx14.5Wx18.5H.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm '],
             "gamingChair": [0, 3.5, -40, Math.PI / 2, 'GLTFs/chairs/gaming chair.glb', '10.2" L x 4" W x 8.3" H', '26cm L x 10cm W x 21cm ']
-    }
+        }
 
 
 
@@ -3102,13 +3148,13 @@
             addDefault("Keyboard", "default60PercentKeyboardAllGrey", false);
             addDefault("Mousepad", "QCKSmall", false);
         }
-        initializeObjects();
+        //initializeObjects();
 
         function removeArrElem(array, index) {
             let tempArr = [];
 
-            for(let i = 0; i < array.length; i++) {
-                if(i != index) {
+            for (let i = 0; i < array.length; i++) {
+                if (i != index) {
                     tempArr.push(array[i]);
                 }
             }
@@ -3135,7 +3181,7 @@
             enablePicking(); // this will get done again in addObject, but I need to do it here so the code to replace the desk works
 
             let geometry = new THREE.BoxBufferGeometry(document.getElementById(objectName + "L").value, "1", document.getElementById(objectName + "W").value);
-            
+
             let textureName = document.getElementById(objectName + "Form").value;
 
             let texture = new THREE.TextureLoader().load(textureDictionary[textureName]);
@@ -3172,12 +3218,12 @@
             // create box or sphere geometry
             let geometry;
             let width = 0;
-            if(objectType.includes("Box")) {
+            if (objectType.includes("Box")) {
                 geometry = new THREE.BoxBufferGeometry(document.getElementById(objectName + "L").value,
                     document.getElementById(objectName + "W").value,
                     document.getElementById(objectName + "H").value);
-                    width = document.getElementById(objectName + "W").value / 2;
-            } else if(objectType.includes("Sphere")) {
+                width = document.getElementById(objectName + "W").value / 2;
+            } else if (objectType.includes("Sphere")) {
                 geometry = new THREE.OctahedronBufferGeometry(document.getElementById(objectName + "Radius").value, 5);
                 width = document.getElementById(objectName + "Radius").value;
             } else {
@@ -3190,10 +3236,10 @@
 
             // add object to scene and make a group
             var object = addPrimitive(objectType, objectName, geometry, material); // this function is not getting called for some reason
-            
+
             // set position, reset if object is being replaced, and delete previous object
             let position = new THREE.Vector3(0, 31.7 + heightDiff + (width - .5), -57);
-            if(replace && pickHelper.pickedObject != null) {
+            if (replace && pickHelper.pickedObject != null) {
                 // only use x and z of the old object and keep y untouched
                 position.set(pickHelper.pickedObject.position.x, position.y, pickHelper.pickedObject.position.z);
                 pickHelper.deletePicked();
@@ -3219,9 +3265,9 @@
             // make sure the object is getting a unique name
             let highest = 0;
             let objCount = 0;
-            for(let i = 0; i < objectsArr.length; i++) {
+            for (let i = 0; i < objectsArr.length; i++) {
                 objCount = getCountOfObject(objectsArr[i].name);
-                if(objectsArr[i].userData.objectName == objectName && objCount >= highest) {
+                if (objectsArr[i].userData.objectName == objectName && objCount >= highest) {
                     highest = objCount + 1;
                 }
             }
@@ -3262,7 +3308,7 @@
 
         // basic add function for adding a gltf. 
         function addDefault(objectType, objectName, replace) {
-            addObject(objectName, function(object) {
+            addObject(objectName, function (object) {
                 let coordDictArr = coordinateDictionary[objectName];
 
                 let pos = new THREE.Vector3(coordDictArr[0], coordDictArr[1], coordDictArr[2]);
@@ -3271,7 +3317,7 @@
                 object.userData.type = objectType;
 
                 // replace object if replace is true
-                if(replace && pickHelper.pickedObject != null) {
+                if (replace && pickHelper.pickedObject != null) {
                     // only use x and y of the old object
                     pos.set(pickHelper.pickedObject.position.x, pos.y, pickHelper.pickedObject.position.z);
                     pickHelper.deletePicked();
@@ -3290,17 +3336,17 @@
         function addObject(objectName, callBack) {
             enablePicking(); // resets pick enabled if it was disabled by something else
 
-            let filePath = coordinateDictionary[objectName][4]; 
+            let filePath = coordinateDictionary[objectName][4];
 
             loader.load(filePath, function (gltf) {
                 let object = gltf.scene.children[0];
-                
+
                 // for loop to check if there are any duplicate objects
                 let highest = 0;
                 let objCount = 0;
-                for(let i = 0; i < objectsArr.length; i++) {
+                for (let i = 0; i < objectsArr.length; i++) {
                     objCount = getCountOfObject(objectsArr[i].name);
-                    if(objectsArr[i].userData.objectName == objectName && objCount >= highest) {
+                    if (objectsArr[i].userData.objectName == objectName && objCount >= highest) {
                         highest = objCount + 1;
                     }
                 }
@@ -3321,7 +3367,7 @@
                 scene.add(object);
 
                 object = callBack(object);
-                
+
 
                 console.log(objectName + " was just added to the scene. Object: ");
                 console.log(object);
@@ -3373,10 +3419,10 @@
             console.log("OBJECT NAME");
             console.log(objectName);
 
-            addObject(objectName, function(object) {
+            addObject(objectName, function (object) {
                 let pos = posi;
                 let rot = roti;
-                
+
                 object.userData.type = objectType;
 
                 pickHelper.pick(object);
@@ -3393,9 +3439,9 @@
             // create box or sphere geometry
             let geometry = null;
             let width = 0;
-            if(objectType.includes("Box")) {
+            if (objectType.includes("Box")) {
                 geometry = new THREE.BoxBufferGeometry(dim.x, dim.y, dim.z);
-            } else if(objectType.includes("Sphere")) {
+            } else if (objectType.includes("Sphere")) {
                 geometry = new THREE.OctahedronBufferGeometry(dim.x, 5);
             } else {
                 console.log("Error: invalid primitive type");
@@ -3404,7 +3450,7 @@
             let texture = null;
             let material = null;
             // create material
-            if(textureName != "null") {
+            if (textureName != "null") {
                 texture = new THREE.TextureLoader().load(textureDictionary[textureName]);
                 material = new THREE.MeshLambertMaterial({ map: texture });
             } else {
@@ -3445,8 +3491,8 @@
         // finds any objects that have a type string with the objectType string in it, and a returns an array of those objects
         function getObjectByType(objectType) {
             var object = [];
-            for(let i = 0; i < objectsArr.length; i++) {
-                if(objectsArr[i].userData.type.includes(objectType)) {
+            for (let i = 0; i < objectsArr.length; i++) {
+                if (objectsArr[i].userData.type.includes(objectType)) {
                     object.push(objectsArr[i]);
                 }
             }
@@ -3457,8 +3503,8 @@
         // !!! unsure if this works. but it's not currently used
         function getObjectByObjectName(objectName) {
             var object = [];
-            for(let i = 0; i < objectsArr.length; i++) {
-                if(objectsArr[i].userData.objectName == objectName) {
+            for (let i = 0; i < objectsArr.length; i++) {
+                if (objectsArr[i].userData.objectName == objectName) {
                     object.push(objectsArr[i]);
                 }
             }
@@ -3468,8 +3514,8 @@
 
         // extract the number from the object's unique name string
         function getCountOfObject(objectName) {
-            let index  = objectName.length - 1;
-            while(objectName.charAt(index) != '-' && index >= 0) {
+            let index = objectName.length - 1;
+            while (objectName.charAt(index) != '-' && index >= 0) {
                 index--;
             }
             return parseInt(objectName.substring(index + 1));
@@ -3479,11 +3525,11 @@
             let position = new THREE.Vector3();
             let object;
 
-            for(let i = 0; i < objectsArr.length; i++) {
+            for (let i = 0; i < objectsArr.length; i++) {
                 object = objectsArr[i];
                 position = object.position;
-                if(!object.userData.type.includes("Furniture")) {
-                    
+                if (!object.userData.type.includes("Furniture")) {
+
                     object.position.set(position.x, position.y + (deskHeightDiff[deskName] - deskHeightDiff[oldDesk]), position.z);
                 }
             }
@@ -3492,7 +3538,7 @@
 
         // clears the scene of all objects
         function resetScene() {
-            for(let i = objectsArr.length - 1; i >= 0; i--) {
+            for (let i = objectsArr.length - 1; i >= 0; i--) {
                 console.log("REMOVED:");
                 console.log(objectsArr[i]);
 
@@ -3511,7 +3557,7 @@
             resetScene();
             heightDiff = 0;
 
-            
+
             let dataType = 0;
             let objectName = "";
             let objectType = "";
@@ -3526,49 +3572,49 @@
             let primitiveData = false;
 
             let object;
-            
+
             let index = 2;
             let exitCode = 0; // becomes 1 if there is a problem in the string
             let c = string.charAt(0);
-            if(c == '[') {
+            if (c == '[') {
                 //while loop to go through string
-                while(c != ']' && !exitCode) {
+                while (c != ']' && !exitCode) {
                     c = string.charAt(index);
 
-                    if(c == ' ') {
+                    if (c == ' ') {
                         dataType = 0;
                         objectType = "";
                         objectName = "";
                         textureName = "";
-                    } else if(c == '*') { // toggle primitive mode
+                    } else if (c == '*') { // toggle primitive mode
                         primitiveData = !primitiveData;
-                    } else if(primitiveData) { // primitive
-                        if(c == '|') {
-                            if(dataType == 0) {
+                    } else if (primitiveData) { // primitive
+                        if (c == '|') {
+                            if (dataType == 0) {
                                 // type
-                            } else if(dataType == 1) {
+                            } else if (dataType == 1) {
                                 // name
-                                if(objectType.includes("Desk")) {
+                                if (objectType.includes("Desk")) {
                                     updateDeskHeightDiff(objectName, "modernDesk");
                                 }
-                            } else if(dataType == 2) {
+                            } else if (dataType == 2) {
                                 // position
                                 //console.log("SETTING POSITION");
                                 position = vector;
                                 //console.log(position);
                                 vector = new THREE.Vector3(); // without this it doesn't work for some reason
-                            } else if(dataType == 3) {
+                            } else if (dataType == 3) {
                                 // rotation
                                 //console.log("SETTING ROTATION");
                                 rotation = vector;
                                 //console.log(rotation);
                                 vector = new THREE.Vector3(); // without this it doesn't work for some reason
-                            } else if(dataType == 4) {
+                            } else if (dataType == 4) {
                                 // dimensions
                                 dimension = vector;
 
                                 vector = new THREE.Vector3();
-                            } else if(dataType == 5) {
+                            } else if (dataType == 5) {
                                 // texture name
                                 addPrimitivePosRotDimText(objectType, objectName, position, rotation, dimension, textureName);
                                 objectType = "";
@@ -3586,16 +3632,16 @@
                                 objectName += c;
                             } else if (dataType == 2 || dataType == 3 || dataType == 4) {
                                 // getting the position or rotation
-                                if(c != ',') {
+                                if (c != ',') {
                                     vecStr += c;
                                 } else {
-                                    if(xyz == 0) {
+                                    if (xyz == 0) {
                                         //console.log("VECTOR X: " + vecStr)
                                         vector.x = parseFloat(vecStr);
-                                    } else if(xyz == 1) {
+                                    } else if (xyz == 1) {
                                         //console.log("VECTOR Y: " + vecStr)
                                         vector.y = parseFloat(vecStr);
-                                    } else if(xyz == 2) {
+                                    } else if (xyz == 2) {
                                         //console.log("VECTOR Z: " + vecStr)
                                         vector.z = parseFloat(vecStr);
                                     } else {
@@ -3613,21 +3659,21 @@
                             }
                         }
                     } else { // not primitive
-                        if(c == '|') {
-                            if(dataType == 0) {
+                        if (c == '|') {
+                            if (dataType == 0) {
                                 // type
-                            } else if(dataType == 1) {
+                            } else if (dataType == 1) {
                                 // name
-                                if(objectType.includes("Desk")) {
+                                if (objectType.includes("Desk")) {
                                     updateDeskHeightDiff(objectName, "modernDesk");
                                 }
-                            } else if(dataType == 2) {
+                            } else if (dataType == 2) {
                                 // position
                                 //console.log("SETTING POSITION");
                                 position = vector;
                                 //console.log(position);
                                 vector = new THREE.Vector3(); // without this it doesn't work for some reason
-                            } else if(dataType == 3) {
+                            } else if (dataType == 3) {
                                 // rotation
                                 //console.log("SETTING ROTATION");
                                 rotation = vector;
@@ -3652,16 +3698,16 @@
                                 objectName += c;
                             } else if (dataType == 2 || dataType == 3) {
                                 // getting the position or rotation
-                                if(c != ',') {
+                                if (c != ',') {
                                     vecStr += c;
                                 } else {
-                                    if(xyz == 0) {
+                                    if (xyz == 0) {
                                         //console.log("VECTOR X: " + vecStr)
                                         vector.x = parseFloat(vecStr);
-                                    } else if(xyz == 1) {
+                                    } else if (xyz == 1) {
                                         //console.log("VECTOR Y: " + vecStr)
                                         vector.y = parseFloat(vecStr);
-                                    } else if(xyz == 2) {
+                                    } else if (xyz == 2) {
                                         //console.log("VECTOR Z: " + vecStr)
                                         vector.z = parseFloat(vecStr);
                                     } else {
@@ -3679,7 +3725,7 @@
                     }
                     index++;
                 }
-                if(index > 10000) {
+                if (index > 10000) {
                     exitCode = 1;
                     console.log("infinite loop");
                 }
@@ -3695,22 +3741,22 @@
             let shareableString = "[ ";
             let object = null;
             let mesh = null;
-            for(let i = 0; i < objectsArr.length; i++) {
+            for (let i = 0; i < objectsArr.length; i++) {
                 object = objectsArr[i];
-                if(object.userData.type.includes("Primitive")) {
+                if (object.userData.type.includes("Primitive")) {
                     shareableString += '*';
                 }
-                
+
                 shareableString += object.userData.type + "|";
                 shareableString += object.userData.objectName + "|";
                 shareableString += object.position.x + "," + object.position.y + "," + object.position.z + ",|";
                 shareableString += object.rotation.x + "," + object.rotation.y + "," + object.rotation.z + ",|";
-                if(object.userData.type.includes("Primitive")) {
+                if (object.userData.type.includes("Primitive")) {
                     mesh = object.children[0];
-                    if(object.userData.type.includes("Box")) {
-                        shareableString += mesh.geometry.parameters.width + "," + mesh.geometry.parameters.height + "," + mesh.geometry.parameters.depth +",|";
+                    if (object.userData.type.includes("Box")) {
+                        shareableString += mesh.geometry.parameters.width + "," + mesh.geometry.parameters.height + "," + mesh.geometry.parameters.depth + ",|";
                     } else if (object.userData.type.includes("Sphere")) {
-                        shareableString += mesh.geometry.parameters.radius + "," + "-1" + "," + "-1" +",|";
+                        shareableString += mesh.geometry.parameters.radius + "," + "-1" + "," + "-1" + ",|";
                     } else {
                         console.log("Error creating shareable string: unknown primitive shape");
                     }
@@ -3721,6 +3767,57 @@
 
             shareableString += "]";
             console.log(shareableString);
+            return shareableString;
+        }
+
+        function loadCustomSetup() {
+            var returnedParams = parseURLParams(window.location.href);
+            if (returnedParams != undefined) {
+                if (returnedParams.hasOwnProperty("customSetup")) {
+                    console.log("ENTERED");
+                    console.log("ENTERED");
+
+                    console.log(returnedParams["customSetup"][0]);
+                    parseShareableString(returnedParams["customSetup"][0]);
+                }
+            } else {
+                initializeObjects();
+            }
+
+
+            //console.log
+            //initializeObjects();
+        }
+
+        function createCustomLink() {
+            var originalLink = "https://deskspacing.com/mainApp.html";
+            var shareableString = createShareableString();
+            var customLink = "https://deskspacing.com/mainApp.html" + "?" + "customSetup=" + shareableString;
+            console.log(customLink);
+            return customLink;
+        }
+        createCustomLink();
+        //This function call checks if the URL has custom data, and implements that data if so
+        loadCustomSetup();
+        //From StackOverflow https://stackoverflow.com/questions/814613/how-to-read-get-data-from-a-url-using-javascript
+        function parseURLParams(url) {
+            var queryStart = url.indexOf("?") + 1,
+                queryEnd = url.indexOf("#") + 1 || url.length + 1,
+                query = url.slice(queryStart, queryEnd - 1),
+                pairs = query.replace(/\+/g, " ").split("&"),
+                parms = {}, i, n, v, nv;
+
+            if (query === url || query === "") return;
+
+            for (i = 0; i < pairs.length; i++) {
+                nv = pairs[i].split("=", 2);
+                n = decodeURIComponent(nv[0]);
+                v = decodeURIComponent(nv[1]);
+
+                if (!parms.hasOwnProperty(n)) parms[n] = [];
+                parms[n].push(nv.length === 2 ? v : null);
+            }
+            return parms;
         }
     </script>
 
