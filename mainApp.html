@@ -84,6 +84,1514 @@
                                     us on Twitter for
                                     updates! <span class="icon-twitter"></span> </a>
                             </li>
+<<<<<<< HEAD
+=======
+
+                        </ul>
+                    </div>
+                    <button type="button" id="saveModalButton" class="btn btn-info my-2 my-sm-0" type="submit"
+                        data-toggle="modal" data-target="#saveModal">Share / Save </button>
+                    <p>&nbsp;&nbsp;</p>
+                    <button type="button" class="btn btn-outline-primary my-2 my-sm-0" type="submit" data-toggle="modal"
+                        data-target="#exampleModal">Keybinds</button>
+                    <p>&nbsp;&nbsp;</p>
+                    <button class="btn btn-success my-2 my-sm-0" type="submit" data-toggle="modal"
+                        data-target="#tutorialModal">Beginner Tutorial</button>
+
+                </nav>
+
+            </div>
+            <div class="row flex-grow-1" id="UIRow">
+
+                <div class="col-md-4 col-md-push-8" style="height: 100%; padding: 0px; max-width: 600px;">
+                    <!--max-width: 600px;-->
+                    <div class="menuCol">
+                        <!--<h1 class="navbarTitle text-white">DeskSpacing</h1>
+                        <p class="underTitleText">Created by Cooper Lappenbusch and Travers Sorenson &copy;</p>
+                        <div class="text-center keybindButton">
+                            <button type="button" class="btn btn-outline-success text-center keybindButton mr-1"
+                                data-toggle="modal" data-target="#exampleModal">
+                                Controls Help
+                            </button>
+                        </div>-->
+                        <div class="accordion" id="accordionExample">
+                            <div class="card text-white z-depth-0 bordered">
+                                <div class="card-header" id="headingOne" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" type="button">
+                                            Desks
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails/customDeskLightAlderwood.jpg"
+                                                            id="customDeskImage">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="itemTitleText" id="modernDesk">
+                                                            <a>
+                                                                Custom Desk</a>
+
+                                                        </h3>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+                                                        <div class="text-center">
+                                                            <p>Length: &nbsp;<input id="customDeskW" type="text"
+                                                                    onkeypress="validate(event)"
+                                                                    onclick="disablePicking()" style="width: 30%;"
+                                                                    value="1">
+                                                            </p>
+                                                            <p>Width: &nbsp;<input id="customDeskL" type="text"
+                                                                    onkeypress="validate(event)"
+                                                                    onclick="disablePicking()" style="width: 30%;"
+                                                                    value="1">
+                                                            </p>
+                                                            <p>
+                                                            <form>
+                                                                <label>Material:</label>
+                                                                <select id="customDeskForm">
+                                                                    <option value="lightAlderwood"
+                                                                        data-image="Model thumbnails/customDeskLightAlderwood.jpg">
+                                                                        Light Alderwood</option>
+                                                                    <option value="darkWalnut"
+                                                                        data-image="Model thumbnails/customDeskDarkWalnut.jpg">
+                                                                        Dark Walnut</option>
+                                                                    <option value="italianOak"
+                                                                        data-image="Model thumbnails/customDeskItalianOak.jpg">
+                                                                        Italian Oak</option>
+                                                                    <option value="zebranoWood"
+                                                                        data-image="Model thumbnails/customDeskZebranoWood.jpg">
+                                                                        Zebrano Wood</option>
+
+
+                                                                </select>
+                                                            </form>
+                                                            </p>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addPrimitiveDesk('FurniturePrimitiveBoxDeskNoSelect','customDesk')">
+                                                                Add</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\standing desk 1.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="itemTitleText" id="modernDesk">
+                                                            <a href="https://www.amazon.com/gp/product/B07PFLRNJ3/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B07PFLRNJ3&linkId=14dde2085ad92614610ab9c163e145cb"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                Modern Desk</a> <span id="modernDeskUnits"
+                                                                class="dimensionsText"> <br>
+                                                                23.8"&nbspL&nbspx&nbsp51.7"&nbspW&nbspx&nbsp30.3"&nbspH
+                                                            </span>
+
+                                                        </h3>
+
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDesk('FurnitureDeskNoSelect','modernDesk')">
+                                                                Add</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\standing desk 2.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+
+                                                        <h3 class="itemTitleText"><a
+                                                                href="https://www.amazon.com/gp/product/B088B739DX/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B088B739DX&linkId=d43d458614fbb9f3e1f9a0c4c3add6c1"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                Standing Desk </a><span id="standingDeskUnits"
+                                                                class="dimensionsText"> <br>
+                                                                28.4"&nbspL&nbspx&nbsp55"&nbspW&nbspx&nbsp29.7"&nbspH
+                                                            </span>
+                                                        </h3>
+
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDesk('FurnitureDeskNoSelect','standingDesk')">
+                                                                Add</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=" productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\linnmon desk.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="itemTitleText" id="Linnmon Desk">
+                                                            Linnmon Desk
+                                                        </h3>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+                                                        <div class="text-center">
+                                                            <h5 class="itemTitleText">
+                                                                <form>
+                                                                    <select id="linnmonDeskForm" autocomplete="off">
+
+                                                                        <option value="39">24" L x 39" W x 30.3" H
+                                                                        </option>
+                                                                        <option value="47">24" L x 47" W x 30.3" H
+                                                                        </option>
+                                                                        <option value="59">24" L x 59" W x 30.3" H
+                                                                        </option>
+                                                                    </select>
+                                                                </form>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDeskCustom('FurnitureDeskNoSelect','linnmonDesk')">
+
+                                                                Add</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\alex desk.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="itemTitleText">
+                                                            <a href="https://www.amazon.com/gp/product/B01CODKU3C/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B01CODKU3C&linkId=15f27f6826d92626486bbae583cb6173"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip"
+                                                                title="Purchase on Amazon (Only Drawers)">
+                                                                Alex Desk </a>
+                                                        </h3>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+                                                        <div class="text-center">
+                                                            <h5 class="itemTitleText">
+                                                                <form>
+                                                                    <select id="alexDeskForm" autocomplete="off">
+
+                                                                        <option value="61">40" L x 61" W x 28.7" H
+                                                                        </option>
+                                                                        <option value="67">31" L x 67" W x 28.7" H
+                                                                        </option>
+                                                                        <option value="79">24" L x 79" W x 28.7" H
+                                                                        </option>
+                                                                    </select>
+                                                                </form>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDeskCustom('FurnitureDeskNoSelect','alexDesk')">
+
+                                                                Add</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\L shaped desk.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="itemTitleText">
+                                                            Bekant L Shaped Desk
+                                                        </h3>
+                                                        <div class="text-center">
+                                                            <h5 class="itemTitleText">
+                                                                43.2"&nbspL&nbspx&nbsp63"&nbspW&nbspx&nbsp30.1"&nbspH
+                                                            </h5>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <h5 class="itemTitleText">
+                                                                <form>
+                                                                    <select id="bekantLShapedForm" autocomplete="off"
+                                                                        autocomplete="off">
+                                                                        <option value="Left">Left </option>
+                                                                        <option value="Right">Right </option>
+                                                                    </select>
+                                                                </form>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDeskCustom('FurnitureDeskNoSelect','bekantLShaped')">
+
+                                                                Add</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card z-depth-0 bordered">
+                                <div class="card-header" id="headingTwo" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed">
+                                            Monitors
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#accordionExample">
+
+                                    <div class="card-body text-white">
+
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\16_9 monitor 3.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            <a href="https://www.amazon.com/gp/product/B07HQYQ63F/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B07HQYQ63F&linkId=dad534e4b09fa6f8b38f0054f4a39bd2"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                16:9 Monitor </a>
+                                                        </h3>
+                                                        <div class="text-center">
+                                                            <h5 class="itemTitleText">
+                                                                <form>
+                                                                    <select id="small16x9MonitorForm"
+                                                                        autocomplete="off">
+                                                                        <option value="22">22" </option>
+                                                                        <option value="23">23" </option>
+                                                                        <option value="24">24" </option>
+                                                                        <option value="25">25" </option>
+                                                                        <option value="27">27" </option>
+                                                                        <option value="28">28" </option>
+                                                                        <option value="31">31.5" </option>
+                                                                    </select>
+
+                                                                    <label for="small16x9MonitorStand"> No Stand:
+                                                                    </label>
+
+                                                                    <input type="checkbox" id="small16x9MonitorStand"
+                                                                        value="off"></input>
+
+                                                                </form>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addMonitor('monitor','small16x9Monitor',false)">
+                                                                Add</button>
+                                                            <button type="button" class="btn btn-secondary"
+                                                                onclick="addMonitor('monitor','small16x9Monitor',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\curved large 16 9 monitor.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            <a href="https://www.amazon.com/gp/product/B0813MP9JZ/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B0813MP9JZ&linkId=6e7825243c9860c3b6e7741e03eb05fe"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                16:9 Curved Monitor </a>
+                                                        </h3>
+                                                        <div class="text-center">
+                                                            <h5 class="itemTitleText">
+                                                                <form>
+                                                                    <select id="largeCurved16x9MonitorForm"
+                                                                        autocomplete="off">
+                                                                        <option value="25">25" </option>
+                                                                        <option value="27">27" </option>
+                                                                        <option value="31">31.5" </option>
+                                                                        <option value="34">34" </option>
+                                                                    </select>
+                                                                    <label for="largeCurved16x9MonitorStand"> No Stand:
+                                                                    </label>
+
+                                                                    <input type="checkbox"
+                                                                        id="largeCurved16x9MonitorStand"
+                                                                        value="off"></input>
+                                                                </form>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addMonitor('monitor','largeCurved16x9Monitor',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addMonitor('monitor','largeCurved16x9Monitor',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails/21 9 monitor 2 non curved.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            <a href="https://www.amazon.com/gp/product/B078GSH1LV/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B078GSH1LV&linkId=bdc68e3fcf70623dfcf02f844954ccb1"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                21:9 Monitor </a>
+                                                        </h3>
+                                                        <div class="text-center">
+                                                            <h5 class="itemTitleText">
+                                                                <form>
+                                                                    <select id="flat21x9MonitorForm" autocomplete="off">
+                                                                        <option value="25">25" </option>
+                                                                        <option value="29">29" </option>
+                                                                        <option value="34">34" </option>
+                                                                    </select>
+                                                                    <label for="flat21x9MonitorStand"> No Stand:
+                                                                    </label>
+
+                                                                    <input type="checkbox" id="flat21x9MonitorStand"
+                                                                        value="off"></input>
+                                                                </form>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addMonitor('Monitor','flat21x9Monitor',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addMonitor('Monitor','flat21x9Monitor',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\Ultrwide Monitor 1.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            <a href="https://www.amazon.com/gp/product/B07HB3ZX9F/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B07HB3ZX9F&linkId=829993acda1fe961a295ad3543218160"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                21:9 Curved Monitor </a>
+                                                        </h3>
+                                                        <div class="text-center">
+                                                            <h5 class="itemTitleText">
+                                                                <form>
+                                                                    <select id="curved21x9MonitorForm"
+                                                                        autocomplete="off">
+                                                                        <option value="30">30" </option>
+                                                                        <option value="34">34" </option>
+                                                                        <option value="38">38" </option>
+                                                                    </select>
+                                                                    <label for="curved21x9MonitorStand"> No Stand:
+                                                                    </label>
+
+                                                                    <input type="checkbox" id="curved21x9MonitorStand"
+                                                                        value="off"></input>
+                                                                </form>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addMonitor('Monitor','curved21x9Monitor',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addMonitor('Monitor','curved21x9Monitor',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails/32_9 monitor.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            <a href="https://www.amazon.com/gp/product/B07PJQKLTW/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B07PJQKLTW&linkId=1a39e190a3083b29f41e48635f89ccd4"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                32:9 Curved Monitor </a>
+                                                        </h3>
+                                                        <div class="text-center">
+                                                            <h5 class="itemTitleText">
+                                                                <form>
+                                                                    <select id="curved32x9MonitorForm"
+                                                                        autocomplete="off">
+                                                                        <option value="43">43.4" </option>
+                                                                        <option value="49">49" </option>
+                                                                    </select>
+                                                                    <label for="curved32x9MonitorStand"> No Stand:
+                                                                    </label>
+
+                                                                    <input type="checkbox" id="curved32x9MonitorStand"
+                                                                        value="off"></input>
+                                                                </form>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addMonitor('Monitor','curved32x9Monitor',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addMonitor('Monitor','curved32x9Monitor',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="card z-depth-0 bordered">
+                                <div class="card-header" id="headingFour" type="button" data-toggle="collapse"
+                                    data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed">
+                                            Keyboards
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body text-white">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img id="default60PercentKeyboardImage" width="200px"
+                                                            height="200px"
+                                                            src="Model thumbnails\default60PercentKeyboardAllGrey.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText"><a
+                                                                href="https://www.amazon.com/gp/product/B088PMW7FD/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B088PMW7FD&linkId=0547eb99050c12904b1bee24e6389d72"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                60% Keyboard</a><span class="dimensionsText"> <br>
+                                                                4.3"&nbspL&nbspx&nbsp12"&nbspW&nbspx&nbsp1.4"&nbspH
+                                                            </span>
+                                                        </h3>
+                                                        <div class="text-center">
+                                                            <h4 class="itemTitleText">
+                                                                <form>
+                                                                    <label>Style:</label>
+                                                                    <select id="default60PercentKeyboardForm">
+                                                                        <option value="AllGrey">All Grey</option>
+                                                                        <option value="AllWhite">All White</option>
+                                                                        <option value="Minimalist">Minimalist</option>
+                                                                        <option value="Nightrunner">Nightrunner</option>
+                                                                        <option value="WGR">White / Grey / Red</option>
+                                                                        <option value="OBW">Orange / Black /
+                                                                            White</option>
+                                                                        <option value="YPGrad">Sunset
+                                                                        </option>
+                                                                    </select>
+                                                                </form>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addCustom('Keyboard','default60PercentKeyboard', false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addCustom('Keyboard','default60PercentKeyboard', true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- travers code -->
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img id="75PercentKeyboardImage" width="200px" height="200px"
+                                                            src="Model thumbnails\75PercentKeyboardAllGrey.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText"><a
+                                                                href="https://www.amazon.com/gp/product/B079M6QY9B/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B079M6QY9B&linkId=0ea0beb3fd9d6b8b921e46dfb8283430"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                75% Keyboard</a><span class="dimensionsText"> <br>
+                                                                4.3"&nbspL&nbspx&nbsp12.5"&nbspW&nbspx&nbsp1.4"&nbspH
+                                                            </span>
+                                                        </h3>
+                                                        <div class="text-center">
+                                                            <h4 class="itemTitleText">
+                                                                <form>
+                                                                    <label>Style:</label>
+                                                                    <select id="75PercentKeyboardForm">
+                                                                        <option value="AllGrey">All Grey</option>
+                                                                        <option value="AllWhite">All White</option>
+                                                                        <option value="Minimalist">Minimalist</option>
+                                                                        <option value="Nightrunner">Nightrunner</option>
+                                                                        <option value="WGR">White / Grey / Red</option>
+                                                                        <option value="OBW">Orange / Black /
+                                                                            White</option>
+                                                                        <option value="8008">8008
+                                                                        </option>
+                                                                    </select>
+                                                                </form>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addCustom('Keyboard','75PercentKeyboard', false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addCustom('Keyboard','75PercentKeyboard', true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /travers code-->
+
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="productPictureImg text-center">
+                                                        <img id="defaultFullKeyboardImage" width="200px" height="200px"
+                                                            src="Model thumbnails\defaultFullKeyboardAllGrey.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            <a href="https://www.amazon.com/gp/product/B07XGK1JHF/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B07XGK1JHF&linkId=6ecd7cbd2e056430ccd4c80c1e4ba305"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                Full Size Keyboard</a><span class="dimensionsText"> <br>
+                                                                5.5"&nbspL&nbspx&nbsp18"&nbspW&nbspx&nbsp1.5"&nbspH
+                                                            </span>
+                                                        </h3>
+                                                        <div class="text-center">
+                                                            <h4 class="itemTitleText">
+                                                                <form>
+                                                                    <label>Style:</label>
+                                                                    <select id="defaultFullKeyboardForm">
+                                                                        <option value="AllGrey">All Grey</option>
+                                                                        <option value="AllWhite">All White</option>
+                                                                        <option value="Nightrunner">Nightrunner</option>
+                                                                        <option value="WGR">White / Grey / Red</option>
+                                                                        <option value="OBW">Orange / Black /
+                                                                            White</option>
+                                                                        <option value="YPGrade">Sunset
+                                                                        </option>
+                                                                    </select>
+                                                                </form>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addCustom('Keyboard','defaultFullKeyboard', false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addCustom('Keyboard','defaultFullKeyboard', true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="productPictureImg text-center">
+                                                        <img id="TKLKeyboardImage" width="200px" height="200px"
+                                                            src="Model thumbnails\TKLKeyboardAllGrey.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            <a href="https://www.amazon.com/gp/product/B07DFBKYT5/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B07DFBKYT5&linkId=a130df8fb868efb4fb53daa8287349ac"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                TKL Keyboard</a><span class="dimensionsText"> <br>
+                                                                5.6"&nbspL&nbspx&nbsp14.8"&nbspW&nbspx&nbsp1.5"&nbspH
+                                                            </span>
+                                                        </h3>
+                                                        <div class="text-center">
+                                                            <h4 class="itemTitleText">
+                                                                <form>
+                                                                    <label>Style:</label>
+                                                                    <select id="TKLKeyboardForm">
+                                                                        <option value="AllGrey">All Grey</option>
+                                                                        <option value="AllWhite">All White</option>
+                                                                        <option value="WGR">White / Grey / Red</option>
+                                                                        <option value="OBW">Orange / Black / White
+                                                                        </option>
+                                                                        <option value="YPGrade">Sunset</option>
+                                                                        <option value="8008">8008</option>
+                                                                    </select>
+                                                                </form>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addCustom('Keyboard','TKLKeyboard',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addCustom('Keyboard','TKLKeyboard',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card z-depth-0 bordered">
+                                <div class="card-header" id="headingSeven" type="button" data-toggle="collapse"
+                                    data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed">
+                                            Mouse
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body text-white">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\mouse 2.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText"><a
+                                                                href="https://www.amazon.com/gp/product/B07S395RWD/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B07S395RWD&linkId=aef426e986ec93d936deaa2e2f422730"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                MX Master Mouse</a><span class="dimensionsText"> <br>
+                                                                4.9"&nbspL&nbspx&nbsp43.5"&nbspW&nbspx&nbsp2"&nbspH
+                                                            </span>
+                                                        </h3>
+
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDefault('Mouse','MXMaster3',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addDefault('Mouse','MXMaster3',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\Mouse 1 textured.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            <a href="https://www.amazon.com/gp/product/B07BFJWBFM/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B07BFJWBFM&linkId=c48d103bb5678d7955be7c153860115e"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                DeathAdder Mouse</a><span class="dimensionsText"> <br>
+                                                                4.1"&nbspL&nbspx&nbsp2.2"&nbspW&nbspx&nbsp1.6"&nbspH
+                                                            </span>
+                                                        </h3>
+
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDefault('Mouse','defaultMouse',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addDefault('Mouse','defaultMouse',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card z-depth-0 bordered">
+                                <div class="card-header" id="headingFive" type="button" data-toggle="collapse"
+                                    data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed">
+                                            Mousepads
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body text-white">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\small qck mousepad.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText"><a
+                                                                href="https://www.amazon.com/gp/product/B000UVRU6G/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B000UVRU6G&linkId=508a3a967f52e447164bae719781c356"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                QCK Small</a><span class="dimensionsText"> <br>
+                                                                8.4"&nbspL&nbspx&nbsp9.8"&nbspW
+                                                            </span>
+                                                        </h3>
+
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDefault('Mousepad','QCKSmall', false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addDefault('Mousepad','QCKSmall',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\medium qck mousepad.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText"><a
+                                                                href="https://www.amazon.com/gp/product/B000UVRU6G/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B000UVRU6G&linkId=508a3a967f52e447164bae719781c356"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                QCK Medium</a><span class="dimensionsText"> <br>
+                                                                10.6"&nbspL&nbspx&nbsp12.6"&nbspW
+                                                            </span>
+                                                        </h3>
+
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDefault('Mousepad','QCKMedium',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addDefault('Mousepad','QCKMedium',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\large qck mousepad.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText"><a
+                                                                href="https://www.amazon.com/gp/product/B000UVRU6G/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B000UVRU6G&linkId=508a3a967f52e447164bae719781c356"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                QCK Large</a><span class="dimensionsText"> <br>
+                                                                15.7"&nbspL&nbspx&nbsp17.7"&nbspW
+                                                            </span>
+                                                        </h3>
+
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDefault('Mousepad','QCKLarge',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addDefault('Mousepad','QCKLarge',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails/qck mousepad XXL.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText"><a
+                                                                href="https://www.amazon.com/gp/product/B000UEZ37G/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B000UEZ37G&linkId=8e54d3ef668c73f9cf40ea33e225aa51"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                QCK XXL</a><span class="dimensionsText"> <br>
+                                                                35.4"&nbspL&nbspx&nbsp15.7"&nbspW
+                                                            </span>
+                                                        </h3>
+
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDefault('Mousepad','QCKXXL',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addDefault('Mousepad','QCKXXL',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card z-depth-0 bordered">
+                                <div class="card-header" id="headingSix" type="button" data-toggle="collapse"
+                                    data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed">
+                                            Speakers and Audio Equipment
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body text-white">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\speakers 1.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            <a href="https://www.amazon.com/gp/product/B088685QVJ/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B088685QVJ&linkId=46c66a938bcab3e47ba8e5fc89121d59"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                Wood Grain Monitor Speakers</a><span
+                                                                class="dimensionsText">
+                                                                <br>
+                                                                7.4"&nbspL&nbspx&nbsp5.8"&nbspW&nbspx&nbsp9.5"&nbspH
+                                                            </span>
+                                                        </h3>
+                                                        <div class="text-center">
+                                                            <h4 class="itemTitleText">
+                                                                <form>
+                                                                    <label>Type:</label>
+                                                                    <select id="deskSpacingSpeakerForm"
+                                                                        autocomplete="off">
+                                                                        <option value="Primary">Primary</option>
+                                                                        <option value="Secondary">Secondary</option>
+                                                                    </select>
+                                                                </form>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addCustom('Speaker','deskSpacingSpeaker',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addCustom('Speaker','deskSpacingSpeaker',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\speaker bar 1.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText"><a
+                                                                href="https://www.amazon.com/gp/product/B07X84XN25/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B07X84XN25&linkId=7cfa8f07b565a254dde5a37b437e23aa"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                SoundBar</a><span class="dimensionsText"> <br>
+                                                                2.5"&nbspL&nbspx&nbsp16"&nbspW&nbspx&nbsp2.8"&nbspH
+                                                            </span>
+                                                        </h3>
+
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDefault('Speaker','deskSpacingSoundBar',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addDefault('Speaker','deskSpacingSoundBar',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\speakers 2 primary.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            <a href="https://www.amazon.com/gp/product/B07RJZ8QHW/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B07RJZ8QHW&linkId=c5326f9aafc4c272acb3c0276a322e43"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                Studio Monitor Speakers</a><span class="dimensionsText">
+                                                                <br>
+                                                                8.3"&nbspL&nbspx&nbsp7.3"&nbspW&nbspx&nbsp10.3"&nbspH
+                                                            </span>
+                                                        </h3>
+                                                        <div class="text-center">
+                                                            <h4 class="itemTitleText">
+                                                                <form>
+                                                                    <label>Type:</label>
+                                                                    <select id="studioMonitorSpeakerForm"
+                                                                        autocomplete="off">
+                                                                        <option value="Primary">Primary</option>
+                                                                        <option value="Secondary">Secondary</option>
+                                                                    </select>
+                                                                </form>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addCustom('Speaker','studioMonitorSpeaker',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addCustom('Speaker','studioMonitorSpeaker',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\blue yeti.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText"><a
+                                                                href="https://www.amazon.com/gp/product/B00N1YPXW2/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B00N1YPXW2&linkId=9d4c15230e8341d369c5516bf7793508"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                USB Microphone</a><span class="dimensionsText">
+                                                                <br>
+                                                                4.8"&nbspL&nbspx&nbsp4.6"&nbspW&nbspx&nbsp11.6"&nbspH
+                                                            </span>
+                                                        </h3>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDefault('Speaker','yetiUSBMic',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addDefault('Speaker','yetiUSBMic',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\audio interface.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            Audio Interface
+                                                            <span class="dimensionsText">
+                                                                <br>
+                                                                4.2"&nbspL&nbspx&nbsp5.7"&nbspW&nbspx&nbsp1.7"&nbspH
+                                                            </span>
+                                                        </h3>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDefault('Speaker','audioInterface',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addDefault('Speaker','audioInterface',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\midi keyboard 1.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText"><a
+                                                                href="https://www.amazon.com/gp/product/B00IJ6QAO2/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B00IJ6QAO2&linkId=197ce4643ff066d929d98c3e407140bc"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                MIDI Keyboard</a><span class="dimensionsText"> <br>
+                                                                7.1"&nbspL&nbspx&nbsp12.5"&nbspW&nbspx&nbsp1.5"&nbspH
+                                                            </span>
+                                                        </h3>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDefault('Misc','MIDIKeyboard',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addDefault('Misc','MIDIKeyboard',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card z-depth-0 bordered">
+                                <div class="card-header" id="headingEight" type="button" data-toggle="collapse"
+                                    data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed">
+                                            Laptops
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseEight" class="collapse" aria-labelledby="headingEight"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body text-white">
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\13 inch laptop.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            13" Laptop
+                                                        </h3>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDefault('Laptop','modernLaptop13',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addDefault('Laptop','modernLaptop13',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\15 inch laptop.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            15" Laptop
+                                                        </h3>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDefault('Laptop','modernLaptop15',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addDefault('Laptop','modernLaptop15',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\17 inch laptop.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            17" Laptop
+                                                        </h3>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDefault('Laptop','modernLaptop17',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addDefault('Laptop','modernLaptop17',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card z-depth-0 bordered">
+                                <div class="card-header" id="headingNine" type="button" data-toggle="collapse"
+                                    data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed">
+                                            Computer Towers
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseNine" class="collapse" aria-labelledby="headingNine"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body text-white">
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+
+                                                    <div class="productPictureImg text-center">
+                                                        <img width="200px" height="200px"
+                                                            src="Model thumbnails\desktop 1.jpg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText">
+                                                            Desktop Computer<span class="dimensionsText"> <br>
+                                                                8.3"&nbspL&nbspx&nbsp16.5"&nbspW&nbspx&nbsp19.5"&nbspH
+                                                            </span>
+                                                        </h3>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDefault('Computer','modernComputerTower',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addDefault('Computer','modernComputerTower',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="productBarrier"></div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl centerTopBottom">
+>>>>>>> parent of 6c9ccf1... Removed amazon affiliate links
 
                         </ul>
                     </div>
@@ -97,6 +1605,7 @@
                         data-target="#tutorialModal">Beginner Tutorial</button>
                 </nav>
 
+<<<<<<< HEAD
             </div>
             <div class="row flex-grow-1" style="padding-left: 10px;">
 
@@ -197,6 +1706,35 @@
                                                 </div>
                                             </li>
                                         </ul>
+=======
+                                                <div class="col-xl centerTopBottom">
+                                                    <div class="innerDescriptionDiv">
+                                                        <h3 class="customMonitorText"><a
+                                                                href="https://www.amazon.com/gp/product/B07CL9TCLN/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=deskspacing-20&creative=9325&linkCode=as2&creativeASIN=B07CL9TCLN&linkId=2acce2b3c108c68683fddb9855c632c4"
+                                                                style="text-decoration: underline;" target="_blank"
+                                                                data-toggle="tooltip" title="Purchase on Amazon">
+                                                                Modern Mini ITX Computer Build</a><span
+                                                                class="dimensionsText">
+                                                                <br>
+                                                                16.7"&nbspL&nbspx&nbsp13.6"&nbspW&nbspx&nbsp14.3"&nbspH
+                                                            </span>
+                                                        </h3>
+                                                        <div class="smallParagraphBreak">&nbsp</div>
+
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary text-center"
+                                                                style="display: inline-block;"
+                                                                onclick="addDefault('Computer','miniITXTower',false)">
+                                                                Add</button>
+                                                            <button type=" button" class="btn btn-secondary"
+                                                                onclick="addDefault('Computer','miniITXTower',true)">Replace
+                                                                selected</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+>>>>>>> parent of 6c9ccf1... Removed amazon affiliate links
                                     </div>
                                 </div>
                                 <button class="btn btn-dark btn-sm" type="button" id="applyFilters" style="margin-left: 30px; padding: 8px; padding-left: 20px; padding-right: 20px;"
@@ -632,8 +2170,12 @@
                                 </div>
                             </div>
                         </div>
+<<<<<<< HEAD
+=======
+                    </div>
+
+>>>>>>> parent of 6c9ccf1... Removed amazon affiliate links
                 </div>
-                
                 <div class="col-md col-md-pull-4" id="rightSideContainer">
                     <canvas id="threeCanvas" style="z-index: 0; background-color: grey;">
                         <button id="settingsButton" class="btn btn-secondary" type="submit" data-toggle="modal"
@@ -645,8 +2187,11 @@
                         data-target="#settingsModal" style="display: none;"><span class="icon-cog"></span></button>
                     <button id="resetCameraButton" class="btn btn-secondary" onclick="resetCamera()">Reset
                         Camera</button>
+<<<<<<< HEAD
                     <!-- <button id="toggleAxesButton" class="btn btn-secondary" onclick="resetCamera()">
                         All Axes</button> -->
+=======
+>>>>>>> parent of 6c9ccf1... Removed amazon affiliate links
                 </div>
 
             </div>
