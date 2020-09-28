@@ -975,6 +975,7 @@
 
                     scene.remove(this.pickedObject);
 
+                    // find object in objectsArr
                     let remIndex = -1;
                     for (let i = 0; i < objectsArr.length; i++) {
                         if (objectsArr[i].name == this.pickedObject.name) {
@@ -983,14 +984,15 @@
                         }
                     }
 
+                    // remove from objectsArr if found
                     if (remIndex != -1) {
                         objectsArr = removeArrElem(objectsArr, remIndex);
                     }
 
-                    this.pickedObject = null;
+                    removeOptionsPanel(this.pickedObject.name);
 
-                    console.log("objectsArr");
-                    console.log(objectsArr);
+                    // make pickedObject null
+                    this.pickedObject = null;
                 }
                 return objectsArr;
             }
@@ -1050,6 +1052,32 @@
                     }
                     index++;
                 }
+            }
+
+            deleteObjectByName(objectName) {
+                let object = null;
+                let index = 0;
+                let remIndex = -1;
+                while(index < searchArr.length) {
+                    if(searchArr[index].name == objectName) {
+                        object = searchArr[index];
+                        
+                        remIndex = index;
+                        index = searchArr.length;
+                    }
+                }
+
+                if (object != null) {
+                    transformControls.detach();
+
+                    scene.remove(object);
+
+                    // remove from objectsArr if found
+                    if (remIndex != -1) {
+                        objectsArr = removeArrElem(objectsArr, remIndex);
+                    }
+                }
+                return objectsArr;
             }
 
             pick(object) {
@@ -1324,25 +1352,27 @@
         window.addEventListener('keydown', function (event) {
             switch (event.keyCode) {
                 case 8: //BACKSPACE (Delete)
-                    if(pickHelper.pickEnabled && pickHelper.pickedObject != null && !pickHelper.pickedObject.userData.type.includes("NoSelect")) {
-                        removeOptionsPanel(pickHelper.pickedObject.userData.objectNameBase + "-" + getCountOfObject(pickHelper.pickedObject.name));
-                        oldOption = null;
-                        objectsArr = pickHelper.deletePicked();
-                    }
+                    // if(pickHelper.pickEnabled && pickHelper.pickedObject != null && !pickHelper.pickedObject.userData.type.includes("NoSelect")) {
+                    //     removeOptionsPanel(pickHelper.pickedObject.userData.objectNameBase + "-" + getCountOfObject(pickHelper.pickedObject.name));
+                    //     oldOption = null;
+                    //     objectsArr = pickHelper.deletePicked();
+                    // }
+
+                    pickHelper.deletePicked();
                     break;
                 case 46:
-                    if(pickHelper.pickEnabled && pickHelper.pickedObject != null && !pickHelper.pickedObject.userData.type.includes("NoSelect")) {
-                        removeOptionsPanel(pickHelper.pickedObject.userData.objectNameBase + "-" + getCountOfObject(pickHelper.pickedObject.name));
-                        oldOption = null;
-                        objectsArr = pickHelper.deletePicked();
-                    }
+                    // if(pickHelper.pickEnabled && pickHelper.pickedObject != null && !pickHelper.pickedObject.userData.type.includes("NoSelect")) {
+                    //     removeOptionsPanel(pickHelper.pickedObject.userData.objectNameBase + "-" + getCountOfObject(pickHelper.pickedObject.name));
+                    //     oldOption = null;
+                    //     objectsArr = pickHelper.deletePicked();
+                    // }
                     break;
                 case 68:
-                    if(pickHelper.pickEnabled && pickHelper.pickedObject != null && !pickHelper.pickedObject.userData.type.includes("NoSelect")) {
-                        removeOptionsPanel(pickHelper.pickedObject.userData.objectNameBase + "-" + getCountOfObject(pickHelper.pickedObject.name));
-                        oldOption = null;
-                        objectsArr = pickHelper.deletePicked();
-                    }
+                    // if(pickHelper.pickEnabled && pickHelper.pickedObject != null && !pickHelper.pickedObject.userData.type.includes("NoSelect")) {
+                    //     removeOptionsPanel(pickHelper.pickedObject.userData.objectNameBase + "-" + getCountOfObject(pickHelper.pickedObject.name));
+                    //     oldOption = null;
+                    //     objectsArr = pickHelper.deletePicked();
+                    // }
                     break;
                 case 82: // R
                     
@@ -1929,9 +1959,10 @@
 
                     let template = document.getElementById("itemOptions0");
                     let clone = template.content.cloneNode(true);
+                    let uniqueName = object.userData.objectNameBase + "-" + getCountOfObject(object.name);
 
                     clone.firstElementChild.className = "itemPanel";
-                    clone.firstElementChild.id = object.userData.objectNameBase + "-" + getCountOfObject(object.name);
+                    clone.firstElementChild.id = uniqueName;
                     clone.getElementById("optionsTitle").textContent = itemInfo[1];
                     clone.getElementById("productImage").src = itemInfo[4];
 
@@ -1940,16 +1971,17 @@
                     oldOption = object;
                     let template = document.getElementById("itemOptions1");
                     let clone = template.content.cloneNode(true);
+                    let uniqueName = object.userData.objectNameBase + "-" + getCountOfObject(object.name);
                     
                     clone.firstElementChild.className = "itemPanel";
-                    clone.firstElementChild.id = object.userData.objectNameBase + "-" + getCountOfObject(object.name);
+                    clone.firstElementChild.id = uniqueName;
                     clone.getElementById("optionsTitle").textContent = itemInfo[1];
                     clone.getElementById("productImage").src = itemInfo[4];
 
                     let dropDown = dropDownDictionary[objectName];
 
                     let dropDownElem = clone.getElementById("drop1");
-                    dropDownElem.id = objectName + "Form";
+                    dropDownElem.id = uniqueName + "Form";
                     let elem = null;
 
                     for(let i = 0; i < dropDown.length; i += 2) {
@@ -1972,16 +2004,17 @@
                     oldOption = object;
                     let template = document.getElementById("itemOptions2");
                     let clone = template.content.cloneNode(true);
+                    let uniqueName = object.userData.objectNameBase + "-" + getCountOfObject(object.name);
 
                     clone.firstElementChild.className = "itemPanel";
-                    clone.firstElementChild.id = object.userData.objectNameBase + "-" + getCountOfObject(object.name);
+                    clone.firstElementChild.id = uniqueName;
                     clone.getElementById("optionsTitle").textContent = itemInfo[1];
                     clone.getElementById("productImage").src = itemInfo[4];
 
                     let dropDown = dropDownDictionary[objectName];
 
                     let dropDownElem = clone.getElementById("drop1");
-                    dropDownElem.id = objectName + "Form";
+                    dropDownElem.id = uniqueName + "Form";
                     let elem = null;
 
                     for(let i = 0; i < dropDown.length; i += 2) {
@@ -1993,11 +2026,11 @@
                     }
 
                     let field = clone.getElementById("field1");
-                    field.id = object.userData.objectNameBase + "L";
+                    field.id = uniqueName + "L";
                     field.value = 35;
 
                     field = clone.getElementById("field2");
-                    field.id = object.userData.objectNameBase + "W";
+                    field.id = uniqueName + "W";
                     field.value = 20;
 
                     let button = clone.getElementById("applyItemOptions");
@@ -2008,26 +2041,29 @@
                     oldOption = object;
                     let template = document.getElementById("itemOptions3");
                     let clone = template.content.cloneNode(true);
+                    let uniqueName = object.userData.objectNameBase + "-" + getCountOfObject(object.name);
 
+                    // title and image
                     clone.firstElementChild.className = "itemPanel";
-                    clone.firstElementChild.id = object.userData.objectNameBase + "-" + getCountOfObject(object.name);
+                    clone.firstElementChild.id = uniqueName;
                     clone.getElementById("optionsTitle").textContent = itemInfo[1];
                     clone.getElementById("productImage").src = itemInfo[4];
 
+                    // size fields
                     let elem = null;
-
                     let field = clone.getElementById("field1");
-                    field.id = object.userData.objectNameBase + "L";
+                    field.id = uniqueName + "L";
                     field.value = 10;
 
                     field = clone.getElementById("field2");
-                    field.id = object.userData.objectNameBase + "W";
+                    field.id = uniqueName + "W";
                     field.value = 10;
 
                     field = clone.getElementById("field3");
-                    field.id = object.userData.objectNameBase + "H";
+                    field.id = uniqueName + "H";
                     field.value = 10;
 
+                    // apply button
                     let button = clone.getElementById("applyItemOptions");
                     button.setAttribute("onclick", itemInfo[5] + "('" + itemInfo[6] + "','" + itemInfo[0] + "', true)");
 
@@ -2036,16 +2072,17 @@
                     oldOption = object;
                     let template = document.getElementById("itemOptions4");
                     let clone = template.content.cloneNode(true);
+                    let uniqueName = object.userData.objectNameBase + "-" + getCountOfObject(object.name);
 
                     clone.firstElementChild.className = "itemPanel";
-                    clone.firstElementChild.id = object.userData.objectNameBase + "-" + getCountOfObject(object.name);
+                    clone.firstElementChild.id = uniqueName;
                     clone.getElementById("optionsTitle").textContent = itemInfo[1];
                     clone.getElementById("productImage").src = itemInfo[4];
 
                     let elem = null;
 
                     let field = clone.getElementById("field1");
-                    field.id = object.userData.objectNameBase + "Radius";
+                    field.id = uniqueName + "Radius";
                     field.value = 5;
 
                     let button = clone.getElementById("applyItemOptions");
@@ -2056,16 +2093,19 @@
                     oldOption = object;
                     let template = document.getElementById("itemOptions5");
                     let clone = template.content.cloneNode(true);
+                    let uniqueName = object.userData.objectNameBase + "-" + getCountOfObject(object.name);
 
+                    // title and image
                     clone.firstElementChild.className = "itemPanel";
-                    clone.firstElementChild.id = object.userData.objectNameBase + "-" + getCountOfObject(object.name);
+                    clone.firstElementChild.id = uniqueName;
                     clone.getElementById("optionsTitle").textContent = itemInfo[1];
                     clone.getElementById("productImage").src = itemInfo[4];
 
+                    // dropdown
                     let dropDown = dropDownDictionary[objectName];
 
                     let dropDownElem = clone.getElementById("drop1");
-                    dropDownElem.id = objectName + "Form";
+                    dropDownElem.id = uniqueName + "Form";
                     let elem = null;
 
                     for(let i = 0; i < dropDown.length; i += 2) {
@@ -2076,10 +2116,12 @@
                         dropDownElem.append(elem);
                     }
 
+                    // checkbox
                     let checkbox = clone.getElementById("check1");
-                    checkbox.id = object.userData.objectNameBase + "Stand";
+                    checkbox.id = uniqueName + "Stand";
                     checkbox.setAttribute("onclick","toggleCheck('" + checkbox.id +"')");
 
+                    // apply button
                     let button = clone.getElementById("applyItemOptions");
                     button.setAttribute("onclick", itemInfo[5] + "('" + itemInfo[6] + "','" + itemInfo[0] + "', true)");
 
@@ -2312,12 +2354,14 @@
         function addPrimitiveDesk(objectType, objectName) {
             enablePicking(); // this will get done again in addObject, but I need to do it here so the code to replace the desk works
 
+            let uniqueName = objectName + "-" + calcObjectNumber(objectName);
+
             // handles a new primitive desk being added
             let geometry;
             let textureName;
             if(document.getElementById(objectName + "L") != null) {
                 geometry = new THREE.BoxBufferGeometry(document.getElementById(objectName + "L").value, "1", document.getElementById(objectName + "W").value);
-                textureName = document.getElementById(objectName + "Form").value;
+                textureName = document.getElementById(uniqueName + "Form").value;
             } else {
                 geometry = new THREE.BoxBufferGeometry(35, 1, 20);
                 textureName = "lightAlderwood";
@@ -2327,15 +2371,16 @@
             let material = new THREE.MeshLambertMaterial({ map: texture });
             material.name = textureName;
 
-            pickHelper.pick(getObjectByType("Desk")[0]);
-            let oldDesk = pickHelper.pickedObject.userData.objectName;
-            pickHelper.deletePicked();
+            // store the old desk and then delete it from the scene
+            let oldDesk = getObjectByType("Desk")[0].userData.objectName;
+            pickHelper.deleteObjectByName(getObjectByType("Desk")[0]);
 
             // add object to scene and make a group
             let object = addPrimitive(objectType, objectName, geometry, material);
 
             updateDeskHeightDiff(objectName, oldDesk);
 
+            // set position
             let posArr = coordinateDictionary[objectName];
             object.position.set(posArr[0], posArr[1], posArr[2]);
         }
@@ -2354,23 +2399,27 @@
 
         // add a reference primitive object
         function addPrimitiveReference(objectType, objectName, replace) {
+        
+            let uniqueName = objectName + "-" + calcObjectNumber(objectName);
+
             // create box or sphere geometry
             let geometry;
             let width = 0;
             if (objectType.includes("Box")) {
-                if(document.getElementById(objectName + "L") != null) {
+                if(document.getElementById(uniqueName + "L") != null) {
                     geometry = new THREE.BoxBufferGeometry(document.getElementById(objectName + "L").value,
-                    document.getElementById(objectName + "W").value,
-                    document.getElementById(objectName + "H").value);
-                    width = document.getElementById(objectName + "W").value / 2;
+                    document.getElementById(uniqueName + "W").value,
+                    document.getElementById(uniqueName + "H").value);
+
+                    width = document.getElementById(uniqueName + "W").value / 2;
                 } else {
                     geometry = new THREE.BoxBufferGeometry(10,10,10);
                     width = 5;
                 }
             } else if (objectType.includes("Sphere")) {
-                if(document.getElementById(objectName + "Radius") != null) {
-                    geometry = new THREE.OctahedronBufferGeometry(document.getElementById(objectName + "Radius").value, 5);
-                    width = document.getElementById(objectName + "Radius").value;
+                if(document.getElementById(uniqueName + "Radius") != null) {
+                    geometry = new THREE.OctahedronBufferGeometry(document.getElementById(uniqueName + "Radius").value, 5);
+                    width = document.getElementById(uniqueName + "Radius").value;
                 } else {
                     geometry = new THREE.OctahedronBufferGeometry(5, 5);
                     width = 5;
@@ -2413,7 +2462,7 @@
             // make sure the object is getting a unique name
             objCount = calcObjectNumber(objectName);
 
-            object.name = objectName + "-" + objCount;
+            object.name = findBaseName(objectName) + "-" + objCount;
 
             object.userData.type = objectType;
             object.userData.objectName = objectName;
@@ -2433,11 +2482,14 @@
 
         // add any object with a dropdown and checkbox field, including monitors
         function addMonitor(objectType, objectNameBase, replace) {
+            let uniqueName = objectNameBase + "-" + calcObjectNumber(objectNameBase);
+            
             // check size
-            let objectName = objectNameBase + document.getElementById(objectNameBase + "Form").value;
+            let objectName = objectNameBase + document.getElementById(uniqueName + "Form").value;
+
 
             // check for stand
-            if (document.getElementById(objectNameBase + "Stand").value == "on") {
+            if (document.getElementById(uniqueName + "Stand").value == "on") {
                 objectName += "NoStand";
             }
 
@@ -2494,7 +2546,7 @@
                     
 
                 // give object unique name and basic name
-                object.name = objectName + "-" + objCount;
+                object.name = findBaseName(objectName) + "-" + objCount;
                 object.userData.objectName = objectName;
                 object.userData.objectNameBase = findBaseName(objectName);
 
@@ -2525,38 +2577,35 @@
 
         // add desk
         function addDesk(objectType, objectName) {
-            enablePicking(); // this will get done again in addObject, but I need to do it here so the code to replace the desk works
 
             // pick the old desk, store it, and delete it
-            pickHelper.pick(getObjectByType("Desk")[0]);
-            let oldDesk = pickHelper.pickedObject.userData.objectName;
-            pickHelper.deletePicked();
+            let oldDesk = getObjectByType("Desk")[0];
+            pickHelper.deleteObjectByName(oldDesk.name)
 
             // call base function for adding single object
             addDefault(objectType, objectName, false);
 
             // update height of all objects and unselect the new desk so it can't be accidentally deleted
-            updateDeskHeightDiff(objectName, oldDesk);
+            updateDeskHeightDiff(objectName, oldDesk.userData.objectName);
 
             pickHelper.unselectPickedObject();
         }
 
         function addDeskCustom(objectType, baseObjectName) {
-            enablePicking(); // this will get done again in addObject, but I need to do it here so the code to replace the desk works
+            let uniqueName = baseObjectName + calcObjectNumber(baseObjectName);
 
             // get exact name of the object to add using the form
-            let objectName = baseObjectName + document.getElementById(baseObjectName + "Form").value
+            let objectName = baseObjectName + document.getElementById(uniqueName + "Form").value
 
             // pick the old desk, store it, and delete it
-            pickHelper.pick(getObjectByType("Desk")[0]);
-            let oldDesk = pickHelper.pickedObject.userData.objectName;
-            pickHelper.deletePicked();
+            let oldDesk = getObjectByType("Desk")[0];
+            pickHelper.deleteObjectByName(oldDesk.name)
 
             // call base function now that we have the complete name
             addDefault(objectType, objectName, false);
 
             // update heighy for all objects
-            updateDeskHeightDiff(objectName, oldDesk);
+            updateDeskHeightDiff(objectName, oldDesk.userData.objectName);
         }
 
         // add an object with position and rotation as inputs
